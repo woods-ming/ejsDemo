@@ -1,14 +1,17 @@
+'use strict';
+
 var gulp = require('gulp');
 var gutil = require('./node_modules/gulp/node_modules/gulp-util');
 var clean = require('gulp-clean');
-var notify = require('gulp-notify');
-var connect = require('gulp-connect');
 var ejsJson = require('gulp-ejs-json');
+var notify = require('gulp-notify');
+var server = require('gulp-server-livereload');
 
 // clean:清除生成的文件
 gulp.task('clean', function () {
     return gulp.src('dist/*', {read: false})
         .pipe(clean());
+        // .pipe(notify('"<%= file.relative %>" cleaned.'));
 });
 
 // compile:编译
@@ -18,30 +21,29 @@ gulp.task('compile', ['clean'], function() {
 	    .pipe(gulp.dest('dist'));
 });
 
-// connect:搭建服务器
-gulp.task('connect', ['compile'], function() {
-  connect.server({
-    root: 'dist',
-    livereload: true
-  });
-});
-
-// reload:重新加载
-gulp.task('reload', function () {
-  gulp.src('dist/**/*.html')
-    .pipe(connect.reload())
-    .pipe(notify("reload File: <%= file.relative %>"));
+// webserver:本机发布
+gulp.task('webserver', function() {
+  gulp.src('dist')
+    .pipe(server({
+      livereload: true,
+      directoryListing: false,
+      open: true,
+      defaultFile: 'demo.html'
+    }));
 });
 
 // watch:监视变化，重新编译
-gulp.task('watch', function() {
-	gulp.watch('models/**/*.json', ['compile']);
-	gulp.watch('views/**/*.ejs', ['compile']);
-	gulp.watch('dist/**/*.html', ['reload'])
+gulp.task('watch', ['webserver'], function() {
+	gulp.watch('models/**/*.json', ['compile'])
+		.on('change', function(event) {
+		  console.log('File:"' + event.path + ' was ' + event.type + '", running tasks...');
+		});
+
+	gulp.watch('views/**/*.ejs', ['compile'])
 		.on('change', function(event) {
 		  console.log('File:"' + event.path + ' was ' + event.type + '", running tasks...');
 		});
 });
 
 // debug:调试
-gulp.task('debug', ['connect', 'watch']);
+gulp.task('debug', ['watch']);
