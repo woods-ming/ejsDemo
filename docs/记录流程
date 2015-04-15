@@ -1,0 +1,13 @@
+admin: 
+npm install -g gulp
+
+project:
+npm init
+npm install gulp --save-dev
+npm install gulp-clean --save-dev
+npm install gulp-connect --save-dev
+npm install gulp-ejs-json --save-dev
+
+创建gulpfile.js
+创建views目录，编辑*.ejs
+创建models目录，编辑*.json
