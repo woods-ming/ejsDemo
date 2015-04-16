@@ -1,18 +1,19 @@
 'use strict';
 
+var del = require('del');
 var gulp = require('gulp');
 var gutil = require('./node_modules/gulp/node_modules/gulp-util');
-var clean = require('gulp-clean');
 var ejsJson = require('gulp-ejs-json');
 var notify = require('gulp-notify');
 var server = require('gulp-server-livereload');
 
 // clean:清除生成的文件
-gulp.task('clean', function () {
-    return gulp.src('dist/*', {read: false})
-        .pipe(clean());
-        // .pipe(notify('"<%= file.relative %>" cleaned.'));
-});
+// gulp.task('clean', function () {
+//     return gulp.src('dist/*', {read: false})
+//         .pipe(clean());
+//         // .pipe(notify('"<%= file.relative %>" cleaned.'));
+// });
+gulp.task('clean', del.bind(null, ['dist/*']));
 
 // compile:编译
 gulp.task('compile', ['clean'], function() {
@@ -22,13 +23,16 @@ gulp.task('compile', ['clean'], function() {
 });
 
 // webserver:本机发布
-gulp.task('webserver', function() {
+gulp.task('webserver', ['compile'], function() {
   gulp.src('dist')
     .pipe(server({
-      livereload: true,
-      directoryListing: false,
-      open: true,
-      defaultFile: 'demo.html'
+    	host:'localhost',
+    	port:9000,
+      	livereload: true,
+      	directoryListing: false,
+      	defaultFile: 'demo.html',
+      	open: true,
+      	https:false
     }));
 });
 

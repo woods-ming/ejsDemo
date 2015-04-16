@@ -3,10 +3,11 @@ npm install -g gulp
 
 project:
 npm init
+npm install del --save-dev
 npm install gulp --save-dev
-npm install gulp-clean --save-dev
-npm install gulp-connect --save-dev
 npm install gulp-ejs-json --save-dev
+npm install gulp-notify --save-dev
+npm install gulp-server-livereload --save-dev
 
 创建gulpfile.js
 创建views目录，编辑*.ejs
