@@ -1,0 +1,10 @@
+<dl>
+	<dt><%= section.name%></dt>
+	<% for(var j = 0; j < section.blocks.length; j++) { %>
+	<% var block = section.blocks[j]; %>
+	<dd>
+		<label class="label label-primary"><%= block.key%></label>
+		<%= block.description%>
+	</dd>
+	<% } %>
+</dl>

@@ -1,13 +1,13 @@
 {
-    "blackBoard": {
+    "Paper": {
         "title": "《 通用编程规范 》",
-        "sub_title": "任何编程语言都应遵守的准则",
+        "subTitle": "任何编程语言都应遵守的准则<a href=\"#\">呵呵</a>",
         "sections": [
             {
-                "section_name": "1.编程规范的目的",
+                "name": "1.编程规范的目的",
                 "blocks": [
                     {
-                        "key": "必须",
+                        "key": "必须<a href=\"#\">呵呵</a>",
                         "description": "减少bug"
                     },
                     {
@@ -17,7 +17,7 @@
                 ]
             },
             {
-                "section_name": "2.代码要达到的目标",
+                "name": "2.代码要达到的目标",
                 "blocks": [
                     {
                         "key": "明确性",
@@ -30,7 +30,7 @@
                 ]
             },
             {
-                "section_name": "3.格式和风格",
+                "name": "3.格式和风格",
                 "blocks": [
                     {
                         "key": "库",
@@ -59,7 +59,7 @@
                 ]
             },
             {
-                "section_name": "4.变量",
+                "name": "4.变量",
                 "blocks": [
                     {
                         "key": "全局变量",
@@ -72,7 +72,7 @@
                 ]
             },
             {
-                "section_name": "5.函数",
+                "name": "5.函数",
                 "blocks": [
                     {
                         "key": "声明",
@@ -85,7 +85,7 @@
                 ]
             },
             {
-                "section_name": "6.枚举",
+                "name": "6.枚举",
                 "blocks": [
                     {
                         "key": "本质",
@@ -102,7 +102,7 @@
                 ]
             },
             {
-                "section_name": "7.注释",
+                "name": "7.注释",
                 "blocks": [
                     {
                         "key": "行注释",
