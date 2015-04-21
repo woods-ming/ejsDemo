@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>CodeExperience</title>
+    <meta name="author" content="woods240" />
+    <meta name="keywords" content="<%= keywords %>" />
+    <meta name="description" content="<%= description %>">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+</head>
+<body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+
+    <!-- Docs master nav -->
+    <%- include('../partials/header'); %>
+
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h1>JavaScript 插件</h1>
+        <p><%= description %></p>
+      </div>
+    </div>
+
+
+    <h1>你好，世界！</h1>
+    <div class="blackBoard">
+        <h3><%- Paper.title%> <small><%- Paper.subTitle%></small></h3>
+        <ul>
+            <% for(var i = 0; i < Paper.sections.length; i++) { %>
+            <li>
+                <%- include('../partials/section', {section: Paper.sections[i]}); %>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <!-- bower:js -->
+    <!-- endbower -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
