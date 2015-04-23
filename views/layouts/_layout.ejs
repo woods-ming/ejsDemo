@@ -7,8 +7,8 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>CodeExperience</title>
     <meta name="author" content="woods240" />
-    <meta name="keywords" content="<%= keywords %>" />
-    <meta name="description" content="<%= description %>">
+    <meta name="keywords" content="<%= 关键字 %>" />
+    <meta name="description" content="<%= 摘要 %>">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -16,7 +16,7 @@
     <!-- endbower -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="http://v3.bootcss.com/assets/css/docs.min.css">
     <!-- endbuild -->
 
 </head>
@@ -33,29 +33,31 @@
     <!-- Docs page layout -->
     <div class="bs-docs-header" id="content" tabindex="-1">
       <div class="container">
-        <h1>JavaScript 插件</h1>
-        <p><%= description %></p>
+        <h1><%= 题目 %></h1>
+        <p><%= 摘要 %></p>
       </div>
     </div>
 
-
-    <h1>你好，世界！</h1>
-    <div class="blackBoard">
-        <h3><%- Paper.title%> <small><%- Paper.subTitle%></small></h3>
-        <ul>
-            <% for(var i = 0; i < Paper.sections.length; i++) { %>
-            <li>
-                <%- include('../partials/section', {section: Paper.sections[i]}); %>
-            </li>
-            <% } %>
-        </ul>
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9" role="main">
+                <% for(var i = 0; i < 正文.length; i++) { %>
+                <% var section = 正文[i]; %>
+                <%- include('../partials/section', {section: section}); %>
+                <% } %>
+            </div>
+            <div class="col-md-3" role="complementary">
+                <%- include('../partials/catalog.ejs'); %>
+            </div>
+        </div>
     </div>
+
 
     <!-- bower:js -->
     <!-- endbower -->
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="http://v3.bootcss.com/assets/js/docs.min.js"></script>
     <!-- endbuild -->
 </body>
 </html>

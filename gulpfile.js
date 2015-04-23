@@ -104,7 +104,7 @@ gulp.task('debug', ['html', 'copy-assets'], function() {
             createHtml(model, view);
         });
 
-    gulp.watch('views/**/*.ejs', ['compile'])
+    gulp.watch('views/**/*.ejs', ['html'])
         .on('change', function(event){
             notifyChange(event.path);
         });
