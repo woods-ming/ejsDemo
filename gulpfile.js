@@ -94,8 +94,8 @@ gulp.task('debug', ['html', 'copy-assets'], function() {
             open: true,
             https:false
         }));
-
-	// watch:监视变化，重新编译
+    
+    // watch:监视变化，重新编译
     gulp.watch('models/**/*.json')
         .on('change', function(event) {
             notifyChange(event.path);

@@ -1,20 +1,23 @@
-<div class="bs-docs-section">
-	<!-- <dl>
-		<dt><%- section.section_name%></dt>
-		<% for(var j = 0; j < section.blocks.length; j++) { %>
-		<% var block = section.blocks[j]; %>
-		<dd>
-			<label class="label label-primary"><%- block.key%></label>
-			<%- block.description%>
-		</dd>
-		<% } %>
-	</dl> -->
-		<h2><%- section.section_name%></h2>
-		<% for(var j = 0; j < section.blocks.length; j++) { %>
-		<% var block = section.blocks[j]; %>
-		<p>
-			<%- block.key%>:
-			<%- block.description%>
-		</p>
-		<% } %>
-</div>
+<% 
+for(var i = 0; i < body.chapters.length; i++) { 
+	var chapter = body.chapters[i]; 
+%>
+	<h1><%= chapter.name%></h1>
+<% 
+	for(var i = 0; i < chapter.sections.length; i++) { 
+		var section = chapter.sections[i]; 
+%>
+		<div class="bs-docs-section">
+			<h2><%= section.name%></h2>
+			<% for(var j = 0; j < section.blocks.length; j++) { %>
+			<% var block = section.blocks[j]; %>
+			<p>
+				<%- block.key %>:
+				<%- block.description %>
+			</p>
+			<% } %>
+		</div>
+<% 
+	} 
+}
+%>
