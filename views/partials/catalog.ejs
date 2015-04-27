@@ -1,33 +1,43 @@
 <ul class="nav bs-docs-sidenav">
-    <li>
-<% 
-        if(chapters.length > 1) { 
-            for(var i = 2; i < chapters.length; i++) { 
-                var chapter = chapters[i]; 
-                var sections = chapter.sections;
-%>
+
+    <% 
+    if(chapters.length > 1) { 
+        for(var i = 0; i < chapters.length; i++) { 
+            var chapter = chapters[i]; 
+            var sections = chapter.sections;
+            %>
+
+            <li>
                 <a href="#<%= chapter.name %>"><%= chapter.name %></a>
                 <ul class="nav">
-<% 
-                for(var i = 0; i < sections.length; i++) {  
-                    var section = sections[i]; 
-%>
-                    <li><a href="#<%= section.name %>"><%= section.name %></a></li>
-<% 
-                } 
-%>
+
+                    <% 
+                    for(var j = 0; j < sections.length; j++) {  
+                        var section = sections[j]; 
+                        %>
+
+                        <li><a href="#<%= section.name %>"><%= section.name %></a></li>
+
+                        <% 
+                    } 
+                    %>
+
                 </ul>
-<% 
-            }
-        } 
-        else if(chapters.length == 1) { 
-            for(var i = 0; i < chapters[0].sections.length; i++) {  
-                var section = chapters[0].sections[i]; 
+            </li>
+
+            <% 
+        }
+    } 
+else if(chapters.length == 1) { 
+    for(var i = 0; i < chapters[0].sections.length; i++) {  
+        var section = chapters[0].sections[i]; 
+        %>
+
+        <li><a href="#<%= section.name %>"><%= section.name %></a></li>
+
+        <% 
+    }  
+} 
 %>
-                <a href="#<%= section.name %>"><%= section.name %></a>
-<% 
-            }  
-        } 
-%>
-    </li>
+
 </ul>

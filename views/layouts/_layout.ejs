@@ -57,7 +57,10 @@
     <div class="container bs-docs-container">
         <div class="row">
             <div class="col-md-9" role="main">
-                <%- include('../partials/section', { body: 正文 }); %>
+                <% for(var i = 0; i < 正文.chapters.length; i++) { %>
+                <% var chapter = 正文.chapters[i]; %>
+                <%- include('../partials/chapter', { chapter: chapter }); %>
+                <% } %>
             </div>
             <div class="col-md-3" role="complementary">
                 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
