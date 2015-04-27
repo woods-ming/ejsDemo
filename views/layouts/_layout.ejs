@@ -16,11 +16,12 @@
     <!-- endbower -->
 
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="http://v3.bootcss.com/assets/css/patch.css">
     <link rel="stylesheet" href="http://v3.bootcss.com/assets/css/docs.min.css">
     <!-- endbuild -->
 
 </head>
-<body>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
         <div class="container">
             <span class="skiplink-text">Skip to main content</span>
@@ -63,7 +64,7 @@
                 <% } %>
             </div>
             <div class="col-md-3" role="complementary">
-                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
                     <%- include('../partials/catalog', { chapters: 正文.chapters }); %>
                     <a class="back-to-top" href="#top">
                         返回顶部
@@ -80,7 +81,7 @@
     <!-- endbower -->
 
     <!-- build:js scripts/main.js -->
-    <script src="http://v3.bootcss.com/assets/js/docs.min.js"></script>
+    
     <!-- endbuild -->
 </body>
 </html>

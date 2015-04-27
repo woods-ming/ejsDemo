@@ -18,10 +18,10 @@ function createHtml(model, view) {
         .pipe(wiredep())
         .pipe(minifyHTML(
     		{
-    			cdata:true,
-    		    conditionals: true,
-    		    spare:true,
-    			quotes:true
+                cdata:true,
+                conditionals: true,
+                spare:true,
+                quotes:true
     		}))
         .pipe(gulp.dest('dist'));
 }
@@ -59,7 +59,7 @@ gulp.task('clean', del.bind(null, ['dist/*']));
 
 // copy-assets:复制资源文件
 gulp.task('copy-assets', function() {
-	gulp.src('assets/*')
+	gulp.src('assets/**/')
 		.pipe(gulp.dest('dist'));
 });
 
@@ -104,11 +104,8 @@ gulp.task('debug', ['html', 'copy-assets'], function() {
             createHtml(model, view);
         });
 
-    gulp.watch('views/**/*.ejs', ['html'])
-        .on('change', function(event){
-            notifyChange(event.path);
-        });
-
+    gulp.watch('views/**/*.ejs', ['html']);
+    gulp.watch('assets/**/*', ['copy-assets'])
     gulp.watch('bower.json', ['wiredep']);
 
 });
