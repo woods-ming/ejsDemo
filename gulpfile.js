@@ -8,6 +8,7 @@ var del = require('del')
   , gutil = require('./node_modules/gulp/node_modules/gulp-util')
   , notify = require('gulp-notify')
   , ejsJson = require('gulp-ejs-json')
+  , sitemap = require('gulp-sitemap')
   , minifyHTML = require('gulp-minify-html')
   , server = require('gulp-server-livereload')
   , routeTable = require('./routeTable.json');
@@ -64,7 +65,7 @@ gulp.task('copy-assets', function() {
 });
 
 // html:根据路由表找到model对应的view，编译成html
-gulp.task('html', function() {
+gulp.task('html', ['clean'], function() {
     for(var i = 0; i < routeTable.length; i++) {
         var route = routeTable[i];
         createHtml(route.modelGlob, route.view);
@@ -79,6 +80,15 @@ gulp.task('styles',function(){
 // scripts:处理js文件
 gulp.task('scripts',function(){
 
+});
+
+// sitemap:生成站点地图
+gulp.task('sitemap', function () {
+    gulp.src('dist/**/*.html')
+        .pipe(sitemap({
+            siteUrl: 'http://codeExperience.sinaapp.com'
+        }))
+        .pipe(gulp.dest('dist/'));
 });
 
 // debug:调试
@@ -116,8 +126,8 @@ gulp.task('build', ['html', 'scripts', 'styles'], function(){
 });
 
 // deploy:发布
-gulp.task('deploy', ['clean'], function() {
-    gulp.start('build');
+gulp.task('deploy', ['build'], function() {
+    gulp.start('sitemap');
 });
 
 

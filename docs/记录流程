@@ -9,6 +9,7 @@ npm install wiredep --save-dev（依赖注入）
 npm install gulp --save-dev（执行任务）
 npm install gulp-notify --save-dev（发出通知）
 npm install gulp-ejs-json --save-dev（使用ejs引擎）
+npm install gulp-sitemap --save-dev（生成站点地图）
 npm install gulp-minify-html --save-dev（压缩html）
 npm install gulp-server-livereload --save-dev（本地服务器）
 
