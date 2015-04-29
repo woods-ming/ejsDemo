@@ -1,18 +1,34 @@
-<h1 id="<%= chapter.name %>"><%= chapter.name %></h1>
 <% 
-for(var i = 0; i < chapter.sections.length; i++) { 
-	var section = chapter.sections[i]; 
-	%>
-	<div class="bs-docs-section">
-		<h2 id="<%= chapter.name %>-<%= section.name %>"><%= section.name %></h2>
-		<% for(var j = 0; j < section.blocks.length; j++) { %>
-		<% var block = section.blocks[j]; %>
-		<p>
-			<%- block.key %>:
-			<%- block.description %>
-		</p>
-		<% } %>
-	</div>
+for(var i = 0; i < content.chapters.length; i++) { 
+	var chapter = content.chapters[i]; %>
+
+	<h1 id="<%= i %>"><%= chapter.name %></h1>
+
 	<% 
+	for(var j = 0; j < chapter.sections.length; j++) { 
+		var section = chapter.sections[j]; 
+		%>
+
+		<div class="bs-docs-section">
+			<h2 id="<%= i %>-<%= j %>"><%= section.name %></h2>
+
+			<% 
+			for(var k = 0; k < section.blocks.length; k++) { 
+				var block = section.blocks[k]; 
+				%>
+
+				<p>
+					<%- block.key %>:
+					<%- block.description %>
+				</p>
+
+				<% 
+			} 
+			%>
+
+		</div>
+
+		<% 
+	} 
 } 
 %>

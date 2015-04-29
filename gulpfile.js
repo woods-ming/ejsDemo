@@ -11,9 +11,11 @@ var del = require('del')
   , sitemap = require('gulp-sitemap')
   , minifyHTML = require('gulp-minify-html')
   , server = require('gulp-server-livereload')
+  , browserSync = require('browser-sync')
+  , reload = browserSync.reload
   , routeTable = require('./routeTable.json');
 
-function createHtml(model, view) {
+function createHtml(model, view, dist) {
     gulp.src(model)
         .pipe(ejsJson({ filename: view }).on('error', gutil.log))
         .pipe(wiredep())
@@ -24,7 +26,7 @@ function createHtml(model, view) {
                 spare:true,
                 quotes:true
     		}))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest(dist ? dist : 'dist'));
 }
 
 function notifyChange (path) {
@@ -94,24 +96,33 @@ gulp.task('sitemap', function () {
 // debug:调试
 gulp.task('debug', ['html', 'copy-assets'], function() {
     // webserver:临时服务器
-    gulp.src('.')
-        .pipe(server({
-            host:'localhost',
-            port:9000,
-            livereload: true,
-            directoryListing: true,
-            // defaultFile: 'CodingSpec.html',
-            open: true,
-            https:false
-        }));
+    browserSync({
+        notify: true,
+        port: 9000,
+        server: {
+            baseDir: ['.'],
+            directory: true
+        }
+    });
+    // gulp.src('.')
+    //     .pipe(server({
+    //         host:'localhost',
+    //         port:9000,
+    //         livereload: true,
+    //         directoryListing: true,
+    //         // defaultFile: 'CodingSpec.html',
+    //         open: true,
+    //         https:false
+    //     }));
     
     // watch:监视变化，重新编译
     gulp.watch('models/**/*.json')
         .on('change', function(event) {
             notifyChange(event.path);
-            var model = path.resolve('dist',path.relative('models',event.path));
+            var model = event.path; 
             var view = findRouteView(model);
-            createHtml(model, view);
+            var dist = path.resolve('dist', path.relative('models', path.dirname(event.path)));
+            createHtml(model, view, dist);
         });
 
     gulp.watch('views/**/*.ejs', ['html']);

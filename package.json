@@ -5,14 +5,15 @@
   "author": "woods-ming",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^1.9.2",
     "del": "^1.1.1",
     "glob": "^5.0.5",
-    "wiredep": "^2.2.2",
     "gulp": "^3.8.11",
     "gulp-ejs-json": "0.0.1",
-    "gulp-sitemap": "^2.1.0",
     "gulp-minify-html": "^1.0.2",
     "gulp-notify": "^2.2.0",
-    "gulp-server-livereload": "^1.2.2"
+    "gulp-server-livereload": "^1.2.2",
+    "gulp-sitemap": "^2.1.0",
+    "wiredep": "^2.2.2"
   }
 }

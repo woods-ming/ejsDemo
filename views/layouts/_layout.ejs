@@ -21,7 +21,7 @@
     <!-- endbuild -->
 
 </head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<body data-spy="scroll" data-offset="50" data-target="#catalog">
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
         <div class="container">
             <span class="skiplink-text">Skip to main content</span>
@@ -58,13 +58,10 @@
     <div class="container bs-docs-container">
         <div class="row">
             <div class="col-md-9" role="main">
-                <% for(var i = 0; i < 正文.chapters.length; i++) { %>
-                <% var chapter = 正文.chapters[i]; %>
-                <%- include('../partials/chapter', { chapter: chapter }); %>
-                <% } %>
+                <%- include('../partials/chapter', { content: 正文 }); %>
             </div>
             <div class="col-md-3" role="complementary">
-                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+                <nav id="catalog" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="260">
                     <%- include('../partials/catalog', { chapters: 正文.chapters }); %>
                     <a class="back-to-top" href="#top">
                         返回顶部

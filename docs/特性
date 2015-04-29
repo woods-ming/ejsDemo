@@ -1,0 +1,7 @@
+1.mvc: model + view => html
+2.route: model <=> view 映射表
+3.catalog: 根据model结构自动生成
+4.bootstrap: 滚动监听, Affix
+5.wiredep: bower依赖注入
+6.notifyChange: 变化通知
+7.sitemap: 生成sitemap（SEO）

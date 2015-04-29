@@ -8,7 +8,7 @@
             %>
 
             <li>
-                <a href="#<%= chapter.name %>"><%= chapter.name %></a>
+                <a href="#<%= i %>"><%= chapter.name %></a>
                 <ul class="nav">
 
                     <% 
@@ -16,7 +16,7 @@
                         var section = sections[j]; 
                         %>
 
-                        <li><a href="#<%= chapter.name %>-<%= section.name %>"><%= section.name %></a></li>
+                        <li><a href="#<%= i %>-<%= j %>"><%= section.name %></a></li>
 
                         <% 
                     } 
@@ -29,11 +29,11 @@
         }
     } 
 else if(chapters.length == 1) { 
-    for(var i = 0; i < chapters[0].sections.length; i++) {  
-        var section = chapters[0].sections[i]; 
+    for(var j = 0; j < chapters[0].sections.length; j++) {  
+        var section = chapters[0].sections[j]; 
         %>
 
-        <li><a href="#<%= section.name %>"><%= section.name %></a></li>
+        <li><a href="#<%= 0 %>-<%= j %>"><%= section.name %></a></li>
 
         <% 
     }  
