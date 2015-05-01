@@ -1,0 +1,6 @@
+[
+	{
+		"modelGlob": "app/models/**/*.json",
+		"view": "app/views/layouts/_layout.ejs"
+	}
+]

@@ -1,0 +1,26 @@
+admin: 
+npm install -g gulp
+
+project:
+npm init
+npm install --save-dev del（删除文件）
+npm install --save-dev glob（目录匹配）
+npm install --save-dev wiredep（依赖注入）
+npm install --save-dev browser-sync（本地服务器）
+npm install --save-dev gulp（执行任务）
+npm install --save-dev gulp-util（gulp工具）
+npm install --save-dev gulp-notify（发出通知）
+npm install --save-dev gulp-ejs-json（使用ejs引擎）
+npm install --save-dev gulp-sitemap（生成站点地图）
+npm install --save-dev gulp-minify-html（压缩html）
+npm install --save-dev gulp-sourcemaps（报错定位到原始代码）
+npm install --save-dev gulp-load-plugins（自动加载gulp插件）
+
+
+bower init
+bower install bootstrap --save
+bower install google-code-prettify --save
+
+创建gulpfile.js
+创建views目录，编辑*.ejs
+创建models目录，编辑*.json
