@@ -17,8 +17,8 @@
     <link href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" rel="stylesheet">
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/patch.css">
-    <link rel="stylesheet" href="styles/docs.min.css">
+    <link rel="stylesheet" href="/styles/docs.min.css">
+    <link rel="stylesheet" href="/styles/patch.css">
     <!-- endbuild -->
 
 </head>
@@ -39,30 +39,53 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="../" class="navbar-brand">Bootstrap</a>
+                <a href="#" class="navbar-brand">CodeExperience</a>
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse">
                 <ul class="nav navbar-nav">
-        <li>
-          <a href="../getting-started/">起步</a>
-        </li>
-        <li>
-          <a href="../css/">全局 CSS 样式</a>
-        </li>
-        <li>
-          <a href="../components/">组件</a>
-        </li>
-        <li class="active">
-          <a href="../javascript/">JavaScript 插件</a>
-        </li>
-        <li>
-          <a href="../customize/">定制</a>
-        </li>
-        <li><a href="http://expo.bootcss.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-网站实例'])" target="_blank">网站实例</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://www.bootcss.com/" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-Bootstrap中文网'])" target="_blank">Bootstrap中文网</a></li>
-      </ul>
+    <li>
+        <a href="#">起步</a>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">编程基础 <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="/books/CodingSpec.html">通用编程规范</a></li>
+            <li><a href="#">C# 编程规范</a></li>
+            <li><a href="#">Effective C#</a></li>
+            <li><a href="#">OOD启思录</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">设计模式 <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">创建型模式</a></li>
+            <li><a href="#">结构型模式</a></li>
+            <li><a href="#">行为型模式</a></li>
+            <li class="divider"></li>
+            <li><a href="#">设计模式总结</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">架构模式 <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">企业应用架构模式</a></li>
+            <li><a href="#">大型网站技术架构</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">项目管理 <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">持续集成</a></li>
+            <li><a href="/books/ProjectPlan.html">项目计划、进度与控制</a></li>
+        </ul>
+    </li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://www.bootcss.com/" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-Bootstrap中文网'])" target="_blank">Bootstrap中文网</a></li>
+</ul>
             </nav>
         </div>
     </header>
@@ -70,8 +93,9 @@
     <!-- 论文简介 -->
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
-            <h1>《 通用编程规范 》</h1>
-            <p>任何语言都应遵守的基本编程规范</p>
+            <h1>通用编程规范</h1>
+            <p>摘要：任何语言都应遵守的基本编程规范</p>
+            <p>关键字：编程规范</p>
         </div>
     </div>
 
@@ -79,14 +103,17 @@
     <div class="container bs-docs-container">
         <div class="row">
             <div class="col-md-9" role="main">
-                
+                <div>
+                    
 
-	<h1 id="0"></h1>
+	<h2 id="0"></h2>
+	<div class="bs-docs-section">
 
 	
 
-		<div class="bs-docs-section">
-			<h2 id="0-0">1.编程规范的目的</h2>
+		
+			<h3 id="0-0">1.编程规范的目的</h3>
+			<div>
 
 			
 
@@ -104,12 +131,14 @@
 
 				
 
-		</div>
+			</div>
+
 
 		
 
-		<div class="bs-docs-section">
-			<h2 id="0-1">2.代码要达到的目标</h2>
+		
+			<h3 id="0-1">2.代码要达到的目标</h3>
+			<div>
 
 			
 
@@ -127,12 +156,14 @@
 
 				
 
-		</div>
+			</div>
+
 
 		
 
-		<div class="bs-docs-section">
-			<h2 id="0-2">3.格式和风格</h2>
+		
+			<h3 id="0-2">3.格式和风格</h3>
+			<div>
 
 			
 
@@ -178,12 +209,14 @@
 
 				
 
-		</div>
+			</div>
+
 
 		
 
-		<div class="bs-docs-section">
-			<h2 id="0-3">4.变量</h2>
+		
+			<h3 id="0-3">4.变量</h3>
+			<div>
 
 			
 
@@ -201,12 +234,14 @@
 
 				
 
-		</div>
+			</div>
+
 
 		
 
-		<div class="bs-docs-section">
-			<h2 id="0-4">5.函数</h2>
+		
+			<h3 id="0-4">5.函数</h3>
+			<div>
 
 			
 
@@ -224,12 +259,14 @@
 
 				
 
-		</div>
+			</div>
+
 
 		
 
-		<div class="bs-docs-section">
-			<h2 id="0-5">6.枚举</h2>
+		
+			<h3 id="0-5">6.枚举</h3>
+			<div>
 
 			
 
@@ -254,12 +291,14 @@
 
 				
 
-		</div>
+			</div>
+
 
 		
 
-		<div class="bs-docs-section">
-			<h2 id="0-6">7.注释</h2>
+		
+			<h3 id="0-6">7.注释</h3>
+			<div>
 
 			
 
@@ -284,12 +323,25 @@
 
 				
 
-		</div>
+			</div>
+
 
 		
+
+			</div>
+
+
+                </div>
+
+                <div class="bs-callout bs-callout-info">
+                    <h4>注:</h4>
+                    <p class="text-info">
+
+</p>
+                </div>
             </div>
             <div class="col-md-3" role="complementary">
-                <nav id="catalog" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="260">
+                <nav id="catalog" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="320">
                     <ul class="nav bs-docs-sidenav">
 
     
@@ -346,7 +398,7 @@
     <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
     <!-- endbuild -->
 </body>
 </html>

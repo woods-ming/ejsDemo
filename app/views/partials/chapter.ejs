@@ -2,15 +2,17 @@
 for(var i = 0; i < content.chapters.length; i++) { 
 	var chapter = content.chapters[i]; %>
 
-	<h1 id="<%= i %>"><%= chapter.name %></h1>
+	<h2 id="<%= i %>"><%= chapter.name %></h2>
+	<div class="bs-docs-section">
 
 	<% 
 	for(var j = 0; j < chapter.sections.length; j++) { 
 		var section = chapter.sections[j]; 
 		%>
 
-		<div class="bs-docs-section">
-			<h2 id="<%= i %>-<%= j %>"><%= section.name %></h2>
+		
+			<h3 id="<%= i %>-<%= j %>"><%= section.name %></h3>
+			<div>
 
 			<% 
 			for(var k = 0; k < section.blocks.length; k++) { 
@@ -26,9 +28,15 @@ for(var i = 0; i < content.chapters.length; i++) {
 			} 
 			%>
 
-		</div>
+			</div>
+
 
 		<% 
 	} 
+	%>
+
+			</div>
+
+<% 
 } 
 %>
