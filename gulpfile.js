@@ -53,7 +53,7 @@ gulp.task('debug', ['compile'], function() {
         logFileChanges: true,
         server: {
             baseDir: ['.tmp', 'app'],
-            index: "books/CodingSpec.html",
+            index: "basic/CodingSpec.html",
             routes: {
                 '/bower_components': 'bower_components'
             }
@@ -156,7 +156,7 @@ gulp.task('default', ['clean'], function () {
         port: 9001,
         server: {
             baseDir: ['dist'],
-            index: "books/CodingSpec.html"
+            index: "basic/CodingSpec.html"
         }
     });
 });

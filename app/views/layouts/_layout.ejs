@@ -16,7 +16,7 @@
     <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" rel="stylesheet">
 
-    <!-- build:css styles/main.css -->
+    <!-- build:css /styles/main.css -->
     <link rel="stylesheet" href="/styles/docs.min.css">
     <link rel="stylesheet" href="/styles/patch.css">
     <!-- endbuild -->
@@ -51,25 +51,23 @@
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
             <h1><%= 题目 %></h1>
-            <p>摘要：<%= 摘要 %></p>
-            <p>关键字：<%= 关键字 %></p>
+            <p>摘要: <%= 摘要 %></p>
+            <p>关键字: <%= 关键字 %></p>
         </div>
     </div>
 
-    <!-- 正文 -->
     <div class="container bs-docs-container">
         <div class="row">
             <div class="col-md-9" role="main">
+                <!-- 正文 -->
                 <div>
                     <%- include('../partials/chapter', { content: 正文 }); %>
                 </div>
 
-                <div class="bs-callout bs-callout-info">
-                    <h4>注:</h4>
-                    <%- include('../partials/note', { note: 注释 }); %>
-                </div>
+                <%- include('../partials/note', { note: 注释 }); %>
             </div>
             <div class="col-md-3" role="complementary">
+                <!-- 目录 -->
                 <nav id="catalog" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="320">
                     <%- include('../partials/catalog', { chapters: 正文.chapters }); %>
                     <a class="back-to-top" href="#top">
@@ -89,7 +87,7 @@
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
 
-    <!-- build:js scripts/main.js -->
+    <!-- build:js /scripts/main.js -->
     <script src="/scripts/main.js"></script>
     <!-- endbuild -->
 </body>

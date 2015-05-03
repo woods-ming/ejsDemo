@@ -10,7 +10,6 @@ for(var i = 0; i < content.chapters.length; i++) {
 		var section = chapter.sections[j]; 
 		%>
 
-		
 			<h3 id="<%= i %>-<%= j %>"><%= section.name %></h3>
 			<div>
 
@@ -19,10 +18,10 @@ for(var i = 0; i < content.chapters.length; i++) {
 				var block = section.blocks[k]; 
 				%>
 
-				<p>
-					<%- block.key %>:
-					<%- block.description %>
-				</p>
+				<dl class="dl-horizontal">
+					<dt><%- block.key %></dt>
+					<dd><%- block.description %></dd>
+				</dl>
 
 				<% 
 			} 
@@ -30,12 +29,11 @@ for(var i = 0; i < content.chapters.length; i++) {
 
 			</div>
 
-
 		<% 
 	} 
 	%>
 
-			</div>
+	</div>
 
 <% 
 } 
