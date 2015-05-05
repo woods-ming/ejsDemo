@@ -97,6 +97,7 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">杂谈 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
+            <li><a href="/talk/terms.html">计算机名词</a></li>
             <li><a href="#">如何做SEO</a></li>
             <li><a href="#">如何选择控件</a></li>
             <li><a href="#">Yeoman为何流行</a></li>
@@ -114,7 +115,7 @@
     <!-- 论文简介 -->
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
-            <h1></h1>
+            <h1>大型网站技术架构</h1>
             <p>摘要: </p>
             <p>关键字: </p>
         </div>
@@ -127,19 +128,300 @@
                 <div>
                     
 
-	<h2 id="0">六、管理自己</h2>
+	<h2 id="0">一、概述</h2>
 	<div class="bs-docs-section">
 
 	
 
-			<h3 id="0-0">3.重要的观念</h3>
+			<h3 id="0-0">1.核心思想</h3>
 			<div>
 
 			
 
 				<dl class="dl-horizontal">
-					<dt>时间管理</dt>
-					<dd>明确人生需求，作为一个项目来逐步实现</dd>
+					<dt>演化</dt>
+					<dd>大型网站是由小网站逐渐演化而来（不是一蹴而就）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>模式</dt>
+					<dd>场景与问题的重复出现，促成了可复用的解决方案</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>驱动</dt>
+					<dd>业务是技术的驱动力，不断增长的业务推动了网站技术的发展</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>解决问题</dt>
+					<dd>业务问题可以由技术手段和业务手段来解决（不要禁锢解决问题的方式）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>高手</dt>
+					<dd>遇到了常人难以遇到的问题，并解决了（积累经验的机会多）</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="0-1">2.大型网站架构的发展历程</h3>
+			<div>
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>单服务器</dt>
+					<dd>应用、文件、数据库集中在一台服务器上</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>应用、数据分离</dt>
+					<dd>应用服务器 + 文件服务器 + 数据库服务器</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>分布式数据缓存</dt>
+					<dd>80%的业务集中在20%的数据，将这部分数据缓存（数据提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>应用服务器集群</dt>
+					<dd>通过负载均衡，提高可接收请求的上限（应用提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>数据库读写分离</dt>
+					<dd>主从热备，主数据库负责写，从数据库负责读（数据提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>使用CDN和反向代理</dt>
+					<dd>CDN缓存静态资源，反向代理缓存业务数据（数据提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>分布式数据库</dt>
+					<dd>单表数据规模非常庞大时使用（数据提量提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>NoSql数据库</dt>
+					<dd>天生就是用来解决大数据量和高性能问题的（数据提量提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>业务纵向拆分</dt>
+					<dd>将大网站拆分为多个松耦合的小网站，通过超链接、消息队列、数据库通信（应用提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>分布式服务</dt>
+					<dd>先横向拆分出服务层，再纵向拆分服务，分别发布在不同的服务器集群中（应用提速）</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="0-2">3.大型网站的特点</h3>
+			<div>
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>大数据</dt>
+					<dd>用户多，因此产生的业务数据和用户数据多</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>高并发、大流量</dt>
+					<dd>用户多，因此单位时间请求量大</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>必须高可用</dt>
+					<dd>用户多，一旦宕机，波及范围广、损失大</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>网络情况复杂</dt>
+					<dd>用户多，且分属在不同的网络环境中</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>安全环境恶劣</dt>
+					<dd>树大招风，成为众多黑客攻击或炫耀的对象</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>渐进式发展</dt>
+					<dd>市场变化快，不可能一开始就捕获所有 功能性和非功能性 需求</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>发布频繁</dt>
+					<dd>为快速响应用户需求，频繁增量迭代</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="0-3">4.大型网站解决问题的思路</h3>
+			<div>
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>分层</dt>
+					<dd>横向切分，定义层次边界和接口（合理的分配职责）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>分割</dt>
+					<dd>纵向切分，根据“高内聚、低耦合”定义模块（使模块独立）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>分布式</dt>
+					<dd>切分后的模块，部署在不同的服务器上（分工协作）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>集群</dt>
+					<dd>多台服务器干同一件事情（人多力量大，并可相互替代）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>缓存</dt>
+					<dd>将经常访问的数据，暂存到可以快速读取的地方（访问提速）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>异步</dt>
+					<dd>将一个业务操作分成多个步骤，通过消息队列联系相邻的步骤（使步骤独立）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>冗余</dt>
+					<dd>服务器和数据多做几个备份（增加后备力量，应付突发情况）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>自动化流程</dt>
+					<dd>开发、维护过程中的固定步骤，用程序描述出来，交给计算机来做</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>安全</dt>
+					<dd>漏洞扫描 + 加密技术 + 信息过滤 + 风险控制</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="0-4">5.大型网站架构的核心要素</h3>
+			<div>
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>性能</dt>
+					<dd>响应迅速</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>伸缩性</dt>
+					<dd>仅通过增加硬件，获得性能提升的能力</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>可用性</dt>
+					<dd>稳定，不宕机</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>扩展性</dt>
+					<dd>容易增加功能</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>安全性</dt>
+					<dd>抵御恶意攻击</dd>
 				</dl>
 
 				
@@ -167,7 +449,23 @@
 
     
 
-        <li><a href="#0-0">3.重要的观念</a></li>
+        <li><a href="#0-0">1.核心思想</a></li>
+
+        
+
+        <li><a href="#0-1">2.大型网站架构的发展历程</a></li>
+
+        
+
+        <li><a href="#0-2">3.大型网站的特点</a></li>
+
+        
+
+        <li><a href="#0-3">4.大型网站解决问题的思路</a></li>
+
+        
+
+        <li><a href="#0-4">5.大型网站架构的核心要素</a></li>
 
         
 
