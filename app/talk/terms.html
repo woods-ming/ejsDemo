@@ -22,7 +22,7 @@
     <!-- endbuild -->
 
 </head>
-<body data-spy="scroll" data-offset="60" data-target="#catalog">
+<body data-spy="scroll" data-offset="100" data-target="#catalog">
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
         <div class="container">
             <span class="skiplink-text">Skip to main content</span>
@@ -66,7 +66,7 @@
             <li><a href="#">C# 编程规范</a></li>
             <li><a href="#">Effective C#</a></li>
             <li><a href="#">OOD启思录</a></li>
-            <li class="divider"></li>s
+            <li class="divider"></li>
             <li><a href="#">性能优化</a></li>
         </ul>
     </li>
@@ -128,13 +128,12 @@
                 <div>
                     
 
-	<h2 id="0"></h2>
 	<div class="bs-docs-section">
 
 	
 
-			<h3 id="0-0">1.开发思想词汇</h3>
-			<div>
+			<h3 id="0-0">1.开发思想</h3>
+			<div class="section">
 
 			
 
@@ -156,21 +155,63 @@
 
 		
 
-			<h3 id="0-1">2. 技术名词</h3>
-			<div>
+			<h3 id="0-1">2. 安全</h3>
+			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt> </dt>
-					<dd> </dd>
+					<dt>XSS漏洞</dt>
+					<dd>用户在输入中嵌入js，浏览器呈现时借机执行（将逻辑注入应用）</dd>
 				</dl>
 
 				
 
 				<dl class="dl-horizontal">
-					<dt> </dt>
-					<dd> </dd>
+					<dt>SQL注入漏洞</dt>
+					<dd>用户在输入中嵌入SQL，改变数据库访问语句（将逻辑注入应用）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>Session劫持</dt>
+					<dd>在XSS攻击的基础上，将标识用户身份的SessionId发送到黑客的电脑上（冒名顶替）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>CSRF攻击</dt>
+					<dd>用户在某网站session没有过期，黑客在另一个网站伪造表单或链接，诱使用户点击，假借用户身份执行自己的逻辑（冒名顶替）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>文件上传漏洞</dt>
+					<dd>上传可执行文件，使其在应用服务器上运行（将逻辑注入服务器）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>单向散列加密</dt>
+					<dd>一个密钥，不可逆（MD5,SHA）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>对称加密</dt>
+					<dd>一个密钥，可逆（DES,RC）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>非对称加密</dt>
+					<dd>一个公钥、一个私钥，可逆（RSA）</dd>
 				</dl>
 
 				
@@ -185,7 +226,7 @@
                 </div>
 
                 <div class="bs-callout bs-callout-info">
-	<h4>注:</h4>
+	<!-- <h4>注:</h4> -->
 	<p class="text-info">
 		
 
@@ -206,11 +247,11 @@
 
     
 
-        <li><a href="#0-0">1.开发思想词汇</a></li>
+        <li><a href="#0-0">1.开发思想</a></li>
 
         
 
-        <li><a href="#0-1">2. 技术名词</a></li>
+        <li><a href="#0-1">2. 安全</a></li>
 
         
 

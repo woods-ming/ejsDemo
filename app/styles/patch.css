@@ -21,3 +21,11 @@ body {
 .bs-callout *:last-child {
 	margin-bottom: 0;
 }
+
+h3{
+	padding-left: 160px;
+}
+
+.section{
+	margin: 1.5em auto 2.5em;
+}

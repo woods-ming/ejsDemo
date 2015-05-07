@@ -8,7 +8,7 @@
                 "name": "",
                 "sections": [
                     {
-                        "name": "1.开发思想词汇",
+                        "name": "1.开发思想",
                         "blocks": [
                             {
                                 "key": "模式",
@@ -21,15 +21,39 @@
                         ]
                     },
                     {
-                        "name": "2. 技术名词",
+                        "name": "2. 安全",
                         "blocks": [
                             {
-                                "key": " ",
-                                "description": " "
+                                "key": "XSS漏洞",
+                                "description": "用户在输入中嵌入js，浏览器呈现时借机执行（将逻辑注入应用）"
                             },
                             {
-                                "key": " ",
-                                "description": " "
+                                "key": "SQL注入漏洞",
+                                "description": "用户在输入中嵌入SQL，改变数据库访问语句（将逻辑注入应用）"
+                            },
+                            {
+                                "key": "Session劫持",
+                                "description": "在XSS攻击的基础上，将标识用户身份的SessionId发送到黑客的电脑上（冒名顶替）"
+                            },
+                            {
+                                "key": "CSRF攻击",
+                                "description": "用户在某网站session没有过期，黑客在另一个网站伪造表单或链接，诱使用户点击，假借用户身份执行自己的逻辑（冒名顶替）"
+                            },
+                            {
+                                "key": "文件上传漏洞",
+                                "description": "上传可执行文件，使其在应用服务器上运行（将逻辑注入服务器）"
+                            },
+                            {
+                                "key": "单向散列加密",
+                                "description": "一个密钥，不可逆（MD5,SHA）"
+                            },
+                            {
+                                "key": "对称加密",
+                                "description": "一个密钥，可逆（DES,RC）"
+                            },
+                            {
+                                "key": "非对称加密",
+                                "description": "一个公钥、一个私钥，可逆（RSA）"
                             }
                         ]
                     }
