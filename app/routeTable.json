@@ -1,6 +1,6 @@
 [
 	{
 		"modelGlob": "app/models/**/*.json",
-		"view": "app/views/layouts/_layout.ejs"
+		"view": "app/views/layouts/_layout_paper.ejs"
 	}
 ]

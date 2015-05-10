@@ -1,0 +1,105 @@
+{
+    "题目": "创建型模式",
+    "摘要": "解决创建对象的问题",
+    "关键字": "单件模式",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、Singleton",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "单个实例",
+                                "description": "该类只能创建1个实例"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "隐藏构造函数",
+                                "description": "限制随意创建实例"
+                            },
+                            {
+                                "key": "使用静态实例",
+                                "description": "确保同一个实例被大家访问"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、Factory",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "单个实例",
+                                "description": "该类只能创建1个实例"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "隐藏构造函数",
+                                "description": "限制随意创建实例"
+                            },
+                            {
+                                "key": "使用静态实例",
+                                "description": "确保同一个实例被大家访问"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1.",
+        ""
+    ],
+    "参考文献": [
+    ]
+}
