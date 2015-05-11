@@ -56,6 +56,19 @@
                                 "description": "一个公钥、一个私钥，可逆（RSA）"
                             }
                         ]
+                    },
+                    {
+                        "name": "3.软件测试",
+                        "blocks": [
+                            {
+                                "key": "Alpha测试",
+                                "description": "用户在开发环境下测试"
+                            },
+                            {
+                                "key": "Beta测试",
+                                "description": "用户在生产环境下测试"
+                            }
+                        ]
                     }
                 ]
             }
