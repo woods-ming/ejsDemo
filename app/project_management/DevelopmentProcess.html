@@ -7,8 +7,8 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>CodeExperience</title>
     <meta name="author" content="胡明明" />
-    <meta name="keywords" content="单件模式" />
-    <meta name="description" content="解决创建对象的问题">
+    <meta name="keywords" content="软件开发流程" />
+    <meta name="description" content="了解一个完整软件开发需要经过的流程">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -53,7 +53,6 @@
             <li><a href="#">jQuery</a></li>
             <li class="divider"></li>
             <li><a href="#">C#</a></li>
-            <li><a href="#">Java</a></li>
             <li><a href="#">Sql</a></li>
             <li class="divider"></li>
             <li><a href="#">Git</a></li>
@@ -118,9 +117,9 @@
     <!-- 论文简介 -->
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
-            <h1>创建型模式</h1>
-            <p>摘要: 解决创建对象的问题</p>
-            <p>关键字: 单件模式</p>
+            <h1>软件开发流程</h1>
+            <p>摘要: 了解一个完整软件开发需要经过的流程</p>
+            <p>关键字: 软件开发流程</p>
         </div>
     </div>
 
@@ -131,7 +130,7 @@
                 <div>
                     
 
-	<h2 class="page-header" id="0">一、Singleton</h2>
+	<h2 class="page-header" id="0">一、需求获取阶段</h2>
 
 	
 
@@ -139,14 +138,21 @@
 
 	
 
-			<h3 id="0-0">1.问题</h3>
+			<h3 id="0-0">1.采集需求</h3>
 			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt>单个实例</dt>
-					<dd>该类只能创建1个实例</dd>
+					<dt>沟通</dt>
+					<dd>通过聊天，了解用户的需求</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>引导</dt>
+					<dd>分析需求背后的根本问题，引导用户改变不合理的需求</dd>
 				</dl>
 
 				
@@ -155,36 +161,27 @@
 
 		
 
-			<h3 id="0-1">2.思路</h3>
+			<h3 id="0-1">2.讨论需求</h3>
 			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt>隐藏构造函数</dt>
-					<dd>限制随意创建实例</dd>
+					<dt>利益干系人</dt>
+					<dd>理清系统面向的各个人群，分别要为他们解决什么问题</dd>
 				</dl>
 
 				
 
 				<dl class="dl-horizontal">
-					<dt>使用静态实例</dt>
-					<dd>确保同一个实例被大家访问</dd>
+					<dt>非功能性需求</dt>
+					<dd>系统要达到的性能、伸缩性、可用性、安全性、可扩展性的程度</dd>
 				</dl>
 
 				
 
-			</div>
-
-		
-
-			<h3 id="0-2">3.代码示例</h3>
-			<div class="section">
-
-			
-
 				<dl class="dl-horizontal">
-					<dt></dt>
+					<dt>可行性分析</dt>
 					<dd></dd>
 				</dl>
 
@@ -194,14 +191,21 @@
 
 		
 
-			<h3 id="0-3">4.模型图</h3>
+			<h3 id="0-2">3.确定需求</h3>
 			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt></dt>
-					<dd></dd>
+					<dt>反复沟通</dt>
+					<dd>与用户达成一致</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>梳理</dt>
+					<dd>理清思路，整理成文档</dd>
 				</dl>
 
 				
@@ -214,7 +218,7 @@
 
 
 
-	<h2 class="page-header" id="1">二、Factory</h2>
+	<h2 class="page-header" id="1">二、概要设计阶段</h2>
 
 	
 
@@ -222,14 +226,21 @@
 
 	
 
-			<h3 id="1-0">1.问题</h3>
+			<h3 id="1-0">1.功能分解</h3>
 			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt>单个实例</dt>
-					<dd>该类只能创建1个实例</dd>
+					<dt>功能目标</dt>
+					<dd>为哪些需求提供支撑</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>功能描述</dt>
+					<dd>如何工作，具体做哪些事情</dd>
 				</dl>
 
 				
@@ -238,37 +249,21 @@
 
 		
 
-			<h3 id="1-1">2.思路</h3>
+			<h3 id="1-1">2.流程设计</h3>
 			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt>隐藏构造函数</dt>
-					<dd>限制随意创建实例</dd>
+					<dt>功能衔接</dt>
+					<dd>各个功能之间如何衔接</dd>
 				</dl>
 
 				
 
 				<dl class="dl-horizontal">
-					<dt>使用静态实例</dt>
-					<dd>确保同一个实例被大家访问</dd>
-				</dl>
-
-				
-
-			</div>
-
-		
-
-			<h3 id="1-2">3.代码示例</h3>
-			<div class="section">
-
-			
-
-				<dl class="dl-horizontal">
-					<dt></dt>
-					<dd></dd>
+					<dt>数据依赖</dt>
+					<dd>各个功能之间的数据依赖关系</dd>
 				</dl>
 
 				
@@ -277,14 +272,241 @@
 
 		
 
-			<h3 id="1-3">4.模型图</h3>
+			<h3 id="1-2">3.开发准备</h3>
 			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt></dt>
-					<dd></dd>
+					<dt>技术选择</dt>
+					<dd>根据项目特点，选择合适的技术</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>开发环境准备</dt>
+					<dd>选择合适的【编辑器、编译器、调试工具、集成工具、测试工具、发布工具】，合理配置使之正常运行</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>业务建模</dt>
+					<dd>从面向对象的角度，建立业务模型</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>数据库设计</dt>
+					<dd>确定要持久化的业务数据：表及表之间的关系</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="1-3">4.搭建程序框架</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>引入第三方类库</dt>
+					<dd>根据经验判断本次开发需要的逻辑，复用市场上现有的产品</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>引入第三方控件</dt>
+					<dd>根据经验判断本次开发需要的界面元素，复用市场上现有的产品</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>定义基础设施</dt>
+					<dd>封装第三方类库和控件，并补充框架中的基础逻辑</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>业务层初步开发</dt>
+					<dd>定义业务接口 || 粗略实现部分业务逻辑 || 粗略定义数据访问接口</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+	</div>
+
+
+
+	<h2 class="page-header" id="2">三、详细设计阶段</h2>
+
+	
+
+	<div class="bs-docs-section">
+
+	
+
+			<h3 id="2-0">1.功能细节</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>业务方面</dt>
+					<dd>字段的格式验证、逻辑验证，详细流程说明等</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>交互方面</dt>
+					<dd>提示信息，页面布局等</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="2-1">2.模块开发</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>业务层</dt>
+					<dd>参照详细设计，完整实现业务逻辑 || 完整定义数据访问接口</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>数据层</dt>
+					<dd>完善数据库字段 || 完整实现数据访问接口 || 预置初始数据（超级管理员等）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>表现层</dt>
+					<dd>组织业务接口实现人机交互 || 完成交互界面</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="2-2">3.单元测试</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>白盒测试</dt>
+					<dd>针对 核心逻辑 || 复用程度高的逻辑 || 人工测试繁琐的逻辑（数据验证等）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>冒烟测试</dt>
+					<dd>模块的基本逻辑运行正常</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+	</div>
+
+
+
+	<h2 class="page-header" id="3">四、全面测试阶段</h2>
+
+	
+
+	<div class="bs-docs-section">
+
+	
+
+			<h3 id="3-0">1.单元测试</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>业务方面</dt>
+					<dd>验证业务逻辑是否正确</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>交互方面</dt>
+					<dd>验证人机交互符合设计</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="3-1">2.集成测试</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>功能衔接</dt>
+					<dd>参照流程设计，验证各个功能之间正确衔接</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>数据依赖</dt>
+					<dd>参照流程设计，验证数据在功能间正确传递和存储</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="3-2">3.确认测试</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>白盒测试</dt>
+					<dd>针对 核心逻辑 || 复用程度高的逻辑 || 人工测试繁琐的逻辑（数据验证等）</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>冒烟测试</dt>
+					<dd>模块的基本逻辑运行正常</dd>
 				</dl>
 
 				
@@ -307,7 +529,7 @@
 
 			
 
-			<br />
+			2.<br />
 
 			
 	</p>
@@ -321,24 +543,20 @@
     
 
             <li>
-                <a href="#0">一、Singleton</a>
+                <a href="#0">一、需求获取阶段</a>
                 <ul class="nav">
 
                     
 
-                        <li><a href="#0-0">1.问题</a></li>
+                        <li><a href="#0-0">1.采集需求</a></li>
 
                         
 
-                        <li><a href="#0-1">2.思路</a></li>
+                        <li><a href="#0-1">2.讨论需求</a></li>
 
                         
 
-                        <li><a href="#0-2">3.代码示例</a></li>
-
-                        
-
-                        <li><a href="#0-3">4.模型图</a></li>
+                        <li><a href="#0-2">3.确定需求</a></li>
 
                         
 
@@ -348,24 +566,70 @@
             
 
             <li>
-                <a href="#1">二、Factory</a>
+                <a href="#1">二、概要设计阶段</a>
                 <ul class="nav">
 
                     
 
-                        <li><a href="#1-0">1.问题</a></li>
+                        <li><a href="#1-0">1.功能分解</a></li>
 
                         
 
-                        <li><a href="#1-1">2.思路</a></li>
+                        <li><a href="#1-1">2.流程设计</a></li>
 
                         
 
-                        <li><a href="#1-2">3.代码示例</a></li>
+                        <li><a href="#1-2">3.开发准备</a></li>
 
                         
 
-                        <li><a href="#1-3">4.模型图</a></li>
+                        <li><a href="#1-3">4.搭建程序框架</a></li>
+
+                        
+
+                </ul>
+            </li>
+
+            
+
+            <li>
+                <a href="#2">三、详细设计阶段</a>
+                <ul class="nav">
+
+                    
+
+                        <li><a href="#2-0">1.功能细节</a></li>
+
+                        
+
+                        <li><a href="#2-1">2.模块开发</a></li>
+
+                        
+
+                        <li><a href="#2-2">3.单元测试</a></li>
+
+                        
+
+                </ul>
+            </li>
+
+            
+
+            <li>
+                <a href="#3">四、全面测试阶段</a>
+                <ul class="nav">
+
+                    
+
+                        <li><a href="#3-0">1.单元测试</a></li>
+
+                        
+
+                        <li><a href="#3-1">2.集成测试</a></li>
+
+                        
+
+                        <li><a href="#3-2">3.确认测试</a></li>
 
                         
 
