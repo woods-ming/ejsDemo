@@ -7,8 +7,8 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>CodeExperience</title>
     <meta name="author" content="胡明明" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="">
+    <meta name="keywords" content="初学Java" />
+    <meta name="description" content="从零开始学习Java，先搭建开发环境">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -125,9 +125,9 @@
     <!-- 论文简介 -->
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
-            <h1>企业应用架构模式</h1>
-            <p>摘要: </p>
-            <p>关键字: </p>
+            <h1>初学Java</h1>
+            <p>摘要: 从零开始学习Java，先搭建开发环境</p>
+            <p>关键字: 初学Java</p>
         </div>
     </div>
 
@@ -138,7 +138,7 @@
                 <div>
                     
 
-	<h2 class="page-header" id="0">六、管理自己</h2>
+	<h2 class="page-header" id="0">一、搭建开发环境</h2>
 
 	
 
@@ -146,14 +146,151 @@
 
 	
 
-			<h3 id="0-0">3.重要的观念</h3>
+			<h3 id="0-0">1.安装Jdk</h3>
 			<div class="section">
 
 			
 
 				<dl class="dl-horizontal">
-					<dt>时间管理</dt>
-					<dd>明确人生需求，作为一个项目来逐步实现</dd>
+					<dt>包含内容</dt>
+					<dd>JRE、编译器、打包工具、文档生成器、调试器、头文件生成器、反汇编器、监控工具等</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>下载</dt>
+					<dd>http://www.oracle.com/technetwork/java/javase/downloads/index.html</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>JAVA_HOME</dt>
+					<dd>C:\Program Files\Java\jdk1.7.0</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>CLASSPATH</dt>
+					<dd>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>Path</dt>
+					<dd>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="0-1">2.安装Tomcat</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>下载（Core:zip）</dt>
+					<dd>http://tomcat.apache.org/download-80.cgi</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>绿色</dt>
+					<dd>解压到不需要Admin权限的目录</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>CATALINA_HOME</dt>
+					<dd>F:\Downloads\Tomcat\apache-tomcat-8.0.22</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>启动</dt>
+					<dd>双击 ‘安装目录\bin\startup.bat’ || 打开浏览器 ‘http://localhost:8080/’</dd>
+				</dl>
+
+				
+
+			</div>
+
+		
+
+			<h3 id="0-2">3.安装Eclipse</h3>
+			<div class="section">
+
+			
+
+				<dl class="dl-horizontal">
+					<dt>下载</dt>
+					<dd>http://www.eclipse.org/downloads/</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>绿色</dt>
+					<dd>解压到不需要Admin权限的目录</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>工作目录</dt>
+					<dd>存放代码的默认文件夹</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>配置运行环境</dt>
+					<dd>Preference\Java\Installed JREs：选择jdk安装目录</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>配置编码格式</dt>
+					<dd>General\WorkSpace\Text file encoding：UTF-8</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>关闭拼写检查</dt>
+					<dd>General\Editors\Text Editors\Spelling：禁用拼写检查</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>安装插件</dt>
+					<dd>Help\Eclipse Marketplace</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>配置Tomcat</dt>
+					<dd>Preference\Server\Runtime Enviorments：添加Apache Tomcat v8.0及安装目录 || JRE选择jdk开头的</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>打开Tomcat</dt>
+					<dd>Window\Show View\Servers：右键\start</dd>
 				</dl>
 
 				
@@ -172,7 +309,7 @@
 	<p class="text-info">
 		
 
-			1.架构选择：没有通用的解决方案，只能根据实际情况来权衡抉择！<br />
+			<br />
 
 			
 
@@ -189,7 +326,15 @@
 
     
 
-        <li><a href="#0-0">3.重要的观念</a></li>
+        <li><a href="#0-0">1.安装Jdk</a></li>
+
+        
+
+        <li><a href="#0-1">2.安装Tomcat</a></li>
+
+        
+
+        <li><a href="#0-2">3.安装Eclipse</a></li>
 
         
 

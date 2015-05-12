@@ -1,0 +1,106 @@
+{
+    "题目": "初学Java",
+    "摘要": "从零开始学习Java，先搭建开发环境",
+    "关键字": "初学Java",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、搭建开发环境",
+                "sections": [
+                    {
+                        "name": "1.安装Jdk",
+                        "blocks": [
+                            {
+                                "key": "包含内容",
+                                "description": "JRE、编译器、打包工具、文档生成器、调试器、头文件生成器、反汇编器、监控工具等"
+                            },
+                            {
+                                "key": "下载",
+                                "description": "http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+                            },
+                            {
+                                "key": "JAVA_HOME",
+                                "description": "C:\\Program Files\\Java\\jdk1.7.0"
+                            },
+                            {
+                                "key": "CLASSPATH",
+                                "description": ".;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;"
+                            },
+                            {
+                                "key": "Path",
+                                "description": "%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.安装Tomcat",
+                        "blocks": [
+                            {
+                                "key": "下载（Core:zip）",
+                                "description": "http://tomcat.apache.org/download-80.cgi"
+                            },
+                            {
+                                "key": "绿色",
+                                "description": "解压到不需要Admin权限的目录"
+                            },
+                            {
+                                "key": "CATALINA_HOME",
+                                "description": "F:\\Downloads\\Tomcat\\apache-tomcat-8.0.22"
+                            },
+                            {
+                                "key": "启动",
+                                "description": "双击 ‘安装目录\\bin\\startup.bat’ || 打开浏览器 ‘http://localhost:8080/’"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.安装Eclipse",
+                        "blocks": [
+                            {
+                                "key": "下载",
+                                "description": "http://www.eclipse.org/downloads/"
+                            },
+                            {
+                                "key": "绿色",
+                                "description": "解压到不需要Admin权限的目录"
+                            },
+                            {
+                                "key": "工作目录",
+                                "description": "存放代码的默认文件夹"
+                            },
+                            {
+                                "key": "配置运行环境",
+                                "description": "Preference\\Java\\Installed JREs：选择jdk安装目录"
+                            },
+                            {
+                                "key": "配置编码格式",
+                                "description": "General\\WorkSpace\\Text file encoding：UTF-8"
+                            },
+                            {
+                                "key": "关闭拼写检查",
+                                "description": "General\\Editors\\Text Editors\\Spelling：禁用拼写检查"
+                            },
+                            {
+                                "key": "安装插件",
+                                "description": "Help\\Eclipse Marketplace"
+                            },
+                            {
+                                "key": "配置Tomcat",
+                                "description": "Preference\\Server\\Runtime Enviorments：添加Apache Tomcat v8.0及安装目录 || JRE选择jdk开头的"
+                            },
+                            {
+                                "key": "打开Tomcat",
+                                "description": "Window\\Show View\\Servers：右键\\start"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "",
+        ""
+    ],
+    "参考文献": []
+}
