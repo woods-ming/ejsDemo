@@ -95,6 +95,36 @@
                         ]
                     }
                 ]
+            },
+            {
+                "name": "二、各种 Hello World",
+                "sections": [
+                    {
+                        "name": "1.Jsp",
+                        "blocks": [
+                            {
+                                "key": "创建项目",
+                                "description": "Web\\Dynamic Web Project"
+                            },
+                            {
+                                "key": "创建页面",
+                                "description": "WebContent\\某目录，右键\\JSP File"
+                            },
+                            {
+                                "key": "编写代码",
+                                "description": "跟Asp差不多，都是<%...%>"
+                            },
+                            {
+                                "key": "部署到Tomcat",
+                                "description": "Server\\Add and Remove...，添加当前项目"
+                            },
+                            {
+                                "key": "运行",
+                                "description": "Window\\Show View\\Servers：右键\\start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
