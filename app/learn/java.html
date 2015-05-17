@@ -311,7 +311,7 @@
 
 	
 
-			<h3 id="1-0">1.Jsp</h3>
+			<h3 id="1-0">1.Jsp（方便生成Html的servlet，由Tomcat自动解析）</h3>
 			<div class="section">
 
 			
@@ -332,7 +332,14 @@
 
 				<dl class="dl-horizontal">
 					<dt>编写代码</dt>
-					<dd>跟Asp差不多，都是<%...%></dd>
+					<dd>跟Asp差不多，语句用<code><% %></code>，声明用<code><%! %></code>，表达式用<code><%= %></code></dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>九大内置对象</dt>
+					<dd>request，response，session，application，out（输出），page，pageContext，config，exception</dd>
 				</dl>
 
 				
@@ -347,6 +354,27 @@
 				<dl class="dl-horizontal">
 					<dt>运行</dt>
 					<dd>Window\Show View\Servers：右键\start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>（修改端口号）</dt>
+					<dd>并列工程目录\Servers\server.xml：找到Connector\port，进行修改</dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>（智能提示）</dt>
+					<dd>快捷键：<kbd>Alt + /</kbd> <br /> 导入运行时类库：<kbd>项目右键\Build Path\Config Build Path\Java Build Path\Add Library\Server Runtime</kbd></dd>
+				</dl>
+
+				
+
+				<dl class="dl-horizontal">
+					<dt>（解决中文乱码）</dt>
+					<dd>post：<code>request.setCharacterEncoding("utf-8");</code><br /> get：修改Tomcat的server.xml的配置 <code>URIEncoding="utf-8"</code></dd>
 				</dl>
 
 				
@@ -411,7 +439,7 @@
 
                     
 
-                        <li><a href="#1-0">1.Jsp</a></li>
+                        <li><a href="#1-0">1.Jsp（方便生成Html的servlet，由Tomcat自动解析）</a></li>
 
                         
 

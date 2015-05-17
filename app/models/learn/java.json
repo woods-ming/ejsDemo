@@ -100,7 +100,7 @@
                 "name": "二、各种 Hello World",
                 "sections": [
                     {
-                        "name": "1.Jsp",
+                        "name": "1.Jsp（方便生成Html的servlet，由Tomcat自动解析）",
                         "blocks": [
                             {
                                 "key": "创建项目",
@@ -112,7 +112,11 @@
                             },
                             {
                                 "key": "编写代码",
-                                "description": "跟Asp差不多，都是<%...%>"
+                                "description": "跟Asp差不多，语句用<code><% %></code>，声明用<code><%! %></code>，表达式用<code><%= %></code>"
+                            },
+                            {
+                                "key": "九大内置对象",
+                                "description": "request，response，session，application，out（输出），page，pageContext，config，exception"
                             },
                             {
                                 "key": "部署到Tomcat",
@@ -121,6 +125,18 @@
                             {
                                 "key": "运行",
                                 "description": "Window\\Show View\\Servers：右键\\start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’"
+                            },
+                            {
+                                "key": "（修改端口号）",
+                                "description": "并列工程目录\\Servers\\server.xml：找到Connector\\port，进行修改"
+                            },
+                            {
+                                "key": "（智能提示）",
+                                "description": "快捷键：<kbd>Alt + /</kbd> <br /> 导入运行时类库：<kbd>项目右键\\Build Path\\Config Build Path\\Java Build Path\\Add Library\\Server Runtime</kbd>"
+                            },
+                            {
+                                "key": "（解决中文乱码）",
+                                "description": "post：<code>request.setCharacterEncoding(\"utf-8\");</code><br /> get：修改Tomcat的server.xml的配置 <code>URIEncoding=\"utf-8\"</code>"
                             }
                         ]
                     }
