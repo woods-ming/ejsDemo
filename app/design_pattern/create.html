@@ -8,7 +8,7 @@
     <title>CodeExperience</title>
     <meta name="author" content="胡明明" />
     <meta name="keywords" content="单件模式" />
-    <meta name="description" content="解决创建对象的问题">
+    <meta name="description" content="解决创建对象时遇到的问题">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -126,7 +126,7 @@
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
             <h1>创建型模式</h1>
-            <p>摘要: 解决创建对象的问题</p>
+            <p>摘要: 解决创建对象时遇到的问题</p>
             <p>关键字: 单件模式</p>
         </div>
     </div>
@@ -151,12 +151,14 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt>单个实例</dt>
-					<dd>该类只能创建1个实例</dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt>单个实例</dt>
+						<dd>有些对象我们只需要一个，比如：线程池、缓存、对话框等。如果创建出多个对象，会导致资源使用过量、或结果不一致</dd>
+					</dl>
 
-				
+					
+
+			
 
 			</div>
 
@@ -167,19 +169,35 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt>隐藏构造函数</dt>
-					<dd>限制随意创建实例</dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt>禁止随意创建对象</dt>
+						<dd>隐藏构造函数</dd>
+					</dl>
 
-				
+					
 
-				<dl class="dl-horizontal">
-					<dt>使用静态实例</dt>
-					<dd>确保同一个实例被大家访问</dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt>保持唯一的实例</dt>
+						<dd>使用静态成员</dd>
+					</dl>
 
-				
+					
+
+					<dl class="dl-horizontal">
+						<dt>懒加载</dt>
+						<dd>使用时，判断没有再创建</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>避免多线程判断错误</dt>
+						<dd>双检查</dd>
+					</dl>
+
+					
+
+			
 
 			</div>
 
@@ -190,12 +208,17 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt></dt>
-					<dd></dd>
-				</dl>
+			
 
-				
+					<div class="highlight">
+						<pre>
+							<code class="language-html" data-lang="html">
+								<strong>Hello World!</strong>
+							</code>
+						</pre>
+					</div>
+
+					
 
 			</div>
 
@@ -206,12 +229,14 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt></dt>
-					<dd></dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt></dt>
+						<dd></dd>
+					</dl>
 
-				
+					
+
+			
 
 			</div>
 
@@ -234,12 +259,14 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt>单个实例</dt>
-					<dd>该类只能创建1个实例</dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt>单个实例</dt>
+						<dd>该类只能创建1个实例</dd>
+					</dl>
 
-				
+					
+
+			
 
 			</div>
 
@@ -250,19 +277,21 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt>隐藏构造函数</dt>
-					<dd>限制随意创建实例</dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt>隐藏构造函数</dt>
+						<dd>限制随意创建实例</dd>
+					</dl>
 
-				
+					
 
-				<dl class="dl-horizontal">
-					<dt>使用静态实例</dt>
-					<dd>确保同一个实例被大家访问</dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt>使用静态实例</dt>
+						<dd>确保同一个实例被大家访问</dd>
+					</dl>
 
-				
+					
+
+			
 
 			</div>
 
@@ -273,12 +302,14 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt></dt>
-					<dd></dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt></dt>
+						<dd></dd>
+					</dl>
 
-				
+					
+
+			
 
 			</div>
 
@@ -289,12 +320,14 @@
 
 			
 
-				<dl class="dl-horizontal">
-					<dt></dt>
-					<dd></dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt></dt>
+						<dd></dd>
+					</dl>
 
-				
+					
+
+			
 
 			</div>
 

@@ -20,17 +20,38 @@ for(var i = 0; i < content.chapters.length; i++) {
 			<div class="section">
 
 			<% 
-			for(var k = 0; k < section.blocks.length; k++) { 
-				var block = section.blocks[k]; 
-				%>
+			if(section.blocks) {
+				for(var k = 0; k < section.blocks.length; k++) { 
+					var block = section.blocks[k]; 
+					%>
 
-				<dl class="dl-horizontal">
-					<dt><%- block.key %></dt>
-					<dd><%- block.description %></dd>
-				</dl>
+					<dl class="dl-horizontal">
+						<dt><%- block.key %></dt>
+						<dd><%- block.description %></dd>
+					</dl>
 
-				<% 
-			} 
+					<% 
+				} 
+			}
+			%>
+
+			<% 
+			if(section.codeSnippets) {
+				for(var k = 0; k < section.codeSnippets.length; k++) { 
+					var codeSnippet = section.codeSnippets[k]; 
+					%>
+
+					<div class="highlight">
+						<pre>
+							<code class="language-html" data-lang="<%- codeSnippet.lang %>">
+								<%- codeSnippet.url %>
+							</code>
+						</pre>
+					</div>
+
+					<% 
+				} 
+			}
 			%>
 
 			</div>
