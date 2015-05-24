@@ -49,7 +49,7 @@
                             },
                             {
                                 "key": "启动",
-                                "description": "双击 ‘安装目录\\bin\\startup.bat’ || 打开浏览器 ‘http://localhost:8080/’"
+                                "description": "<kbd>双击</kbd> ‘安装目录\\bin\\startup.bat’ || 打开浏览器 ‘http://localhost:8080/’"
                             }
                         ]
                     },
@@ -90,7 +90,7 @@
                             },
                             {
                                 "key": "打开Tomcat",
-                                "description": "Window\\Show View\\Servers：右键\\start"
+                                "description": "Window\\Show View\\Servers：<kbd>右键</kbd> start"
                             }
                         ]
                     }
@@ -108,7 +108,7 @@
                             },
                             {
                                 "key": "创建页面",
-                                "description": "WebContent\\某目录，右键\\JSP File"
+                                "description": "WebContent\\某目录，<kbd>右键</kbd> JSP File"
                             },
                             {
                                 "key": "编写代码",
@@ -124,19 +124,44 @@
                             },
                             {
                                 "key": "运行",
-                                "description": "Window\\Show View\\Servers：右键\\start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’"
+                                "description": "Window\\Show View\\Servers：<kbd>右键</kbd> start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’"
                             },
                             {
                                 "key": "（修改端口号）",
-                                "description": "并列工程目录\\Servers\\server.xml：找到Connector\\port，进行修改"
+                                "description": "并列工程目录的Servers\\server.xml：找到Connector\\port，进行修改"
                             },
                             {
                                 "key": "（智能提示）",
-                                "description": "快捷键：<kbd>Alt + /</kbd> <br /> 导入运行时类库：<kbd>项目右键\\Build Path\\Config Build Path\\Java Build Path\\Add Library\\Server Runtime</kbd>"
+                                "description": "快捷键：<kbd>Alt + /</kbd> <br /> 导入运行时类库：<kbd>项目右键</kbd> Build Path\\Config Build Path\\Java Build Path\\Add Library\\Server Runtime"
                             },
                             {
                                 "key": "（解决中文乱码）",
                                 "description": "post：<code>request.setCharacterEncoding(\"utf-8\");</code><br /> get：修改Tomcat的server.xml的配置 <code>URIEncoding=\"utf-8\"</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.JavaBean（符合特定规范的java类，用于做Model层）",
+                        "blocks": [
+                            {
+                                "key": "四大特点",
+                                "description": "public， 无参构造函数， 私有属性， get/set访问器"
+                            },
+                            {
+                                "key": "<code>&lt;jsp:useBean /&gt;</code>",
+                                "description": "实例化Bean，并将Bean作为成员，挂到scope对象上（它就具有了scope对象的生存期）"
+                            },
+                            {
+                                "key": "<code>&lt;jsp:setProperty /&gt;</code>",
+                                "description": "给指定Bean的属性赋值（从表单或Request的池子中捞数据，与.net MVC中的模型绑定极其相似）"
+                            },
+                            {
+                                "key": "<code>&lt;jsp:getProperty /&gt;</code>",
+                                "description": "读取指定Bean的属性值"
+                            },
+                            {
+                                "key": "本质",
+                                "description": "jsp要经常使用Bean，因此特定开发出一系列语法技巧"
                             }
                         ]
                     }

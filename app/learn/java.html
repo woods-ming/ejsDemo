@@ -220,7 +220,7 @@
 
 					<dl class="dl-horizontal">
 						<dt>启动</dt>
-						<dd>双击 ‘安装目录\bin\startup.bat’ || 打开浏览器 ‘http://localhost:8080/’</dd>
+						<dd><kbd>双击</kbd> ‘安装目录\bin\startup.bat’ || 打开浏览器 ‘http://localhost:8080/’</dd>
 					</dl>
 
 					
@@ -294,7 +294,7 @@
 
 					<dl class="dl-horizontal">
 						<dt>打开Tomcat</dt>
-						<dd>Window\Show View\Servers：右键\start</dd>
+						<dd>Window\Show View\Servers：<kbd>右键</kbd> start</dd>
 					</dl>
 
 					
@@ -331,7 +331,7 @@
 
 					<dl class="dl-horizontal">
 						<dt>创建页面</dt>
-						<dd>WebContent\某目录，右键\JSP File</dd>
+						<dd>WebContent\某目录，<kbd>右键</kbd> JSP File</dd>
 					</dl>
 
 					
@@ -359,21 +359,21 @@
 
 					<dl class="dl-horizontal">
 						<dt>运行</dt>
-						<dd>Window\Show View\Servers：右键\start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’</dd>
+						<dd>Window\Show View\Servers：<kbd>右键</kbd> start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
 						<dt>（修改端口号）</dt>
-						<dd>并列工程目录\Servers\server.xml：找到Connector\port，进行修改</dd>
+						<dd>并列工程目录的Servers\server.xml：找到Connector\port，进行修改</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
 						<dt>（智能提示）</dt>
-						<dd>快捷键：<kbd>Alt + /</kbd> <br /> 导入运行时类库：<kbd>项目右键\Build Path\Config Build Path\Java Build Path\Add Library\Server Runtime</kbd></dd>
+						<dd>快捷键：<kbd>Alt + /</kbd> <br /> 导入运行时类库：<kbd>项目右键</kbd> Build Path\Config Build Path\Java Build Path\Add Library\Server Runtime</dd>
 					</dl>
 
 					
@@ -381,6 +381,52 @@
 					<dl class="dl-horizontal">
 						<dt>（解决中文乱码）</dt>
 						<dd>post：<code>request.setCharacterEncoding("utf-8");</code><br /> get：修改Tomcat的server.xml的配置 <code>URIEncoding="utf-8"</code></dd>
+					</dl>
+
+					
+
+			
+
+			</div>
+
+		
+
+			<h3 id="1-1">2.JavaBean（符合特定规范的java类，用于做Model层）</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>四大特点</dt>
+						<dd>public， 无参构造函数， 私有属性， get/set访问器</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt><code>&lt;jsp:useBean /&gt;</code></dt>
+						<dd>实例化Bean，并将Bean作为成员，挂到scope对象上（它就具有了scope对象的生存期）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt><code>&lt;jsp:setProperty /&gt;</code></dt>
+						<dd>给指定Bean的属性赋值（从表单或Request的池子中捞数据，与.net MVC中的模型绑定极其相似）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt><code>&lt;jsp:getProperty /&gt;</code></dt>
+						<dd>读取指定Bean的属性值</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>本质</dt>
+						<dd>jsp要经常使用Bean，因此特定开发出一系列语法技巧</dd>
 					</dl>
 
 					
@@ -448,6 +494,10 @@
                     
 
                         <li><a href="#1-0">1.Jsp（方便生成Html的servlet，由Tomcat自动解析）</a></li>
+
+                        
+
+                        <li><a href="#1-1">2.JavaBean（符合特定规范的java类，用于做Model层）</a></li>
 
                         
 
