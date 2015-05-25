@@ -42,7 +42,7 @@
                         "codeSnippets": [
                             {
                                 "lang": "html",
-                                "url": "<strong>Hello World!</strong>"
+                                "url": "/codeSnippets/helloWorld.html"
                             }
                         ]
                     },
