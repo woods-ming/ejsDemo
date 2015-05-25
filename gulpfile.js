@@ -111,7 +111,7 @@ gulp.task('styles', function () {
 gulp.task('html', ['compile', 'styles'], function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'bower_components']});
 
-  return gulp.src('app/**/*.html')
+  return gulp.src(['app/**/*.html', '!app/codeSnippets/*.*'])
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
@@ -134,6 +134,11 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
+gulp.task('extras', function () {
+  return gulp.src('app/codeSnippets/*.*')
+    .pipe(gulp.dest('dist/codeSnippets'));
+});
+
 // sitemap:生成站点地图，并拷贝到生成目录
 gulp.task('sitemap', function () {
     gulp.src('app/**/*.html')
@@ -144,7 +149,8 @@ gulp.task('sitemap', function () {
 });
 
 // build:生成
-gulp.task('build', ['jshint', 'html', 'images', 'sitemap'], function () {
+// gulp.task('build', ['jshint', 'html', 'images', 'extras', 'sitemap'], function () {
+gulp.task('build', ['html', 'images', 'extras', 'sitemap'], function () {
     return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

@@ -28,7 +28,7 @@
 						var encodedData = that.htmlEncode(data);
 
 						that.$codeContainer.html(encodedData);
-						window.prettyPrint && prettyPrint();
+						prettyPrint();
 					},
 					error : function (XMLHttpRequest, textStatus, errorThrown) {
 						alert(errorThrown);
@@ -63,7 +63,7 @@
             var $this = $(this),
             codeUrl = $this.attr('data-code-url');
             $this.prettyCode(codeUrl);
-        })
+        });
     });
 }(window.jQuery);
 
