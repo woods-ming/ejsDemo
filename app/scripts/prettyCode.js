@@ -1,49 +1,44 @@
-﻿!function ($) {
+﻿+function ($) {
+    'use strict';
 
     /* PrettyCode CLASS DEFINITION
      * ========================= */
     var PrettyCode = function (element, codeUrl) {
-        
         this.codeUrl = codeUrl;
-
-        // this.$codePanel = $('<pre class="prettyprint linenums">' +
-        //         '<span class="loading">源代码加载中...</span></pre>');
         this.$codeContainer = $(element);
         this.$codeContainer.append('<span class="loading">源代码加载中...</span>');
     };
 
-    PrettyCode.prototype = {
-        constructor : PrettyCode,
-        htmlEncode : function (s) {
-            return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        },
-        show : function () {
-			var noContent = this.$codeContainer.children().hasClass('loading');
-			if (noContent) {
-				var that = this;
-				$.ajax({
-					url : this.codeUrl,
-					dataType : 'text',
-					success : function (data) {
-						var encodedData = that.htmlEncode(data);
+    PrettyCode.prototype.htmlEncode = function (s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
 
-						that.$codeContainer.html(encodedData);
-						prettyPrint();
-					},
-					error : function (XMLHttpRequest, textStatus, errorThrown) {
-						alert(errorThrown);
-					},
-					cache : true,
-					type : 'get',
-					async : true
-				});
-			}
-        }
+    PrettyCode.prototype.show = function () {
+		var noContent = this.$codeContainer.children().hasClass('loading');
+		if (noContent) {
+			var that = this;
+			$.ajax({
+				url : this.codeUrl,
+				dataType : 'text',
+				success : function (data) {
+					var encodedData = that.htmlEncode(data);
+
+					that.$codeContainer.html(encodedData);
+					prettyPrint();
+				},
+				error : function (XMLHttpRequest, textStatus, errorThrown) {
+					that.$codeContainer.html(errorThrown);
+				},
+				cache : true,
+				type : 'get',
+				async : true
+			});
+		}
     };
 
     /* PrettyCode PLUGIN DEFINITION
      * ============================= */
-    $.fn.prettyCode = function (option) {
+    function Plugin(option) {
         return this.each(function () {
             var $this = $(this),
             data = $this.data('prettyCode'),
@@ -54,6 +49,18 @@
 
             data.show();
         });
+    }
+
+    var old = $.fn.prettyCode;
+
+    $.fn.prettyCode = Plugin;
+    $.fn.prettyCode.Constructor = PrettyCode;
+
+    // PrettyCode NO CONFLICT
+    // =================
+    $.fn.prettyCode.noConflict = function () {
+        $.fn.prettyCode = old;
+        return this;
     };
 
     /* PrettyCode DATA-API
@@ -65,5 +72,4 @@
             $this.prettyCode(codeUrl);
         });
     });
-}(window.jQuery);
-
+}(jQuery);

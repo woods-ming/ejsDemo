@@ -41,8 +41,12 @@
                         "name": "3.代码示例",
                         "codeSnippets": [
                             {
-                                "lang": "html",
-                                "url": "/codeSnippets/helloWorld.html"
+                                "lang": "java",
+                                "url": "/codeSnippets/singleton1.java"
+                            },
+                            {
+                                "lang": "java",
+                                "url": "/codeSnippets/singleton2.java"
                             }
                         ]
                     },
