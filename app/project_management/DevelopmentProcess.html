@@ -241,21 +241,21 @@
 
 	
 
-			<h3 id="1-0">1.功能分解</h3>
+			<h3 id="1-0">1.分解需求</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>功能目标</dt>
-						<dd>为哪些需求提供支撑</dd>
+						<dt>分解</dt>
+						<dd>无数个基本业务需求，组合在一起满足了整体需求</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>功能描述</dt>
-						<dd>如何工作，具体做哪些事情</dd>
+						<dt>粒度</dt>
+						<dd>一项基本业务需求，其结果可与现实对应</dd>
 					</dl>
 
 					
@@ -266,21 +266,42 @@
 
 		
 
-			<h3 id="1-1">2.流程设计</h3>
+			<h3 id="1-1">2.分解功能</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>功能衔接</dt>
-						<dd>各个功能之间如何衔接</dd>
+						<dt>分解</dt>
+						<dd>无数个功能，组合在一起完成了一项基本业务需求</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>数据依赖</dt>
-						<dd>各个功能之间的数据依赖关系</dd>
+						<dt>衔接</dt>
+						<dd>针对某项基本业务需求，各个功能之间如何配合</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>粒度</dt>
+						<dd>一个功能是一个基本页面（可视交互），或一项操作</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>定义</dt>
+						<dd>该功能具体做什么</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>去重</dt>
+						<dd>多项基本业务需求分解后，可能包含相同的功能（即：复用了某个功能）</dd>
 					</dl>
 
 					
@@ -306,6 +327,13 @@
 					<dl class="dl-horizontal">
 						<dt>开发环境准备</dt>
 						<dd>选择合适的【编辑器、编译器、调试工具、集成工具、测试工具、发布工具】，合理配置使之正常运行</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>撰写服务层</dt>
+						<dd>一个服务，对应一项基本业务需求</dd>
 					</dl>
 
 					
@@ -358,7 +386,7 @@
 
 					<dl class="dl-horizontal">
 						<dt>业务层初步开发</dt>
-						<dd>定义业务接口 || 粗略实现部分业务逻辑 || 粗略定义数据访问接口</dd>
+						<dd>定义服务并粗略实现 || 定义业务接口 || 粗略实现部分业务逻辑 || 粗略定义数据访问接口</dd>
 					</dl>
 
 					
@@ -381,7 +409,7 @@
 
 	
 
-			<h3 id="2-0">1.功能细节</h3>
+			<h3 id="2-0">1.细化功能</h3>
 			<div class="section">
 
 			
@@ -413,7 +441,7 @@
 
 					<dl class="dl-horizontal">
 						<dt>业务层</dt>
-						<dd>参照详细设计，完整实现业务逻辑 || 完整定义数据访问接口</dd>
+						<dd>参照详细设计，完整实现服务 || 完整实现业务逻辑 || 完整定义数据访问接口</dd>
 					</dl>
 
 					
@@ -438,21 +466,28 @@
 
 		
 
-			<h3 id="2-2">3.单元测试</h3>
+			<h3 id="2-2">3.持续集成</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>白盒测试</dt>
+						<dt>静态代码检查</dt>
+						<dd>针对 编码风格（使用StyleCop） || 代码分析（是否符合编程最佳实践） || 代码度量值（可维护性：数值越高越好）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>编写单元测试</dt>
 						<dd>针对 核心逻辑 || 复用程度高的逻辑 || 人工测试繁琐的逻辑（数据验证等）</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>冒烟测试</dt>
-						<dd>模块的基本逻辑运行正常</dd>
+						<dt>功能冒烟测试</dt>
+						<dd>功能的基本运行正常，不涉及细节</dd>
 					</dl>
 
 					
@@ -550,6 +585,118 @@
 
 		
 
+			<h3 id="3-3">4.修改bug</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>业务方面</dt>
+						<dd>调整功能细节</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>交互方面</dt>
+						<dd>优化界面</dd>
+					</dl>
+
+					
+
+			
+
+			</div>
+
+		
+
+	</div>
+
+
+
+	<h2 class="page-header" id="4">五、部署上线</h2>
+
+	
+
+	<div class="bs-docs-section">
+
+	
+
+			<h3 id="4-0">1.数据库</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>初始化结构</dt>
+						<dd>针对稳定的库结构，生成Sql脚本</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>预置数据</dt>
+						<dd>按业务分类，生成Sql脚本</dd>
+					</dl>
+
+					
+
+			
+
+			</div>
+
+		
+
+			<h3 id="4-1">2.网站</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>参数配置</dt>
+						<dd>调整到Release模式（适应生存环境）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>部署包</dt>
+						<dd>整合所有资源，编译生成部署包</dd>
+					</dl>
+
+					
+
+			
+
+			</div>
+
+		
+
+			<h3 id="4-2">3.服务器</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>部署数据库</dt>
+						<dd>按次序执行所有Sql脚本</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>部署网站</dt>
+						<dd>网站虚拟目录指向Ftp后的部署包，配置相关参数（连接字符串等）</dd>
+					</dl>
+
+					
+
+			
+
+			</div>
+
+		
+
 	</div>
 
 
@@ -606,11 +753,11 @@
 
                     
 
-                        <li><a href="#1-0">1.功能分解</a></li>
+                        <li><a href="#1-0">1.分解需求</a></li>
 
                         
 
-                        <li><a href="#1-1">2.流程设计</a></li>
+                        <li><a href="#1-1">2.分解功能</a></li>
 
                         
 
@@ -633,7 +780,7 @@
 
                     
 
-                        <li><a href="#2-0">1.功能细节</a></li>
+                        <li><a href="#2-0">1.细化功能</a></li>
 
                         
 
@@ -641,7 +788,7 @@
 
                         
 
-                        <li><a href="#2-2">3.单元测试</a></li>
+                        <li><a href="#2-2">3.持续集成</a></li>
 
                         
 
@@ -665,6 +812,33 @@
                         
 
                         <li><a href="#3-2">3.性能测试</a></li>
+
+                        
+
+                        <li><a href="#3-3">4.修改bug</a></li>
+
+                        
+
+                </ul>
+            </li>
+
+            
+
+            <li>
+                <a href="#4">五、部署上线</a>
+                <ul class="nav">
+
+                    
+
+                        <li><a href="#4-0">1.数据库</a></li>
+
+                        
+
+                        <li><a href="#4-1">2.网站</a></li>
+
+                        
+
+                        <li><a href="#4-2">3.服务器</a></li>
 
                         
 
