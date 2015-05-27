@@ -6,7 +6,7 @@
     var PrettyCode = function (element, codeUrl) {
         this.codeUrl = codeUrl;
         this.$codeContainer = $(element);
-        this.$codeContainer.append('<span class="loading">源代码加载中...</span>');
+        this.$codeContainer.html('<span class="loading">源代码加载中...</span>');
     };
 
     PrettyCode.prototype.htmlEncode = function (s) {
@@ -22,9 +22,11 @@
 				dataType : 'text',
 				success : function (data) {
 					var encodedData = that.htmlEncode(data);
-
 					that.$codeContainer.html(encodedData);
-					prettyPrint();
+
+                    if(--count == 0){
+                        prettyPrint();
+                    }
 				},
 				error : function (XMLHttpRequest, textStatus, errorThrown) {
 					that.$codeContainer.html(errorThrown);
@@ -65,11 +67,15 @@
 
     /* PrettyCode DATA-API
      * =================== */
-    $(window).on('load', function () {
-        $('[data-code-url]').each(function () {
+    var count = 0;
+    $(function(){
+        var $codeContainer = $('[data-code-url]');
+        count = $('[data-code-url]').length;
+        $codeContainer.each(function () {
             var $this = $(this),
             codeUrl = $this.attr('data-code-url');
             $this.prettyCode(codeUrl);
         });
     });
+
 }(jQuery);

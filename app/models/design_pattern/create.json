@@ -12,7 +12,7 @@
                         "blocks": [
                             {
                                 "key": "单个实例",
-                                "description": "有些对象我们只需要一个，比如：线程池、缓存、对话框等。如果创建出多个对象，会导致资源使用过量、或结果不一致"
+                                "description": "有些对象我们只需要一个，<br />比如：线程池、缓存、对话框等。如果创建出多个对象，会导致资源使用过量、或结果不一致"
                             }
                         ]
                     },
@@ -20,11 +20,11 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "禁止随意创建对象",
+                                "key": "禁用对象创建",
                                 "description": "隐藏构造函数"
                             },
                             {
-                                "key": "保持唯一的实例",
+                                "key": "唯一实例",
                                 "description": "使用静态成员"
                             },
                             {
@@ -41,21 +41,21 @@
                         "name": "3.代码示例",
                         "codeSnippets": [
                             {
-                                "lang": "java",
+                                "description": "代码简单，对象预加载，如果没被用到会造成资源浪费",
                                 "url": "/codeSnippets/singleton1.java"
                             },
                             {
-                                "lang": "java",
+                                "description": "同步 + 双检查，对象懒加载，初次资源竞争时会降低执行速度",
                                 "url": "/codeSnippets/singleton2.java"
                             }
                         ]
                     },
                     {
                         "name": "4.模型图",
-                        "blocks": [
+                        "images": [
                             {
-                                "key": "",
-                                "description": ""
+                                "alt": "单件模式",
+                                "url": "/images/singleton.png"
                             }
                         ]
                     }

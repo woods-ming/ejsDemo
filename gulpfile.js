@@ -134,6 +134,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
+// extras:复制其它资源
 gulp.task('extras', function () {
   return gulp.src('app/codeSnippets/*.*')
     .pipe(gulp.dest('dist/codeSnippets'));
