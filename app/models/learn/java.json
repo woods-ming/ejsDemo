@@ -97,10 +97,10 @@
                 ]
             },
             {
-                "name": "二、各种 Hello World",
+                "name": "二、Jsp（方便生成Html的servlet，由Tomcat自动解析）",
                 "sections": [
                     {
-                        "name": "1.Jsp（方便生成Html的servlet，由Tomcat自动解析）",
+                        "name": "1.Hello World",
                         "blocks": [
                             {
                                 "key": "创建项目",
@@ -141,11 +141,11 @@
                         ]
                     },
                     {
-                        "name": "2.JavaBean（符合特定规范的java类，用于做Model层）",
+                        "name": "2.使用JavaBean",
                         "blocks": [
                             {
                                 "key": "四大特点",
-                                "description": "public， 无参构造函数， 私有属性， get/set访问器"
+                                "description": "public， 无参构造函数， 私有属性， get/set访问器（符合特定规范的java类，用于做Model层）"
                             },
                             {
                                 "key": "<code>&lt;jsp:useBean /&gt;</code>",
@@ -162,6 +162,48 @@
                             {
                                 "key": "本质",
                                 "description": "jsp要经常使用Bean，因此特定开发出一系列语法技巧"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.使用Jsp指令",
+                        "blocks": [
+                            {
+                                "key": "<code><%@ include file %></code>",
+                                "description": "嵌入外部文件的原始代码（物理替换）"
+                            },
+                            {
+                                "key": "<code><%@ page import %></code>",
+                                "description": "相当于 c#的<code>using</code>"
+                            },
+                            {
+                                "key": "<code><%@ page contentType %></code>",
+                                "description": "当前页面使用的字符编码（推荐utf-8）"
+                            },
+                            {
+                                "key": "本质",
+                                "description": "编译Jsp页面时，执行的逻辑"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.使用Jsp动作",
+                        "blocks": [
+                            {
+                                "key": "<code>&lt;jsp:include page /&gt;</code>",
+                                "description": "嵌入外部文件的执行结果（逻辑调用）"
+                            },
+                            {
+                                "key": "<code>&lt;jsp:forward page /&gt;</code>",
+                                "description": "服务器跳转（交给指定Jsp页面处理请求）"
+                            },
+                            {
+                                "key": "<code>&lt;jsp:param name value /&gt;</code>",
+                                "description": "作为forward动作的子标签，给request对象添加请求参数（相当于 c#的<code>routeValues</code>）"
+                            },
+                            {
+                                "key": "本质",
+                                "description": "运行Jsp页面时，调用的逻辑"
                             }
                         ]
                     }

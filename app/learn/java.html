@@ -315,7 +315,7 @@
 
 
 
-	<h2 class="page-header" id="1">二、各种 Hello World</h2>
+	<h2 class="page-header" id="1">二、Jsp（方便生成Html的servlet，由Tomcat自动解析）</h2>
 
 	
 
@@ -323,7 +323,7 @@
 
 	
 
-			<h3 id="1-0">1.Jsp（方便生成Html的servlet，由Tomcat自动解析）</h3>
+			<h3 id="1-0">1.Hello World</h3>
 			<div class="section">
 
 			
@@ -399,14 +399,14 @@
 
 		
 
-			<h3 id="1-1">2.JavaBean（符合特定规范的java类，用于做Model层）</h3>
+			<h3 id="1-1">2.使用JavaBean</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
 						<dt>四大特点</dt>
-						<dd>public， 无参构造函数， 私有属性， get/set访问器</dd>
+						<dd>public， 无参构造函数， 私有属性， get/set访问器（符合特定规范的java类，用于做Model层）</dd>
 					</dl>
 
 					
@@ -435,6 +435,88 @@
 					<dl class="dl-horizontal">
 						<dt>本质</dt>
 						<dd>jsp要经常使用Bean，因此特定开发出一系列语法技巧</dd>
+					</dl>
+
+					
+
+			
+
+			
+
+			</div>
+
+		
+
+			<h3 id="1-2">3.使用Jsp指令</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt><code><%@ include file %></code></dt>
+						<dd>嵌入外部文件的原始代码（物理替换）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt><code><%@ page import %></code></dt>
+						<dd>相当于 c#的<code>using</code></dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt><code><%@ page contentType %></code></dt>
+						<dd>当前页面使用的字符编码（推荐utf-8）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>本质</dt>
+						<dd>编译Jsp页面时，执行的逻辑</dd>
+					</dl>
+
+					
+
+			
+
+			
+
+			</div>
+
+		
+
+			<h3 id="1-3">4.使用Jsp动作</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt><code>&lt;jsp:include page /&gt;</code></dt>
+						<dd>嵌入外部文件的执行结果（逻辑调用）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt><code>&lt;jsp:forward page /&gt;</code></dt>
+						<dd>服务器跳转（交给指定Jsp页面处理请求）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt><code>&lt;jsp:param name value /&gt;</code></dt>
+						<dd>作为forward动作的子标签，给request对象添加请求参数（相当于 c#的<code>routeValues</code>）</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>本质</dt>
+						<dd>运行Jsp页面时，调用的逻辑</dd>
 					</dl>
 
 					
@@ -498,16 +580,24 @@
             
 
             <li>
-                <a href="#1">二、各种 Hello World</a>
+                <a href="#1">二、Jsp（方便生成Html的servlet，由Tomcat自动解析）</a>
                 <ul class="nav">
 
                     
 
-                        <li><a href="#1-0">1.Jsp（方便生成Html的servlet，由Tomcat自动解析）</a></li>
+                        <li><a href="#1-0">1.Hello World</a></li>
 
                         
 
-                        <li><a href="#1-1">2.JavaBean（符合特定规范的java类，用于做Model层）</a></li>
+                        <li><a href="#1-1">2.使用JavaBean</a></li>
+
+                        
+
+                        <li><a href="#1-2">3.使用Jsp指令</a></li>
+
+                        
+
+                        <li><a href="#1-3">4.使用Jsp动作</a></li>
 
                         
 
