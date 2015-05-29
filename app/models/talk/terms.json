@@ -69,6 +69,15 @@
                                 "description": "用户在生产环境下测试"
                             }
                         ]
+                    },
+                    {
+                        "name": "4.其它",
+                        "blocks": [
+                            {
+                                "key": "Hands-On Labs",
+                                "description": "动手实验室"
+                            }
+                        ]
                     }
                 ]
             }
