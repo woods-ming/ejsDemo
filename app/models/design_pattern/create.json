@@ -54,7 +54,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "单件模式",
+                                "alt": "确保一个类只有一个示例，并提供全局访问点",
                                 "url": "/images/singleton.png"
                             }
                         ]
