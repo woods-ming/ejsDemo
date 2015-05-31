@@ -1,0 +1,129 @@
+{
+    "题目": "Windows Azure发布网站",
+    "摘要": "了解如何使用微软的云服务器Windows Azure发布网站",
+    "关键字": "Windows Azure，发布网站",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、在云服务器的门户中操作",
+                "sections": [
+                    {
+                        "name": "1.登录manage.windowsazure.cn",
+                        "blocks": [
+                            {
+                                "key": "帐号",
+                                "description": "xxx@xxx.partner.onmschina.cn"
+                            },
+                            {
+                                "key": "密码",
+                                "description": "注册时填写的密码"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.新建数据库",
+                        "blocks": [
+                            {
+                                "key": "名称",
+                                "description": "【数据库名称】"
+                            },
+                            {
+                                "key": "服务层",
+                                "description": "BASIC"
+                            },
+                            {
+                                "key": "性能级别",
+                                "description": "Basic(5 DTU)"
+                            },
+                            {
+                                "key": "排序规则",
+                                "description": "Chinese_PRC_CI_AS"
+                            },
+                            {
+                                "key": "服务器",
+                                "description": "选已有的 || 新建"
+                            },
+                            {
+                                "key": "获取连接字符串",
+                                "description": "进入该数据库的“仪表盘”，在页面右下方"
+                            },
+                            {
+                                "key": "配置远程访问",
+                                "description": "进入该数据库的“配置”，将当前客户端IP地址 -> 添加到允许的IP地址，保存"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.新建网站",
+                        "blocks": [
+                            {
+                                "key": "URL",
+                                "description": "【网站英文名称】"
+                            },
+                            {
+                                "key": "应用服务计划",
+                                "description": "选中国北部"
+                            },
+                            {
+                                "key": "缩放",
+                                "description": "进入该网站的“缩放”，根据负载情况选择定价层"
+                            },
+                            {
+                                "key": "下载发布设置文件",
+                                "description": "进入网站的“仪表盘”，点击右侧的“下载发布配置文件”"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、在本地电脑操作",
+                "sections": [
+                    {
+                        "name": "1.初始化数据库",
+                        "blocks": [
+                            {
+                                "key": "连接数据库",
+                                "description": "打开本地的SqlServerManagementStudio，填写“连接字符串”、“登录名”、“密码”"
+                            },
+                            {
+                                "key": "初始化库结构",
+                                "description": "执行 xxx_Create.sql"
+                            },
+                            {
+                                "key": "预置数据",
+                                "description": "依次执行 xxx_Init.sql"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.部署网站",
+                        "blocks": [
+                            {
+                                "key": "提取发布设置信息",
+                                "description": "host：用“publishUrl=\"ftp://”查找，记住“/site/wwwroot”之前的部分 <br />userName：用“userName”查找，记住对应的值 <br />userPWD：用“userPWD”查找，记住对应的值"
+                            },
+                            {
+                                "key": "安装FileZilla",
+                                "description": "https://filezilla-project.org/"
+                            },
+                            {
+                                "key": "配置FileZilla",
+                                "description": "新站点：Enrollment <br />主机：粘贴刚才找到的host <br />登录类型：正常 <br />用户：粘贴刚才找到的userName <br />密码：粘贴刚才找到的userPWD <br />高级/默认本地目录：本地网站部署包所在的目录 <br />高级/默认远程目录：/site/wwwroot <br />高级/使用同步浏览：勾选"
+                            },
+                            {
+                                "key": "上传网站部署包",
+                                "description": "“全选”本地目录中的文件，右键“上传”"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1.使用了Windows Azure提供的两项基础服务",
+        "2.网站提供自动负载均衡，数据库以DTU为性能单位"
+    ],
+    "参考文献": []
+}

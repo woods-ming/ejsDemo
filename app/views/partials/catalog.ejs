@@ -28,16 +28,16 @@
             <% 
         }
     } 
-else if(chapters.length == 1) { 
-    for(var j = 0; j < chapters[0].sections.length; j++) {  
-        var section = chapters[0].sections[j]; 
-        %>
+    if(chapters.length == 1) { 
+        for(var j = 0; j < chapters[0].sections.length; j++) {  
+            var section = chapters[0].sections[j]; 
+            %>
 
-        <li><a href="#<%= 0 %>-<%= j %>"><%= section.name %></a></li>
+            <li><a href="#<%= 0 %>-<%= j %>"><%= section.name %></a></li>
 
-        <% 
-    }  
-} 
-%>
+            <% 
+        }  
+    } 
+    %>
 
 </ul>

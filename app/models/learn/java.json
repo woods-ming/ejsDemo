@@ -74,7 +74,7 @@
                             },
                             {
                                 "key": "配置编码格式",
-                                "description": "General\\WorkSpace\\Text file encoding：UTF-8"
+                                "description": "General\\WorkSpace\\Text file encoding：UTF-8 <br />General\\Web\\JSP Files\\Encoding：ISO 10646/Unicode(UTF-8)"
                             },
                             {
                                 "key": "关闭拼写检查",
@@ -91,6 +91,19 @@
                             {
                                 "key": "打开Tomcat",
                                 "description": "Window\\Show View\\Servers：<kbd>右键</kbd> start"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.安装Oracle",
+                        "blocks": [
+                            {
+                                "key": "下载（11g）",
+                                "description": "http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html 两个文件都下载"
+                            },
+                            {
+                                "key": "安装",
+                                "description": "两个文件解压到同一个目录，<kbd>双击</kbd> setup.exe"
                             }
                         ]
                     }

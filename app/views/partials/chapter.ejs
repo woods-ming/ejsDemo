@@ -27,7 +27,7 @@ for(var i = 0; i < content.chapters.length; i++) {
 
 					<dl class="dl-horizontal">
 						<dt><%- block.key %></dt>
-						<dd><%- block.description %></dd>
+						<dd class="text-muted"><%- block.description %></dd>
 					</dl>
 
 					<% 
@@ -58,7 +58,7 @@ for(var i = 0; i < content.chapters.length; i++) {
 					var image = section.images[k]; 
 					%>
 
-					<img src="<%= image.url %>" class="img-thumbnail img-responsive" alt="<%= image.alt %>">
+					<img src="<%= image.url %>" class="img-thumbnail img-responsive" title="<%= image.alt %>" alt="<%= image.alt %>">
 
 					<% 
 				} 

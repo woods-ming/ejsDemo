@@ -24,8 +24,8 @@
 					var encodedData = that.htmlEncode(data);
 					that.$codeContainer.html(encodedData);
 
-                    if(--count == 0){
-                        prettyPrint();
+                    if(--count === 0 && window.prettyPrint){
+                        window.prettyPrint();
                     }
 				},
 				error : function (XMLHttpRequest, textStatus, errorThrown) {

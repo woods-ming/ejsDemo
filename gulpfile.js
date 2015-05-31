@@ -150,8 +150,7 @@ gulp.task('sitemap', function () {
 });
 
 // build:生成
-// gulp.task('build', ['jshint', 'html', 'images', 'extras', 'sitemap'], function () {
-gulp.task('build', ['html', 'images', 'extras', 'sitemap'], function () {
+gulp.task('build', ['jshint', 'html', 'images', 'extras', 'sitemap'], function () {
     return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

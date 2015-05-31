@@ -7,8 +7,8 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>CodeExperience</title>
     <meta name="author" content="胡明明" />
-    <meta name="keywords" content="单件模式" />
-    <meta name="description" content="解决创建对象时遇到的问题">
+    <meta name="keywords" content="Windows Azure，发布网站" />
+    <meta name="description" content="了解如何使用微软的云服务器Windows Azure发布网站">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -126,9 +126,9 @@
     <!-- 论文简介 -->
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
-            <h1>创建型模式</h1>
-            <p>摘要: 解决创建对象时遇到的问题</p>
-            <p>关键字: 单件模式</p>
+            <h1>Windows Azure发布网站</h1>
+            <p>摘要: 了解如何使用微软的云服务器Windows Azure发布网站</p>
+            <p>关键字: Windows Azure，发布网站</p>
         </div>
     </div>
 
@@ -139,7 +139,7 @@
                 <div>
                     
 
-	<h2 class="page-header" id="0">一、Singleton</h2>
+	<h2 class="page-header" id="0">一、在云服务器的门户中操作</h2>
 
 	
 
@@ -147,14 +147,21 @@
 
 	
 
-			<h3 id="0-0">1.问题</h3>
+			<h3 id="0-0">1.登录manage.windowsazure.cn</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>单个实例</dt>
-						<dd class="text-muted">有些对象我们只需要一个，<br />比如：线程池、缓存、对话框等。如果创建出多个对象，会导致资源使用过量、或结果不一致</dd>
+						<dt>帐号</dt>
+						<dd class="text-muted">xxx@xxx.partner.onmschina.cn</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>密码</dt>
+						<dd class="text-muted">注册时填写的密码</dd>
 					</dl>
 
 					
@@ -167,35 +174,56 @@
 
 		
 
-			<h3 id="0-1">2.思路</h3>
+			<h3 id="0-1">2.新建数据库</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>禁用对象创建</dt>
-						<dd class="text-muted">隐藏构造函数</dd>
+						<dt>名称</dt>
+						<dd class="text-muted">【数据库名称】</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>唯一实例</dt>
-						<dd class="text-muted">使用静态成员</dd>
+						<dt>服务层</dt>
+						<dd class="text-muted">BASIC</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>懒加载</dt>
-						<dd class="text-muted">使用时，判断没有再创建</dd>
+						<dt>性能级别</dt>
+						<dd class="text-muted">Basic(5 DTU)</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>避免多线程判断错误</dt>
-						<dd class="text-muted">双检查</dd>
+						<dt>排序规则</dt>
+						<dd class="text-muted">Chinese_PRC_CI_AS</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>服务器</dt>
+						<dd class="text-muted">选已有的 || 新建</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>获取连接字符串</dt>
+						<dd class="text-muted">进入该数据库的“仪表盘”，在页面右下方</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>配置远程访问</dt>
+						<dd class="text-muted">进入该数据库的“配置”，将当前客户端IP地址 -> 添加到允许的IP地址，保存</dd>
 					</dl>
 
 					
@@ -208,47 +236,42 @@
 
 		
 
-			<h3 id="0-2">3.代码示例</h3>
+			<h3 id="0-2">3.新建网站</h3>
 			<div class="section">
 
 			
 
-			
-
-					<div class="highlight">
-					<span class="text-muted">代码简单，对象预加载，如果没被用到会造成资源浪费</span>
-					<pre><code class="prettyprint linenums" data-code-url="/codeSnippets/singleton1.java">
-					</code></pre>
-					</div>
+					<dl class="dl-horizontal">
+						<dt>URL</dt>
+						<dd class="text-muted">【网站英文名称】</dd>
+					</dl>
 
 					
 
-					<div class="highlight">
-					<span class="text-muted">同步 + 双检查，对象懒加载，初次资源竞争时会降低执行速度</span>
-					<pre><code class="prettyprint linenums" data-code-url="/codeSnippets/singleton2.java">
-					</code></pre>
-					</div>
+					<dl class="dl-horizontal">
+						<dt>应用服务计划</dt>
+						<dd class="text-muted">选中国北部</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>缩放</dt>
+						<dd class="text-muted">进入该网站的“缩放”，根据负载情况选择定价层</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>下载发布设置文件</dt>
+						<dd class="text-muted">进入网站的“仪表盘”，点击右侧的“下载发布配置文件”</dd>
+					</dl>
 
 					
 
 			
 
-			</div>
-
-		
-
-			<h3 id="0-3">4.模型图</h3>
-			<div class="section">
-
 			
-
-			
-
-			
-
-					<img src="/images/singleton.png" class="img-thumbnail img-responsive" title="确保一个类只有一个示例，并提供全局访问点" alt="确保一个类只有一个示例，并提供全局访问点">
-
-					
 
 			</div>
 
@@ -258,7 +281,7 @@
 
 
 
-	<h2 class="page-header" id="1">二、Factory</h2>
+	<h2 class="page-header" id="1">二、在本地电脑操作</h2>
 
 	
 
@@ -266,14 +289,28 @@
 
 	
 
-			<h3 id="1-0">1.问题</h3>
+			<h3 id="1-0">1.初始化数据库</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>单个实例</dt>
-						<dd class="text-muted">该类只能创建1个实例</dd>
+						<dt>连接数据库</dt>
+						<dd class="text-muted">打开本地的SqlServerManagementStudio，填写“连接字符串”、“登录名”、“密码”</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>初始化库结构</dt>
+						<dd class="text-muted">执行 xxx_Create.sql</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>预置数据</dt>
+						<dd class="text-muted">依次执行 xxx_Init.sql</dd>
 					</dl>
 
 					
@@ -286,61 +323,35 @@
 
 		
 
-			<h3 id="1-1">2.思路</h3>
+			<h3 id="1-1">2.部署网站</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>隐藏构造函数</dt>
-						<dd class="text-muted">限制随意创建实例</dd>
+						<dt>提取发布设置信息</dt>
+						<dd class="text-muted">host：用“publishUrl="ftp://”查找，记住“/site/wwwroot”之前的部分 <br />userName：用“userName”查找，记住对应的值 <br />userPWD：用“userPWD”查找，记住对应的值</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>使用静态实例</dt>
-						<dd class="text-muted">确保同一个实例被大家访问</dd>
+						<dt>安装FileZilla</dt>
+						<dd class="text-muted">https://filezilla-project.org/</dd>
 					</dl>
 
 					
 
-			
-
-			
-
-			</div>
-
-		
-
-			<h3 id="1-2">3.代码示例</h3>
-			<div class="section">
-
-			
-
 					<dl class="dl-horizontal">
-						<dt></dt>
-						<dd class="text-muted"></dd>
+						<dt>配置FileZilla</dt>
+						<dd class="text-muted">新站点：Enrollment <br />主机：粘贴刚才找到的host <br />登录类型：正常 <br />用户：粘贴刚才找到的userName <br />密码：粘贴刚才找到的userPWD <br />高级/默认本地目录：本地网站部署包所在的目录 <br />高级/默认远程目录：/site/wwwroot <br />高级/使用同步浏览：勾选</dd>
 					</dl>
 
 					
 
-			
-
-			
-
-			</div>
-
-		
-
-			<h3 id="1-3">4.模型图</h3>
-			<div class="section">
-
-			
-
 					<dl class="dl-horizontal">
-						<dt></dt>
-						<dd class="text-muted"></dd>
+						<dt>上传网站部署包</dt>
+						<dd class="text-muted">“全选”本地目录中的文件，右键“上传”</dd>
 					</dl>
 
 					
@@ -363,11 +374,11 @@
 	<p class="text-info">
 		
 
-			1.<br />
+			1.使用了Windows Azure提供的两项基础服务<br />
 
 			
 
-			<br />
+			2.网站提供自动负载均衡，数据库以DTU为性能单位<br />
 
 			
 	</p>
@@ -381,24 +392,20 @@
     
 
             <li>
-                <a href="#0">一、Singleton</a>
+                <a href="#0">一、在云服务器的门户中操作</a>
                 <ul class="nav">
 
                     
 
-                        <li><a href="#0-0">1.问题</a></li>
+                        <li><a href="#0-0">1.登录manage.windowsazure.cn</a></li>
 
                         
 
-                        <li><a href="#0-1">2.思路</a></li>
+                        <li><a href="#0-1">2.新建数据库</a></li>
 
                         
 
-                        <li><a href="#0-2">3.代码示例</a></li>
-
-                        
-
-                        <li><a href="#0-3">4.模型图</a></li>
+                        <li><a href="#0-2">3.新建网站</a></li>
 
                         
 
@@ -408,24 +415,16 @@
             
 
             <li>
-                <a href="#1">二、Factory</a>
+                <a href="#1">二、在本地电脑操作</a>
                 <ul class="nav">
 
                     
 
-                        <li><a href="#1-0">1.问题</a></li>
+                        <li><a href="#1-0">1.初始化数据库</a></li>
 
                         
 
-                        <li><a href="#1-1">2.思路</a></li>
-
-                        
-
-                        <li><a href="#1-2">3.代码示例</a></li>
-
-                        
-
-                        <li><a href="#1-3">4.模型图</a></li>
+                        <li><a href="#1-1">2.部署网站</a></li>
 
                         
 
