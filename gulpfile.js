@@ -40,7 +40,7 @@ function findRouteView(model) {
 gulp.task('compile', function() {
     for(var i = 0; i < routeTable.length; i++) {
         var route = routeTable[i];
-        compileHtml(route.modelGlob, route.view, 'app');
+        compileHtml(route.modelGlob, route.view, 'app/html');
     }
 });
 
@@ -53,7 +53,7 @@ gulp.task('debug', ['compile'], function() {
         logFileChanges: true,
         server: {
             baseDir: ['.tmp', 'app'],
-            index: "design_pattern/create.html",
+            index: "/html/design_pattern/create.html",
             routes: {
                 '/bower_components': 'bower_components'
             }
@@ -62,7 +62,7 @@ gulp.task('debug', ['compile'], function() {
 
     // watch:监视变化
     gulp.watch([
-        'app/**/*.html',
+        'app/html/**/*.html',
         'app/scripts/**/*.js',
         'app/styles/**/*.css',
         'app/images/**/*.*'
@@ -77,7 +77,7 @@ gulp.task('debug', ['compile'], function() {
             notifyChange(event.path);
             var model = event.path; 
             var view = findRouteView(model);
-            var dest = path.resolve('app', path.relative('app/models', path.dirname(event.path)));
+            var dest = path.resolve('app/html', path.relative('app/models', path.dirname(event.path)));
             compileHtml(model, view, dest);
         });
 });
@@ -111,7 +111,7 @@ gulp.task('styles', function () {
 gulp.task('html', ['compile', 'styles'], function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'bower_components']});
 
-  return gulp.src(['app/**/*.html', '!app/codeSnippets/*.*'])
+  return gulp.src('app/**/*.html')
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
@@ -142,7 +142,7 @@ gulp.task('extras', function () {
 
 // sitemap:生成站点地图，并拷贝到生成目录
 gulp.task('sitemap', function () {
-    gulp.src('app/**/*.html')
+    gulp.src('app/html/**/*.html')
         .pipe($.sitemap({
             siteUrl: 'http://codeExperience.sinaapp.com'
         }))
@@ -162,7 +162,7 @@ gulp.task('default', ['clean'], function () {
         port: 9001,
         server: {
             baseDir: ['dist'],
-            index: "design_pattern/create.html"
+            index: "/html/design_pattern/create.html"
         }
     });
 });
