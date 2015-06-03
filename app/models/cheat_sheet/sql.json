@@ -5,17 +5,170 @@
     "正文": {
         "chapters": [
             {
-                "name": "一、需求获取阶段",
+                "name": "一、Data Define Language",
                 "sections": [
                     {
-                        "name": "1.采集需求",
+                        "name": "1.Table 表",
                         "blocks": [
                             {
-                                "key": "",
+                                "key": "创建",
                                 "description": ""
                             },
                             {
-                                "key": "",
+                                "key": "修改",
+                                "description": ""
+                            },
+                            {
+                                "key": "删除",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.Index 索引",
+                        "blocks": [
+                            {
+                                "key": "创建",
+                                "description": ""
+                            },
+                            {
+                                "key": "修改",
+                                "description": ""
+                            },
+                            {
+                                "key": "删除",
+                                "description": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、Data Manipulation Language",
+                "sections": [
+                    {
+                        "name": "1.Tables",
+                        "blocks": [
+                            {
+                                "key": "插入",
+                                "description": ""
+                            },
+                            {
+                                "key": "更新",
+                                "description": ""
+                            },
+                            {
+                                "key": "删除",
+                                "description": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、Data Query Language",
+                "sections": [
+                    {
+                        "name": "1.Select",
+                        "blocks": [
+                            {
+                                "key": "单表查询",
+                                "description": "select * from 【表】 <br />where 【条件】 <br />group by 【列名】 <br />order by 【列名】 asc/desc"
+                            },
+                            {
+                                "key": "modify",
+                                "description": ""
+                            },
+                            {
+                                "key": "delete",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.操作符",
+                        "blocks": [
+                            {
+                                "key": "比较",
+                                "description": "=, <>, >, >=, <, <="
+                            },
+                            {
+                                "key": "算术",
+                                "description": "与java中的一样"
+                            },
+                            {
+                                "key": "逻辑",
+                                "description": "isnull, between, in, like, exists, unique, all, any, and, or"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、Data Control Language",
+                "sections": [
+                    {
+                        "name": "1.权限",
+                        "blocks": [
+                            {
+                                "key": "grant",
+                                "description": ""
+                            },
+                            {
+                                "key": "revoke",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.口令",
+                        "blocks": [
+                            {
+                                "key": "alter",
+                                "description": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "五、数据管理命令",
+                "sections": [
+                    {
+                        "name": "1.审计",
+                        "blocks": [
+                            {
+                                "key": "start audit",
+                                "description": ""
+                            },
+                            {
+                                "key": "stop audit",
+                                "description": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "六、事务性控制命令",
+                "sections": [
+                    {
+                        "name": "1.事务",
+                        "blocks": [
+                            {
+                                "key": "commit",
+                                "description": ""
+                            },
+                            {
+                                "key": "rollback",
+                                "description": ""
+                            },
+                            {
+                                "key": "savepoint",
+                                "description": ""
+                            },
+                            {
+                                "key": "set transaction",
                                 "description": ""
                             }
                         ]
