@@ -142,7 +142,7 @@ gulp.task('extras', function () {
 
 // sitemap:生成站点地图，并拷贝到生成目录
 gulp.task('sitemap', function () {
-    gulp.src('app/html/**/*.html')
+    gulp.src('app/**/*.html')
         .pipe($.sitemap({
             siteUrl: 'http://codeExperience.sinaapp.com'
         }))

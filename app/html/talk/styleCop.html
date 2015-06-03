@@ -7,8 +7,8 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>CodeExperience</title>
     <meta name="author" content="胡明明" />
-    <meta name="keywords" content="单件模式" />
-    <meta name="description" content="解决创建对象时遇到的问题">
+    <meta name="keywords" content="StyleCop，静态代码检查，团队中应用StyleCop" />
+    <meta name="description" content="微软的静态代码检查工具">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -55,7 +55,7 @@
             <li class="divider"></li>
             <li><a href="#">C#</a></li>
             <li><a href="#">Java</a></li>
-            <li><a href="#">Sql</a></li>
+            <li><a href="/html/cheat_sheet/sql.html">Sql</a></li>
             <li class="divider"></li>
             <li><a href="#">Git</a></li>
             <li><a href="#">Yeoman</a></li>
@@ -64,7 +64,7 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">编程基础 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="/basic/CodingSpec.html">基本编程规范</a></li>
+            <li><a href="/html/basic/CodingSpec.html">基本编程规范</a></li>
             <li><a href="#">C# 编程规范</a></li>
             <li><a href="#">Effective C#</a></li>
             <li><a href="#">OOD启思录</a></li>
@@ -75,9 +75,9 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">设计模式 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="/design_pattern/create.html">创建型模式</a></li>
-            <li><a href="/design_pattern/struct.html">结构型模式</a></li>
-            <li><a href="/design_pattern/behavior.html">行为型模式</a></li>
+            <li><a href="/html/design_pattern/create.html">创建型模式</a></li>
+            <li><a href="/html/design_pattern/struct.html">结构型模式</a></li>
+            <li><a href="/html/design_pattern/behavior.html">行为型模式</a></li>
             <li class="divider"></li>
             <li><a href="#">设计模式总结</a></li>
             <li><a href="#">面向对象设计原则</a></li>
@@ -86,32 +86,33 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">架构模式 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="/architect/enterpriseApplicationArchitecture.html">企业应用架构模式</a></li>
-            <li><a href="/architect/largeWebsiteArchitecture.html">大型网站技术架构</a></li>
+            <li><a href="/html/architect/enterpriseApplicationArchitecture.html">企业应用架构模式</a></li>
+            <li><a href="/html/architect/largeWebsiteArchitecture.html">大型网站技术架构</a></li>
         </ul>
     </li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">项目管理 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="/project_management/DevelopmentProcess.html">软件开发流程</a></li>
+            <li><a href="/html/project_management/DevelopmentProcess.html">软件开发流程</a></li>
             <li><a href="#">持续集成</a></li>
-            <li><a href="/project_management/ProjectPlan.html">项目计划、进度与控制</a></li>
+            <li><a href="/html/project_management/ProjectPlan.html">项目计划、进度与控制</a></li>
         </ul>
     </li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">杂谈 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="/talk/terms.html">计算机名词</a></li>
+            <li><a href="/html/talk/terms.html">计算机名词</a></li>
             <li><a href="#">如何做SEO</a></li>
             <li><a href="#">如何选择控件</a></li>
             <li><a href="#">Yeoman为何流行</a></li>
-            <li><a href="/talk/windowsAzure.html">Windows Azure发布网站</a></li>
+            <li><a href="/html/talk/windowsAzure.html">Windows Azure发布网站</a></li>
+            <li><a href="/html/talk/styleCop.html">在团队开发中应用StyleCop</a></li>
         </ul>
     </li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">自学经历 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="/learn/java.html">Java入门</a></li>
+            <li><a href="/html/learn/java.html">Java入门</a></li>
         </ul>
     </li>
 </ul>
@@ -126,9 +127,9 @@
     <!-- 论文简介 -->
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
-            <h1>创建型模式</h1>
-            <p>摘要: 解决创建对象时遇到的问题</p>
-            <p>关键字: 单件模式</p>
+            <h1>StyleCop</h1>
+            <p>摘要: 微软的静态代码检查工具</p>
+            <p>关键字: StyleCop，静态代码检查，团队中应用StyleCop</p>
         </div>
     </div>
 
@@ -139,7 +140,7 @@
                 <div>
                     
 
-	<h2 class="page-header" id="0">一、Singleton</h2>
+	<h2 class="page-header" id="0">一、在本机搭建环境</h2>
 
 	
 
@@ -147,14 +148,21 @@
 
 	
 
-			<h3 id="0-0">1.问题</h3>
+			<h3 class="text-primary" id="0-0">1.安装StyleCop</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>单个实例</dt>
-						<dd class="text-muted">有些对象我们只需要一个，<br />比如：线程池、缓存、对话框等。如果创建出多个对象，会导致资源使用过量、或结果不一致</dd>
+						<dt>下载</dt>
+						<dd class="text-muted">http://stylecop.codeplex.com/</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>安装</dt>
+						<dd class="text-muted">默认安装到C:\Program Files (x86)\下 <br />StyleCop 4.7 中存放安装文件 <br />MSBuild\StyleCop\v4.7 中存放编译器对StyleCop的引用</dd>
 					</dl>
 
 					
@@ -167,35 +175,35 @@
 
 		
 
-			<h3 id="0-1">2.思路</h3>
+			<h3 class="text-primary" id="0-1">2.配置StyleCop</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>禁用对象创建</dt>
-						<dd class="text-muted">隐藏构造函数</dd>
+						<dt>生成配置文件</dt>
+						<dd class="text-muted">打开Visual Studio，在任意一个工程上<kbd>右键</kbd> StyleCop Settings</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>唯一实例</dt>
-						<dd class="text-muted">使用静态成员</dd>
+						<dt>配置规则</dt>
+						<dd class="text-muted">默认启用了所有检查规则，根据需要去掉一些规则</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>懒加载</dt>
-						<dd class="text-muted">使用时，判断没有再创建</dd>
+						<dt>全局应用</dt>
+						<dd class="text-muted">从工程根目录中剪切Settings.StyleCop，粘贴到解决方案的根目录中</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>避免多线程判断错误</dt>
-						<dd class="text-muted">双检查</dd>
+						<dt>规则覆盖</dt>
+						<dd class="text-muted">子目录中的Settings.StyleCop，可以在父目录的基础上，扩展更严格的规则</dd>
 					</dl>
 
 					
@@ -208,47 +216,21 @@
 
 		
 
-			<h3 id="0-2">3.代码示例</h3>
+			<h3 class="text-primary" id="0-2">3.绑定StyleCop</h3>
 			<div class="section">
 
 			
 
-			
-
-					<div class="highlight">
-					<span class="text-muted">代码简单，对象预加载，如果没被用到会造成资源浪费</span>
-					<pre><code class="prettyprint linenums" data-code-url="/codeSnippets/singleton1.java">
-					</code></pre>
-					</div>
-
-					
-
-					<div class="highlight">
-					<span class="text-muted">同步 + 双检查，对象懒加载，初次资源竞争时会降低执行速度</span>
-					<pre><code class="prettyprint linenums" data-code-url="/codeSnippets/singleton2.java">
-					</code></pre>
-					</div>
+					<dl class="dl-horizontal">
+						<dt>编译触发检查</dt>
+						<dd class="text-muted">编辑所有 .csproj文件，搜索“Microsoft.CSharp.targets” <br />在后面添加<code>&lt;Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" /&gt;</code></dd>
+					</dl>
 
 					
 
 			
 
-			</div>
-
-		
-
-			<h3 id="0-3">4.模型图</h3>
-			<div class="section">
-
 			
-
-			
-
-			
-
-					<img src="/images/singleton.png" class="img-thumbnail img-responsive" title="确保一个类只有一个示例，并提供全局访问点" alt="确保一个类只有一个示例，并提供全局访问点">
-
-					
 
 			</div>
 
@@ -258,7 +240,7 @@
 
 
 
-	<h2 class="page-header" id="1">二、Factory</h2>
+	<h2 class="page-header" id="1">二、在团队中应用</h2>
 
 	
 
@@ -266,14 +248,21 @@
 
 	
 
-			<h3 id="1-0">1.问题</h3>
+			<h3 class="text-primary" id="1-0">1.共享StyleCop</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>单个实例</dt>
-						<dd class="text-muted">该类只能创建1个实例</dd>
+						<dt>方式</dt>
+						<dd class="text-muted">通过版本控制工具，建立StyleCop共享目录</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>拷贝内容</dt>
+						<dd class="text-muted">C:\Program Files (x86)\下的 安装文件和MSBuild文件</dd>
 					</dl>
 
 					
@@ -286,41 +275,21 @@
 
 		
 
-			<h3 id="1-1">2.思路</h3>
+			<h3 class="text-primary" id="1-1">2.修改StyleCop引用</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt>隐藏构造函数</dt>
-						<dd class="text-muted">限制随意创建实例</dd>
+						<dt>共享的StyleCop.Targets</dt>
+						<dd class="text-muted">搜索“UsingTask”，将引用路径修改为共享文件夹下StyleCop.dll的相对路径 <br />即：<code>&lt;UsingTask AssemblyFile="StyleCop.dll" TaskName="StyleCopTask"/&gt;</code></dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>使用静态实例</dt>
-						<dd class="text-muted">确保同一个实例被大家访问</dd>
-					</dl>
-
-					
-
-			
-
-			
-
-			</div>
-
-		
-
-			<h3 id="1-2">3.代码示例</h3>
-			<div class="section">
-
-			
-
-					<dl class="dl-horizontal">
-						<dt></dt>
-						<dd class="text-muted"></dd>
+						<dt>所有 .csproj文件</dt>
+						<dd class="text-muted">搜索“Microsoft.CSharp.targets” <br />修改后面StyleCop.targets的引用路径，指向共享文件夹下的副本 <br />即：<code>&lt;Import Project="..\StyleCop\v4.7\StyleCop.Targets" /&gt;</code></dd>
 					</dl>
 
 					
@@ -333,14 +302,21 @@
 
 		
 
-			<h3 id="1-3">4.模型图</h3>
+			<h3 class="text-primary" id="1-2">3.使用</h3>
 			<div class="section">
 
 			
 
 					<dl class="dl-horizontal">
-						<dt></dt>
-						<dd class="text-muted"></dd>
+						<dt>获取配置</dt>
+						<dd class="text-muted">使用版本控制工具，更新目录</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>检查</dt>
+						<dd class="text-muted">在Visual Studio中编译工程或解决方案，查看错误列表中的警告</dd>
 					</dl>
 
 					
@@ -367,7 +343,7 @@
 
 			
 
-			<br />
+			2.<br />
 
 			
 	</p>
@@ -381,24 +357,20 @@
     
 
             <li>
-                <a href="#0">一、Singleton</a>
+                <a href="#0">一、在本机搭建环境</a>
                 <ul class="nav">
 
                     
 
-                        <li><a href="#0-0">1.问题</a></li>
+                        <li><a href="#0-0">1.安装StyleCop</a></li>
 
                         
 
-                        <li><a href="#0-1">2.思路</a></li>
+                        <li><a href="#0-1">2.配置StyleCop</a></li>
 
                         
 
-                        <li><a href="#0-2">3.代码示例</a></li>
-
-                        
-
-                        <li><a href="#0-3">4.模型图</a></li>
+                        <li><a href="#0-2">3.绑定StyleCop</a></li>
 
                         
 
@@ -408,24 +380,20 @@
             
 
             <li>
-                <a href="#1">二、Factory</a>
+                <a href="#1">二、在团队中应用</a>
                 <ul class="nav">
 
                     
 
-                        <li><a href="#1-0">1.问题</a></li>
+                        <li><a href="#1-0">1.共享StyleCop</a></li>
 
                         
 
-                        <li><a href="#1-1">2.思路</a></li>
+                        <li><a href="#1-1">2.修改StyleCop引用</a></li>
 
                         
 
-                        <li><a href="#1-2">3.代码示例</a></li>
-
-                        
-
-                        <li><a href="#1-3">4.模型图</a></li>
+                        <li><a href="#1-2">3.使用</a></li>
 
                         
 

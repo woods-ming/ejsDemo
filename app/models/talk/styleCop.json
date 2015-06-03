@@ -1,0 +1,107 @@
+{
+    "题目": "StyleCop",
+    "摘要": "微软的静态代码检查工具",
+    "关键字": "StyleCop，静态代码检查，团队中应用StyleCop",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、在本机搭建环境",
+                "sections": [
+                    {
+                        "name": "1.安装StyleCop",
+                        "blocks": [
+                            {
+                                "key": "下载",
+                                "description": "http://stylecop.codeplex.com/"
+                            },
+                            {
+                                "key": "安装",
+                                "description": "默认安装到C:\\Program Files (x86)\\下 <br />StyleCop 4.7 中存放安装文件 <br />MSBuild\\StyleCop\\v4.7 中存放编译器对StyleCop的引用"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.配置StyleCop",
+                        "blocks": [
+                            {
+                                "key": "生成配置文件",
+                                "description": "打开Visual Studio，在任意一个工程上<kbd>右键</kbd> StyleCop Settings"
+                            },
+                            {
+                                "key": "配置规则",
+                                "description": "默认启用了所有检查规则，根据需要去掉一些规则"
+                            },
+                            {
+                                "key": "全局应用",
+                                "description": "从工程根目录中剪切Settings.StyleCop，粘贴到解决方案的根目录中"
+                            },
+                            {
+                                "key": "规则覆盖",
+                                "description": "子目录中的Settings.StyleCop，可以在父目录的基础上，扩展更严格的规则"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.绑定StyleCop",
+                        "blocks": [
+                            {
+                                "key": "编译触发检查",
+                                "description": "编辑所有 .csproj文件，搜索“Microsoft.CSharp.targets” <br />在后面添加<code>&lt;Import Project=\"$(ProgramFiles)\\MSBuild\\StyleCop\\v4.7\\StyleCop.targets\" /&gt;</code>"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、在团队中应用",
+                "sections": [
+                    {
+                        "name": "1.共享StyleCop",
+                        "blocks": [
+                            {
+                                "key": "方式",
+                                "description": "通过版本控制工具，建立StyleCop共享目录"
+                            },
+                            {
+                                "key": "拷贝内容",
+                                "description": "C:\\Program Files (x86)\\下的 安装文件和MSBuild文件"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.修改StyleCop引用",
+                        "blocks": [
+                            {
+                                "key": "共享的StyleCop.Targets",
+                                "description": "搜索“UsingTask”，将引用路径修改为共享文件夹下StyleCop.dll的相对路径 <br />即：<code>&lt;UsingTask AssemblyFile=\"StyleCop.dll\" TaskName=\"StyleCopTask\"/&gt;</code>"
+                            },
+                            {
+                                "key": "所有 .csproj文件",
+                                "description": "搜索“Microsoft.CSharp.targets” <br />修改后面StyleCop.targets的引用路径，指向共享文件夹下的副本 <br />即：<code>&lt;Import Project=\"..\\StyleCop\\v4.7\\StyleCop.Targets\" /&gt;</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.使用",
+                        "blocks": [
+                            {
+                                "key": "获取配置",
+                                "description": "使用版本控制工具，更新目录"
+                            },
+                            {
+                                "key": "检查",
+                                "description": "在Visual Studio中编译工程或解决方案，查看错误列表中的警告"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1.",
+        "2."
+    ],
+    "参考文献": [
+    ]
+}
