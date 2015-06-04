@@ -12,20 +12,37 @@
                         "blocks": [
                             {
                                 "key": "创建",
-                                "description": ""
+                                "description": "create table 【表】( <br />&nbsp; 【字段】 【数据类型】 【约束】, <br />&nbsp; ... <br /> )"
                             },
                             {
                                 "key": "修改",
-                                "description": ""
+                                "description": "alter table 【表】 add(【字段】 【数据类型】 【约束】) <br /> alter table 【表】 modify(【字段】 【数据类型】 【约束】) <br /> alter table 【表】 drop(【字段】 【数据类型】 【约束】)"
                             },
                             {
                                 "key": "删除",
-                                "description": ""
+                                "description": "drop table 【表】"
                             }
                         ]
                     },
                     {
-                        "name": "2.Index 索引",
+                        "name": "2.Sequence 序号",
+                        "blocks": [
+                            {
+                                "key": "创建",
+                                "description": "create sequence 【序号】 <br />&nbsp; minvalue 【值】 <br />&nbsp; maxvalue 【值】 <br />&nbsp; start with 【值】 <br />&nbsp; increment by 【值】 <br />&nbsp; cache 【值】"
+                            },
+                            {
+                                "key": "修改",
+                                "description": "alter sequence 【序号】 【属性】 【值】"
+                            },
+                            {
+                                "key": "删除",
+                                "description": "drop sequence 【序号】"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.Index 索引",
                         "blocks": [
                             {
                                 "key": "创建",
@@ -51,15 +68,15 @@
                         "blocks": [
                             {
                                 "key": "插入",
-                                "description": ""
+                                "description": "insert into 【表】(【各字段的名称】) values(【一条记录】) <br /> insert into 【表】(【各字段的名称】) (【记录集合】)"
                             },
                             {
                                 "key": "更新",
-                                "description": ""
+                                "description": "update 【表】 set 【字段】=【值】 where 【条件】"
                             },
                             {
                                 "key": "删除",
-                                "description": ""
+                                "description": "delete from 【表】 where 【条件】"
                             }
                         ]
                     }
@@ -73,7 +90,7 @@
                         "blocks": [
                             {
                                 "key": "单表查询",
-                                "description": "select * from 【表】 <br />where 【条件】 <br />group by 【列名】 <br />order by 【列名】 asc/desc"
+                                "description": "select 【字段】 from 【表】 <br />&nbsp; where 【条件】 <br />&nbsp; group by 【列名】 <br />&nbsp; order by 【列名】 asc/desc"
                             },
                             {
                                 "key": "modify",
@@ -89,16 +106,24 @@
                         "name": "2.操作符",
                         "blocks": [
                             {
-                                "key": "比较",
+                                "key": "关系比较",
                                 "description": "=, <>, >, >=, <, <="
                             },
                             {
-                                "key": "算术",
+                                "key": "算术运算",
                                 "description": "与java中的一样"
                             },
                             {
-                                "key": "逻辑",
-                                "description": "isnull, between, in, like, exists, unique, all, any, and, or"
+                                "key": "逻辑判断",
+                                "description": "【字段】 is null / is not null <br /> 【字段】 between 【值1】 and 【值2】 <br /> 【字段】 in ('【枚举1】', '【枚举2】', ...) <br /> 【字段】 like '-匹配字符串%' <br /> exists (select 1 from 【表】) 集合不为空 <br /> unique (select 【字段】 from 【表】) 记录无重复 <br /> 【字段】 > all 【集合】 <br /> 【字段】 < any 【集合】 <br />  【条件1】 and 【条件2】 <br />  【条件1】 or 【条件2】 "
+                            },
+                            {
+                                "key": "统计函数",
+                                "description": "count <br /> sum <br /> max <br /> min <br /> avg"
+                            },
+                            {
+                                "key": "字符串函数",
+                                "description": "upper <br /> lower <br /> substring(【字段】,【起始位置】,【长度】)"
                             }
                         ]
                     }

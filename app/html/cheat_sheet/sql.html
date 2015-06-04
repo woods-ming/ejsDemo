@@ -155,21 +155,21 @@
 
 					<dl class="dl-horizontal">
 						<dt>创建</dt>
-						<dd class="text-muted"></dd>
+						<dd class="text-muted">create table 【表】( <br />&nbsp; 【字段】 【数据类型】 【约束】, <br />&nbsp; ... <br /> )</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
 						<dt>修改</dt>
-						<dd class="text-muted"></dd>
+						<dd class="text-muted">alter table 【表】 add(【字段】 【数据类型】 【约束】) <br /> alter table 【表】 modify(【字段】 【数据类型】 【约束】) <br /> alter table 【表】 drop(【字段】 【数据类型】 【约束】)</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
 						<dt>删除</dt>
-						<dd class="text-muted"></dd>
+						<dd class="text-muted">drop table 【表】</dd>
 					</dl>
 
 					
@@ -182,7 +182,41 @@
 
 		
 
-			<h3 class="text-primary" id="0-1">2.Index 索引</h3>
+			<h3 class="text-primary" id="0-1">2.Sequence 序号</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>创建</dt>
+						<dd class="text-muted">create sequence 【序号】 <br />&nbsp; minvalue 【值】 <br />&nbsp; maxvalue 【值】 <br />&nbsp; start with 【值】 <br />&nbsp; increment by 【值】 <br />&nbsp; cache 【值】</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>修改</dt>
+						<dd class="text-muted">alter sequence 【序号】 【属性】 【值】</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>删除</dt>
+						<dd class="text-muted">drop sequence 【序号】</dd>
+					</dl>
+
+					
+
+			
+
+			
+
+			</div>
+
+		
+
+			<h3 class="text-primary" id="0-2">3.Index 索引</h3>
 			<div class="section">
 
 			
@@ -235,21 +269,21 @@
 
 					<dl class="dl-horizontal">
 						<dt>插入</dt>
-						<dd class="text-muted"></dd>
+						<dd class="text-muted">insert into 【表】(【各字段的名称】) values(【一条记录】) <br /> insert into 【表】(【各字段的名称】) (【记录集合】)</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
 						<dt>更新</dt>
-						<dd class="text-muted"></dd>
+						<dd class="text-muted">update 【表】 set 【字段】=【值】 where 【条件】</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
 						<dt>删除</dt>
-						<dd class="text-muted"></dd>
+						<dd class="text-muted">delete from 【表】 where 【条件】</dd>
 					</dl>
 
 					
@@ -281,7 +315,7 @@
 
 					<dl class="dl-horizontal">
 						<dt>单表查询</dt>
-						<dd class="text-muted">select * from 【表】 <br />where 【条件】 <br />group by 【列名】 <br />order by 【列名】 asc/desc</dd>
+						<dd class="text-muted">select 【字段】 from 【表】 <br />&nbsp; where 【条件】 <br />&nbsp; group by 【列名】 <br />&nbsp; order by 【列名】 asc/desc</dd>
 					</dl>
 
 					
@@ -314,22 +348,36 @@
 			
 
 					<dl class="dl-horizontal">
-						<dt>比较</dt>
+						<dt>关系比较</dt>
 						<dd class="text-muted">=, <>, >, >=, <, <=</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>算术</dt>
+						<dt>算术运算</dt>
 						<dd class="text-muted">与java中的一样</dd>
 					</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>逻辑</dt>
-						<dd class="text-muted">isnull, between, in, like, exists, unique, all, any, and, or</dd>
+						<dt>逻辑判断</dt>
+						<dd class="text-muted">【字段】 is null / is not null <br /> 【字段】 between 【值1】 and 【值2】 <br /> 【字段】 in ('【枚举1】', '【枚举2】', ...) <br /> 【字段】 like '-匹配字符串%' <br /> exists (select 1 from 【表】) 集合不为空 <br /> unique (select 【字段】 from 【表】) 记录无重复 <br /> 【字段】 > all 【集合】 <br /> 【字段】 < any 【集合】 <br />  【条件1】 and 【条件2】 <br />  【条件1】 or 【条件2】 </dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>统计函数</dt>
+						<dd class="text-muted">count <br /> sum <br /> max <br /> min <br /> avg</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>字符串函数</dt>
+						<dd class="text-muted">upper <br /> lower <br /> substring(【字段】,【起始位置】,【长度】)</dd>
 					</dl>
 
 					
@@ -530,7 +578,11 @@
 
                         
 
-                        <li><a href="#0-1">2.Index 索引</a></li>
+                        <li><a href="#0-1">2.Sequence 序号</a></li>
+
+                        
+
+                        <li><a href="#0-2">3.Index 索引</a></li>
 
                         
 
