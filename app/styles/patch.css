@@ -26,7 +26,7 @@ body {
 }
 
 h3{
-	padding-left: 160px;
+	padding-left: 30%;
 }
 
 .section{
@@ -35,4 +35,9 @@ h3{
 
 .dl-horizontal dt {
  	white-space: pre-wrap;
+ 	width: 30%;
+}
+
+.dl-horizontal dd {
+	margin-left: 32%;
 }

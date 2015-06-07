@@ -1,7 +1,7 @@
 {
     "题目": "初学Java",
-    "摘要": "从零开始学习Java，先搭建开发环境",
-    "关键字": "初学Java",
+    "摘要": "从零开始学习Java",
+    "关键字": "Java入门",
     "正文": {
         "chapters": [
             {
@@ -217,6 +217,28 @@
                             {
                                 "key": "本质",
                                 "description": "运行Jsp页面时，调用的逻辑"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、Java API",
+                "sections": [
+                    {
+                        "name": "1.集合框架",
+                        "blocks": [
+                            {
+                                "key": "Collection",
+                                "description": "List &rarr; ArrayList <br /> Set &rarr; HashSet <br /> Queue &rarr; LinkedList  &nbsp; "
+                            },
+                            {
+                                "key": "Map",
+                                "description": "HashMap"
+                            },
+                            {
+                                "key": "工具类",
+                                "description": "Collections, Comparable, Comparator"
                             }
                         ]
                     }
