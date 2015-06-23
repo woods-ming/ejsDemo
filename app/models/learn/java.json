@@ -29,6 +29,10 @@
                             {
                                 "key": "Path",
                                 "description": "%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;"
+                            },
+                            {
+                                "key": "指定java版本",
+                                "description": "java -version: "
                             }
                         ]
                     },
@@ -73,8 +77,20 @@
                                 "description": "Preference\\Java\\Installed JREs：选择jdk安装目录"
                             },
                             {
+                                "key": "配置Tomcat",
+                                "description": "Preference\\Server\\Runtime Enviorments：添加Apache Tomcat v8.0及安装目录 || JRE选择jdk开头的"
+                            },
+                            {
+                                "key": "配置Content Assist",
+                                "description": "Preference\\Java\\Content Assist\\Auto activacation：输入'.abc...z'"
+                            },
+                            {
+                                "key": "打开Tomcat",
+                                "description": "Window\\Show View\\Servers：<kbd>右键</kbd> start"
+                            },
+                            {
                                 "key": "配置编码格式",
-                                "description": "General\\WorkSpace\\Text file encoding：UTF-8 <br />General\\Web\\JSP Files\\Encoding：ISO 10646/Unicode(UTF-8)"
+                                "description": "General\\WorkSpace\\Text file encoding：UTF-8 <br />Web\\JSP Files\\Encoding：ISO 10646/Unicode(UTF-8)"
                             },
                             {
                                 "key": "关闭拼写检查",
@@ -83,14 +99,6 @@
                             {
                                 "key": "安装插件",
                                 "description": "Help\\Eclipse Marketplace"
-                            },
-                            {
-                                "key": "配置Tomcat",
-                                "description": "Preference\\Server\\Runtime Enviorments：添加Apache Tomcat v8.0及安装目录 || JRE选择jdk开头的"
-                            },
-                            {
-                                "key": "打开Tomcat",
-                                "description": "Window\\Show View\\Servers：<kbd>右键</kbd> start"
                             }
                         ]
                     },
@@ -104,6 +112,27 @@
                             {
                                 "key": "安装",
                                 "description": "两个文件解压到同一个目录，<kbd>双击</kbd> setup.exe"
+                            },
+                            {
+                                "key": "删除",
+                                "description": "安装目录\\product\\11.2.0\\dbhome_1\\deinstall， <kbd>双击</kbd> deinstall.bat"
+                            },
+                            {
+                                "key": "ORACLE_HOME",
+                                "description": "F:\\oracle\\product\\10.2.0\\db_1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.安装PL/Sql Developer",
+                        "blocks": [
+                            {
+                                "key": "下载（破解版）",
+                                "description": "http://gd.ddooo.com:8081/uuauth/PLSQLDeveloper_13356.rar"
+                            },
+                            {
+                                "key": "配置",
+                                "description": "Tools\\Preferences ...\\Connection, Oracle Home使用自动检测"
                             }
                         ]
                     }
@@ -239,6 +268,122 @@
                             {
                                 "key": "工具类",
                                 "description": "Collections, Comparable, Comparator"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、Oracle基础",
+                "sections": [
+                    {
+                        "name": "1.系统用户",
+                        "blocks": [
+                            {
+                                "key": "概念",
+                                "description": "系统自带的4个用户"
+                            },
+                            {
+                                "key": "sys",
+                                "description": "sysdba/sysoper"
+                            },
+                            {
+                                "key": "system",
+                                "description": "normal"
+                            },
+                            {
+                                "key": "sysman",
+                                "description": "normal"
+                            },
+                            {
+                                "key": "scott",
+                                "description": "tiger"
+                            },
+                            {
+                                "key": "登录",
+                                "description": "connect 用户名/密码 @服务器地址 as normal/sysdba/sysoper"
+                            },
+                            {
+                                "key": "查看登录用户",
+                                "description": "show user"
+                            },
+                            {
+                                "key": "用户的数据字典",
+                                "description": "dba_users"
+                            },
+                            {
+                                "key": "启用用户",
+                                "description": "alter user 用户名 account unlock;"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.表空间",
+                        "blocks": [
+                            {
+                                "key": "概念",
+                                "description": "数据的逻辑分类，包含多个数据文件"
+                            },
+                            {
+                                "key": "永久表空间",
+                                "description": "表、视图、存储过程等"
+                            },
+                            {
+                                "key": "临时表空间",
+                                "description": "执行时的中间过程，执行完删除"
+                            },
+                            {
+                                "key": "undo表空间",
+                                "description": "为事务服务，保存修改前的数据"
+                            },
+                            {
+                                "key": "dba_tablespaces / user_tablespaces",
+                                "description": "表空间相关的信息"
+                            },
+                            {
+                                "key": "dba_data_files / user_data_files",
+                                "description": "数据文件相关的信息"
+                            },
+                            {
+                                "key": "修改默认表空间",
+                                "description": "alter user 用户名 default tablespace 表空间"
+                            },
+                            {
+                                "key": "创建表空间",
+                                "description": "create tablespace 表空间 datafile 'xxx.dbf' size 10m;"
+                            },
+                            {
+                                "key": "删除表空间",
+                                "description": "drop tablespace 表空间 including contents;"
+                            },
+                            {
+                                "key": "增加数据文件",
+                                "description": "alter tablespace 表空间 add datafile 'xxx.dbf' size 10m;"
+                            },
+                            {
+                                "key": "删除数据文件",
+                                "description": "alter tablespace 表空间 drop datafile 'xxx.dbf';"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.表",
+                        "blocks": [
+                            {
+                                "key": "概念",
+                                "description": "二维结构的基本存储单位"
+                            },
+                            {
+                                "key": "数据类型",
+                                "description": "字符型 <code>char(n)/nchar(n), varchar2(n)/nvarchar2(n)</code> <br /> 数值型 <code>number(有效数字,小数位数), float(n)</code> <br /> 日期型 <code>date, timestamp</code> <br /> 大对象 <code>blob【二进制存储】, clob【字符串存储】</code>"
+                            },
+                            {
+                                "key": "约束",
+                                "description": "非空约束 <code>not null</code> <br /> 主键约束 <code>primary key / constraint 【约束名】 primary key(【字段1,2...】)</code> <br /> 外键约束 <code>reference 【主表】(【字段】) / constraint 【约束名】 foreign key(【从表字段】) references 【主表】(【主表字段】) on delete cascade</code> <br /> 唯一约束 <code>unique / constraint 【约束名】 unique(【字段】)</code> <br /> 检查约束 <code>check(【条件】) / constraint 【约束名】 check(【条件】)</code>"
+                            },
+                            {
+                                "key": "约束的数据字典",
+                                "description": "user_constraints"
                             }
                         ]
                     }

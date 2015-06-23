@@ -5,7 +5,7 @@
     "正文": {
         "chapters": [
             {
-                "name": "一、Data Define Language",
+                "name": "一、数据定义",
                 "sections": [
                     {
                         "name": "1.Table 表",
@@ -16,11 +16,15 @@
                             },
                             {
                                 "key": "修改",
-                                "description": "alter table 【表】 add(【字段】 【数据类型】 【约束】) <br /> alter table 【表】 modify(【字段】 【数据类型】 【约束】) <br /> alter table 【表】 drop(【字段】 【数据类型】 【约束】)"
+                                "description": "alter table 【表】 add 【字段】 【数据类型】 【约束】 <br /> alter table 【表】 modify 【字段】 【数据类型】 【约束】 <br /> alter table 【表】 drop column 【字段】 <br /> alter table 【表】 rename column 【字段】 to 【新字段名】 <br /> rename 【表】 to 【新表名】"
                             },
                             {
                                 "key": "删除",
                                 "description": "drop table 【表】"
+                            },
+                            {
+                                "key": "查看表结构",
+                                "description": "desc 【表】"
                             }
                         ]
                     },
@@ -61,7 +65,7 @@
                 ]
             },
             {
-                "name": "二、Data Manipulation Language",
+                "name": "二、数据操作",
                 "sections": [
                     {
                         "name": "1.Tables",
@@ -76,14 +80,14 @@
                             },
                             {
                                 "key": "删除",
-                                "description": "delete from 【表】 where 【条件】"
+                                "description": "delete from 【表】 where 【条件】 <br /> truncate table 【表】（删除全部数据，速度快）"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "三、Data Query Language",
+                "name": "三、数据查询",
                 "sections": [
                     {
                         "name": "1.Select",
@@ -130,7 +134,7 @@
                 ]
             },
             {
-                "name": "四、Data Control Language",
+                "name": "四、数据控制",
                 "sections": [
                     {
                         "name": "1.权限",

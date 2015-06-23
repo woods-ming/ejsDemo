@@ -188,6 +188,13 @@
 
 					
 
+					<dl class="dl-horizontal">
+						<dt>指定java版本</dt>
+						<dd class="text-muted">java -version: </dd>
+					</dl>
+
+					
+
 			
 
 			
@@ -271,8 +278,29 @@
 					
 
 					<dl class="dl-horizontal">
+						<dt>配置Tomcat</dt>
+						<dd class="text-muted">Preference\Server\Runtime Enviorments：添加Apache Tomcat v8.0及安装目录 || JRE选择jdk开头的</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>配置Content Assist</dt>
+						<dd class="text-muted">Preference\Java\Content Assist\Auto activacation：输入'.abc...z'</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>打开Tomcat</dt>
+						<dd class="text-muted">Window\Show View\Servers：<kbd>右键</kbd> start</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
 						<dt>配置编码格式</dt>
-						<dd class="text-muted">General\WorkSpace\Text file encoding：UTF-8 <br />General\Web\JSP Files\Encoding：ISO 10646/Unicode(UTF-8)</dd>
+						<dd class="text-muted">General\WorkSpace\Text file encoding：UTF-8 <br />Web\JSP Files\Encoding：ISO 10646/Unicode(UTF-8)</dd>
 					</dl>
 
 					
@@ -287,20 +315,6 @@
 					<dl class="dl-horizontal">
 						<dt>安装插件</dt>
 						<dd class="text-muted">Help\Eclipse Marketplace</dd>
-					</dl>
-
-					
-
-					<dl class="dl-horizontal">
-						<dt>配置Tomcat</dt>
-						<dd class="text-muted">Preference\Server\Runtime Enviorments：添加Apache Tomcat v8.0及安装目录 || JRE选择jdk开头的</dd>
-					</dl>
-
-					
-
-					<dl class="dl-horizontal">
-						<dt>打开Tomcat</dt>
-						<dd class="text-muted">Window\Show View\Servers：<kbd>右键</kbd> start</dd>
 					</dl>
 
 					
@@ -328,6 +342,47 @@
 					<dl class="dl-horizontal">
 						<dt>安装</dt>
 						<dd class="text-muted">两个文件解压到同一个目录，<kbd>双击</kbd> setup.exe</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>删除</dt>
+						<dd class="text-muted">安装目录\product\11.2.0\dbhome_1\deinstall， <kbd>双击</kbd> deinstall.bat</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>ORACLE_HOME</dt>
+						<dd class="text-muted">F:\oracle\product\10.2.0\db_1</dd>
+					</dl>
+
+					
+
+			
+
+			
+
+			</div>
+
+		
+
+			<h3 class="text-primary" id="0-4">5.安装PL/Sql Developer</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>下载（破解版）</dt>
+						<dd class="text-muted">http://gd.ddooo.com:8081/uuauth/PLSQLDeveloper_13356.rar</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>配置</dt>
+						<dd class="text-muted">Tools\Preferences ...\Connection, Oracle Home使用自动检测</dd>
 					</dl>
 
 					
@@ -607,6 +662,225 @@
 	</div>
 
 
+
+	<h2 class="page-header" id="3">四、Oracle基础</h2>
+
+	
+
+	<div class="bs-docs-section">
+
+	
+
+			<h3 class="text-primary" id="3-0">1.系统用户</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>概念</dt>
+						<dd class="text-muted">系统自带的4个用户</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>sys</dt>
+						<dd class="text-muted">sysdba/sysoper</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>system</dt>
+						<dd class="text-muted">normal</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>sysman</dt>
+						<dd class="text-muted">normal</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>scott</dt>
+						<dd class="text-muted">tiger</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>登录</dt>
+						<dd class="text-muted">connect 用户名/密码 @服务器地址 as normal/sysdba/sysoper</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>查看登录用户</dt>
+						<dd class="text-muted">show user</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>用户的数据字典</dt>
+						<dd class="text-muted">dba_users</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>启用用户</dt>
+						<dd class="text-muted">alter user 用户名 account unlock;</dd>
+					</dl>
+
+					
+
+			
+
+			
+
+			</div>
+
+		
+
+			<h3 class="text-primary" id="3-1">2.表空间</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>概念</dt>
+						<dd class="text-muted">数据的逻辑分类，包含多个数据文件</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>永久表空间</dt>
+						<dd class="text-muted">表、视图、存储过程等</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>临时表空间</dt>
+						<dd class="text-muted">执行时的中间过程，执行完删除</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>undo表空间</dt>
+						<dd class="text-muted">为事务服务，保存修改前的数据</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>dba_tablespaces / user_tablespaces</dt>
+						<dd class="text-muted">表空间相关的信息</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>dba_data_files / user_data_files</dt>
+						<dd class="text-muted">数据文件相关的信息</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>修改默认表空间</dt>
+						<dd class="text-muted">alter user 用户名 default tablespace 表空间</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>创建表空间</dt>
+						<dd class="text-muted">create tablespace 表空间 datafile 'xxx.dbf' size 10m;</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>删除表空间</dt>
+						<dd class="text-muted">drop tablespace 表空间 including contents;</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>增加数据文件</dt>
+						<dd class="text-muted">alter tablespace 表空间 add datafile 'xxx.dbf' size 10m;</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>删除数据文件</dt>
+						<dd class="text-muted">alter tablespace 表空间 drop datafile 'xxx.dbf';</dd>
+					</dl>
+
+					
+
+			
+
+			
+
+			</div>
+
+		
+
+			<h3 class="text-primary" id="3-2">3.表</h3>
+			<div class="section">
+
+			
+
+					<dl class="dl-horizontal">
+						<dt>概念</dt>
+						<dd class="text-muted">二维结构的基本存储单位</dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>数据类型</dt>
+						<dd class="text-muted">字符型 <code>char(n)/nchar(n), varchar2(n)/nvarchar2(n)</code> <br /> 数值型 <code>number(有效数字,小数位数), float(n)</code> <br /> 日期型 <code>date, timestamp</code> <br /> 大对象 <code>blob【二进制存储】, clob【字符串存储】</code></dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>约束</dt>
+						<dd class="text-muted">非空约束 <code>not null</code> <br /> 主键约束 <code>primary key / constraint 【约束名】 primary key(【字段1,2...】)</code> <br /> 外键约束 <code>reference 【主表】(【字段】) / constraint 【约束名】 foreign key(【从表字段】) references 【主表】(【主表字段】) on delete cascade</code> <br /> 唯一约束 <code>unique / constraint 【约束名】 unique(【字段】)</code> <br /> 检查约束 <code>check(【条件】) / constraint 【约束名】 check(【条件】)</code></dd>
+					</dl>
+
+					
+
+					<dl class="dl-horizontal">
+						<dt>约束的数据字典</dt>
+						<dd class="text-muted">user_constraints</dd>
+					</dl>
+
+					
+
+			
+
+			
+
+			</div>
+
+		
+
+	</div>
+
+
                 </div>
 
                 <div class="bs-callout bs-callout-info">
@@ -653,6 +927,10 @@
 
                         
 
+                        <li><a href="#0-4">5.安装PL/Sql Developer</a></li>
+
+                        
+
                 </ul>
             </li>
 
@@ -692,6 +970,29 @@
                     
 
                         <li><a href="#2-0">1.集合框架</a></li>
+
+                        
+
+                </ul>
+            </li>
+
+            
+
+            <li>
+                <a href="#3">四、Oracle基础</a>
+                <ul class="nav">
+
+                    
+
+                        <li><a href="#3-0">1.系统用户</a></li>
+
+                        
+
+                        <li><a href="#3-1">2.表空间</a></li>
+
+                        
+
+                        <li><a href="#3-2">3.表</a></li>
 
                         
 
