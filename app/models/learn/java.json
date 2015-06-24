@@ -118,8 +118,12 @@
                                 "description": "安装目录\\product\\11.2.0\\dbhome_1\\deinstall， <kbd>双击</kbd> deinstall.bat"
                             },
                             {
+                                "key": "注意",
+                                "description": "win8下出现很多奇怪的错误，多数情况下右键.exe文件，选择兼容模式和管理员身份"
+                            },
+                            {
                                 "key": "ORACLE_HOME",
-                                "description": "F:\\oracle\\product\\10.2.0\\db_1"
+                                "description": "F:\\oracle\\product\\10.2.0\\db_2"
                             }
                         ]
                     },
