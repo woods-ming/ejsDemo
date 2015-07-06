@@ -58,7 +58,74 @@
                         ]
                     },
                     {
-                        "name": "3.安装Eclipse",
+                        "name": "3.安装Oracle服务端",
+                        "blocks": [
+                            {
+                                "key": "下载（11g）",
+                                "description": "http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html 两个文件都下载"
+                            },
+                            {
+                                "key": "安装",
+                                "description": "两个文件解压到同一个目录，<kbd>双击</kbd> setup.exe"
+                            },
+                            {
+                                "key": "删除",
+                                "description": "安装目录\\product\\11.2.0\\dbhome_1\\deinstall， <kbd>双击</kbd> deinstall.bat"
+                            },
+                            {
+                                "key": "注意",
+                                "description": "win8下出现很多奇怪的错误，多数情况下右键.exe文件，选择兼容模式和管理员身份"
+                            },
+                            {
+                                "key": "ORACLE_HOME",
+                                "description": "F:\\oracle\\product\\10.2.0\\db_2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.安装Oracle客户端",
+                        "blocks": [
+                            {
+                                "key": "下载（32位）",
+                                "description": "http://www.oracle.com/technetwork/topics/winsoft-085727.html 由于PL/Sql Developer是32位的，要保持一致"
+                            },
+                            {
+                                "key": "安装",
+                                "description": "直接解压，并创建 \\NETWORK\\ADMIN\\ 目录，放置tnsnames.ora文件"
+                            },
+                            {
+                                "key": "ORACLE_HOME",
+                                "description": "C:\\instantclient_10_2"
+                            },
+                            {
+                                "key": "TNS_ADMIN",
+                                "description": "C:\\instantclient_10_2\\NETWORK\\ADMIN\\"
+                            },
+                            {
+                                "key": "NLS_LANG",
+                                "description": "SIMPLIFIED CHINESE_CHINA.ZHS16GBK"
+                            },
+                            {
+                                "key": "配置tnsnames.ora",
+                                "description": "指定各个数据库的连接字符串"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.安装PL/Sql Developer",
+                        "blocks": [
+                            {
+                                "key": "下载（破解版）",
+                                "description": "http://gd.ddooo.com:8081/uuauth/PLSQLDeveloper_13356.rar"
+                            },
+                            {
+                                "key": "配置",
+                                "description": "Tools\\Preferences ...\\Connection, <br /> Oracle Home：与环境变量一致, <br /> OCI Library：指向oci.dll"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.安装Eclipse",
                         "blocks": [
                             {
                                 "key": "下载",
@@ -99,44 +166,6 @@
                             {
                                 "key": "安装插件",
                                 "description": "Help\\Eclipse Marketplace"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "4.安装Oracle",
-                        "blocks": [
-                            {
-                                "key": "下载（11g）",
-                                "description": "http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html 两个文件都下载"
-                            },
-                            {
-                                "key": "安装",
-                                "description": "两个文件解压到同一个目录，<kbd>双击</kbd> setup.exe"
-                            },
-                            {
-                                "key": "删除",
-                                "description": "安装目录\\product\\11.2.0\\dbhome_1\\deinstall， <kbd>双击</kbd> deinstall.bat"
-                            },
-                            {
-                                "key": "注意",
-                                "description": "win8下出现很多奇怪的错误，多数情况下右键.exe文件，选择兼容模式和管理员身份"
-                            },
-                            {
-                                "key": "ORACLE_HOME",
-                                "description": "F:\\oracle\\product\\10.2.0\\db_2"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "5.安装PL/Sql Developer",
-                        "blocks": [
-                            {
-                                "key": "下载（破解版）",
-                                "description": "http://gd.ddooo.com:8081/uuauth/PLSQLDeveloper_13356.rar"
-                            },
-                            {
-                                "key": "配置",
-                                "description": "Tools\\Preferences ...\\Connection, Oracle Home使用自动检测"
                             }
                         ]
                     }
@@ -388,6 +417,95 @@
                             {
                                 "key": "约束的数据字典",
                                 "description": "user_constraints"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "五、PL/Sql",
+                "sections": [
+                    {
+                        "name": "1.概念",
+                        "blocks": [
+                            {
+                                "key": "定义",
+                                "description": "SQL语句的超集，运行在Oracle上"
+                            },
+                            {
+                                "key": "逻辑单元",
+                                "description": "PL/Sql程序块，可独立编译并存储在数据库中，以四种形式存储：函数、过程、包、触发器"
+                            },
+                            {
+                                "key": "函数",
+                                "description": "输入参数：任意，返回值：1个，调用："
+                            },
+                            {
+                                "key": "过程",
+                                "description": "输入参数：任意，返回值：无，调用：execute 过程名"
+                            },
+                            {
+                                "key": "包",
+                                "description": "输入参数：任意，返回值：无，调用：execute 过程名"
+                            },
+                            {
+                                "key": "触发器",
+                                "description": "输入参数：无，返回值：无，调用：事件引发"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.语法",
+                        "blocks": [
+                            {
+                                "key": "声明",
+                                "description": "<code>变量名 数据类型; </code>"
+                            },
+                            {
+                                "key": "赋值",
+                                "description": "<code>变量 := 值; </code>"
+                            },
+                            {
+                                "key": "算术操作符",
+                                "description": "加<code>+</code>、减<code>-</code>、乘<code>*</code>、除<code>/</code>、乘方<code>**</code>"
+                            },
+                            {
+                                "key": "关系操作符",
+                                "description": "相等<code>=</code>、不等<code>!= / &lt;&gt;</code>、其它的都一样"
+                            },
+                            {
+                                "key": "比较操作符",
+                                "description": "为空<code>is null</code>、模糊匹配<code>like</code>、区间<code>between and</code>、枚举<code>in</code>"
+                            },
+                            {
+                                "key": "逻辑操作符",
+                                "description": "与<code>and</code>、或<code>or</code>、非<code>not</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.流程控制",
+                        "codeSnippets": [
+                            {
+                                "description": "分支",
+                                "url": "/codeSnippets/plsql/plsql_if.sql"
+                            },
+                            {
+                                "description": "循环1：LOOP",
+                                "url": "/codeSnippets/plsql/plsql_loop.sql"
+                            },
+                            {
+                                "description": "循环2：WHILE",
+                                "url": "/codeSnippets/plsql/plsql_while.sql"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.示例",
+                        "codeSnippets": [
+                            {
+                                "description": "PL/Sql 程序块",
+                                "url": "/codeSnippets/plsql/plsql_block.sql"
                             }
                         ]
                     }

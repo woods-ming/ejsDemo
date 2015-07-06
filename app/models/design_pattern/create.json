@@ -42,11 +42,11 @@
                         "codeSnippets": [
                             {
                                 "description": "代码简单，对象预加载，如果没被用到会造成资源浪费",
-                                "url": "/codeSnippets/singleton1.java"
+                                "url": "/codeSnippets/design_pattern/singleton1.java"
                             },
                             {
                                 "description": "同步 + 双检查，对象懒加载，初次资源竞争时会降低执行速度",
-                                "url": "/codeSnippets/singleton2.java"
+                                "url": "/codeSnippets/design_pattern/singleton2.java"
                             }
                         ]
                     },
