@@ -153,16 +153,16 @@
 			
 
 					<dl class="dl-horizontal">
-						<dt>下载</dt>
-						<dd class="text-muted">http://stylecop.codeplex.com/</dd>
-					</dl>
+	<dt>下载</dt>
+	<dd class="text-muted">http://stylecop.codeplex.com/</dd>
+</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>安装</dt>
-						<dd class="text-muted">默认安装到C:\Program Files (x86)\下 <br />StyleCop 4.7 中存放安装文件 <br />MSBuild\StyleCop\v4.7 中存放编译器对StyleCop的引用</dd>
-					</dl>
+	<dt>安装</dt>
+	<dd class="text-muted">默认安装到C:\Program Files (x86)\下 <br />StyleCop 4.7 中存放安装文件 <br />MSBuild\StyleCop\v4.7 中存放编译器对StyleCop的引用</dd>
+</dl>
 
 					
 
@@ -180,30 +180,30 @@
 			
 
 					<dl class="dl-horizontal">
-						<dt>生成配置文件</dt>
-						<dd class="text-muted">打开Visual Studio，在任意一个工程上<kbd>右键</kbd> StyleCop Settings</dd>
-					</dl>
+	<dt>生成配置文件</dt>
+	<dd class="text-muted">打开Visual Studio，在任意一个工程上<kbd>右键</kbd> StyleCop Settings</dd>
+</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>配置规则</dt>
-						<dd class="text-muted">默认启用了所有检查规则，根据需要去掉一些规则</dd>
-					</dl>
+	<dt>配置规则</dt>
+	<dd class="text-muted">默认启用了所有检查规则，根据需要去掉一些规则</dd>
+</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>全局应用</dt>
-						<dd class="text-muted">从工程根目录中剪切Settings.StyleCop，粘贴到解决方案的根目录中</dd>
-					</dl>
+	<dt>全局应用</dt>
+	<dd class="text-muted">从工程根目录中剪切Settings.StyleCop，粘贴到解决方案的根目录中</dd>
+</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>规则覆盖</dt>
-						<dd class="text-muted">子目录中的Settings.StyleCop，可以在父目录的基础上，扩展更严格的规则</dd>
-					</dl>
+	<dt>规则覆盖</dt>
+	<dd class="text-muted">子目录中的Settings.StyleCop，可以在父目录的基础上，扩展更严格的规则</dd>
+</dl>
 
 					
 
@@ -221,9 +221,9 @@
 			
 
 					<dl class="dl-horizontal">
-						<dt>编译触发检查</dt>
-						<dd class="text-muted">编辑所有 .csproj文件，搜索“Microsoft.CSharp.targets” <br />在后面添加<code>&lt;Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" /&gt;</code></dd>
-					</dl>
+	<dt>编译触发检查</dt>
+	<dd class="text-muted">编辑所有 .csproj文件，搜索“Microsoft.CSharp.targets” <br />在后面添加<code>&lt;Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" /&gt;</code></dd>
+</dl>
 
 					
 
@@ -253,16 +253,16 @@
 			
 
 					<dl class="dl-horizontal">
-						<dt>方式</dt>
-						<dd class="text-muted">通过版本控制工具，建立StyleCop共享目录</dd>
-					</dl>
+	<dt>方式</dt>
+	<dd class="text-muted">通过版本控制工具，建立StyleCop共享目录</dd>
+</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>拷贝内容</dt>
-						<dd class="text-muted">C:\Program Files (x86)\下的 安装文件和MSBuild文件</dd>
-					</dl>
+	<dt>拷贝内容</dt>
+	<dd class="text-muted">C:\Program Files (x86)\下的 安装文件和MSBuild文件</dd>
+</dl>
 
 					
 
@@ -280,16 +280,16 @@
 			
 
 					<dl class="dl-horizontal">
-						<dt>共享的StyleCop.Targets</dt>
-						<dd class="text-muted">搜索“UsingTask”，将引用路径修改为共享文件夹下StyleCop.dll的相对路径 <br />即：<code>&lt;UsingTask AssemblyFile="StyleCop.dll" TaskName="StyleCopTask"/&gt;</code></dd>
-					</dl>
+	<dt>共享的StyleCop.Targets</dt>
+	<dd class="text-muted">搜索“UsingTask”，将引用路径修改为共享文件夹下StyleCop.dll的相对路径 <br />即：<code>&lt;UsingTask AssemblyFile="StyleCop.dll" TaskName="StyleCopTask"/&gt;</code></dd>
+</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>所有 .csproj文件</dt>
-						<dd class="text-muted">搜索“Microsoft.CSharp.targets” <br />修改后面StyleCop.targets的引用路径，指向共享文件夹下的副本 <br />即：<code>&lt;Import Project="..\StyleCop\v4.7\StyleCop.Targets" /&gt;</code></dd>
-					</dl>
+	<dt>所有 .csproj文件</dt>
+	<dd class="text-muted">搜索“Microsoft.CSharp.targets” <br />修改后面StyleCop.targets的引用路径，指向共享文件夹下的副本 <br />即：<code>&lt;Import Project="..\StyleCop\v4.7\StyleCop.Targets" /&gt;</code></dd>
+</dl>
 
 					
 
@@ -307,16 +307,16 @@
 			
 
 					<dl class="dl-horizontal">
-						<dt>获取配置</dt>
-						<dd class="text-muted">使用版本控制工具，更新目录</dd>
-					</dl>
+	<dt>获取配置</dt>
+	<dd class="text-muted">使用版本控制工具，更新目录</dd>
+</dl>
 
 					
 
 					<dl class="dl-horizontal">
-						<dt>检查</dt>
-						<dd class="text-muted">在Visual Studio中编译工程或解决方案，查看错误列表中的警告</dd>
-					</dl>
+	<dt>检查</dt>
+	<dd class="text-muted">在Visual Studio中编译工程或解决方案，查看错误列表中的警告</dd>
+</dl>
 
 					
 

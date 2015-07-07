@@ -186,20 +186,342 @@
                         "blocks": [
                             {
                                 "key": "commit",
-                                "description": ""
+                                "description": "提交更改"
                             },
                             {
                                 "key": "rollback",
-                                "description": ""
+                                "description": "放弃更改"
                             },
                             {
                                 "key": "savepoint",
-                                "description": ""
+                                "description": "保存点，可以实现事务分段撤销"
                             },
                             {
                                 "key": "set transaction",
-                                "description": ""
+                                "description": "设置事务的属性"
                             }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "附录一、Oracle环境搭建",
+                "sections": [
+                    {
+                        "name": "1.安装Oracle服务端",
+                        "blocks": [
+                            {
+                                "key": "下载（11g）",
+                                "description": "http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html 两个文件都下载"
+                            },
+                            {
+                                "key": "安装",
+                                "description": "两个文件解压到同一个目录，<kbd>双击</kbd> setup.exe"
+                            },
+                            {
+                                "key": "删除",
+                                "description": "安装目录\\product\\11.2.0\\dbhome_1\\deinstall， <kbd>双击</kbd> deinstall.bat"
+                            },
+                            {
+                                "key": "注意",
+                                "description": "win8下出现很多奇怪的错误，多数情况下右键.exe文件，选择兼容模式和管理员身份"
+                            },
+                            {
+                                "key": "ORACLE_HOME",
+                                "description": "F:\\oracle\\product\\10.2.0\\db_2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.安装Oracle客户端",
+                        "blocks": [
+                            {
+                                "key": "下载（32位）",
+                                "description": "http://www.oracle.com/technetwork/topics/winsoft-085727.html （由于PL/Sql Developer是32位的，要保持一致）"
+                            },
+                            {
+                                "key": "安装",
+                                "description": "直接解压，并创建 \\NETWORK\\ADMIN\\ 目录，放置tnsnames.ora文件"
+                            },
+                            {
+                                "key": "ORACLE_HOME",
+                                "description": "C:\\instantclient_10_2"
+                            },
+                            {
+                                "key": "TNS_ADMIN",
+                                "description": "C:\\instantclient_10_2\\NETWORK\\ADMIN\\"
+                            },
+                            {
+                                "key": "NLS_LANG",
+                                "description": "SIMPLIFIED CHINESE_CHINA.ZHS16GBK"
+                            },
+                            {
+                                "key": "配置tnsnames.ora",
+                                "description": "指定各个数据库的连接字符串"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.安装PL/Sql Developer",
+                        "blocks": [
+                            {
+                                "key": "下载（破解版）",
+                                "description": "http://gd.ddooo.com:8081/uuauth/PLSQLDeveloper_13356.rar"
+                            },
+                            {
+                                "key": "配置",
+                                "description": "Tools\\Preferences ...\\Connection, <br /> Oracle Home：与环境变量一致, <br /> OCI Library：指向oci.dll"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "附录二、Oracle基础",
+                "sections": [
+                    {
+                        "name": "1.系统用户",
+                        "blocks": [
+                            {
+                                "key": "概念",
+                                "description": "系统自带的4个用户"
+                            },
+                            {
+                                "key": "sys",
+                                "description": "sysdba/sysoper"
+                            },
+                            {
+                                "key": "system",
+                                "description": "normal"
+                            },
+                            {
+                                "key": "sysman",
+                                "description": "normal"
+                            },
+                            {
+                                "key": "scott",
+                                "description": "tiger"
+                            },
+                            {
+                                "key": "登录",
+                                "description": "connect 用户名/密码 @服务器地址 as normal/sysdba/sysoper"
+                            },
+                            {
+                                "key": "查看登录用户",
+                                "description": "show user"
+                            },
+                            {
+                                "key": "用户的数据字典",
+                                "description": "dba_users"
+                            },
+                            {
+                                "key": "启用用户",
+                                "description": "alter user 用户名 account unlock;"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.表空间",
+                        "blocks": [
+                            {
+                                "key": "概念",
+                                "description": "数据的逻辑分类，包含多个数据文件"
+                            },
+                            {
+                                "key": "永久表空间",
+                                "description": "表、视图、存储过程等"
+                            },
+                            {
+                                "key": "临时表空间",
+                                "description": "执行时的中间过程，执行完删除"
+                            },
+                            {
+                                "key": "undo表空间",
+                                "description": "为事务服务，保存修改前的数据"
+                            },
+                            {
+                                "key": "dba_tablespaces / user_tablespaces",
+                                "description": "表空间相关的信息"
+                            },
+                            {
+                                "key": "dba_data_files / user_data_files",
+                                "description": "数据文件相关的信息"
+                            },
+                            {
+                                "key": "修改默认表空间",
+                                "description": "alter user 用户名 default tablespace 表空间"
+                            },
+                            {
+                                "key": "创建表空间",
+                                "description": "create tablespace 表空间 datafile 'xxx.dbf' size 10m;"
+                            },
+                            {
+                                "key": "删除表空间",
+                                "description": "drop tablespace 表空间 including contents;"
+                            },
+                            {
+                                "key": "增加数据文件",
+                                "description": "alter tablespace 表空间 add datafile 'xxx.dbf' size 10m;"
+                            },
+                            {
+                                "key": "删除数据文件",
+                                "description": "alter tablespace 表空间 drop datafile 'xxx.dbf';"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.表",
+                        "blocks": [
+                            {
+                                "key": "概念",
+                                "description": "二维结构的基本存储单位"
+                            },
+                            {
+                                "key": "数据类型",
+                                "description": "字符型 <code>char(n)/nchar(n), varchar2(n)/nvarchar2(n)</code> <br /> 数值型 <code>number(有效数字,小数位数), float(n)</code> <br /> 日期型 <code>date, timestamp</code> <br /> 大对象 <code>blob【二进制存储】, clob【字符串存储】</code>"
+                            },
+                            {
+                                "key": "约束",
+                                "description": "非空约束 <code>not null</code> <br /> 主键约束 <code>primary key / constraint 【约束名】 primary key(【字段1,2...】)</code> <br /> 外键约束 <code>reference 【主表】(【字段】) / constraint 【约束名】 foreign key(【从表字段】) references 【主表】(【主表字段】) on delete cascade</code> <br /> 唯一约束 <code>unique / constraint 【约束名】 unique(【字段】)</code> <br /> 检查约束 <code>check(【条件】) / constraint 【约束名】 check(【条件】)</code>"
+                            },
+                            {
+                                "key": "约束的数据字典",
+                                "description": "user_constraints"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "附录三、PL/Sql基础",
+                "sections": [
+                    {
+                        "name": "1.概念",
+                        "blocks": [
+                            {
+                                "key": "定义",
+                                "description": "SQL语句的超集，运行在Oracle上"
+                            },
+                            {
+                                "key": "逻辑单元",
+                                "description": "PL/Sql程序块，可独立编译并存储在数据库中，以四种形式存储：函数、过程、包、触发器"
+                            },
+                            {
+                                "key": "函数",
+                                "description": "输入参数：任意，返回值：1个，调用："
+                            },
+                            {
+                                "key": "过程",
+                                "description": "输入参数：任意，返回值：无，调用：execute 过程名"
+                            },
+                            {
+                                "key": "包",
+                                "description": "输入参数：任意，返回值：无，调用："
+                            },
+                            {
+                                "key": "触发器",
+                                "description": "输入参数：无，返回值：无，调用：事件引发"
+                            },
+                            {
+                                "key": "记录",
+                                "description": "当成结构体来用，有2种定义方式：显示和隐式"
+                            },
+                            {
+                                "key": "集合",
+                                "description": "当成数组来用"
+                            },
+                            {
+                                "key": "游标",
+                                "description": "指向集合的指针，作用是遍历集合"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.语法",
+                        "blocks": [
+                            {
+                                "key": "声明",
+                                "description": "<code>[变量名] 数据类型; </code>"
+                            },
+                            {
+                                "key": "赋值",
+                                "description": "<code>[变量] := 值; </code>"
+                            },
+                            {
+                                "key": "算术操作符",
+                                "description": "加<code>+</code>、减<code>-</code>、乘<code>*</code>、除<code>/</code>、乘方<code>**</code>"
+                            },
+                            {
+                                "key": "关系操作符",
+                                "description": "相等<code>=</code>、不等<code>!= / &lt;&gt;</code>、其它的都一样"
+                            },
+                            {
+                                "key": "比较操作符",
+                                "description": "为空<code>is null</code>、模糊匹配<code>like</code>、区间<code>between and</code>、枚举<code>in</code>"
+                            },
+                            {
+                                "key": "逻辑操作符",
+                                "description": "与<code>and</code>、或<code>or</code>、非<code>not</code>"
+                            },
+                            {
+                                "key": "抛出异常",
+                                "description": "<code>raise [异常名称]</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码模版",
+                        "codeSnippets": [
+                            {
+                                "description": "PL/Sql 程序块",
+                                "url": "/codeSnippets/plsql/block.sql"
+                            },
+                            {
+                                "description": "分支",
+                                "url": "/codeSnippets/plsql/if.sql"
+                            },
+                            {
+                                "description": "循环1：LOOP",
+                                "url": "/codeSnippets/plsql/loop.sql"
+                            },
+                            {
+                                "description": "循环2：WHILE",
+                                "url": "/codeSnippets/plsql/while.sql"
+                            },
+                            {
+                                "description": "异常处理：Exception",
+                                "url": "/codeSnippets/plsql/exception.sql"
+                            },
+                            {
+                                "description": "记录定义1：显式",
+                                "url": "/codeSnippets/plsql/record_explicit.sql"
+                            },
+                            {
+                                "description": "记录定义2：隐式",
+                                "url": "/codeSnippets/plsql/record_implicit.sql"
+                            },
+                            {
+                                "description": "记录赋值1：select into",
+                                "url": "/codeSnippets/plsql/record_SelectInto.sql"
+                            },
+                            {
+                                "description": "记录赋值2：fetch into",
+                                "url": "/codeSnippets/plsql/record_FetchInto.sql"
+                            },
+                            {
+                                "description": "集合定义1：Index_by",
+                                "url": "/codeSnippets/plsql/collection_Index_by.sql"
+                            },
+                            {
+                                "description": "游标的使用",
+                                "url": "/codeSnippets/plsql/collection_cursor.sql"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.示例",
+                        "codeSnippets": [
+                            
                         ]
                     }
                 ]

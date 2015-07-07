@@ -25,10 +25,7 @@ for(var i = 0; i < content.chapters.length; i++) {
 					var block = section.blocks[k]; 
 					%>
 
-					<dl class="dl-horizontal">
-						<dt><%- block.key %></dt>
-						<dd class="text-muted"><%- block.description %></dd>
-					</dl>
+					<%- include('block', { block: block }); %>
 
 					<% 
 				} 
@@ -41,10 +38,7 @@ for(var i = 0; i < content.chapters.length; i++) {
 					var codeSnippet = section.codeSnippets[k]; 
 					%>
 
-					<div class="highlight">
-					<span class="text-muted"><%- codeSnippet.description %></span>
-					<pre><code class="prettyprint linenums" data-code-url="<%= codeSnippet.url %>"></code></pre>
-					</div>
+					<%- include('codeSnippet', { codeSnippet: codeSnippet }); %>
 
 					<% 
 				} 
@@ -57,7 +51,7 @@ for(var i = 0; i < content.chapters.length; i++) {
 					var image = section.images[k]; 
 					%>
 
-					<img src="<%= image.url %>" class="img-thumbnail img-responsive" title="<%= image.alt %>" alt="<%= image.alt %>">
+					<%- include('image', { image: image }); %>
 
 					<% 
 				} 
