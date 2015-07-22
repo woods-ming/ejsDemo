@@ -408,15 +408,15 @@
                             },
                             {
                                 "key": "函数",
-                                "description": "输入参数：任意，返回值：1个，调用："
+                                "description": "输入参数：任意，返回值：1个，调用：与其它语言一样"
                             },
                             {
                                 "key": "过程",
-                                "description": "输入参数：任意，返回值：无，调用：execute 过程名"
+                                "description": "输入参数：任意，返回值：无，调用：直接调用 / execute 过程名"
                             },
                             {
                                 "key": "包",
-                                "description": "输入参数：任意，返回值：无，调用："
+                                "description": "一组过程、函数、类型、变量的集合"
                             },
                             {
                                 "key": "触发器",
@@ -432,7 +432,7 @@
                             },
                             {
                                 "key": "游标",
-                                "description": "指向集合的指针，作用是遍历集合"
+                                "description": "指向集合的指针，作用是遍历集合 <br /><code>%FOUND</code>有记录 <br /><code>%NOTFOUND</code>没有记录 <br /><code>%ROWCOUNT</code>当前记录数 <br /><code>%ISOPEN</code>游标开启"
                             }
                         ]
                     },
@@ -489,6 +489,10 @@
                                 "url": "/codeSnippets/plsql/while.sql"
                             },
                             {
+                                "description": "循环3：FOR IN",
+                                "url": "/codeSnippets/plsql/for_in.sql"
+                            },
+                            {
                                 "description": "异常处理：Exception",
                                 "url": "/codeSnippets/plsql/exception.sql"
                             },
@@ -515,11 +519,19 @@
                             {
                                 "description": "游标的使用",
                                 "url": "/codeSnippets/plsql/collection_cursor.sql"
+                            },
+                            {
+                                "description": "存储过程",
+                                "url": "/codeSnippets/plsql/procedure.sql"
+                            },
+                            {
+                                "description": "函数",
+                                "url": "/codeSnippets/plsql/function.sql"
                             }
                         ]
                     },
                     {
-                        "name": "3.示例",
+                        "name": "4.",
                         "codeSnippets": [
                             
                         ]

@@ -74,15 +74,27 @@
                         ]
                     },
                     {
-                        "name": "3.软件测试",
+                        "name": "3.软件版本",
                         "blocks": [
                             {
-                                "key": "Alpha测试",
-                                "description": "用户在开发环境下测试"
+                                "key": "Snapshot",
+                                "description": "快照"
                             },
                             {
-                                "key": "Beta测试",
-                                "description": "用户在生产环境下测试"
+                                "key": "Alpha",
+                                "description": "内部测试"
+                            },
+                            {
+                                "key": "Beta",
+                                "description": "用户公测"
+                            },
+                            {
+                                "key": "Release",
+                                "description": "稳定"
+                            },
+                            {
+                                "key": "GA",
+                                "description": "正式发布"
                             }
                         ]
                     },

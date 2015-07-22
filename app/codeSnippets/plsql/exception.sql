@@ -6,5 +6,3 @@ EXCEPTION
 
   WHEN other THEN
     -- 默认处理
-    
-END;

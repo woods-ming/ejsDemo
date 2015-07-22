@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion><!-- 指定pom版本 -->
+    <groupId>org.springframework</groupId><!-- 公司网址的反写.项目名 -->
+    <artifactId>gs-maven</artifactId><!-- 项目名-模块名 -->
+    <version>0.1.0</version><!-- 版本号 -->
+    <packaging>jar</packaging><!-- jar / war / zip / pom -->
+
+    <dependencies>
+        <dependency><!-- 指定依赖 -->
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.2</version>
+            <scope></scope><!-- 指定处于哪个阶段的ClassPath -->
+            <exclusions>
+                <exclusion><!-- 排除依赖传递 -->
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <java.version>1.6</java.version>
+    </properties>
+
+    <build>
+        <plugins><!-- 插件列表 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>hello.HelloWorld</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <parent></parent><!-- 继承父模块的pom配置 -->
+    <modules></modules><!-- 继承父模块的pom配置 -->
+</project>

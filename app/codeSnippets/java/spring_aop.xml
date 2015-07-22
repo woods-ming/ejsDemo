@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<bean id="moocAspect" class="com.imooc.aop.schema.advice.MoocAspect"></bean>
+	
+	<bean id="aspectBiz" class="com.imooc.aop.schema.advice.biz.AspectBiz"></bean>
+	
+    <aop:config>
+        <aop:aspect id="moocAspectAOP" ref="moocAspect">
+            <!-- 连接点 -->
+            <aop:pointcut id="moocPiontcut" expression="execution(* com.imooc.aop.schema.advice.biz.*Biz.*(..))"/>
+
+            <!-- 执行前 -->
+            <aop:before method="before" pointcut-ref="moocPiontcut"/>
+            <!-- 执行成功后 -->
+            <aop:after-returning method="afterReturning" pointcut-ref="moocPiontcut"/>
+            <!-- 执行失败后 -->
+            <aop:after-throwing method="afterThrowing" pointcut-ref="moocPiontcut"/>
+            <!-- 执行后 -->
+            <aop:after method="after" pointcut-ref="moocPiontcut"/>
+            <!-- 执行前后 -->
+            <aop:around method="around" pointcut-ref="moocPiontcut"/>
+            <!-- 执行前后 -->
+            <aop:around method="aroundInit" pointcut="execution(* com.imooc.aop.schema.advice.biz.AspectBiz.init(String, int)) and args(bizName, times)"/>
+
+            <aop:declare-parents types-matching="com.imooc.aop.schema.advice.biz.*(+)" implement-interface="com.imooc.aop.schema.advice.Fit" default-impl="com.imooc.aop.schema.advice.FitImpl"/>
+		</aop:aspect>
+	</aop:config>
+
+ </beans>

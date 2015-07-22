@@ -1,0 +1,14 @@
+<!-- Maven根目录/conf/settings.xml -->
+
+<!-- 为加速访问，设置为国内的镜像服务器（使用 mirrors 搜索，并增加下列配置） -->
+<mirror>
+  <id>maven.net.cn</id>
+  <mirrorOf>central</mirrorOf>
+  <name>central mirror in china</name>
+  <url>http://maven.net.cn/content/groups/public</url>
+</mirror>
+
+<!-- 修改本地仓库的位置（使用 localRepository 搜索，并增加下列配置） -->
+<localRepository>G:\SoftWare\maveRepository</localRepository>
+
+<!-- 将修改后的 settings.xml 文件复制到 本地仓库根目录 -->
