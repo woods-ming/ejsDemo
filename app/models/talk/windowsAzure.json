@@ -8,8 +8,12 @@
                 "name": "一、在云服务器的门户中操作",
                 "sections": [
                     {
-                        "name": "1.登录manage.windowsazure.cn",
+                        "name": "1.登录",
                         "blocks": [
+                            {
+                                "key": "网址",
+                                "description": "manage.windowsazure.cn"
+                            },
                             {
                                 "key": "帐号",
                                 "description": "xxx@xxx.partner.onmschina.cn"

@@ -243,6 +243,27 @@
                                 "description": "运行Jsp页面时，调用的逻辑"
                             }
                         ]
+                    },
+                    {
+                        "name": "5.什么是Servlet",
+                        "blocks": [
+                            {
+                                "key": "定义",
+                                "description": "在服务端运行的小程序，没有程序入口，由servlet容器调用"
+                            },
+                            {
+                                "key": "处理流程",
+                                "description": "1.servlet容器（如：Tomcat）接收 Http请求 <br />2.容器根据 url映射，调用对应的servlet <br />3.servlet运行完毕，将结果返回给容器 <br />4.容器将结果返回给请求方"
+                            },
+                            {
+                                "key": "本质",
+                                "description": "一个实现了特定接口的基类，以接口为规范在服务器运行"
+                            },
+                            {
+                                "key": "相关package",
+                                "description": "<code>javax.servlet</code> <code>javax.servlet.http</code> <code>javax.servlet.annotation</code> <code>javax.servlet.descriptor</code>"
+                            }
+                        ]
                     }
                 ]
             },
@@ -253,12 +274,12 @@
                         "name": "1.集合框架",
                         "blocks": [
                             {
-                                "key": "Collection",
-                                "description": "List &rarr; ArrayList <br /> Set &rarr; HashSet <br /> Queue &rarr; LinkedList  &nbsp; "
+                                "key": "Collection接口",
+                                "description": "List接口 &rarr; ArrayList子类 / Vector子类 （可以重复） <br /> Set接口 &rarr; HashSet （不能重复） <br /> Queue接口 &rarr; LinkedList  &nbsp; "
                             },
                             {
-                                "key": "Map",
-                                "description": "HashMap"
+                                "key": "Map接口",
+                                "description": "HashMap / HashTable （键值对）"
                             },
                             {
                                 "key": "工具类",
@@ -412,6 +433,15 @@
                             {
                                 "description": "AOP配置范例",
                                 "url": "/codeSnippets/java/spring_aop.xml"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.常见出错原因",
+                        "blocks": [
+                            {
+                                "key": "相关包未引入",
+                                "description": "必须的包 <code>spring-core</code> <code>spring-beans</code> <code>spring-context</code> <code>spring-context-support</code> <code>spring-expression</code> <code>commons-logging</code>"
                             }
                         ]
                     }

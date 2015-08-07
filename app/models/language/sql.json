@@ -229,6 +229,10 @@
                             {
                                 "key": "ORACLE_HOME",
                                 "description": "F:\\oracle\\product\\10.2.0\\db_2"
+                            },
+                            {
+                                "key": "开启两个重要的服务",
+                                "description": "<code>xxxListener</code>允许客户端连接 <br /><code>xxxORCL</code> 支持服务端运行"
                             }
                         ]
                     },
@@ -262,7 +266,20 @@
                         ]
                     },
                     {
-                        "name": "3.安装PL/Sql Developer",
+                        "name": "3.相关工具",
+                        "blocks": [
+                            {
+                                "key": "管理",
+                                "description": "<code>Oracle Universal Installer</code> 安装卸载数据库管理系统 <br/><code>Database Configuration Assistant</code> 创建/配置/删除数据库 <br/><code>Net Configuration Assistant</code> 网络配置 "
+                            },
+                            {
+                                "key": "开发",
+                                "description": "<code>Sql Plus</code> <br/><code>Sql Developer</code> <br/><code>PL/Sql Developer</code> <br/><code>TOAD</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.安装PL/Sql Developer",
                         "blocks": [
                             {
                                 "key": "下载（破解版）",
