@@ -433,7 +433,7 @@
                             },
                             {
                                 "key": "包",
-                                "description": "一组过程、函数、类型、变量的集合"
+                                "description": "一组相关的【过程、函数、类型、变量】的集合"
                             },
                             {
                                 "key": "触发器",
@@ -470,7 +470,7 @@
                             },
                             {
                                 "key": "关系操作符",
-                                "description": "相等<code>=</code>、不等<code>!= / &lt;&gt;</code>、其它的都一样"
+                                "description": "相等<code>=</code>、不等<code>!=</code>、其它的都一样"
                             },
                             {
                                 "key": "比较操作符",

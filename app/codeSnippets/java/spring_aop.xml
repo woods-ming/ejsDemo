@@ -7,9 +7,8 @@
         http://www.springframework.org/schema/aop 
         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
-	<bean id="moocAspect" class="com.imooc.aop.schema.advice.MoocAspect"></bean>
-	
-	<bean id="aspectBiz" class="com.imooc.aop.schema.advice.biz.AspectBiz"></bean>
+    <bean id="moocAspect" class="com.imooc.aop.schema.advice.MoocAspect"></bean>
+    <bean id="aspectBiz" class="com.imooc.aop.schema.advice.biz.AspectBiz"></bean>
 	
     <aop:config>
         <aop:aspect id="moocAspectAOP" ref="moocAspect">
@@ -30,7 +29,7 @@
             <aop:around method="aroundInit" pointcut="execution(* com.imooc.aop.schema.advice.biz.AspectBiz.init(String, int)) and args(bizName, times)"/>
 
             <aop:declare-parents types-matching="com.imooc.aop.schema.advice.biz.*(+)" implement-interface="com.imooc.aop.schema.advice.Fit" default-impl="com.imooc.aop.schema.advice.FitImpl"/>
-		</aop:aspect>
-	</aop:config>
+        </aop:aspect>
+    </aop:config>
 
  </beans>
