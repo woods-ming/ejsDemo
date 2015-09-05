@@ -2,7 +2,7 @@
   "name": "ejsDemo",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.3.4",
+    "bootstrap": "3.3.4",
     "google-code-prettify": "~1.0.4"
   }
 }
