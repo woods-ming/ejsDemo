@@ -328,12 +328,32 @@
                                 "description": "show user"
                             },
                             {
+                                "key": "查看用户权限",
+                                "description": "select * from user_sys_privs"
+                            },
+                            {
                                 "key": "用户的数据字典",
                                 "description": "dba_users"
                             },
                             {
                                 "key": "启用用户",
-                                "description": "alter user 用户名 account unlock;"
+                                "description": "alter user 用户名 account unlock"
+                            },
+                            {
+                                "key": "创建用户",
+                                "description": "create user 用户名 identified by 密码"
+                            },
+                            {
+                                "key": "给用户授权",
+                                "description": "grant 权限名 to 用户名"
+                            },
+                            {
+                                "key": "撤销用户权限",
+                                "description": "revoke 权限名 to 用户名"
+                            },
+                            {
+                                "key": "用户权限列表",
+                                "description": "<code>create session</code> <br /> <code>create any table</code> <br /> <code>create any view</code> <br /> <code>create any procedure</code> <br /> <code>create any cluster</code> <br /> <code>create any trigger</code> <br /> <code>create any synonym</code>"
                             }
                         ]
                     },
@@ -404,6 +424,31 @@
                             {
                                 "key": "约束的数据字典",
                                 "description": "user_constraints"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.导入/导出",
+                        "blocks": [
+                            {
+                                "key": "概念",
+                                "description": "可以实现数据库的备份/还原，也可以在数据库间传递数据"
+                            },
+                            {
+                                "key": "命令行导出",
+                                "description": "<code>exp \\\"用户名/密码@服务名\\\" file=导出文件.dmp full=y compress=N</code> <br /> <code>owner=(用户1,用户2) tables=(表1,表2) query=\\\"where 过滤条件\\\"</code>"
+                            },
+                            {
+                                "key": "命令行导出表结构（不要数据）",
+                                "description": "<code>exp \\\"用户名/密码@服务名\\\" file=导出文件.dmp full=y compress=n rows=n</code>"
+                            },
+                            {
+                                "key": "命令行导入",
+                                "description": "<code>imp \\\"用户名/密码@服务名\\\" file=导入文件.dmp ignore=y</code> <br /> <code>tables=(表1,表2)</code>"
+                            },
+                            {
+                                "key": "导入可能出的问题",
+                                "description": "1)主外键约束: <br /> &nbsp; &nbsp; a.先导入主表，再导入子表 <br /> &nbsp; &nbsp; b.disable主外键约束，导入后再enable <br /> 2)权限不够: <br /> &nbsp; &nbsp; 赋予imp_full_database权限 <br /> 3)imp和exp字符集不同: <br /> &nbsp; &nbsp; 修改注册表中的 NLS_LANG <br /> 4)数据库连接不上: <br /> &nbsp; &nbsp; tnsping 服务名"
                             }
                         ]
                     }

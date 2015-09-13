@@ -1,5 +1,9 @@
 [
 	{
+		"modelGlob": "app/models/index.json",
+		"view": "app/views/layouts/_layout_index.ejs"
+	},
+	{
 		"modelGlob": "app/models/*/*.json",
 		"view": "app/views/layouts/_layout_paper.ejs"
 	}

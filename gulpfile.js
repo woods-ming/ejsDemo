@@ -79,24 +79,24 @@ gulp.task('html', ['compile', 'styles'], function () {
         usePrefix:false,
         patterns: [
         {
-            match: '../../../bower_components/bootstrap/dist/css/bootstrap.css',
-            replacement: '//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css'
+            match: /href=\".*bootstrap.css\"/,
+            replacement: 'href="//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css"'
         },
         {
-            match: '../../../bower_components/google-code-prettify/bin/prettify.min.css',
-            replacement: '//apps.bdimg.com/libs/prettify/r298/prettify.min.css'
+            match: /href=\".*prettify.min.css\"/,
+            replacement: 'href="//apps.bdimg.com/libs/prettify/r298/prettify.min.css"'
         },
         {
-            match: '../../../bower_components/jquery/dist/jquery.js',
-            replacement: '//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js'
+            match: /src=\".*jquery.js\"/,
+            replacement: 'src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"'
         },
         {
-            match: '../../../bower_components/bootstrap/dist/js/bootstrap.js',
-            replacement: '//apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js'
+            match: /src=\".*bootstrap.js\"/,
+            replacement: 'src="//apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"'
         },
         {
-            match: '../../../bower_components/google-code-prettify/bin/prettify.min.js',
-            replacement: '//apps.bdimg.com/libs/prettify/r298/prettify.min.js'
+            match: /src=\".*prettify.min.js\"/,
+            replacement: 'src="//apps.bdimg.com/libs/prettify/r298/prettify.min.js"'
         }
         ]
     }))
@@ -160,7 +160,7 @@ gulp.task('debug', ['compile'], function() {
         logFileChanges: true,
         server: {
             baseDir: ['.tmp', 'app'],
-            index: "/html/language/sql.html",
+            index: "/html/index.html",
             routes: {
                 '/bower_components': 'bower_components'
             }
@@ -195,7 +195,7 @@ gulp.task('default', ['rebuild'], function () {
         port: 9001,
         server: {
             baseDir: ['dist'],
-            index: "/html/language/sql.html"
+            index: "/html/index.html"
         }
     });
 });

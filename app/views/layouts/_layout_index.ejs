@@ -10,7 +10,7 @@
     <meta name="author" content="胡明明" />
     <meta name="keywords" content="<%= 关键字 %>" />
     <meta name="description" content="<%= 摘要 %>">
-    
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="/favicon.ico">
 
@@ -24,7 +24,7 @@
     <!-- endbuild -->
 
 </head>
-<body data-spy="scroll" data-offset="100" data-target="#catalog">
+<body class="bs-docs-home">
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
         <div class="container">
             <span class="skiplink-text">Skip to main content</span>
@@ -38,36 +38,14 @@
         </div>
     </header>
 
-    <!-- 论文简介 -->
-    <div class="bs-docs-header" id="content" tabindex="-1">
+
+    <!-- Page content of course! -->
+    <main class="bs-docs-masthead" id="content" role="main" tabindex="-1">
         <div class="container">
-            <h1><%= 题目 %></h1>
-            <p>摘要: <%= 摘要 %></p>
-            <p>关键字: <%= 关键字 %></p>
+            <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">H</span>
+            <p class="lead"><%= 摘要 %></p>
         </div>
-    </div>
-
-    <div class="container bs-docs-container">
-        <div class="row">
-            <div class="col-md-9" role="main">
-                <!-- 正文 -->
-                <div>
-                    <%- include('../partials/chapter', { content: 正文 }); %>
-                </div>
-
-                <%- include('../partials/note', { note: 注释 }); %>
-            </div>
-            <div class="col-md-3" role="complementary">
-                <!-- 目录 -->
-                <nav id="catalog" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="320">
-                    <%- include('../partials/catalog', { chapters: 正文.chapters }); %>
-                    <a class="back-to-top" href="#top">
-                        返回顶部
-                    </a>
-                </nav>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <!-- 页脚 -->
     <%- include('../partials/footer.ejs'); %>
