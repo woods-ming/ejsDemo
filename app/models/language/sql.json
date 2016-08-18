@@ -228,7 +228,7 @@
                             },
                             {
                                 "key": "ORACLE_HOME",
-                                "description": "F:\\oracle\\product\\10.2.0\\db_2"
+                                "description": "F:\\oracle\\product\\10.2.0\\db_1"
                             },
                             {
                                 "key": "开启两个重要的服务",
@@ -301,23 +301,11 @@
                         "blocks": [
                             {
                                 "key": "概念",
-                                "description": "系统自带的4个用户"
+                                "description": "把Oracle比作公司，用户就是它的员工"
                             },
                             {
-                                "key": "sys",
-                                "description": "sysdba/sysoper"
-                            },
-                            {
-                                "key": "system",
-                                "description": "normal"
-                            },
-                            {
-                                "key": "sysman",
-                                "description": "normal"
-                            },
-                            {
-                                "key": "scott",
-                                "description": "tiger"
+                                "key": "默认用户",
+                                "description": "sys as sysdba/sysoper <br /> system, sysman as normal"
                             },
                             {
                                 "key": "登录",
@@ -328,20 +316,16 @@
                                 "description": "show user"
                             },
                             {
-                                "key": "查看用户权限",
-                                "description": "select * from user_sys_privs"
-                            },
-                            {
-                                "key": "用户的数据字典",
-                                "description": "dba_users"
+                                "key": "创建用户",
+                                "description": "create user 用户名 identified by 密码"
                             },
                             {
                                 "key": "启用用户",
                                 "description": "alter user 用户名 account unlock"
                             },
                             {
-                                "key": "创建用户",
-                                "description": "create user 用户名 identified by 密码"
+                                "key": "dba_users / user_users",
+                                "description": "用户相关的信息"
                             },
                             {
                                 "key": "给用户授权",
@@ -352,8 +336,12 @@
                                 "description": "revoke 权限名 to 用户名"
                             },
                             {
-                                "key": "用户权限列表",
-                                "description": "<code>create session</code> <br /> <code>create any table</code> <br /> <code>create any view</code> <br /> <code>create any procedure</code> <br /> <code>create any cluster</code> <br /> <code>create any trigger</code> <br /> <code>create any synonym</code>"
+                                "key": "dba_sys_privs / user_sys_privs",
+                                "description": "权限相关的信息"
+                            },
+                            {
+                                "key": "通常给用户授予两个角色",
+                                "description": "<code>grant connect, resource to 用户</code>"
                             }
                         ]
                     },
@@ -362,7 +350,7 @@
                         "blocks": [
                             {
                                 "key": "概念",
-                                "description": "数据的逻辑分类，包含多个数据文件"
+                                "description": "把Oracle比作公司，表空间就是员工的办公区域"
                             },
                             {
                                 "key": "永久表空间",
@@ -449,6 +437,23 @@
                             {
                                 "key": "导入可能出的问题",
                                 "description": "1)主外键约束: <br /> &nbsp; &nbsp; a.先导入主表，再导入子表 <br /> &nbsp; &nbsp; b.disable主外键约束，导入后再enable <br /> 2)权限不够: <br /> &nbsp; &nbsp; 赋予imp_full_database权限 <br /> 3)imp和exp字符集不同: <br /> &nbsp; &nbsp; 修改注册表中的 NLS_LANG <br /> 4)数据库连接不上: <br /> &nbsp; &nbsp; tnsping 服务名"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.DBA常态步骤",
+                        "blocks": [
+                            {
+                                "key": "创建表空间",
+                                "description": "<code>create tablespace 表空间 datafile 'xxx.dbf' size 10m;</code>"
+                            },
+                            {
+                                "key": "为应用创建用户",
+                                "description": "<code>create user 用户名 identified by 密码 default tablespace 表空间;</code>"
+                            },
+                            {
+                                "key": "为用户授权",
+                                "description": "<code>grant connect, resource to 用户名;</code> <br /> <code>revoke unlimited tablespace from 用户名;</code> <br /> <code>alter user 用户名 quota unlimited on 表空间;</code>"
                             }
                         ]
                     }
@@ -589,6 +594,10 @@
                             {
                                 "description": "函数",
                                 "url": "/codeSnippets/plsql/function.sql"
+                            },
+                            {
+                                "description": "动态SQL",
+                                "url": "/codeSnippets/plsql/dynamic_sql.sql"
                             }
                         ]
                     },

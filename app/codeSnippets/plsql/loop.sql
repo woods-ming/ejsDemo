@@ -3,5 +3,6 @@ LOOP
 
   IF 退出条件 THEN 
     EXIT;
-
+  END IF;
+  
 END LOOP;
