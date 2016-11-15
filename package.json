@@ -5,7 +5,7 @@
   "author": "woods-ming",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer-core": "*",
+    "autoprefixer": "*",
     "browser-sync": "*",
     "del": "*",
     "glob": "*",

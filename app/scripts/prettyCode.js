@@ -1,6 +1,8 @@
 ﻿+function ($) {
     'use strict';
 
+    var count = 0;
+    
     /* PrettyCode CLASS DEFINITION
      * ========================= */
     var PrettyCode = function (element, codeUrl) {
@@ -67,7 +69,7 @@
 
     /* PrettyCode DATA-API
      * =================== */
-    var count = 0;
+    
     $(function(){
         var $codeContainer = $('[data-code-url]');
         count = $('[data-code-url]').length;

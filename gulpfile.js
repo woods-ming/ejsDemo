@@ -58,7 +58,7 @@ gulp.task('styles', function () {
     return gulp.src('app/styles/*.css')
     .pipe($.sourcemaps.init())
     .pipe($.postcss([
-        require('autoprefixer-core')({browsers: ['last 1 version']})
+        require('autoprefixers')({browsers: ['last 1 version']})
         ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
@@ -67,14 +67,10 @@ gulp.task('styles', function () {
 
 // html:处理html及依赖的js、css文件，并拷贝到生成目录
 gulp.task('html', ['compile', 'styles'], function () {
-    var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'bower_components']});
-
     return gulp.src('app/**/*.html')
-    .pipe(assets)
+    .pipe($.useref({searchPath: ['.tmp', 'app', 'bower_components']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
-    .pipe(assets.restore())
-    .pipe($.useref())
     .pipe($.replaceTask({
         usePrefix:false,
         patterns: [
@@ -107,14 +103,14 @@ gulp.task('html', ['compile', 'styles'], function () {
 // images:优化图片，并拷贝到生成目录
 gulp.task('images', function () {
     return gulp.src('app/images/**/*')
-        .pipe($.cache($.imagemin({
-            progressive: true,
-            interlaced: true,
+    .pipe($.cache($.imagemin({
+        progressive: true,
+        interlaced: true,
             // don't remove IDs from SVGs, they are often used
             // as hooks for embedding and styling
             svgoPlugins: [{cleanupIDs: false}]
         })))
-        .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/images'));
 });
 
 // extras:复制其它资源
@@ -130,7 +126,7 @@ gulp.task('extras', function () {
 gulp.task('sitemap', function () {
     gulp.src('app/**/*.html')
     .pipe($.sitemap({
-        siteUrl: 'http://codeExperience.sinaapp.com'
+        siteUrl: 'http://codexp.duapp.com/'
     }))
     .pipe(gulp.dest('dist'));
 });
@@ -173,7 +169,7 @@ gulp.task('debug', ['compile'], function() {
         'app/scripts/**/*.js',
         'app/styles/**/*.css',
         'app/images/**/*.*'
-    ]).on('change', reload);
+        ]).on('change', reload);
     gulp.watch('app/styles/**/*.css', ['styles']);
     gulp.watch('app/views/**/*.ejs', ['compile']);
 
