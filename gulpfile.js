@@ -58,7 +58,7 @@ gulp.task('styles', function () {
     return gulp.src('app/styles/*.css')
     .pipe($.sourcemaps.init())
     .pipe($.postcss([
-        require('autoprefixers')({browsers: ['last 1 version']})
+        require('autoprefixer')({browsers: ['last 1 version']})
         ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
