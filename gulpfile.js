@@ -66,7 +66,7 @@ gulp.task('styles', function () {
 });
 
 // html:处理html及依赖的js、css文件，并拷贝到生成目录
-gulp.task('html', ['compile', 'styles'], function () {
+gulp.task('html', ['compile', 'jshint', 'styles'], function () {
     return gulp.src('app/**/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', 'bower_components']}))
     .pipe($.if('*.js', $.uglify()))
@@ -132,7 +132,7 @@ gulp.task('sitemap', function () {
 });
 
 // build:生成
-gulp.task('build', ['jshint', 'html', 'images', 'extras', 'sitemap'], function () {
+gulp.task('build', ['html', 'images', 'extras', 'sitemap'], function () {
     gulp.src('dist/**/*')
     .pipe($.size({title: 'build', gzip: true}))
     .pipe($.zip('ejsDemo_' + moment().format('YYYYMMDD_Ahhmmss') + '.zip'))
