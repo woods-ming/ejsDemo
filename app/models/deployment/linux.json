@@ -1,22 +1,991 @@
 {
-    "题目": "题目",
-    "摘要": "摘要",
-    "关键字": "关键字",
+    "题目": "linux基础知识",
+    "摘要": "介绍linux系统的安装和使用",
+    "关键字": "linux, CentOS",
     "正文": {
         "chapters": [
             {
-                "name": "一、第一章",
+                "name": "一、背景介绍",
+                "sections": [
+                    {
+                        "name": "1.简介",
+                        "blocks": [
+                            {
+                                "key": "Why Linux?",
+                                "description": "作为服务器：免费、稳定、性能好"
+                            },
+                            {
+                                "key": "版本",
+                                "description": "服务器用redhat，桌面用ubuntu；centos是redhat的商业版本"
+                            },
+                            {
+                                "key": "基本思想",
+                                "description": "一切都是文件：命令、设备、进程..."
+                            },
+                            {
+                                "key": "选择虚拟机",
+                                "description": "VMware Workstation Player"
+                            }
+                        ]
+                    },
+                     {
+                        "name": "2.选择虚拟机网络模式",
+                        "blocks": [
+                            {
+                                "key": "桥接",
+                                "description": "将虚拟机作为局域网的一个成员"
+                            },
+                            {
+                                "key": "NAT",
+                                "description": "主机作为路由器，虚拟一个局域网来包含所有虚拟机"
+                            },
+                            {
+                                "key": "Host-Only",
+                                "description": "不提供地址转换的虚拟局域网（不能与外部通信）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.How to learn?",
+                        "blocks": [
+                            {
+                                "key": "搭建环境",
+                                "description": "vmware安装linux"
+                            },
+                            {
+                                "key": "内容",
+                                "description": "使用字符界面（图形界面在工作中用不上）"
+                            },
+                            {
+                                "key": "掌握命令（用户接口）",
+                                "description": "了解“在什么情况下，使用哪方面的命令”；不要“死记硬背”，使用帮助系统"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、安装CentOS 7",
+                "sections": [
+                    {
+                        "name": "1.分区",
+                        "blocks": [
+                            {
+                                "key": "swap",
+                                "description": "虚拟内存（与物理内存相当）"
+                            },
+                            {
+                                "key": "/boot",
+                                "description": "引导（100M足够）"
+                            },
+                            {
+                                "key": "/home",
+                                "description": "用户数据文件（独立于系统存在，不受重装系统的影响）"
+                            },
+                            {
+                                "key": "/",
+                                "description": "root目录"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.系统启动过程",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "内核引导"
+                            },
+                            {
+                                "key": "",
+                                "description": "运行init"
+                            },
+                            {
+                                "key": "",
+                                "description": "系统初始化"
+                            },
+                            {
+                                "key": "",
+                                "description": "建立终端（6个）"
+                            },
+                            {
+                                "key": "",
+                                "description": "用户登录"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.登录过程",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "输出“最近一次的登录信息”：何时登录了哪个终端"
+                            },
+                            {
+                                "key": "",
+                                "description": "执行 /etc/profile"
+                            },
+                            {
+                                "key": "",
+                                "description": "执行用户主目录下的 .bash_profile （可能调用其它配置文件）"
+                            },
+                            {
+                                "key": "",
+                                "description": "配置文件设定好各种【环境变量】"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.常用快捷键",
+                        "blocks": [
+                            {
+                                "key": "Ctrl+C",
+                                "description": "终止当前命令"
+                            },
+                            {
+                                "key": "Ctrl+D",
+                                "description": "退出终端 (exit)"
+                            },
+                            {
+                                "key": "Ctrl+Z",
+                                "description": "暂停进程（可使用fg恢复）"
+                            },
+                            {
+                                "key": "Ctrl+L",
+                                "description": "清屏"
+                            },
+                            {
+                                "key": "Tab",
+                                "description": "自动补全"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.目录结构介绍",
+                        "blocks": [
+                            {
+                                "key": "/bin",
+                                "description": "常用命令"
+                            },
+                            {
+                                "key": "/boot",
+                                "description": "启动时的核心文件"
+                            },
+                            {
+                                "key": "/dev",
+                                "description": "外部设备（与文件的访问方式相同）"
+                            },
+                            {
+                                "key": "/etc",
+                                "description": "系统管理所需要的配置文件"
+                            },
+                            {
+                                "key": "/home",
+                                "description": "用户的文件"
+                            },
+                            {
+                                "key": "/lib",
+                                "description": "系统管理所需要的配置文件"
+                            },
+                            {
+                                "key": "/lost+found",
+                                "description": "非法关机后存储的文件"
+                            },
+                            {
+                                "key": "/media",
+                                "description": "挂载设备"
+                            },
+                            {
+                                "key": "/mnt",
+                                "description": "临时挂载别的文件目录"
+                            },
+                            {
+                                "key": "/opt",
+                                "description": "应用软件的安装目录"
+                            },
+                            {
+                                "key": "/proc",
+                                "description": "映射系统内存"
+                            },
+                            {
+                                "key": "/root",
+                                "description": "系统管理员"
+                            },
+                            {
+                                "key": "/sbin",
+                                "description": "系统管理员用的命令"
+                            },
+                            {
+                                "key": "/selinux",
+                                "description": "安全机制（类似windows防火墙）"
+                            },
+                            {
+                                "key": "/srv",
+                                "description": "存放服务启动后需要提取的数据"
+                            },
+                            {
+                                "key": "/sys",
+                                "description": "（linux2.6内核新出现的）文件系统sysfs"
+                            },
+                            {
+                                "key": "/tmp",
+                                "description": "临时文件"
+                            },
+                            {
+                                "key": "/usr",
+                                "description": "用户的应用程序和文件（类似windows的program files）"
+                            },
+                            {
+                                "key": "/var",
+                                "description": "经常变化的文件（比如：日志文件）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.正确关机流程",
+                        "blocks": [
+                            {
+                                "key": "sync",
+                                "description": "将内存信息写入硬盘"
+                            },
+                            {
+                                "key": "shutdown",
+                                "description": "安全关机"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.忘记root密码，怎么破？",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "重启"
+                            },
+                            {
+                                "key": "",
+                                "description": "3秒内按下回车，输入e"
+                            },
+                            {
+                                "key": "",
+                                "description": "在第2行输入 _single，回车"
+                            },
+                            {
+                                "key": "",
+                                "description": "输入 b，进入单用户模式"
+                            },
+                            {
+                                "key": "",
+                                "description": "输入 passwd，修改密码"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "8.远程登录",
+                        "blocks": [
+                            {
+                                "key": "理论基础",
+                                "description": "远程登录通过ssh服务（默认端口：22）来提供"
+                            },
+                            {
+                                "key": "下载终端登录软件",
+                                "description": "Putty, SSH Secure Shell, Xshell 等"
+                            },
+                            {
+                                "key": "启动ssh服务",
+                                "description": "service sshd start"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、Linux文件与目录管理",
+                "sections": [
+                    {
+                        "name": "1.路径",
+                        "blocks": [
+                            {
+                                "key": "绝对路径",
+                                "description": "'/'开头"
+                            },
+                            {
+                                "key": "相对路径",
+                                "description": "非 ..."
+                            },
+                            {
+                                "key": "输入命令",
+                                "description": "找到“$PATH/命令”这个文件，并运行"
+                            },
+                            {
+                                "key": "环境变量",
+                                "description": "就是操作系统中的“静态变量”（系统环境变量/用户环境变量 的作用域不同）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.管理“目录文件”",
+                        "blocks": [
+                            {
+                                "key": "创建目录",
+                                "description": "mkdir -p"
+                            },
+                            {
+                                "key": "删除目录",
+                                "description": "rm -rf"
+                            },
+                            {
+                                "key": "当前目录",
+                                "description": "pwd"
+                            },
+                            {
+                                "key": "查看目录",
+                                "description": "ls"
+                            },
+                            {
+                                "key": "创建文件",
+                                "description": "touch"
+                            },
+                            {
+                                "key": "写入文件",
+                                "description": "echo '文本'' > [文件名]"
+                            },
+                            {
+                                "key": "追加到文件",
+                                "description": "echo '文本'' >> [文件名]"
+                            },
+                            {
+                                "key": "查看文件",
+                                "description": "cat / less / more / tail -f (动态增加的文件：如日志)"
+                            },
+                            {
+                                "key": "拷贝",
+                                "description": "cp -d"
+                            },
+                            {
+                                "key": "移动",
+                                "description": "mv"
+                            },
+                            {
+                                "key": "重命名",
+                                "description": "mv"
+                            },
+                            {
+                                "key": "搜索命令",
+                                "description": "which （只能在$PATH目录下寻找命令文件）"
+                            },
+                            {
+                                "key": "搜索文件",
+                                "description": "find [路径] [参数]"
+                            },
+                            {
+                                "key": "建立硬连接",
+                                "description": "ln [来源文件] [目的文件]"
+                            },
+                            {
+                                "key": "建立软连接",
+                                "description": "ln -s [来源文件] [目的文件]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.管理“目录文件”的属性",
+                        "blocks": [
+                            {
+                                "key": "查看属性",
+                                "description": "ll"
+                            },
+                            {
+                                "key": "更改user",
+                                "description": "chown -r [用户名] [文件名]"
+                            },
+                            {
+                                "key": "更改group",
+                                "description": "chgrp [组名] [文件名]"
+                            },
+                            {
+                                "key": "更改权限",
+                                "description": "chmod [权限] [文件名]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.属性含义",
+                        "blocks": [
+                            {
+                                "key": "文件类型",
+                                "description": "1"
+                            },
+                            {
+                                "key": "user权限",
+                                "description": "2,3,4  [r:4 w:2 x:1]（二进制范围: 0-7）"
+                            },
+                            {
+                                "key": "group权限",
+                                "description": "5,6,7  [r:4 w:2 x:1]"
+                            },
+                            {
+                                "key": "other权限",
+                                "description": "8,9,10 [r:4 w:2 x:1]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.文件类型",
+                        "blocks": [
+                            {
+                                "key": "-",
+                                "description": "普通文件"
+                            },
+                            {
+                                "key": "d",
+                                "description": "目录"
+                            },
+                            {
+                                "key": "l",
+                                "description": "链接文件 （硬连接:指向block 软连接:指向inode）"
+                            },
+                            {
+                                "key": "b",
+                                "description": "备份文件"
+                            },
+                            {
+                                "key": "c",
+                                "description": "字符设备"
+                            },
+                            {
+                                "key": "s",
+                                "description": "socket"
+                            },
+                            {
+                                "key": "备注",
+                                "description": "在linux文件系统中，block存储内容，inode是指向block的指针"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、用户与用户组管理",
+                "sections": [
+                    {
+                        "name": "1.存储用户的文件: /etc/passwd",
+                        "blocks": [
+                            {
+                                "key": "用户名",
+                                "description": "1"
+                            },
+                            {
+                                "key": "密码",
+                                "description": "2 用x代替"
+                            },
+                            {
+                                "key": "用户Id",
+                                "description": "3"
+                            },
+                            {
+                                "key": "组Id",
+                                "description": "4"
+                            },
+                            {
+                                "key": "注释",
+                                "description": "5"
+                            },
+                            {
+                                "key": "家目录",
+                                "description": "6 登录后进入的目录"
+                            },
+                            {
+                                "key": "shell",
+                                "description": "7 登录后启动的UI （分2类：图形界面如windows / 命令行界面如bash）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.存储密码的文件: /etc/shadow",
+                        "blocks": [
+                            {
+                                "key": "用户名",
+                                "description": "1"
+                            },
+                            {
+                                "key": "密码",
+                                "description": "2"
+                            },
+                            {
+                                "key": "更改日期",
+                                "description": "3 何时修改了密码"
+                            },
+                            {
+                                "key": "修改间隔",
+                                "description": "4 过了这个间隔，才能修改密码"
+                            },
+                            {
+                                "key": "到期日期",
+                                "description": "5 过期不更改密码，不允许登录"
+                            },
+                            {
+                                "key": "警告间隔",
+                                "description": "6 提前几天，提醒用户修改密码"
+                            },
+                            {
+                                "key": "失效间隔",
+                                "description": "7 过期几天后，账号锁定"
+                            },
+                            {
+                                "key": "失效日期",
+                                "description": "8 这一天后，账号锁定"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.sudo的配置文件: /etc/sudoers",
+                        "blocks": [
+                            {
+                                "key": "sudo是否安装",
+                                "description": "rpm -q sudo"
+                            },
+                            {
+                                "key": "编辑sudo",
+                                "description": "visudo"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.管理 user 和 group",
+                        "blocks": [
+                            {
+                                "key": "新增用户组",
+                                "description": "groupadd"
+                            },
+                            {
+                                "key": "删除用户组",
+                                "description": "groupdel"
+                            },
+                            {
+                                "key": "新增用户",
+                                "description": "useradd"
+                            },
+                            {
+                                "key": "删除用户",
+                                "description": "userdel"
+                            },
+                            {
+                                "key": "修改密码",
+                                "description": "passwd [用户名]"
+                            },
+                            {
+                                "key": "切换用户",
+                                "description": "su - [用户名]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "五、磁盘管理",
+                "sections": [
+                    {
+                        "name": "1.常用命令",
+                        "blocks": [
+                            {
+                                "key": "文件系统大小",
+                                "description": "df -h"
+                            },
+                            {
+                                "key": "目录大小",
+                                "description": "du -s [目录名]"
+                            },
+                            {
+                                "key": "磁盘分区",
+                                "description": "fdisk"
+                            },
+                            {
+                                "key": "挂载设备",
+                                "description": "mount [设备] [目录名]"
+                            },
+                            {
+                                "key": "卸载设备",
+                                "description": "umount [设备]"
+                            },
+                            {
+                                "key": "挂载光驱",
+                                "description": "mount /dev/cdrom /mnt"
+                            },
+                            {
+                                "key": "卸载光驱",
+                                "description": "umount /dev/cdrom /mnt"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "六、用vi进行文本编辑",
+                "sections": [
+                    {
+                        "name": "1.三种模式",
+                        "blocks": [
+                            {
+                                "key": "一般模式",
+                                "description": "移动光标、粘贴、复制、删除"
+                            },
+                            {
+                                "key": "编辑模式",
+                                "description": "修改字符"
+                            },
+                            {
+                                "key": "命令模式",
+                                "description": "保存、退出、搜索"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.模式切换",
+                        "blocks": [
+                            {
+                                "key": "默认",
+                                "description": "打开文件 -> 一般模式"
+                            },
+                            {
+                                "key": "i",
+                                "description": "一般模式 -> 编辑模式"
+                            },
+                            {
+                                "key": "ESC",
+                                "description": "编辑模式 -> 一般模式"
+                            },
+                            {
+                                "key": ":",
+                                "description": "一般模式 -> 命令模式"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.一般模式下的命令",
+                        "blocks": [
+                            {
+                                "key": "查找",
+                                "description": "/字符"
+                            },
+                            {
+                                "key": "删除整行",
+                                "description": "dd"
+                            },
+                            {
+                                "key": "复制整行",
+                                "description": "yy"
+                            },
+                            {
+                                "key": "粘贴整行",
+                                "description": "p"
+                            },
+                            {
+                                "key": "撤销",
+                                "description": "u"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.命令模式下的命令",
+                        "blocks": [
+                            {
+                                "key": "保存",
+                                "description": "w"
+                            },
+                            {
+                                "key": "退出",
+                                "description": "q"
+                            },
+                            {
+                                "key": "不保存退出",
+                                "description": "q!"
+                            },
+                            {
+                                "key": "保存退出",
+                                "description": "wq"
+                            },
+                            {
+                                "key": "显示行号",
+                                "description": "set nu"
+                            },
+                            {
+                                "key": "取消行号",
+                                "description": "set nonu"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "七、文档压缩/解压",
+                "sections": [
+                    {
+                        "name": "1.普通压缩",
+                        "blocks": [
+                            {
+                                "key": "压缩",
+                                "description": "zip -r [xx.zip] [目录1] [目录2]"
+                            },
+                            {
+                                "key": "解压",
+                                "description": "unzip [xx.zip] -d [解压目录]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.程序打包源码",
+                        "blocks": [
+                            {
+                                "key": "目录合并成一个文件",
+                                "description": "tar -cvf [xx.tar] [目录]"
+                            },
+                            {
+                                "key": "文件解压到当前目录",
+                                "description": "tar -xvf [xx.tar]"
+                            },
+                            {
+                                "key": "打包同时用gzip压缩",
+                                "description": "tar -zcvf [xx.tar.gz] [目录]"
+                            },
+                            {
+                                "key": "拆包同时用gzip解压",
+                                "description": "tar -zxvf [xx.tar.gz]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "八、安装软件",
+                "sections": [
+                    {
+                        "name": "1.软件安装包的类型",
+                        "blocks": [
+                            {
+                                "key": "可执行程序",
+                                "description": "软件名-版本-平台.rpm"
+                            },
+                            {
+                                "key": "源代码包",
+                                "description": "xx.压缩格式"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.使用rpm管理软件",
+                        "blocks": [
+                            {
+                                "key": "安装rpm软件",
+                                "description": "rpm -ivh 软件名-版本-平台.rpm"
+                            },
+                            {
+                                "key": "升级rpm软件",
+                                "description": "rpm -uvh 软件名-版本-平台.rpm"
+                            },
+                            {
+                                "key": "卸载rpm软件",
+                                "description": "rpm -e 软件名"
+                            },
+                            {
+                                "key": "检查是否安装",
+                                "description": "rpm -q 软件名"
+                            },
+                            {
+                                "key": "查看软件信息",
+                                "description": "rpm -qi 软件名"
+                            },
+                            {
+                                "key": "列出包含的文件",
+                                "description": "rpm -ql 软件名"
+                            },
+                            {
+                                "key": "文件属于哪个包",
+                                "description": "rpm -qf [文件绝对路径]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.使用yum管理软件，自动下载相关依赖（增强的rpm，相当于Nuget, Gulp, Maven）",
+                        "blocks": [
+                            {
+                                "key": "安装源所在目录",
+                                "description": "/etc/yum.repos.d/"
+                            },
+                            {
+                                "key": "安装软件",
+                                "description": "yum install 软件名"
+                            },
+                            {
+                                "key": "升级软件",
+                                "description": "yum update 软件名"
+                            },
+                            {
+                                "key": "卸载软件",
+                                "description": "yum remove 软件名"
+                            },
+                            {
+                                "key": "可更新的软件",
+                                "description": "yum list update"
+                            },
+                            {
+                                "key": "可安装的软件",
+                                "description": "yum list |grep [软件名]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.只下载不安装",
+                        "blocks": [
+                            {
+                                "key": "先安装支持插件",
+                                "description": "yum install yum-utils.noarch"
+                            },
+                            {
+                                "key": "下载到默认目录",
+                                "description": "yum install unzip.x86_64 --downloadonly"
+                            },
+                            {
+                                "key": "下载到指定目录",
+                                "description": "yum install unzip.x86_64 --downloadonly --downloaddir=[路径]"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.安装时保存下载文件",
+                        "blocks": [
+                            {
+                                "key": "修改 /etc/yum.conf 文件",
+                                "description": "keepcache=1"
+                            },
+                            {
+                                "key": "默认文件目录",
+                                "description": "cachedir"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.使用源代码安装",
+                        "blocks": [
+                            {
+                                "key": "准备好编译下载工具",
+                                "description": "yum install gcc wget"
+                            },
+                            {
+                                "key": "进入源码目录",
+                                "description": "cd /usr/local/src/"
+                            },
+                            {
+                                "key": "下载",
+                                "description": "wget http://apache.fayea.com//httpd/httpd-2.4.18.tar.gz"
+                            },
+                            {
+                                "key": "解压",
+                                "description": "tar -zxvf mysql-5.1.40-linux-i686-icc-glibc23.tar.gz"
+                            },
+                            {
+                                "key": "进入程序目录",
+                                "description": "cd httpd-2.4.18"
+                            },
+                            {
+                                "key": "配置",
+                                "description": "./configure --prefix=/usr/local/apache2"
+                            },
+                            {
+                                "key": "检查安装结果",
+                                "description": "echo $?  （0操作成功）"
+                            },
+                            {
+                                "key": "编译",
+                                "description": "make"
+                            },
+                            {
+                                "key": "安装",
+                                "description": "make install"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "九、管理网络",
+                "sections": [
+                    {
+                        "name": "1.打开网络",
+                        "blocks": [
+                            {
+                                "key": "进入网络目录",
+                                "description": "cd /etc/sysconfig/network-scripts/"
+                            },
+                            {
+                                "key": "找到 ifcfg-*",
+                                "description": "修改 ONBOOT=yes"
+                            },
+                            {
+                                "key": "重启",
+                                "description": "生效"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.ip",
+                        "blocks": [
+                            {
+                                "key": "查看ip",
+                                "description": "ip route show 或 ifconfig"
+                            },
+                            {
+                                "key": "设置ip",
+                                "description": "sudo ip addr add 192.168.x.x/24 dev wlan0"
+                            },
+                            {
+                                "key": "删除ip",
+                                "description": "sudo ip addr del 192.168.x.x/24 dev wlan0"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.防火墙",
+                        "blocks": [
+                            {
+                                "key": "防火墙状态",
+                                "description": "service iptables status"
+                            },
+                            {
+                                "key": "关闭防火墙",
+                                "description": "service iptables stop"
+                            },
+                            {
+                                "key": "打开防火墙",
+                                "description": "service iptables start"
+                            },
+                            {
+                                "key": "重启防火墙",
+                                "description": "service iptables restart"
+                            },
+                            {
+                                "key": "配置防火墙端口",
+                                "description": "在文件/etc/sysconfig/iptables中修改"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "十、管理时间",
                 "sections": [
                     {
                         "name": "1.第一节",
                         "blocks": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": "查看时间",
+                                "description": "date"
                             },
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": "修改时间（将系统时间写入cmos）",
+                                "description": "date -s && hwclock -w"
+                            },
+                            {
+                                "key": "同步网络时间",
+                                "description": "ntpdate time.nist.gov"
                             }
                         ]
                     }
