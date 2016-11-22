@@ -1,0 +1,21 @@
+1.打开网络管理器
+netmgr
+
+2.添加监听
+Listening Locations页面：填写IP和端口
+Database Services页面：填写SID，全局服务名
+
+3.添加服务名（向导）
+填写服务名，IP和端口，全局服务名
+
+4.关闭，保存
+
+5.关闭selinux
+setenforce 0（临时）
+vi /etc/selinux/config（永久：改为disabled）
+
+6.启动监听
+lsnrctl start
+（停止stop，查看status）
+
+7.在防火墙打开1521端口

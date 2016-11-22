@@ -1,0 +1,15 @@
+1.安装vncserver
+yum install tigervnc-server.x86_64
+yum install xorg-x11-server-utils.x86_64
+yum install xorg-x11-apps.x86_64
+yum install xorg-x11-utils.x86_64
+sync && shutdown -r now
+
+2.启动vncserver
+vncserver
+export DISPLAY=localhost:0.0
+vi /etc/ssh/sshd_config（修改：X11Forwarding yes）
+vi /etc/ssh/ssh_config（修改：ForwardX11 yes）
+sync && shutdown -r now
+xhost +
+xclock

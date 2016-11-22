@@ -1,0 +1,10 @@
+1.下载instantclient和PLSQL Developer
+
+2.instantclient安装
+解压
+创建network/admin目录
+将linux服务器上的$ORACLE_HOME/network/admin/tnsnames.ora拷贝到这里
+
+3.PLSQL Developer安装
+双击
+配置Tools—>Preferences—>Connection :OCI libray 为“instantclient目录/oci.dll”

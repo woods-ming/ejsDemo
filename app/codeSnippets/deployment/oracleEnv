@@ -1,0 +1,17 @@
+1.打开启动文件
+vi /home/oracle/.bash_profile
+
+2.文件中增加以下内容
+# Oracle DB 11g Environment
+export ORACLE_BASE=/app/oracle
+export ORACLE_SID=test
+export ORACLE_HOME=/app/oracle/product/11.2.0.3/db_1
+export ORACLE_TERM=xterm
+export ORA_NLS33=/app/oracle/product/11.2.0.3/ocommon/nls/admin/data
+export TMP=/tmp
+export TMPDIR=$TMP
+export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
+export PATH=$ORACLE_HOME/bin:$PATH
+
+3.配置生效
+source /home/oracle/.bash_profile

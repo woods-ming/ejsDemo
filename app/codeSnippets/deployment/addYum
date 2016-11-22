@@ -1,0 +1,23 @@
+1.挂载安装盘
+mkdir -p /mnt/cdrom
+mount /dev/cdrom /mnt/cdrom
+
+2.创建本地安装源
+vi /etc/yum.repos.d/local.repo
+（文件内容）
+[LocalRepo]
+name=Local Repository
+baseurl=file:///mnt/cdrom
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+3.更新CentOS7安装源
+yum localinstall http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm 
+
+4.yum安装时保存下载文件
+vi /etc/yum.conf（修改: keepcache=1  查看：cachedir）
+yum clean all
+yum makecache
+yum repolist（检查安装源是否存在）
+yum update

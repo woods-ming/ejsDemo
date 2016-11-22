@@ -1,43 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-
-    <title>CodeExperience</title>
-    <meta name="author" content="胡明明" />
-    <meta name="keywords" content="<%= 关键字 %>" />
-    <meta name="description" content="<%= 摘要 %>">
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="/favicon.ico">
-
-    <!-- bower:css --> 
-    <!-- endbower --> 
-
-    <!-- build:css /styles/main.css -->
-    <link rel="stylesheet" href="/styles/docs.min.css">
-    <link rel="stylesheet" href="/styles/patch.css">
-    <link rel="stylesheet" href="/styles/prettify.css">
-    <!-- endbuild -->
-
+    <%- include('../partials/head'); %>
 </head>
 <body class="bs-docs-home">
-    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-
     <!-- 导航 -->
-    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-        <div class="container">
-            <%- include('../partials/nav'); %>
-        </div>
-    </header>
-
+    <%- include('../partials/nav'); %>
 
     <!-- Page content of course! -->
     <main class="bs-docs-masthead" id="content" role="main" tabindex="-1">
@@ -49,14 +17,5 @@
 
     <!-- 页脚 -->
     <%- include('../partials/footer.ejs'); %>
-
-
-    <!-- bower:js --> 
-    <!-- endbower --> 
-
-    <!-- build:js /scripts/main.js -->
-    <script src="/scripts/main.js"></script>
-    <script src="/scripts/prettyCode.js"></script>
-    <!-- endbuild -->
 </body>
 </html>

@@ -1,14 +1,19 @@
-<div class="bs-callout bs-callout-info">
-	<!-- <h4>注:</h4> -->
-	<p class="text-info">
-		<% 
-		for(var i = 0; i < note.length; i++) { 
-			%>
-
-			<%- note[i] %><br />
-
+<% 
+if(注释) { 
+	%> 
+	<div class="bs-callout bs-callout-info">
+		<!-- <h4>注:</h4> -->
+		<p class="text-info">
 			<% 
-		} 
-		%>
-	</p>
-</div>
+			for(var i = 0; i < note.length; i++) { 
+				%>
+				<%- note[i] %><br />
+
+				<% 
+			} 
+			%>
+		</p>
+	</div>
+	<% 
+} 
+%>

@@ -1,0 +1,8 @@
+1.用xftp上传安装文件到根目录（root用户）
+
+2.解压安装文件（root用户）
+unzip linux.x64_11gR2_database_1of2.zip
+unzip linux.x64_11gR2_database_2of2.zip
+
+3.正式安装（oracle用户）
+/database/runInstaller

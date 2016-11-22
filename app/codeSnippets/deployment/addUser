@@ -1,0 +1,10 @@
+1.创建用户
+groupadd oinstall
+groupadd dba
+useradd -g oinstall -G dba oracle
+passwd oracle
+
+2.创建目录
+mkdir -p /app/
+chown -R oracle:oinstall /app/
+chmod -R 775 /app/

@@ -1,3 +1,5 @@
+<div>
+
 <% 
 for(var i = 0; i < content.chapters.length; i++) { 
 	var chapter = content.chapters[i]; 
@@ -16,8 +18,8 @@ for(var i = 0; i < content.chapters.length; i++) {
 		var section = chapter.sections[j]; 
 		%>
 
-			<h3 class="text-primary" id="<%= i %>-<%= j %>"><%= section.name %></h3>
-			<div class="section">
+		<h3 class="text-primary" id="<%= i %>-<%= j %>"><%= section.name %></h3>
+		<div class="section">
 
 			<% 
 			if(section.blocks) {
@@ -58,7 +60,7 @@ for(var i = 0; i < content.chapters.length; i++) {
 			}
 			%>
 
-			</div>
+		</div>
 
 		<% 
 	} 
@@ -69,3 +71,5 @@ for(var i = 0; i < content.chapters.length; i++) {
 <% 
 } 
 %>
+
+</div>

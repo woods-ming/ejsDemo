@@ -1,22 +1,130 @@
 {
-    "题目": "题目",
+    "题目": "在linux下部署oracle数据库",
     "摘要": "摘要",
     "关键字": "关键字",
     "正文": {
         "chapters": [
             {
-                "name": "一、第一章",
+                "name": "一、检查依赖的软件包",
                 "sections": [
                     {
-                        "name": "1.第一节",
-                        "blocks": [
+                        "name": "",
+                        "codeSnippets": [
                             {
-                                "key": "键",
-                                "description": "值"
-                            },
+                                "description": "",
+                                "url": "/codeSnippets/deployment/checkOracleDependency"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、配置核心参数",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "description": "",
+                                "url": "/codeSnippets/deployment/oracleCoreSetting"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、修改操作系统对oracle用户资源的限制",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/oracleLimits"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、创建用户和目录",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/addUser"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "五、设置oracle环境变量",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/oracleEnv"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "六、安装oracle 11g R2",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/oracle11gR2Install"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "七、配置监听",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/setListener"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "八、创建数据库",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/createDb"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "九、在windows中安装Oracle客户端",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/oracleWindowsClient"
                             }
                         ]
                     }
@@ -25,8 +133,8 @@
         ]
     },
     "注释": [
-        "1.",
-        "2."
+        "1.http://docs.oracle.com/cd/E11882_01/install.112/e24326/toc.htm",
+        "2.http://www.askoracle.org/oracle/DBA/169.html"
     ],
     "参考文献": [
     ]

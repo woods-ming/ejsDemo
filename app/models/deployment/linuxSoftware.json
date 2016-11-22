@@ -1,22 +1,60 @@
 {
     "题目": "linux常用软件安装",
-    "摘要": "摘要",
-    "关键字": "关键字",
+    "摘要": "系统安装好后，在第一时间安装这些应用软件",
+    "关键字": "linux常用软件, 安装操作记录",
     "正文": {
         "chapters": [
             {
-                "name": "一、第一章",
+                "name": "一、增加yum安装源",
                 "sections": [
                     {
-                        "name": "1.第一节",
-                        "blocks": [
+                        "name": "",
+                        "codeSnippets": [
                             {
-                                "key": "键",
-                                "description": "值"
-                            },
+                                "description": "",
+                                "url": "/codeSnippets/deployment/addYum"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、基础软件",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "description": "",
+                                "url": "/codeSnippets/deployment/basicInstall"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、基本设置",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/basicSettings"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、从xshell打开图形界面",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/vncserverInstall"
                             }
                         ]
                     }
@@ -25,8 +63,7 @@
         ]
     },
     "注释": [
-        "1.",
-        "2."
+        "1.必备客户端：xManager, xShell, xFtp"
     ],
     "参考文献": [
     ]

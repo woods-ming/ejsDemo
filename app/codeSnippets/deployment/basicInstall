@@ -1,0 +1,10 @@
+1.安装
+yum install zip.x86_64
+yum install unzip.x86_64
+yum install yum-utils.noarch
+yum install net-tools.x86_64
+yum install ntpdate.x86_64
+yum install wget.x86_64
+yum install iptables-services.x86_64
+yum install tree.x86_64
+yum install firefox.x86_64（在浏览器插件中，安装中文语言包）

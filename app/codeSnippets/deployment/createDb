@@ -1,0 +1,11 @@
+1.打开数据库配置助手
+dbca
+
+2.指定数据库文件路径
+{ORACLE_BASE}/oradata
+
+3.启动数据库
+sqlplus /nolog
+conn / as sysdba;
+shutdown immediate;
+startup;

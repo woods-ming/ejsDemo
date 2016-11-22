@@ -1,0 +1,14 @@
+1.防火墙还原传统管理方式
+systemctl stop firewalld
+systemctl mask firewalld
+systemctl enable iptables
+vi /etc/sysconfig/iptables（仿照22，增加端口）
+service iptables start  （stop/restart）
+service iptables save
+
+2.配置登陆后执行的命令
+chmod +x /etc/rc.d/rc.local
+vi /etc/rc.d/rc.local
+（添加如下语句：对时，挂载cdrom）
+/usr/bin/mount /dev/cdrom /mnt/cdrom
+/usr/sbin/ntpdate -u time.nist.gov && /sbin/hwclock -w

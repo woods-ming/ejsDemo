@@ -1,0 +1,26 @@
+binutils-2.17.50.0.6
+compat-libstdc++-33-3.2.3
+compat-libstdc++-33-3.2.3 (32 bit)
+elfutils-libelf-0.125
+elfutils-libelf-devel-0.125
+gcc-4.1.2
+gcc-c++-4.1.2
+glibc-2.5-24
+glibc-2.5-24 (32 bit)
+glibc-common-2.5
+glibc-devel-2.5
+glibc-devel-2.5 (32 bit)
+glibc-headers-2.5
+ksh-20060214
+libaio-0.3.106
+libaio-0.3.106 (32 bit)
+libaio-devel-0.3.106
+libaio-devel-0.3.106 (32 bit)
+libgcc-4.1.2yu
+libgcc-4.1.2 (32 bit)
+libstdc++-4.1.2
+libstdc++-4.1.2 (32 bit)
+libstdc++-devel 4.1.2
+make-3.81
+sysstat-7.0.2
+（没有就安装，有些需要同时安装x86_64和i386/i686，如果确实安装了，可以忽略错误）
