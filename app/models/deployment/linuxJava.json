@@ -5,18 +5,42 @@
     "正文": {
         "chapters": [
             {
-                "name": "一、第一章",
+                "name": "一、安装jdk1.7",
                 "sections": [
                     {
-                        "name": "1.第一节",
-                        "blocks": [
+                        "name": "",
+                        "codeSnippets": [
                             {
-                                "key": "键",
-                                "description": "值"
-                            },
+                                "description": "",
+                                "url": "/codeSnippets/deployment/jdkInstall"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、安装tomcat7",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "description": "",
+                                "url": "/codeSnippets/deployment/tomcatInstall"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、安装weblogic",
+                "sections": [
+                    {
+                        "name": "",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/deployment/"
                             }
                         ]
                     }

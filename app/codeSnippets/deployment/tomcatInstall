@@ -1,0 +1,27 @@
+1.解压
+cd /usr/local
+unzip apache-tomcat-7.0.69.zip
+
+2.修改权限
+cd apache-tomcat-7.0.69/bin
+chmod 775 *.sh
+
+3.设置环境变量
+（在/etc/profile的最后添加如下语句）
+export CATALINA_HOME=/usr/local/apache-tomcat-7.0.69/
+
+4.使环境变量生效
+source /etc/profile
+
+5.修改启动配置
+（在/bin/catalina.sh的“cygwin=false”前，添加如下语句）
+JAVA_OPTS="-Xms256m -Xmx512m -Xss1024k -XX:PermSize=128m -XX:MaxPermSize=256m"
+
+6.打开使用的端口
+（在/etc/sysconfig/iptables中添加如下语句）
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
+service iptables restart
+
+7.启动tomcat
+（在bin目录下）
+./startup.sh

@@ -1,0 +1,22 @@
+1.安装
+rpm -ivh jdk-7u80-linux-x64.rpm
+
+2.移动
+mv /usr/java /usr/local/
+rm -rf /usr/local/java/latest
+rm -rf /usr/local/java/default
+ln -s /usr/local/java/jdk1.7.0_80 /usr/local/java/latest
+ln -s /usr/local/java/latest /usr/local/java/default
+
+3.设置环境变量
+（在/etc/profile的最后添加如下语句）
+（在用户家目录下vi .bash_profile）
+export JAVA_HOME=/usr/local/java/jdk1.7.0_80
+export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
+
+4.使环境变量生效
+source /etc/profile
+
+5.检查
+java -version
