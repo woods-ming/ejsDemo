@@ -27,7 +27,11 @@
 					that.$codeContainer.html(encodedData);
 
                     if(--count === 0 && window.prettyPrint){
-                        window.prettyPrint();
+                        window.setTimeout(
+                            function() {
+                                window.prettyPrint();
+                            }, 
+                            100);
                     }
 				},
 				error : function (XMLHttpRequest, textStatus, errorThrown) {
