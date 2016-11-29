@@ -1,0 +1,1248 @@
+{
+    "题目": "Javascript",
+    "摘要": "介绍Javascript的语法基础、内建对象、Web运行环境",
+    "关键字": "关键字",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、语法基础",
+                "sections": [
+                    {
+                        "name": "1.数据类型",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①基本数据类型"
+                            },
+                            {
+                                "key": "数字（number）",
+                                "description": "定量工具"
+                            },
+                            {
+                                "key": "字符串（string）",
+                                "description": "文本描述（用 单引号或双引号 括起来）"
+                            },
+                            {
+                                "key": "布尔值（boolean）",
+                                "description": "定性工具（true | false）"
+                            },
+                            {
+                                "key": "",
+                                "description": "②复合数据类型"
+                            },
+                            {
+                                "key": "对象（object）",
+                                "description": "键值对集合，键为 自定义字符串"
+                            },
+                            {
+                                "key": "数组（object）",
+                                "description": "键值对集合，键为 自动生成的数字"
+                            },
+                            {
+                                "key": "函数（function）",
+                                "description": "具有可执行代码，可通过调用来执行操作"
+                            },
+                            {
+                                "key": "未定义（undefined）",
+                                "description": "未声明的变量"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.类型转换",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①数字转字符串"
+                            },
+                            {
+                                "key": "自动转换",
+                                "description": "var 字符串 = 数字 + '' ;"
+                            },
+                            {
+                                "key": "指定小数位数",
+                                "description": "var 字符串 = 数字.toFixed(小数位数) ;"
+                            },
+                            {
+                                "key": "指定有效数字位数",
+                                "description": "var 字符串 = 数字.toPrecision(有效数字位数);"
+                            },
+                            {
+                                "key": "指定指数表示中的小数位数",
+                                "description": "var 字符串 = 数字.toExponential(指数表示中的小数位数);"
+                            },
+                            {
+                                "key": "",
+                                "description": "②字符串转数字"
+                            },
+                            {
+                                "key": "自动转换",
+                                "description": "var 数字 = 字符串 - 0 ;"
+                            },
+                            {
+                                "key": "整数转换",
+                                "description": "var 数字 = parseInt(字符串) ;"
+                            },
+                            {
+                                "key": "小数转换",
+                                "description": "var 数字 = parseFloat(字符串) ;"
+                            },
+                            {
+                                "key": "",
+                                "description": "③布尔值自动转换"
+                            },
+                            {
+                                "key": "布尔值在数字环境",
+                                "description": "true -> 1, false -> 0"
+                            },
+                            {
+                                "key": "布尔值在字符串环境",
+                                "description": "true -> 'true', false -> 'false'"
+                            },
+                            {
+                                "key": "数字在布尔值环境",
+                                "description": "0或NaN -> false, 其余 -> true"
+                            },
+                            {
+                                "key": "字符串在布尔值环境",
+                                "description": "空字符串 -> false, 其余 -> true"
+                            },
+                            {
+                                "key": "object在布尔值环境",
+                                "description": "null和undefined -> false, 其余 -> true"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.语句",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①顺序"
+                            },
+                            {
+                                "key": "表达式",
+                                "description": "数学运算，函数调用"
+                            },
+                            {
+                                "key": "语句块",
+                                "description": "{ ... }"
+                            },
+                            {
+                                "key": "",
+                                "description": "②分支"
+                            },
+                            {
+                                "key": "if ... else if ... else ...",
+                                "description": "含优先级、通过布尔值来判断"
+                            },
+                            {
+                                "key": "switch() { case: ... }",
+                                "description": "不含优先级、通过值匹配来判断"
+                            },
+                            {
+                                "key": "",
+                                "description": "③循环"
+                            },
+                            {
+                                "key": "while()",
+                                "description": "条件循环"
+                            },
+                            {
+                                "key": "for( ; ; )",
+                                "description": "计数器循环"
+                            },
+                            {
+                                "key": "for(key in object)",
+                                "description": "集合枚举（key是集合元素的键）"
+                            },
+                            {
+                                "key": "",
+                                "description": "④跳转"
+                            },
+                            {
+                                "key": "break",
+                                "description": "跳出循环或switch"
+                            },
+                            {
+                                "key": "continue",
+                                "description": "开始下一次循环"
+                            },
+                            {
+                                "key": "return",
+                                "description": "跳出函数"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑤异常处理"
+                            },
+                            {
+                                "key": "throw()",
+                                "description": "抛出异常"
+                            },
+                            {
+                                "key": "try ... catch ... finally ...",
+                                "description": "捕获异常"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.函数",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①定义"
+                            },
+                            {
+                                "key": "命名方式",
+                                "description": "function f(){ ... }"
+                            },
+                            {
+                                "key": "匿名方式",
+                                "description": "var f = function() { ... }"
+                            },
+                            {
+                                "key": "",
+                                "description": "②调用"
+                            },
+                            {
+                                "key": "静态调用",
+                                "description": "调用对象.f()"
+                            },
+                            {
+                                "key": "动态调用",
+                                "description": "f.call(调用对象,参数0,1, ...) / f.apply( ... )"
+                            },
+                            {
+                                "key": "",
+                                "description": "函数作为属性所属的对象，被称作调用对象，在函数内部由this指代"
+                            },
+                            {
+                                "key": "",
+                                "description": "③参数"
+                            },
+                            {
+                                "key": "实参",
+                                "description": "调用时传递的参数"
+                            },
+                            {
+                                "key": "形参",
+                                "description": "定义的参数"
+                            },
+                            {
+                                "key": "",
+                                "description": "实参少于形参时，未映射的形参值是undefined"
+                            },
+                            {
+                                "key": "",
+                                "description": "实参多于形参时，可用arguments[下标]访问所有的实参"
+                            },
+                            {
+                                "key": "",
+                                "description": "④闭包"
+                            },
+                            {
+                                "key": "概念",
+                                "description": "一个函数，它使用了外部变量"
+                            },
+                            {
+                                "key": "类比理解",
+                                "description": "面向对象设计模式中的Command模式"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.对象",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①创建"
+                            },
+                            {
+                                "key": "静态",
+                                "description": "var o = { \"name1\":\"value1\", \"name2\":\"value2\", ... }"
+                            },
+                            {
+                                "key": "动态",
+                                "description": "var o = new 构造函数()"
+                            },
+                            {
+                                "key": "",
+                                "description": "②调用"
+                            },
+                            {
+                                "key": "静态",
+                                "description": "o.name1"
+                            },
+                            {
+                                "key": "动态",
+                                "description": "o[\"name1\"]"
+                            },
+                            {
+                                "key": "",
+                                "description": "③Object属性和方法"
+                            },
+                            {
+                                "key": "o.constructor",
+                                "description": "引用构造函数"
+                            },
+                            {
+                                "key": "o.prototype",
+                                "description": "引用原型对象"
+                            },
+                            {
+                                "key": "o.toString()",
+                                "description": "转换为字符串"
+                            },
+                            {
+                                "key": "o.valueOf()",
+                                "description": "转换为数字"
+                            },
+                            {
+                                "key": "o.hasOwnProperty('属性名')",
+                                "description": "检查对象自己的属性（Object的除外）"
+                            },
+                            {
+                                "key": "A.isPrototypeOf(B)",
+                                "description": "A是否为B的原型对象"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.模拟类",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①定义类结构"
+                            },
+                            {
+                                "key": "实例属性",
+                                "description": "var MyClass = function( x ){ this.实例属性1 = x; }"
+                            },
+                            {
+                                "key": "实例方法",
+                                "description": "MyClass.prototype.实例方法1 = function(){ }"
+                            },
+                            {
+                                "key": "静态属性",
+                                "description": "MyClass.静态属性1 = x;"
+                            },
+                            {
+                                "key": "静态方法",
+                                "description": "MyClass.静态方法1 = function(){ }"
+                            },
+                            {
+                                "key": "构造函数",
+                                "description": "MyClass"
+                            },
+                            {
+                                "key": "",
+                                "description": "this 指代类的实例，在构造函数和实例方法中被引用"
+                            },
+                            {
+                                "key": "",
+                                "description": "②类继承"
+                            },
+                            {
+                                "key": "继承实例属性",
+                                "description": "var InheritClass = function( x, y ){ MyClass.Call(this, x); this.实例属性2 = y; }"
+                            },
+                            {
+                                "key": "继承实例方法",
+                                "description": "InheritClass.prototype = new InheritClass();"
+                            },
+                            {
+                                "key": "指定构造函数",
+                                "description": "InheritClass.prototype.constructor = InheritClass;"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.模块和名字空间",
+                        "blocks": [
+                            {
+                                "key": "名字空间",
+                                "description": "避免变量命名冲突"
+                            },
+                            {
+                                "key": "",
+                                "description": "静态变量或方法所属的对象，被当作命名空间"
+                            },
+                            {
+                                "key": "模块",
+                                "description": "以功能为单位，划分代码"
+                            },
+                            {
+                                "key": "",
+                                "description": "(function(){ ... })();"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、内建对象",
+                "sections": [
+                    {
+                        "name": "1.Array",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①创建"
+                            },
+                            {
+                                "key": "静态",
+                                "description": "var a = [ \"value1\", \"value2\", ... ]"
+                            },
+                            {
+                                "key": "动态",
+                                "description": "var a = new Array()"
+                            },
+                            {
+                                "key": "",
+                                "description": "②调用"
+                            },
+                            {
+                                "key": "动态",
+                                "description": "o[序号]"
+                            },
+                            {
+                                "key": "",
+                                "description": "③Array属性和方法"
+                            },
+                            {
+                                "key": "a.length",
+                                "description": "数组的长度"
+                            },
+                            {
+                                "key": "a.join('连字符')",
+                                "description": "连接数组元素，组成一个字符串"
+                            },
+                            {
+                                "key": "a.reverse()",
+                                "description": "颠倒元素的顺序，返回新数组"
+                            },
+                            {
+                                "key": "a.sort(function(a,b){ return 数字; })",
+                                "description": "对数组排序（函数描述规则）"
+                            },
+                            {
+                                "key": "a.concat([ 数组2 ])",
+                                "description": "将第二个数组的元素挂到第一个数组后面"
+                            },
+                            {
+                                "key": "a.slice(起始位置，[结束位置])",
+                                "description": "截取一段元素"
+                            },
+                            {
+                                "key": "a.splice(起始位置，删除几个，[新元素, ...])",
+                                "description": "在指定位置，用新元素替换旧元素"
+                            },
+                            {
+                                "key": "a.push()",
+                                "description": "尾部入栈（返回数组长度）"
+                            },
+                            {
+                                "key": "a.pop()",
+                                "description": "尾部出栈（返回出栈元素）"
+                            },
+                            {
+                                "key": "a.unshift()",
+                                "description": "头部入栈（返回数组长度）"
+                            },
+                            {
+                                "key": "a.shift()",
+                                "description": "头部出栈（返回出栈元素）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.String",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①创建"
+                            },
+                            {
+                                "key": "静态",
+                                "description": "var s = \"字符串\""
+                            },
+                            {
+                                "key": "",
+                                "description": "②String属性和方法"
+                            },
+                            {
+                                "key": "s.length",
+                                "description": "字符串的长度"
+                            },
+                            {
+                                "key": "s.anchor('name') ",
+                                "description": "创建锚：&lt;a name=\"名称\"&gt;文本&lt;/a&gt;"
+                            },
+                            {
+                                "key": "s.link('href') ",
+                                "description": "创建链接：&lt;a href=\"http://www.baidu.com\"&gt;abc&lt;/a&gt;"
+                            },
+                            {
+                                "key": "s.charAt(位置)",
+                                "description": "返回指定位置的字符"
+                            },
+                            {
+                                "key": "s.indexOf(文本，[起始位置])",
+                                "description": "从前向后，检索文本在字符串中的位置"
+                            },
+                            {
+                                "key": "s.lastIndexOf(文本，[起始位置])",
+                                "description": "从后向前，检索文本在字符串中的位置"
+                            },
+                            {
+                                "key": "s.slice(起始位置，[结束位置])",
+                                "description": "截取一段字符"
+                            },
+                            {
+                                "key": "s.split('separator')",
+                                "description": "把字符串分割成数组"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.Number",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①创建"
+                            },
+                            {
+                                "key": "静态",
+                                "description": "var n = 0"
+                            },
+                            {
+                                "key": "",
+                                "description": "②Number静态常量"
+                            },
+                            {
+                                "key": "最大的数",
+                                "description": "Number.MAX_VALUE"
+                            },
+                            {
+                                "key": "最小的数",
+                                "description": "Number.MIN_VALUE"
+                            },
+                            {
+                                "key": "非数字",
+                                "description": "Number.NaN"
+                            },
+                            {
+                                "key": "负无穷大",
+                                "description": "Number.NEGATIVE_INFINITY"
+                            },
+                            {
+                                "key": "正无穷大",
+                                "description": "Number.POSITIVE_INFINITY"
+                            },
+                            {
+                                "key": "",
+                                "description": "③Number方法"
+                            },
+                            {
+                                "key": "n.toFixed(小数位数)",
+                                "description": "四舍五入表示法"
+                            },
+                            {
+                                "key": "n.toExponential(小数位数)",
+                                "description": "指数计数表示法"
+                            },
+                            {
+                                "key": "n.toPrecision(有效数字个数)",
+                                "description": "有效数字表示法"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.Date",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①创建"
+                            },
+                            {
+                                "key": "动态",
+                                "description": "var date = new Date()"
+                            },
+                            {
+                                "key": "",
+                                "description": "②Date属性和方法"
+                            },
+                            {
+                                "key": "new Date()",
+                                "description": "此刻的日期和时间"
+                            },
+                            {
+                                "key": "date.getDate()",
+                                "description": "本月中的第几天"
+                            },
+                            {
+                                "key": "date.getDay()",
+                                "description": "本周中的第几天（周日=0, ...）"
+                            },
+                            {
+                                "key": "date.getMonth()",
+                                "description": "本年中的第几个月（一月=0, ...）"
+                            },
+                            {
+                                "key": "date.getFullYear()",
+                                "description": "年份"
+                            },
+                            {
+                                "key": "date.getHours()",
+                                "description": "小时"
+                            },
+                            {
+                                "key": "date.getMinutes()",
+                                "description": "分钟"
+                            },
+                            {
+                                "key": "date.getSeconds()",
+                                "description": "秒数"
+                            },
+                            {
+                                "key": "date.getMilliseconds()",
+                                "description": "毫秒数"
+                            },
+                            {
+                                "key": "date.toLocaleString()",
+                                "description": "根据本地时间格式，转换为字符串"
+                            },
+                            {
+                                "key": "date.toLocaleDateString()",
+                                "description": "根据本地时间格式，将日期转换为字符串"
+                            },
+                            {
+                                "key": "date.toLocaleTimeString()",
+                                "description": "根据本地时间格式，将时间转换为字符串"
+                            },
+                            {
+                                "key": "",
+                                "description": "③日期比较"
+                            },
+                            {
+                                "key": "做减法",
+                                "description": "date1-date2 > 0 ? 'date1大' : 'date2大'"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.Math",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①Math静态常量"
+                            },
+                            {
+                                "key": "Math.E",
+                                "description": "e（自然对数的常量）"
+                            },
+                            {
+                                "key": "Math.PI",
+                                "description": "π（圆周率）"
+                            },
+                            {
+                                "key": "Math.SQRT2",
+                                "description": "2的平方根"
+                            },
+                            {
+                                "key": "",
+                                "description": "②Math静态方法"
+                            },
+                            {
+                                "key": "Math.abs(x)",
+                                "description": "绝对值"
+                            },
+                            {
+                                "key": "Math.max(x...)",
+                                "description": "最大值"
+                            },
+                            {
+                                "key": "Math.min(x...)",
+                                "description": "最小值"
+                            },
+                            {
+                                "key": "Math.ceil(x)",
+                                "description": "向上取整数"
+                            },
+                            {
+                                "key": "Math.floor(x)",
+                                "description": "向下取整数"
+                            },
+                            {
+                                "key": "Math.round(x)",
+                                "description": "四舍五入"
+                            },
+                            {
+                                "key": "Math.random()",
+                                "description": "随机数（0 - 1）"
+                            },
+                            {
+                                "key": "Math.exp(x)",
+                                "description": "e的x次幂"
+                            },
+                            {
+                                "key": "Math.log(x)",
+                                "description": "x的自然对数"
+                            },
+                            {
+                                "key": "Math.pow(x,y)",
+                                "description": "x的y次幂"
+                            },
+                            {
+                                "key": "Math.sqrt(x)",
+                                "description": "平方根"
+                            },
+                            {
+                                "key": "Math.sin(x)",
+                                "description": "正弦"
+                            },
+                            {
+                                "key": "Math.cos(x)",
+                                "description": "余弦"
+                            },
+                            {
+                                "key": "Math.tan(x)",
+                                "description": "正切"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.Date",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①创建"
+                            },
+                            {
+                                "key": "动态",
+                                "description": "var date = new Date()"
+                            },
+                            {
+                                "key": "",
+                                "description": "②Date属性和方法"
+                            },
+                            {
+                                "key": "new Date()",
+                                "description": "此刻的日期和时间"
+                            },
+                            {
+                                "key": "date.getDate()",
+                                "description": "本月中的第几天"
+                            },
+                            {
+                                "key": "date.getDay()",
+                                "description": "本周中的第几天（周日=0, ...）"
+                            },
+                            {
+                                "key": "date.getMonth()",
+                                "description": "本年中的第几个月（一月=0, ...）"
+                            },
+                            {
+                                "key": "date.getFullYear()",
+                                "description": "年份"
+                            },
+                            {
+                                "key": "date.getHours()",
+                                "description": "小时"
+                            },
+                            {
+                                "key": "date.getMinutes()",
+                                "description": "分钟"
+                            },
+                            {
+                                "key": "date.getSeconds()",
+                                "description": "秒数"
+                            },
+                            {
+                                "key": "date.getMilliseconds()",
+                                "description": "毫秒数"
+                            },
+                            {
+                                "key": "date.toLocaleString()",
+                                "description": "根据本地时间格式，转换为字符串"
+                            },
+                            {
+                                "key": "date.toLocaleDateString()",
+                                "description": "根据本地时间格式，将日期转换为字符串"
+                            },
+                            {
+                                "key": "date.toLocaleTimeString()",
+                                "description": "根据本地时间格式，将时间转换为字符串"
+                            },
+                            {
+                                "key": "",
+                                "description": "③日期比较"
+                            },
+                            {
+                                "key": "做减法",
+                                "description": "date1-date2 > 0 ? 'date1大' : 'date2大'"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.RegExp",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①创建"
+                            },
+                            {
+                                "key": "静态",
+                                "description": "var regExp = /正则表达式/[修饰符]"
+                            },
+                            {
+                                "key": "动态",
+                                "description": "var regExp = new RegExp(正则表达式,[修饰符])"
+                            },
+                            {
+                                "key": "",
+                                "description": "②修饰符"
+                            },
+                            {
+                                "key": "g",
+                                "description": "全局匹配（找所有的）"
+                            },
+                            {
+                                "key": "i",
+                                "description": "忽略大小写"
+                            },
+                            {
+                                "key": "m",
+                                "description": "多行匹配"
+                            },
+                            {
+                                "key": "",
+                                "description": "③RegExp属性"
+                            },
+                            {
+                                "key": "regExp.global",
+                                "description": "是否全局匹配（返回true / false）"
+                            },
+                            {
+                                "key": "regExp.ignoreCase",
+                                "description": "是否忽略大小写（返回true / false）"
+                            },
+                            {
+                                "key": "regExp.multiline",
+                                "description": "是否多行匹配（返回true / false）"
+                            },
+                            {
+                                "key": "regExp.source",
+                                "description": "正则表达式的原始文本"
+                            },
+                            {
+                                "key": "regExp.lastIndex",
+                                "description": "下一次匹配的起始位置"
+                            },
+                            {
+                                "key": "",
+                                "description": "④RegExp方法"
+                            },
+                            {
+                                "key": "regExp.compile(新的正则表达式)",
+                                "description": "修改正则表达式后，重新编译"
+                            },
+                            {
+                                "key": "regExp.exec(要检索的字符串)",
+                                "description": "找出匹配的元素（返回找到的数组、第一个元素的位置）"
+                            },
+                            {
+                                "key": "regExp.test(要检索的字符串)",
+                                "description": "是否存在匹配的元素（返回true / false）"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、Web运行环境",
+                "sections": [
+                    {
+                        "name": "1.浏览器",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①环境：使用全局对象window，包含当前环境的所有信息"
+                            },
+                            {
+                                "key": "window",
+                                "description": "当前窗口"
+                            },
+                            {
+                                "key": "",
+                                "description": "②运行：单线程运行"
+                            },
+                            {
+                                "key": "加载过程",
+                                "description": "按照抒写顺序，一边加载一边执行"
+                            },
+                            {
+                                "key": "事件驱动阶段",
+                                "description": "事件句柄接受DOM事件，用挂接的js函数来响应"
+                            },
+                            {
+                                "key": "",
+                                "description": "③安全：不能访问所在计算机上、除浏览器之外的资源"
+                            },
+                            {
+                                "key": "同源策略",
+                                "description": "只有window.document.domain相同的网页，才可以共享数据"
+                            },
+                            {
+                                "key": "跨站脚本攻击(XSS)",
+                                "description": "将脚本伪装成输入，在网站的疏忽下运行"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.window",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①属性"
+                            },
+                            {
+                                "key": "window.name",
+                                "description": "窗口名称"
+                            },
+                            {
+                                "key": "window.opener",
+                                "description": "打开当前窗口的窗口"
+                            },
+                            {
+                                "key": "window.location",
+                                "description": "当前窗口的地址"
+                            },
+                            {
+                                "key": "window.history",
+                                "description": "当前窗口的浏览历史"
+                            },
+                            {
+                                "key": "window.screen",
+                                "description": "显示器的屏幕"
+                            },
+                            {
+                                "key": "window.document",
+                                "description": "窗口加载的Html文档（DOM）"
+                            },
+                            {
+                                "key": "",
+                                "description": "②方法"
+                            },
+                            {
+                                "key": "window.open(url,窗口名,'属性设置')",
+                                "description": "打开新窗口"
+                            },
+                            {
+                                "key": "window.close()",
+                                "description": "关闭当前窗口"
+                            },
+                            {
+                                "key": "window.focus()",
+                                "description": "当前窗口锁定键盘焦点"
+                            },
+                            {
+                                "key": "window.moveTo() / window.moveBy()",
+                                "description": "移动当前窗口"
+                            },
+                            {
+                                "key": "window.scrollTo() / window.scrollBy()",
+                                "description": "滚动当前窗口的位置"
+                            },
+                            {
+                                "key": "window.resizeTo() / window.resizeBy()",
+                                "description": "调整当前窗口的尺寸"
+                            },
+                            {
+                                "key": "window.addEventListener() / window.removeEventListener()",
+                                "description": "管理当前窗口的事件句柄"
+                            },
+                            {
+                                "key": "",
+                                "description": "③特别说明"
+                            },
+                            {
+                                "key": "",
+                                "description": "window上挂接的属性，可以直接引用（省略window.）"
+                            },
+                            {
+                                "key": "",
+                                "description": "所有直接创建的变量，都默认被挂在window上"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.window.location",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①属性"
+                            },
+                            {
+                                "key": "location.href",
+                                "description": "完整的url地址"
+                            },
+                            {
+                                "key": "location.protocal",
+                                "description": "url的协议部分"
+                            },
+                            {
+                                "key": "location.host",
+                                "description": "url的主机名和端口"
+                            },
+                            {
+                                "key": "location.hostname",
+                                "description": "url的主机名部分"
+                            },
+                            {
+                                "key": "location.port",
+                                "description": "url的端口部分"
+                            },
+                            {
+                                "key": "location.pathname",
+                                "description": "url的路径部分"
+                            },
+                            {
+                                "key": "location.search",
+                                "description": "url的查询部分"
+                            },
+                            {
+                                "key": "location.hash",
+                                "description": "url的锚部分"
+                            },
+                            {
+                                "key": "",
+                                "description": "②方法"
+                            },
+                            {
+                                "key": "location.reload(true/false)",
+                                "description": "重新装载当前文档(是/否强制刷新)"
+                            },
+                            {
+                                "key": "location.replace(url)",
+                                "description": "装载新的地址(旧地址不记入history)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.window.history",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①方法"
+                            },
+                            {
+                                "key": "history.back()",
+                                "description": "后退"
+                            },
+                            {
+                                "key": "history.forward()",
+                                "description": "前进"
+                            },
+                            {
+                                "key": "history.go(次数)",
+                                "description": "前进/后退的次数(正数前进/负数后退)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.window.screen",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①属性"
+                            },
+                            {
+                                "key": "screen.availHeight",
+                                "description": "可用屏幕高度px"
+                            },
+                            {
+                                "key": "screen.availWidth",
+                                "description": "可用屏幕宽度px"
+                            },
+                            {
+                                "key": "screen.colorDepth",
+                                "description": "颜色深度"
+                            },
+                            {
+                                "key": "screen.height",
+                                "description": "屏幕高度px"
+                            },
+                            {
+                                "key": "screen.width",
+                                "description": "屏幕宽度px"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.window.document",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①属性"
+                            },
+                            {
+                                "key": "document.cookie",
+                                "description": "设置或返回与当前文档有关的所有cookie"
+                            },
+                            {
+                                "key": "document.domain",
+                                "description": "当前文档的域名"
+                            },
+                            {
+                                "key": "document.referrer",
+                                "description": "前一个文档的url"
+                            },
+                            {
+                                "key": "document.title",
+                                "description": "当前文档的标题"
+                            },
+                            {
+                                "key": "",
+                                "description": "②方法"
+                            },
+                            {
+                                "key": "document.getElementById('Id')",
+                                "description": "根据Id查找元素"
+                            },
+                            {
+                                "key": "document.getElementsByName('tag')",
+                                "description": "根据tag查找元素"
+                            },
+                            {
+                                "key": "document.createElement('tag')",
+                                "description": "创建标签节点"
+                            },
+                            {
+                                "key": "document.createAttribute(属性名)",
+                                "description": "创建属性节点"
+                            },
+                            {
+                                "key": "document.createTextNode(文本)",
+                                "description": "创建文本节点"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.document.cookie",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①属性"
+                            },
+                            {
+                                "key": "cookie.expires",
+                                "description": "生存期：截止日期（绝对时间）"
+                            },
+                            {
+                                "key": "cookie.max-age",
+                                "description": "生存期：多少秒（相对时间）"
+                            },
+                            {
+                                "key": "cookie.domain",
+                                "description": "可见范围：'域名'"
+                            },
+                            {
+                                "key": "cookie.path",
+                                "description": "可见范围：'/目录'下"
+                            },
+                            {
+                                "key": "cookie.secure",
+                                "description": "是否使用https传输"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "8.事件处理",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①传播过程"
+                            },
+                            {
+                                "key": "捕捉阶段",
+                                "description": "document对象 --> 叶子祖先 --> 目标节点"
+                            },
+                            {
+                                "key": "找到目标",
+                                "description": "调用事件句柄 + 浏览器执行默认行为"
+                            },
+                            {
+                                "key": "起泡阶段",
+                                "description": "document对象 <-- 叶子祖先 <-- 目标节点"
+                            },
+                            {
+                                "key": "阻止事件传播",
+                                "description": "stopPropagation()"
+                            },
+                            {
+                                "key": "取消浏览器默认行为",
+                                "description": "preventDefault()"
+                            },
+                            {
+                                "key": "",
+                                "description": "②响应过程：元素订阅事件，当事件在传播过程中经过它时，用指定的函数来响应（可订阅多次）"
+                            },
+                            {
+                                "key": "注册事件句柄",
+                                "description": "元素.addEventListener('eventType',响应函数,是否捕捉事件)"
+                            },
+                            {
+                                "key": "触发方式",
+                                "description": "设备触发 || 过程触发 || 代码调用触发"
+                            },
+                            {
+                                "key": "响应方式",
+                                "description": "随即调用响应函数，但顺序不确定"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "9.计时器",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①在指定毫秒数过去后执行"
+                            },
+                            {
+                                "key": "定义TimeOut计时器",
+                                "description": "var t = setTimeOut('语句',毫秒数)"
+                            },
+                            {
+                                "key": "删除TimeOut计时器",
+                                "description": "clearTimeOut(t)"
+                            },
+                            {
+                                "key": "",
+                                "description": "②在指定毫秒数的间隔里重复调用"
+                            },
+                            {
+                                "key": "定义Interval计时器",
+                                "description": "var t = setInterval('语句',毫秒数)"
+                            },
+                            {
+                                "key": "删除Interval计时器",
+                                "description": "clearInterval(t)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1.结构化程序的3种基本结构：顺序、分支、循环 ",
+        "2.数组和对象都可以看成键值对集合，数组将下标编号编号作为键、对象将属性名称作为键 ",
+        "3.异常是一个信号，通知运行环境，程序发生了意外",
+        "4.javascript的每个函数都可以调用的数据：外部变量、实参、局部变量",
+        "5.浏览器构建了一个web容器，解析接受到的javascript代码"
+    ],
+    "参考文献": [
+    ]
+}
