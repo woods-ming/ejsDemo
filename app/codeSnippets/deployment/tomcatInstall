@@ -7,7 +7,7 @@ cd apache-tomcat-7.0.69/bin
 chmod 775 *.sh
 
 3.设置环境变量
-（在/etc/profile的最后添加如下语句）
+（在用户家目录下vi .bash_profile最后添加如下语句）
 export CATALINA_HOME=/usr/local/apache-tomcat-7.0.69/
 
 4.使环境变量生效

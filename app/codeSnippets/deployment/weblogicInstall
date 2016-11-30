@@ -19,3 +19,8 @@ vi setDomainEnv.sh
 export WLS_USER="weblogic"
 export WLS_PW="weblogic2016"
 
+6.启动脚本地址
+安装路径：/home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/bin
+启动：startWebLogic.sh
+停止：stopWebLogic.sh
+端口配置文件：Middleware\Oracle_Home\user_projects\domains\base_domain\confi
