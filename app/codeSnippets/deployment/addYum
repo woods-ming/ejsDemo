@@ -20,4 +20,3 @@ vi /etc/yum.conf（修改: keepcache=1  查看：cachedir）
 yum clean all
 yum makecache
 yum repolist（检查安装源是否存在）
-yum update

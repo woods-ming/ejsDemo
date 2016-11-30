@@ -1,7 +1,11 @@
 1.防火墙还原传统管理方式
 systemctl stop firewalld
 systemctl mask firewalld
+
+firewall-cmd --state
 systemctl enable iptables
+vi /etc/selinux/config（修改：SELINUX=disabled  注释：SELINUXTYPE）
+setenforce 0
 vi /etc/sysconfig/iptables（仿照22，增加端口）
 service iptables start  （stop/restart）
 service iptables save
@@ -12,3 +16,6 @@ vi /etc/rc.d/rc.local
 （添加如下语句：对时，挂载cdrom）
 /usr/bin/mount /dev/cdrom /mnt/cdrom
 /usr/sbin/ntpdate -u time.nist.gov && /sbin/hwclock -w
+
+3.重启生效
+sync & shutdown -r now
