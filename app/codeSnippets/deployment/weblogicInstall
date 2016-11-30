@@ -6,7 +6,7 @@ passwd weblogic
 2.下载安装文件
 http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-main-097127.html
 
-3.安装
+3.用weblogic用户登录并安装
 java -jar wls1036_generic.jar
 
 4.创建域
