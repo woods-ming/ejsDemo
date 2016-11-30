@@ -1,0 +1,21 @@
+1.创建用户和用户组
+groupadd weblogic
+useradd -g weblogic -m -d /home/weblogic weblogic
+passwd weblogic
+
+2.下载安装文件
+http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-main-097127.html
+
+3.用weblogic用户登录并安装
+java -jar wls1036_generic.jar
+
+4.创建域
+cd /home/weblogic/Oracle/Middleware/wlserver_10.3/common/bin/
+./config.sh
+
+5.修改域的环境变量
+（进入域的bin目录）
+vi setDomainEnv.sh
+export WLS_USER="weblogic"
+export WLS_PW="weblogic2016"
+
