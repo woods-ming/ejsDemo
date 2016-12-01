@@ -12,7 +12,7 @@ Database Services页面：填写SID，全局服务名
 
 5.关闭selinux
 setenforce 0（临时）
-vi /etc/selinux/config（永久：改为disabled）
+vi /etc/selinux/config（修改：SELINUX=disabled）
 
 6.启动监听
 lsnrctl start
