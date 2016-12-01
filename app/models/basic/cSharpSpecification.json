@@ -1,0 +1,214 @@
+{
+    "题目": "C#编程规范",
+    "摘要": "了解编程规范的意义，和一些通用的原则",
+    "关键字": "基本编程规范",
+    "正文": {
+        "chapters": [
+            {
+                "name": "",
+                "sections": [
+                    {
+                        "name": "1.文件和结构",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "1个文件只包含1个Public类"
+                            },
+                            {
+                                "key": "",
+                                "description": "1个Public类中可以有多个内部类"
+                            },
+                            {
+                                "key": "",
+                                "description": "“文件名”和“类名”必须相同"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.命名规范：见名知意",
+                        "blocks": [
+                            {
+                                "key": "名词",
+                                "description": "命名空间、接口、类、结构体、枚举、属性、域、变量、常量"
+                            },
+                            {
+                                "key": "动词(短语)",
+                                "description": "方法"
+                            },
+                            {
+                                "key": "“_前缀”",
+                                "description": "域"
+                            },
+                            {
+                                "key": "“I前缀”",
+                                "description": "接口"
+                            },
+                            {
+                                "key": "“后缀Callback”",
+                                "description": "委托"
+                            },
+                            {
+                                "key": "“后缀EventHandler”",
+                                "description": "事件"
+                            },
+                            {
+                                "key": "“T”",
+                                "description": "泛型参数"
+                            },
+                            {
+                                "key": "",
+                                "description": "暴露给外部的数据大写，内部使用的数据小写"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.常量",
+                        "blocks": [
+                            {
+                                "key": "运行时static readonly",
+                                "description": "引用类型 || 会随着版本变化的数据"
+                            },
+                            {
+                                "key": "编译时const",
+                                "description": "值类型 && 不会随着版本变化的数据"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.字符串",
+                        "blocks": [
+                            {
+                                "key": "拼接",
+                                "description": "量少时使用“+”，量大时使用StringBuilder"
+                            },
+                            {
+                                "key": "相等",
+                                "description": "str1.Equals(str2, StringComparison.OrdinalIgnoreCase)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.描述相同数据类型的元素集合",
+                        "blocks": [
+                            {
+                                "key": "数组",
+                                "description": "大小固定，性能较高，只读场景下须Clone()代价高"
+                            },
+                            {
+                                "key": "泛型集合",
+                                "description": "大小可变，性能稍差，可以转为ReadOnlyCollection<T>"
+                            },
+                            {
+                                "key": "集合不能是null",
+                                "description": "没有元素时是空集合"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.结构体",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "用于存储数据"
+                            },
+                            {
+                                "key": "如果需要比较",
+                                "description": "请实现IEquatable<T>"
+                            },
+                            {
+                                "key": "默认值",
+                                "description": "默认构造函数将struct初始化为0，必须将0定义为一个有意义的状态"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.类",
+                        "blocks": [
+                            {
+                                "key": "字段",
+                                "description": "一个成员，表示与对象或类关联的变量"
+                            },
+                            {
+                                "key": "属性",
+                                "description": "通过get/set附加简单逻辑，暴露域"
+                            },
+                            {
+                                "key": "构造函数",
+                                "description": "初始化数据成员，做必须的工作；不要调用虚方法"
+                            },
+                            {
+                                "key": "方法",
+                                "description": "将输出参数放到最后"
+                            },
+                            {
+                                "key": "事件",
+                                "description": "引发事件的代码放到try...catch中（防止被异常终止程序）"
+                            },
+                            {
+                                "key": "回调",
+                                "description": "确定执行时机，不确定具体行为，由传递的委托确定"
+                            },
+                            {
+                                "key": "虚函数",
+                                "description": "留给子类重写实现"
+                            },
+                            {
+                                "key": "接口",
+                                "description": "定义行为契约"
+                            },
+                            {
+                                "key": "抽象类",
+                                "description": "抽象出共同的数据和行为；构造函数对外不可见protected"
+                            },
+                            {
+                                "key": "静态类",
+                                "description": "框架内的核心支持辅助类"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "8.前置条件不满足：错误 / 异常",
+                        "blocks": [
+                            {
+                                "key": "错误",
+                                "description": "出问题了，责任在我（内因），更正后可以继续"
+                            },
+                            {
+                                "key": "异常",
+                                "description": "出问题了，责任在外部环境（外因），除非让环境变化，否则进行不下去"
+                            },
+                            {
+                                "key": "",
+                                "description": "①共同点"
+                            },
+                            {
+                                "key": "",
+                                "description": "通过检查前置条件，事先预测错误或异常"
+                            },
+                            {
+                                "key": "",
+                                "description": "都是消息传递方式，分别由“错误码”/“异常类型”来区分消息"
+                            },
+                            {
+                                "key": "",
+                                "description": "②不同点"
+                            },
+                            {
+                                "key": "",
+                                "description": "错误通过正常流程返回，提示用户更正输入"
+                            },
+                            {
+                                "key": "",
+                                "description": "异常直接抛出，告知调用程序环境不正常；可被try...catch处理：尝试修复 / 记录 / 重新抛出"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1.可以参考一些.Net类库的源码，了解C#的编程风格"
+    ],
+    "参考文献": []
+}
