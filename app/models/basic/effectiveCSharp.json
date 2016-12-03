@@ -1,0 +1,324 @@
+{
+    "题目": "《Effective C#》",
+    "摘要": "有效使用C#的一些语言技巧",
+    "关键字": "Effective, C#, 技巧",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、数据",
+                "sections": [
+                    {
+                        "name": "1.如何描述？",
+                        "blocks": [
+                            {
+                                "key": "数据类型",
+                                "description": "描述对东西的分类"
+                            },
+                            {
+                                "key": "变量",
+                                "description": "由类型修饰，是数据的名字"
+                            },
+                            {
+                                "key": "实例",
+                                "description": "具体的东西"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.自定义类型",
+                        "blocks": [
+                            {
+                                "key": "enum",
+                                "description": "对不同事物做简单区分"
+                            },
+                            {
+                                "key": "struct",
+                                "description": "描述事物的组成结构（要能够序列化[Serializable]）"
+                            },
+                            {
+                                "key": "class",
+                                "description": "描述事物的组成结构和行为方式（重写ToString()）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.类型转换",
+                        "blocks": [
+                            {
+                                "key": "引用类型",
+                                "description": "as"
+                            },
+                            {
+                                "key": "值类型",
+                                "description": "强转"
+                            },
+                            {
+                                "key": "类型判断",
+                                "description": "is"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.类成员初始化",
+                        "blocks": [
+                            {
+                                "key": "调用顺序",
+                                "description": "静态成员 → 静态构造函数 → 实例成员 → 实例构造函数"
+                            },
+                            {
+                                "key": "无需初始化的成员",
+                                "description": "系统赋予默认值为0或null"
+                            },
+                            {
+                                "key": "需要初始化的成员",
+                                "description": "常量初始化直接在成员上赋值，带运算过程的再使用构造函数"
+                            },
+                            {
+                                "key": "复用构造函数",
+                                "description": "把多个构造函数重复的部分提炼出来，封装到私有构造函数中"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.等同性判断：尤其用在集合识别其成员的情况下",
+                        "blocks": [
+                            {
+                                "key": "引用相等",
+                                "description": "①static bool ReferenceEquals(object left, object right) "
+                            },
+                            {
+                                "key": "值相等",
+                                "description": "②static bool Equals(object left, object right) "
+                            },
+                            {
+                                "key": "值相等",
+                                "description": "③virtual bool Equals(object right) "
+                            },
+                            {
+                                "key": "值相等",
+                                "description": "④static bool operator ==(object left, object right) "
+                            },
+                            {
+                                "key": "",
+                                "description": "值类型struct，应该重写③,④，以提高比较性能"
+                            },
+                            {
+                                "key": "",
+                                "description": "需要用语义区分的引用类型class，应该重写③"
+                            },
+                            {
+                                "key": "",
+                                "description": "重写③必须实现IEquatable<T>，重载④能够提高程序可读性"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.标准 IEquatable 代码",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/basic/IEquatable.cs"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.定义比较规则：常用于排序",
+                        "blocks": [
+                            {
+                                "key": "类本身支持比较",
+                                "description": "IComparable&lt;T&gt; 可以使用该逻辑同时重载运算符"
+                            },
+                            {
+                                "key": "专门负责对别人进行比较的类",
+                                "description": "IComparer&lt;T&gt; 用于扩展排序规则"
+                            },
+                            {
+                                "key": "需要初始化的成员",
+                                "description": "常量初始化直接在成员上赋值，带运算过程的再使用构造函数"
+                            },
+                            {
+                                "key": "复用构造函数",
+                                "description": "把多个构造函数重复的部分提炼出来，封装到私有构造函数中"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "8.标准 IComparable 代码",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/basic/IComparable.cs"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "9.标准 IComparer 代码",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/basic/IComparer.cs"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、方法",
+                "sections": [
+                    {
+                        "name": "1.如何描述？",
+                        "blocks": [
+                            {
+                                "key": "函数类型",
+                                "description": "用delegate修饰，通过输入参数和输出参数来区分"
+                            },
+                            {
+                                "key": "变量",
+                                "description": "由函数类型声明，指代一类方法"
+                            },
+                            {
+                                "key": "实例",
+                                "description": "具体的函数，描述实现步骤"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.抒写建议",
+                        "blocks": [
+                            {
+                                "key": "单一职责",
+                                "description": "结构清晰、逻辑简单，便于维护"
+                            },
+                            {
+                                "key": "重载",
+                                "description": "一个重载系列像一个梯形，短重载就是调用长重载，然后给后面的参数指定默认值"
+                            },
+                            {
+                                "key": "可选参数",
+                                "description": "在函数的声明中，直接给后面的参数赋默认值"
+                            },
+                            {
+                                "key": "",
+                                "description": "重载和可选参数，在本质上都是对函数调用的复用"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.DotNet类库定义的委托类型",
+                        "blocks": [
+                            {
+                                "key": "Predict<>",
+                                "description": "返回 bool类型，自定义 in类型"
+                            },
+                            {
+                                "key": "Action<>",
+                                "description": "返回 void类型，自定义 in类型"
+                            },
+                            {
+                                "key": "Func<>",
+                                "description": "自定义 out类型，自定义 in类型"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、契约",
+                "sections": [
+                    {
+                        "name": "1.契约种类",
+                        "blocks": [
+                            {
+                                "key": "接口",
+                                "description": "调用类与被调用类 之间的约定"
+                            },
+                            {
+                                "key": "虚函数",
+                                "description": "父类与子类 的约定"
+                            },
+                            {
+                                "key": "回调",
+                                "description": "调用函数与被调用函数 之间的约定"
+                            },
+                            {
+                                "key": "事件",
+                                "description": "通知类与订阅类 之间的约定"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.使用事件的标准方式",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/basic/event.cs"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、最少知识原则：按需提供信息",
+                "sections": [
+                    {
+                        "name": "1.程序集：隐藏不必要的类",
+                        "blocks": [
+                            {
+                                "key": "public",
+                                "description": "外部可见"
+                            },
+                            {
+                                "key": "internal",
+                                "description": "程序集内可见"
+                            },
+                            {
+                                "key": "private",
+                                "description": "类内部可见"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.类：隐藏不必要的方法成员",
+                        "blocks": [
+                            {
+                                "key": "public",
+                                "description": "外部可见"
+                            },
+                            {
+                                "key": "protected",
+                                "description": "子类可见"
+                            },
+                            {
+                                "key": "private",
+                                "description": "类内部可见"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.属性：隐藏不必要的数据成员",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "域必须是私有的，通过属性来暴露"
+                            },
+                            {
+                                "key": "",
+                                "description": "属性的get和set中能够封装轻量级的逻辑"
+                            },
+                            {
+                                "key": "",
+                                "description": "用户将属性看成数据成员，编译器将属性看成方法"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1.",
+        "2."
+    ],
+    "参考文献": [
+    ]
+}
