@@ -159,6 +159,95 @@
                                 "url": "/codeSnippets/basic/IComparer.cs"
                             }
                         ]
+                    },
+                    {
+                        "name": "10.释放非托管资源",
+                        "blocks": [
+                            {
+                                "key": "IDisposable",
+                                "description": "DotNet类库定义的释放资源接口"
+                            },
+                            {
+                                "key": "用到非托管资源的类",
+                                "description": "需要实现IDisposable接口"
+                            },
+                            {
+                                "key": "使用该类的上下文",
+                                "description": "需要在使用完成后调用该类的IDisposable接口"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "11.标准 IDisposable 代码",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/basic/IDisposable.cs"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "12.有原子性的值类型，让它保持常量性",
+                        "blocks": [
+                            {
+                                "key": "原子性",
+                                "description": "最小的单元，再不能分割"
+                            },
+                            {
+                                "key": "常量性",
+                                "description": "状态不可变"
+                            },
+                            {
+                                "key": "编程建议",
+                                "description": "域为readonly，没有set属性，在get属性中的引用类型成员必须被复制，只能通过构造函数初始化"
+                            },
+                            {
+                                "key": "",
+                                "description": "具有原子性的struct，不能单独修改属性，否则会把它割裂开，变成无意义的数据"
+                            },
+                            {
+                                "key": "",
+                                "description": "所以在它诞生后，状态就一直不可变，成为常量"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "13.慎用ICloneable",
+                        "blocks": [
+                            {
+                                "key": "原因",
+                                "description": "会绑架子类，使实现变得复杂"
+                            },
+                            {
+                                "key": "值类型",
+                                "description": "直接赋值更好"
+                            },
+                            {
+                                "key": "叶子类",
+                                "description": "可以使用"
+                            },
+                            {
+                                "key": "其它情况",
+                                "description": "尽量避免使用"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "14.尽量减少 装箱和拆箱",
+                        "blocks": [
+                            {
+                                "key": "装箱",
+                                "description": "值类型 → Object类型"
+                            },
+                            {
+                                "key": "拆箱",
+                                "description": "Object类型 → 值类型"
+                            },
+                            {
+                                "key": "避免原因",
+                                "description": "这两个操作非常耗费性能"
+                            }
+                        ]
                     }
                 ]
             },
@@ -217,6 +306,70 @@
                             {
                                 "key": "Func<>",
                                 "description": "自定义 out类型，自定义 in类型"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.并行遍历集合",
+                        "blocks": [
+                            {
+                                "key": "条件1",
+                                "description": "不关注遍历顺序"
+                            },
+                            {
+                                "key": "条件2",
+                                "description": "集合很庞大"
+                            },
+                            {
+                                "key": "CPU密集时，使用PLinq",
+                                "description": "集合.AsParallel()【线程数量固定】"
+                            },
+                            {
+                                "key": "I/O密集时，使用并行任务库",
+                                "description": "Parallel.ForEach()【自动调整线程数量】"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.方法调用",
+                        "blocks": [
+                            {
+                                "key": "传参",
+                                "description": "避免类型转换，按类型要求提供数据"
+                            },
+                            {
+                                "key": "结果",
+                                "description": "避免返回对成员的引用，防止被外界修改"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.设计Web API时选择合适的粒度",
+                        "blocks": [
+                            {
+                                "key": "粒度小",
+                                "description": "通信次数多，数据传输量小（client陷入频繁等待）"
+                            },
+                            {
+                                "key": "粒度大",
+                                "description": "通信次数少，数据传输量大（一次等待的时间长）"
+                            },
+                            {
+                                "key": "选择合适的粒度",
+                                "description": "使client每次的等待时间都适中，在合理时间内完成一件事"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.何时隐藏基类方法：new",
+                        "blocks": [
+                            {
+                                "key": "原因1",
+                                "description": "从第三方更新基类后，基类中新增的方法与派生类重名"
+                            },
+                            {
+                                "key": "原因2",
+                                "description": "重名方法已被大量使用，不方便在客户程序中修改"
                             }
                         ]
                     }
