@@ -8,7 +8,7 @@
                 "name": "一、工作原理",
                 "sections": [
                     {
-                        "name": "1.第一节",
+                        "name": "1.文件流转区域",
                         "blocks": [
                             {
                                 "key": "工作区",
@@ -16,11 +16,88 @@
                             },
                             {
                                 "key": "暂存区",
-                                "description": "将要提交的文件先暂时放在这里"
+                                "description": "暂时存放要提交的文件清单"
                             },
                             {
                                 "key": "本地仓库",
                                 "description": "用来存储提交后的文件，版本历史都在这里"
+                            },
+                            {
+                                "key": "远程仓库",
+                                "description": "放在其它地方的“本地仓库”（分布式）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.分支",
+                        "blocks": [
+                            {
+                                "key": "本地分支",
+                                "description": "从某一个版本开始，内容独立变化（拥有独立的流转区域）"
+                            },
+                            {
+                                "key": "HEAD",
+                                "description": "指向当前分支"
+                            },
+                            {
+                                "key": "master",
+                                "description": "仓库的默认分支"
+                            },
+                            {
+                                "key": "创建分支",
+                                "description": "以当前分支的内容为蓝本，创建一套新的流转区域"
+                            },
+                            {
+                                "key": "切换分支",
+                                "description": "进入到该分支的流转区域"
+                            },
+                            {
+                                "key": "合并分支",
+                                "description": "将指定分支的文件内容，合并到当前分支中"
+                            },
+                            {
+                                "key": "衍合分支",
+                                "description": "把当前分支的改变做成补丁，应用到指定的分支上"
+                            },
+                            {
+                                "key": "远程分支",
+                                "description": "远程仓库中的分支"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、具体操作",
+                "sections": [
+                    {
+                        "name": "1.第一节",
+                        "blocks": [
+                            {
+                                "key": "键",
+                                "description": "值"
+                            },
+                            {
+                                "key": "键",
+                                "description": "值"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、环境搭建",
+                "sections": [
+                    {
+                        "name": "1.第一节",
+                        "blocks": [
+                            {
+                                "key": "键",
+                                "description": "值"
+                            },
+                            {
+                                "key": "键",
+                                "description": "值"
                             }
                         ]
                     }
@@ -29,9 +106,9 @@
         ]
     },
     "注释": [
-        "1.",
-        "2."
+        "参考Pro Git（中文版） http://git.oschina.net/progit/index.html"
     ],
     "参考文献": [
+        ""
     ]
 }
