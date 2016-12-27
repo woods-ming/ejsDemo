@@ -1,0 +1,1136 @@
+{
+    "题目": "jQuery",
+    "摘要": "在Web编程中，提供更简单的API，并兼容所有浏览器",
+    "关键字": "jQuery",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、工作原理",
+                "sections": [
+                    {
+                        "name": "1.封装",
+                        "blocks": [
+                            {
+                                "key": "jQuery类",
+                                "description": "将所有接口集为一身的类"
+                            },
+                            {
+                                "key": "实例方法",
+                                "description": "对jQuery对象做操作"
+                            },
+                            {
+                                "key": "静态方法",
+                                "description": "需要指定jQuery对象"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.构建jQuery对象",
+                        "blocks": [
+                            {
+                                "key": "选择器",
+                                "description": "通过搜索语法，筛选DOM出元素，然后构建jQuery对象"
+                            },
+                            {
+                                "key": "DOM对象",
+                                "description": "将DOM对象转换为jQuery对象，就可以使用jQuery的接口了"
+                            },
+                            {
+                                "key": "js对象",
+                                "description": "将js对象转换为jQuery对象，就可以使用jQuery的接口了"
+                            },
+                            {
+                                "key": "Html文本",
+                                "description": "Html文本与DOM元素的本质相同，只是还不在当前的文档中"
+                            },
+                            {
+                                "key": "jQuery对象",
+                                "description": "直接克隆"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.区分浏览器",
+                        "blocks": [
+                            {
+                                "key": "特性检测",
+                                "description": "通过函数规则和返回结果，判断浏览器是否支持某项特性"
+                            },
+                            {
+                                "key": "因地制宜",
+                                "description": "根据不同的特性，选择不同的解决方案，达到兼容不同浏览器的目的"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.插件扩展",
+                        "blocks": [
+                            {
+                                "key": "实例方法",
+                                "description": "面向DOM元素的扩展，扩展为实例方法"
+                            },
+                            {
+                                "key": "静态方法",
+                                "description": "更通用的工具性质方法，扩展为静态方法"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、选择元素",
+                "sections": [
+                    {
+                        "name": "1.根据元素的基本特征来筛选",
+                        "blocks": [
+                            {
+                                "key": "#id",
+                                "description": "id匹配的第一个DOM元素"
+                            },
+                            {
+                                "key": ".class",
+                                "description": "class匹配的一类DOM元素"
+                            },
+                            {
+                                "key": "tag",
+                                "description": "标签匹配的一类DOM元素"
+                            },
+                            {
+                                "key": "*",
+                                "description": "所有DOM元素（不区分叶子和祖先）"
+                            },
+                            {
+                                "key": "selector1, selector2, selectorN",
+                                "description": "多个匹配结果的并集"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.根据元素的attribute特征来筛选",
+                        "blocks": [
+                            {
+                                "key": "[attribute]",
+                                "description": "包含该attribute的DOM元素"
+                            },
+                            {
+                                "key": "[attribute=value]",
+                                "description": "包含该attribute && 值为value"
+                            },
+                            {
+                                "key": "[attribute!=value]",
+                                "description": "包含该attribute && 值不等于value"
+                            },
+                            {
+                                "key": "[attribute^=value]",
+                                "description": "包含该attribute && 值的前缀为value"
+                            },
+                            {
+                                "key": "[attribute$=value]",
+                                "description": "包含该attribute && 值的后缀为value"
+                            },
+                            {
+                                "key": "[attribute*=value]",
+                                "description": "包含该attribute && 值包含value"
+                            },
+                            {
+                                "key": "[attribute~=value]",
+                                "description": "包含该attribute && 用空格分隔的值中包含value"
+                            },
+                            {
+                                "key": "[attribute|=value]",
+                                "description": "包含该attribute && 值的前缀为value-或value"
+                            },
+                            {
+                                "key": "[selector1][selector2][selectorN]",
+                                "description": "多个匹配结果的交集"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.根据表单特征进行筛选",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①输入"
+                            },
+                            {
+                                "key": "[type=text]",
+                                "description": "文本框"
+                            },
+                            {
+                                "key": "[type=password]",
+                                "description": "密码框"
+                            },
+                            {
+                                "key": "[type=file]",
+                                "description": "上传框"
+                            },
+                            {
+                                "key": "[type=image]",
+                                "description": "图像类型的输入"
+                            },
+                            {
+                                "key": "",
+                                "description": "②选择"
+                            },
+                            {
+                                "key": "[type=radio]",
+                                "description": "单选框"
+                            },
+                            {
+                                "key": "[type=checkbox]",
+                                "description": "复选框"
+                            },
+                            {
+                                "key": "select",
+                                "description": "下拉列表"
+                            },
+                            {
+                                "key": "input:checked",
+                                "description": "单选框 / 复选框 中被选中的项目"
+                            },
+                            {
+                                "key": ".filter(\":selected\")",
+                                "description": "下拉列表中被选中的项目"
+                            },
+                            {
+                                "key": "",
+                                "description": "③触发操作"
+                            },
+                            {
+                                "key": ".filter(\":button\")",
+                                "description": "所有按钮"
+                            },
+                            {
+                                "key": "[type=reset]",
+                                "description": "重置按钮"
+                            },
+                            {
+                                "key": "[type=submit]",
+                                "description": "提交按钮"
+                            },
+                            {
+                                "key": "",
+                                "description": "④状态"
+                            },
+                            {
+                                "key": ":enabled",
+                                "description": "状态为启用的元素"
+                            },
+                            {
+                                "key": ":disabled",
+                                "description": "状态为禁用的元素"
+                            },
+                            {
+                                "key": "document.activeElement",
+                                "description": "焦点所在的元素"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑤全部"
+                            },
+                            {
+                                "key": ".filter(\":input\")",
+                                "description": "所有表单控件"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.根据元素包含的内容来筛选",
+                        "blocks": [
+                            {
+                                "key": ":contains(\"text\")",
+                                "description": "文本内容模糊匹配"
+                            },
+                            {
+                                "key": ":has(\"selector\")",
+                                "description": "子元素能够匹配selector"
+                            },
+                            {
+                                "key": ":empty",
+                                "description": "不包含子元素和任何文本"
+                            },
+                            {
+                                "key": ":parent",
+                                "description": "与empty相反"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.根据“可见性”来筛选",
+                        "blocks": [
+                            {
+                                "key": ":visible",
+                                "description": "visibility:hidden || opacity:0 也被认为是可见的，因为占用了空间"
+                            },
+                            {
+                                "key": ":hidden",
+                                "description": "width:0 || height:0"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.根据相对层级关系来筛选",
+                        "blocks": [
+                            {
+                                "key": "祖先 子孙",
+                                "description": "在‘祖先’的后辈节点中，‘子孙’匹配的节点"
+                            },
+                            {
+                                "key": "父亲 > 孩子",
+                                "description": "在‘父亲’的子节点中，‘孩子’匹配的节点"
+                            },
+                            {
+                                "key": "兄长 ~ 兄弟",
+                                "description": "在‘哥哥’的兄弟节点中，‘兄弟’匹配的节点"
+                            },
+                            {
+                                "key": "哥哥 + 相邻的弟弟",
+                                "description": "‘哥哥’相邻的弟弟节点，并且‘相邻的弟弟’能够匹配"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.根据兄弟排行进行筛选",
+                        "blocks": [
+                            {
+                                "key": ":first-child",
+                                "description": "老大"
+                            },
+                            {
+                                "key": ":last-child",
+                                "description": "老小"
+                            },
+                            {
+                                "key": ":nth-child(index)",
+                                "description": "老几"
+                            },
+                            {
+                                "key": ":only-child",
+                                "description": "独生子"
+                            },
+                            {
+                                "key": ":first-of-type",
+                                "description": "每个Tag的老大"
+                            },
+                            {
+                                "key": ":last-of-type",
+                                "description": "每个Tag的老小"
+                            },
+                            {
+                                "key": ":nth-of-type(index)",
+                                "description": "每个Tag的老几"
+                            },
+                            {
+                                "key": ":only-of-type",
+                                "description": "每个Tag的独生子"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "8.在筛选结果中根据位置进行二次筛选",
+                        "blocks": [
+                            {
+                                "key": ":first",
+                                "description": "第一个"
+                            },
+                            {
+                                "key": ":last",
+                                "description": "最后一个"
+                            },
+                            {
+                                "key": ":even",
+                                "description": "偶数位置"
+                            },
+                            {
+                                "key": ":odd",
+                                "description": "奇数位置"
+                            },
+                            {
+                                "key": ":eq(index)",
+                                "description": "索引等于index"
+                            },
+                            {
+                                "key": ":lt(index)",
+                                "description": "索引小于index"
+                            },
+                            {
+                                "key": ":gt(index)",
+                                "description": "索引大于index"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、操作元素",
+                "sections": [
+                    {
+                        "name": "1.读取和修改元素的属性", 
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① html文本"
+                            },
+                            {
+                                "key": ".html()",
+                                "description": "找到集合中的第一个元素，返回它的innerHtml（不包含本身）"
+                            },
+                            {
+                                "key": ".html('html文本')",
+                                "description": "遍历集合中的所有元素，用新的html文本替换innerHtml"
+                            },
+                            {
+                                "key": "",
+                                "description": "② attribute: html文本作为普通标签，所包含的无意义的文本键值对"
+                            },
+                            {
+                                "key": ".attr('键')",
+                                "description": "找到集合中的第一个元素，返回'键'对应的'值'"
+                            },
+                            {
+                                "key": ".attr('键', '值')",
+                                "description": "遍历集合中的所有元素，设定'键值对'"
+                            },
+                            {
+                                "key": ".removeAttr('键')",
+                                "description": "遍历集合中的所有元素，移除'键值对'"
+                            },
+                            {
+                                "key": "",
+                                "description": "③ property: html文本作为DOM元素，所包含的有意义的属性"
+                            },
+                            {
+                                "key": ".prop('属性名')",
+                                "description": "找到集合中的第一个元素，返回对应'属性的值'"
+                            },
+                            {
+                                "key": ".prop('属性名', '值')",
+                                "description": "遍历集合中的所有元素，设定'属性的值'"
+                            },
+                            {
+                                "key": "",
+                                "description": "④ value: 表单元素的值"
+                            },
+                            {
+                                "key": ".val()",
+                                "description": "找到集合中的第一个元素，返回它的value"
+                            },
+                            {
+                                "key": ".val('值')",
+                                "description": "遍历集合中的所有元素，设定它的value"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑤ text: html标签内包含的文本内容（连接起来）"
+                            },
+                            {
+                                "key": ".text()",
+                                "description": "遍历集合中的所有元素，将它们的内容连接起来返回"
+                            },
+                            {
+                                "key": ".text('文本')",
+                                "description": "遍历集合中的所有元素，把内容设定为'文本'"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.读取和修改元素的皮肤",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① class: 样式类"
+                            },
+                            {
+                                "key": ".addClass('样式类')",
+                                "description": "遍历集合中的所有元素，增加'样式类'"
+                            },
+                            {
+                                "key": ".removeClass('样式类')",
+                                "description": "遍历集合中的所有元素，移除'样式类'"
+                            },
+                            {
+                                "key": ".toggleClass('样式类')",
+                                "description": "遍历集合中的所有元素，反转'样式类'"
+                            },
+                            {
+                                "key": ".hasClass('样式类')",
+                                "description": "遍历集合中的所有元素，是否至少存在一个'样式类'"
+                            },
+                            {
+                                "key": "",
+                                "description": "② css: 内联样式"
+                            },
+                            {
+                                "key": ".css('样式属性')",
+                                "description": "找到集合中的第一个元素，返回它的'样式属性的值'"
+                            },
+                            {
+                                "key": ".css('样式属性', '值')",
+                                "description": "遍历集合中的所有元素，设定'样式属性的值'"
+                            },
+                            {
+                                "key": "",
+                                "description": "③ offset：相对于document左上角的位置，由坐标对象“{ top:_, left:_ }”表示"
+                            },
+                            {
+                                "key": ".offset()",
+                                "description": "找到集合中的第一个元素，返回它的'坐标'"
+                            },
+                            {
+                                "key": ".offset(坐标)",
+                                "description": "遍历集合中的所有元素，设定'坐标'"
+                            },
+                            {
+                                "key": "",
+                                "description": "④ position：相对于父元素左上角的位置，由坐标对象 { top:_, left:_ } 表示"
+                            },
+                            {
+                                "key": ".position()",
+                                "description": "找到集合中的第一个元素，返回它的'坐标'"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑤ 滚动位置：由于拖动滚动条，被隐藏区域的长度"
+                            },
+                            {
+                                "key": ".scrollLeft()",
+                                "description": "找到集合中的第一个元素，返回'水平方向，左侧隐藏的长度'"
+                            },
+                            {
+                                "key": ".scrollLeft(长度)",
+                                "description": "遍历集合中的所有元素，设定'水平方向，左侧隐藏的长度'"
+                            },
+                            {
+                                "key": ".scrollTop()",
+                                "description": "找到集合中的第一个元素，返回'垂直方向，上侧隐藏的长度'"
+                            },
+                            {
+                                "key": ".scrollTop(长度)",
+                                "description": "遍历集合中的所有元素，设定'垂直方向，上侧隐藏的长度'"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑥ '内容'的尺寸"
+                            },
+                            {
+                                "key": ".width()",
+                                "description": "找到集合中的第一个元素，返回'内容的宽度'"
+                            },
+                            {
+                                "key": ".width(宽度)",
+                                "description": "遍历集合中的所有元素，设定'内容的宽度'"
+                            },
+                            {
+                                "key": ".height()",
+                                "description": "找到集合中的第一个元素，返回'内容的高度'"
+                            },
+                            {
+                                "key": ".height(高度)",
+                                "description": "遍历集合中的所有元素，设定'内容的高度'"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑦ '内容+padding'的尺寸"
+                            },
+                            {
+                                "key": ".innerWidth()",
+                                "description": "找到集合中的第一个元素，返回'包含padding的宽度'"
+                            },
+                            {
+                                "key": ".innerHeight()",
+                                "description": "找到集合中的第一个元素，返回'包含padding的高度'"
+                            },
+                            {
+                                "key": "",
+                                "description": "不要在 window 和 document 上使用"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑧ '内容+padding+border+(?margin)'的尺寸：参数为true时，包含margin"
+                            },
+                            {
+                                "key": ".outerWidth()",
+                                "description": "找到集合中的第一个元素，返回'包含border的宽度'"
+                            },
+                            {
+                                "key": ".outerWidth(宽度)",
+                                "description": "遍历集合中的所有元素，设定'包含border的宽度'"
+                            },
+                            {
+                                "key": ".outerHeight()",
+                                "description": "找到集合中的第一个元素，返回'包含border的高度'"
+                            },
+                            {
+                                "key": ".outerHeight(高度)",
+                                "description": "遍历集合中的所有元素，设定'包含border的高度'"
+                            },
+                            {
+                                "key": "",
+                                "description": "不要在 window 和 document 上使用"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.修改DOM结构",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① 对DOM元素做包裹"
+                            },
+                            {
+                                "key": ".wrap(content)",
+                                "description": "遍历集合中的所有元素，在外层包裹content"
+                            },
+                            {
+                                "key": ".unwrap()",
+                                "description": "遍历集合中的所有元素，移除父元素"
+                            },
+                            {
+                                "key": ".wrapInner(content)",
+                                "description": "遍历集合中的所有元素，在内层包裹content"
+                            },
+                            {
+                                "key": "",
+                                "description": "② 在DOM元素内部做插入"
+                            },
+                            {
+                                "key": ".append(content)",
+                                "description": "遍历集合中的所有元素，在内部后侧插入content"
+                            },
+                            {
+                                "key": ".prepend(content)",
+                                "description": "遍历集合中的所有元素，在内部前侧插入content"
+                            },
+                            {
+                                "key": ".appendTo()",
+                                "description": "与append相似，只是把主宾调换"
+                            },
+                            {
+                                "key": ".prependTo()",
+                                "description": "与prepend相似，只是把主宾调换"
+                            },
+                            {
+                                "key": "",
+                                "description": "③ 在DOM元素外部做插入"
+                            },
+                            {
+                                "key": ".after(content)",
+                                "description": "遍历集合中的所有元素，在外部后侧插入content"
+                            },
+                            {
+                                "key": ".before(content)",
+                                "description": "遍历集合中的所有元素，在外部前侧插入content"
+                            },
+                            {
+                                "key": ".insertAfter()",
+                                "description": "与after相似，只是把主宾调换"
+                            },
+                            {
+                                "key": ".insertBefore()",
+                                "description": "与before相似，只是把主宾调换"
+                            },
+                            {
+                                "key": "",
+                                "description": "④ 替换DOM元素"
+                            },
+                            {
+                                "key": ".replaceWith(content)",
+                                "description": "遍历集合中的所有元素，用content替换"
+                            },
+                            {
+                                "key": ".replaceAll()",
+                                "description": "与replaceWith相似，只是把主宾调换"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑤ 移除DOM元素"
+                            },
+                            {
+                                "key": ".remove()",
+                                "description": "遍历集合中的所有元素，从DOM中移除"
+                            },
+                            {
+                                "key": ".detach()",
+                                "description": "遍历集合中的所有元素，从DOM中移除（保留event等，还会重新插入）"
+                            },
+                            {
+                                "key": ".empty()",
+                                "description": "遍历集合中的所有元素，将子元素从DOM中移除（保留自己）"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑥ 复制DOM元素"
+                            },
+                            {
+                                "key": ".clone(是否复制event)",
+                                "description": "遍历集合中的所有元素，做深度复制"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.添加动画效果",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① 基本"
+                            },
+                            {
+                                "key": ".show(毫秒, callback)",
+                                "description": "显示匹配的元素"
+                            },
+                            {
+                                "key": ".hide(毫秒, callback)",
+                                "description": "隐藏匹配的元素"
+                            },
+                            {
+                                "key": ".toggle(毫秒, callback)",
+                                "description": "反转匹配的元素"
+                            },
+                            {
+                                "key": "",
+                                "description": "② 淡入淡出"
+                            },
+                            {
+                                "key": ".fadeIn(毫秒, callback)",
+                                "description": "淡入匹配的元素"
+                            },
+                            {
+                                "key": ".fadeOut(毫秒, callback)",
+                                "description": "淡出匹配的元素"
+                            },
+                            {
+                                "key": ".fadeToggle(毫秒, callback)",
+                                "description": "反转匹配的元素"
+                            },
+                            {
+                                "key": ".fadeTo(毫秒, 透明度, callback)",
+                                "description": "调整匹配元素的透明度"
+                            },
+                            {
+                                "key": "",
+                                "description": "③ 滑动"
+                            },
+                            {
+                                "key": ".slidingDown(毫秒, callback)",
+                                "description": "展开匹配的元素"
+                            },
+                            {
+                                "key": ".slidingUp(毫秒, callback)",
+                                "description": "收起匹配的元素"
+                            },
+                            {
+                                "key": ".slidingToggle(毫秒, callback)",
+                                "description": "反转匹配的元素"
+                            },
+                            {
+                                "key": "",
+                                "description": "callback 是动画完成时的回掉函数"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、事件处理",
+                "sections": [
+                    {
+                        "name": "1.监听事件",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① 函数签名"
+                            },
+                            {
+                                "key": "$( 'html元素' ).on( events [,selector] [,data], handler(eventObject) )",
+                                "description": "为保证监听成功，在html文档加载完之后，再注册监听"
+                            },
+                            {
+                                "key": "",
+                                "description": "② 参数详解"
+                            },
+                            {
+                                "key": "events",
+                                "description": "(string)以空格分隔的事件类型"
+                            },
+                            {
+                                "key": "",
+                                "description": "事件类型可以是浏览器定义好的，也可以是自定义的"
+                            },
+                            {
+                                "key": "",
+                                "description": "推荐用namespace给事件类型分类，方便分类管理（注册/取消）"
+                            },
+                            {
+                                "key": "",
+                                "description": "浏览器触发标准事件 || .trigger()触发自定义事件和标准事件"
+                            },
+                            {
+                                "key": "selector",
+                                "description": "(string)匹配后辈元素的选择器"
+                            },
+                            {
+                                "key": "",
+                                "description": "在匹配的元素（可以是动态附加的）上触发事件"
+                            },
+                            {
+                                "key": "",
+                                "description": "出于性能考虑：选用的元素与后辈尽量离得近一些"
+                            },
+                            {
+                                "key": "data",
+                                "description": "(object)传递给handler的数据"
+                            },
+                            {
+                                "key": "",
+                                "description": "在handler中，通过event.data来引用"
+                            },
+                            {
+                                "key": "handler(eventObject)",
+                                "description": "事件处理函数"
+                            },
+                            {
+                                "key": "",
+                                "description": "事件发生时，event对象会传递到事件处理函数中"
+                            },
+                            {
+                                "key": "",
+                                "description": "可以阻止事件继续冒泡：event.stopPropagation()"
+                            },
+                            {
+                                "key": "",
+                                "description": "可以取消浏览器的默认行为：event.preventDefault()"
+                            },
+                            {
+                                "key": "",
+                                "description": "阻止事件继续冒泡 && 取消浏览器的默认行为：return false"
+                            },
+                            {
+                                "key": "",
+                                "description": "指代触发事件的DOM元素：this"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.取消监听",
+                        "blocks": [
+                            {
+                                "key": "$( 'html元素' ).off()",
+                                "description": "取消对所有事件的监听"
+                            },
+                            {
+                                "key": "$( 'html元素' ).off('.namespace')",
+                                "description": "取消对namespace下所有事件的监听"
+                            },
+                            {
+                                "key": "$( 'html元素' ).off('事件类型.namespace')",
+                                "description": "取消对指定事件的监听"
+                            },
+                            {
+                                "key": "$( 'html元素' ).off('events','selector',handler)",
+                                "description": "取消对指定事件的一种处理（仍然有其它处理方式）"
+                            },
+                            {
+                                "key": "",
+                                "description": "程序模块化，使程序员不知道一个元素上到底监听了哪些事件，为了方便管理，最好用namespace给它们分类 "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.事件对象",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① 属性"
+                            },
+                            {
+                                "key": "event.target",
+                                "description": "(dom)事件传播过程中找到的目标html元素"
+                            },
+                            {
+                                "key": "event.currentTarget",
+                                "description": "(dom)触发事件的html元素"
+                            },
+                            {
+                                "key": "event.delegateTarget",
+                                "description": "(dom)监听事件的html元素"
+                            },
+                            {
+                                "key": "event.type",
+                                "description": "(string)事件类型"
+                            },
+                            {
+                                "key": "event.namespace",
+                                "description": "(string)事件的命名空间"
+                            },
+                            {
+                                "key": "event.data",
+                                "description": "(object)监听事件时，传过来的数据"
+                            },
+                            {
+                                "key": "event.metaKey",
+                                "description": "(boolean)是否在事件发生时按下了Ctrl键"
+                            },
+                            {
+                                "key": "event.which",
+                                "description": "(number)当前按下的鼠标或键盘上按键的编号"
+                            },
+                            {
+                                "key": "event.pageX, event.pageY",
+                                "description": "(number)相对于document左上角的坐标值"
+                            },
+                            {
+                                "key": "event.result",
+                                "description": "(object)上一个handler的返回值"
+                            },
+                            {
+                                "key": "",
+                                "description": "② 方法"
+                            },
+                            {
+                                "key": "event.preventDefault()",
+                                "description": "取消浏览器默认行为"
+                            },
+                            {
+                                "key": "event.stopPropagation()",
+                                "description": "阻止事件继续冒泡"
+                            },
+                            {
+                                "key": "event.isDefaultPrevented()",
+                                "description": "(boolean)是否已经取消浏览器默认行为"
+                            },
+                            {
+                                "key": "event.isPropagationStopped()",
+                                "description": "(boolean)是否已经阻止事件继续冒泡"
+                            },
+                            {
+                                "key": "",
+                                "description": "在事件触发的过程中，event对象作为参数被传递到handler中"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.代码触发事件",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① 函数签名"
+                            },
+                            {
+                                "key": "$( 'html元素' ).trigger( eventType [,extraParameters] )",
+                                "description": "激发事件，保留了事件传播过程和浏览器默认行为"
+                            },
+                            {
+                                "key": "$( 'html元素' ).triggerHandler( eventType [,extraParameters] )",
+                                "description": "仅仅调用事件处理函数（并且限于第一个匹配的元素）"
+                            },
+                            {
+                                "key": "",
+                                "description": "② 参数详解"
+                            },
+                            {
+                                "key": "eventType",
+                                "description": "(string)事件类型.namespace"
+                            },
+                            {
+                                "key": "extraParameters",
+                                "description": "(Array)触发事件时，传递给handler的数据"
+                            },
+                            {
+                                "key": "",
+                                "description": "增加传递数据的灵活性：extraParameters用在触发时，event.data用在监听时"
+                            },
+                            {
+                                "key": "",
+                                "description": "javascript对象的方法，可以被当成事件触发"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.标准浏览器事件",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "① 鼠标触发"
+                            },
+                            {
+                                "key": "click",
+                                "description": "单击"
+                            },
+                            {
+                                "key": "dblclick",
+                                "description": "双击"
+                            },
+                            {
+                                "key": "mousedown",
+                                "description": "鼠标任意键被按下"
+                            },
+                            {
+                                "key": "mouseup",
+                                "description": "鼠标任意键被松开"
+                            },
+                            {
+                                "key": "mouseenter",
+                                "description": "鼠标指针进入元素"
+                            },
+                            {
+                                "key": "mouseleave",
+                                "description": "鼠标指针离开元素"
+                            },
+                            {
+                                "key": "mousemove",
+                                "description": "鼠标指针在元素内移动"
+                            },
+                            {
+                                "key": "mouseenter + mouseleave",
+                                "description": "模拟hover效果"
+                            },
+                            {
+                                "key": "",
+                                "description": "② 键盘触发"
+                            },
+                            {
+                                "key": "keydown",
+                                "description": "按键被按下"
+                            },
+                            {
+                                "key": "keyup",
+                                "description": "按键被松开"
+                            },
+                            {
+                                "key": "keypress",
+                                "description": "通过按键输入字符"
+                            },
+                            {
+                                "key": "",
+                                "description": "③ 文档加载过程中触发"
+                            },
+                            {
+                                "key": "$( handler )",
+                                "description": "DOM加载完成后（不考虑其它资源是否加载完成）"
+                            },
+                            {
+                                "key": "",
+                                "description": "④ 浏览器窗口触发"
+                            },
+                            {
+                                "key": "window.onload",
+                                "description": "全部加载完成"
+                            },
+                            {
+                                "key": "window.onbeforeunload = function () { return '提示内容'; }",
+                                "description": "离开页面之前（可以取消）"
+                            },
+                            {
+                                "key": "window.onunload",
+                                "description": "离开页面（不能取消），卸载文档之前"
+                            },
+                            {
+                                "key": "window.onresize",
+                                "description": "缩放浏览器窗口"
+                            },
+                            {
+                                "key": "window.onerror",
+                                "description": "js执行出错"
+                            },
+                            {
+                                "key": "scroll",
+                                "description": "拖动滚动条（任何包含滚动条的容器都可触发）"
+                            },
+                            {
+                                "key": "",
+                                "description": "⑤ 表单元素相关"
+                            },
+                            {
+                                "key": "change",
+                                "description": "value值发生了改变"
+                            },
+                            {
+                                "key": "focus",
+                                "description": "获得焦点"
+                            },
+                            {
+                                "key": "blur",
+                                "description": "失去焦点"
+                            },
+                            {
+                                "key": "focusin",
+                                "description": "获得焦点（支持事件冒泡）"
+                            },
+                            {
+                                "key": "focusout",
+                                "description": "失去焦点（支持事件冒泡）"
+                            },
+                            {
+                                "key": "",
+                                "description": "除了window.事件句柄，所有的事件类型都在.on()和.trigger()中使用"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "五、工具方法",
+                "sections": [
+                    {
+                        "name": "1.第一节",
+                        "blocks": [
+                            {
+                                "key": "键",
+                                "description": "值"
+                            },
+                            {
+                                "key": "键",
+                                "description": "值"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "六、Ajax",
+                "sections": [
+                    {
+                        "name": "1.第一节",
+                        "blocks": [
+                            {
+                                "key": "键",
+                                "description": "值"
+                            },
+                            {
+                                "key": "键",
+                                "description": "值"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "七、开发插件",
+                "sections": [
+                    {
+                        "name": "1.第一节",
+                        "blocks": [
+                            {
+                                "key": "键",
+                                "description": "值"
+                            },
+                            {
+                                "key": "键",
+                                "description": "值"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1. id, class, tag 是Html元素本身的基本特征,使用它们来筛选是最基础的",
+        "2.“可见性”的含义：在窗口中占用了空间（不是指看得到）",
+        "3. attribute: html文本作为普通标签，所包含的无意义的文本键值对",
+        "4. property: html文本作为DOM元素，所包含的有意义的属性"
+    ],
+    "参考文献": [
+    ]
+}
