@@ -1073,15 +1073,143 @@
                 "name": "五、工具方法",
                 "sections": [
                     {
-                        "name": "1.第一节",
+                        "name": "1.存取数据",
                         "blocks": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": "$.data(DOM元素, key, value)",
+                                "description": "将键值对存储到DOM元素上"
                             },
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": "$.data(DOM元素, key)",
+                                "description": "从DOM元素上取出键值对"
+                            },
+                            {
+                                "key": "$.removeData(DOM元素, key)",
+                                "description": "从DOM元素上移除键值对"
+                            },
+                            {
+                                "key": "",
+                                "description": "以上静态方法，都有对应的实例方法$(DOM元素).data(...)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.判断目标特征",
+                        "blocks": [
+                            {
+                                "key": ".is(selector)",
+                                "description": "能否匹配选择器"
+                            },
+                            {
+                                "key": "$.isNumeric(obj)",
+                                "description": "是否为一个数字"
+                            },
+                            {
+                                "key": "$.isArray(obj)",
+                                "description": "是否为一个纯粹的数组(形如：'[]')"
+                            },
+                            {
+                                "key": "$.isPlainObject(obj)",
+                                "description": "是否为一个Plain Object(由{}或new创建)"
+                            },
+                            {
+                                "key": "$.isEmptyObject(obj)",
+                                "description": "是否为一个空对象(不包含任何属性)"
+                            },
+                            {
+                                "key": "$.isFunction(obj)",
+                                "description": "是否为一个函数"
+                            },
+                            {
+                                "key": "$.contains(container, contained)",
+                                "description": "container是否为contained的祖先(仅限DOM元素)"
+                            },
+                            {
+                                "key": "$.isXMLDoc(obj)",
+                                "description": "是否为XML文件中的一个节点"
+                            },
+                            {
+                                "key": "",
+                                "description": "以上工具函数，全部返回 Boolean 类型 "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.处理集合",
+                        "blocks": [
+                            {
+                                "key": "$.each(集合, function(key, value) { ... })",
+                                "description": "遍历集合，自定义对元素的操作"
+                            },
+                            {
+                                "key": "$.grep(数组, function(元素, index){ ... })",
+                                "description": "筛选集合，自定义筛选规则（返回true的）"
+                            },
+                            {
+                                "key": "$.inArray(元素, 数组)",
+                                "description": "定位元素，返回元素在数组中的位置"
+                            },
+                            {
+                                "key": "$.map(数组, function(元素, index){ ... })",
+                                "description": "转换集合，自定义转换规则，映射出一个新数组"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.解析文本",
+                        "blocks": [
+                            {
+                                "key": "$.parseHTML('html格式的字符串')",
+                                "description": "DOM对象，将文本解析成DOM对象"
+                            },
+                            {
+                                "key": "$.parseJSON('json格式的字符串')",
+                                "description": "js对象，将文本解析成js对象"
+                            },
+                            {
+                                "key": "$.parseXML('xml格式的字符串')",
+                                "description": "XML文档对象，将文本解析成XML文档"
+                            },
+                            {
+                                "key": "",
+                                "description": "文本必须符合相应的格式，否则会出错"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.其它",
+                        "blocks": [
+                            {
+                                "key": "$.extend(target [,obj1] [,obj2])",
+                                "description": "将多个obj的属性合并到target上（若存在，就覆盖）"
+                            },
+                            {
+                                "key": "$.fn.extend(obj)",
+                                "description": "将obj的属性合并到jQuery的prototype上，为jQuery扩展属性（制作jQuery插件）"
+                            },
+                            {
+                                "key": "$.globalEval('js语句')",
+                                "description": "在全局环境中执行js语句"
+                            },
+                            {
+                                "key": "$.now()",
+                                "description": "获取当前时间，相当于(new Date).getTime()"
+                            },
+                            {
+                                "key": "$.proxy(函数, 调用对象)",
+                                "description": "改变函数的调用对象，相当于f.call()"
+                            },
+                            {
+                                "key": "$.trim(字符串)",
+                                "description": "改变函数的调用对象，相当于f.call()"
+                            },
+                            {
+                                "key": "$.trim(字符串)",
+                                "description": "字符串Trim"
+                            },
+                            {
+                                "key": "$.type(obj)",
+                                "description": "用jQuery自己的方式返回obj的数据类型，不同于typeof"
                             }
                         ]
                     }
@@ -1091,15 +1219,139 @@
                 "name": "六、Ajax",
                 "sections": [
                     {
-                        "name": "1.第一节",
+                        "name": "1.Ajax全局事件",
                         "blocks": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": ".ajaxStart()",
+                                "description": "第一个Ajax请求 开始时"
                             },
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": ".ajaxSend()",
+                                "description": "请求发送前"
+                            },
+                            {
+                                "key": ".ajaxSuccess()",
+                                "description": "请求成功"
+                            },
+                            {
+                                "key": ".ajaxError()",
+                                "description": "请求失败"
+                            },
+                            {
+                                "key": ".ajaxComplete()",
+                                "description": "请求完成"
+                            },
+                            {
+                                "key": ".ajaxStop()",
+                                "description": "最后一个Ajax请求 结束时"
+                            },
+                            {
+                                "key": "",
+                                "description": "不支持跨域请求，全局事件只能绑定到 document 上 "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.辅助方法",
+                        "blocks": [
+                            {
+                                "key": ".serializeArray()",
+                                "description": "表单元素 → json（将'form element'转换成js对象数组：[{ name:'', value:'' } ...]）"
+                            },
+                            {
+                                "key": "",
+                                "description": "只筛选表单元素中的'successful controls' "
+                            },
+                            {
+                                "key": "jQuery.param()",
+                                "description": "js对象 → QueryString（将'对象/数组'序列化成字符串，方便 QueryString/Ajax 使用）"
+                            },
+                            {
+                                "key": "",
+                                "description": "在序列化的同时，进行 url 编码（不需要再考虑中文乱码的问题了） "
+                            },
+                            {
+                                "key": ".serialize()",
+                                "description": "表单元素 → QueryString（封装上面两个步骤，将'表单元素'序列化成字符串，方便Ajax提交表单）"
+                            },
+                            {
+                                "key": "successful controls",
+                                "description": "表单提交所包含的有效控件(不包含上传的文件、被禁用的控件、没有name属性的控件) "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.底层接口",
+                        "blocks": [
+                            {
+                                "key": "jQuery.ajax( options )",
+                                "description": "执行异步 Ajax 请求"
+                            },
+                            {
+                                "key": "jQuery.ajaxPrefilter()",
+                                "description": "发送 Ajax 请求前，修改Ajax options"
+                            },
+                            {
+                                "key": "jQuery.ajaxSetup()",
+                                "description": "设置 Ajax 请求的默认参数"
+                            },
+                            {
+                                "key": "jQuery.ajaxTransport()",
+                                "description": "创建一个对象，处理 Ajax 的数据传输"
+                            },
+                            {
+                                "key": "",
+                                "description": "所有的Ajax请求都是通过 jQuery.ajax() 来实现，一般使用的是简单易用的高层接口 "
+                            },
+                            {
+                                "key": "",
+                                "description": "jQuery.ajaxPrefilter() 和 jQuery.ajaxTransport() 不常用，jQuery.ajaxSetup() 在调试时很好用 "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.简略接口",
+                        "blocks": [
+                            {
+                                "key": "jQuery.get()",
+                                "description": "用Get方式获取数据"
+                            },
+                            {
+                                "key": "jQuery.getJSON()",
+                                "description": "用Get方式获取JSON"
+                            },
+                            {
+                                "key": "jQuery.getScript()",
+                                "description": "用Get方式获取Script"
+                            },
+                            {
+                                "key": "jQuery.post()",
+                                "description": "用Post方式提交请求"
+                            },
+                            {
+                                "key": "$( selector ).load()",
+                                "description": "获取数据，并替换匹配元素的innerHTML"
+                            },
+                            {
+                                "key": "",
+                                "description": "它们都是 jQuery.ajax() 固定参数后的缩写 "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.如何使用 Ajax ?",
+                        "blocks": [
+                            {
+                                "key": "局部视图刷新",
+                                "description": "不需要包含css、js、模板页，数据按需索取"
+                            },
+                            {
+                                "key": "数据逻辑验证",
+                                "description": "发出请求后，就去做其它任务，无需等待"
+                            },
+                            {
+                                "key": "在当前页面展现 '进度提示'",
+                                "description": "不刷新整个页面"
                             }
                         ]
                     }
@@ -1109,15 +1361,101 @@
                 "name": "七、开发插件",
                 "sections": [
                     {
-                        "name": "1.第一节",
+                        "name": "1.类插件",
                         "blocks": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": "$.插件名称 = function () { //代码 }",
+                                "description": "直接定义"
                             },
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": "$.extend { 插件名称 : function () { //代码 } }",
+                                "description": "用方法扩展"
+                            },
+                            {
+                                "key": "$.命名空间 = { 插件1 : function () { //代码 }, 插件2 : function () { //代码 } }",
+                                "description": "同时定义多个"
+                            },
+                            {
+                                "key": "",
+                                "description": "插件名称就是静态方法的名字，可以包含命名空间：命名空间.插件名称 "
+                            },
+                            {
+                                "key": "",
+                                "description": "函数也是对象，所以第一种方式可以转化为第三种方式 "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.对象插件",
+                        "blocks": [
+                            {
+                                "key": "$.fn.插件名称 = function () { //代码 }",
+                                "description": "直接定义"
+                            },
+                            {
+                                "key": "$.fn.extend { 插件名称 : function () { //代码 } }",
+                                "description": "用方法扩展"
+                            },
+                            {
+                                "key": "$.fn.命名空间 = { 插件1 : function () { //代码 }, 插件2 : function () { //代码 } }",
+                                "description": "同时定义多个"
+                            },
+                            {
+                                "key": "",
+                                "description": "对象插件与类插件的定义相比，只是多了个 .fn "
+                            },
+                            {
+                                "key": "",
+                                "description": "插件的目的是逻辑复用，两种插件仅是挂接的位置不同 "
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.开发习惯",
+                        "blocks": [
+                            {
+                                "key": "使用闭包",
+                                "description": "隔离外界干扰"
+                            },
+                            {
+                                "key": "类定义",
+                                "description": "实现核心逻辑"
+                            },
+                            {
+                                "key": "插件定义",
+                                "description": "将核心逻辑附加到jQuery上"
+                            },
+                            {
+                                "key": "默认值定义",
+                                "description": "将配置参数组织到一起"
+                            },
+                            {
+                                "key": "data API",
+                                "description": "按约定查找DOM读取数据，并使用插件初始化"
+                            },
+                            {
+                                "key": "",
+                                "description": "类定义时：实例方法定义在prototype中，私有方法在类外直接定义 "
+                            },
+                            {
+                                "key": "",
+                                "description": "在插件定义时，间接使用核心类的逻辑（插件其实就是代理） "
+                            },
+                            {
+                                "key": "",
+                                "description": "默认值定义将所有可配置参数罗列出来，一目了然 "
+                            },
+                            {
+                                "key": "",
+                                "description": "插件可以提供两种使用方式：编程方式和数据定义方式（可选）"
+                            },
+                            {
+                                "key": "",
+                                "description": "data API有3个插件初始化时机：DOM加载完成后、页面加载完成后、事件触发"
+                            },
+                            {
+                                "key": "",
+                                "description": "使用模版，快速创建jquery插件，参考http://jqueryboilerplate.com/"
                             }
                         ]
                     }
@@ -1129,7 +1467,9 @@
         "1. id, class, tag 是Html元素本身的基本特征,使用它们来筛选是最基础的",
         "2.“可见性”的含义：在窗口中占用了空间（不是指看得到）",
         "3. attribute: html文本作为普通标签，所包含的无意义的文本键值对",
-        "4. property: html文本作为DOM元素，所包含的有意义的属性"
+        "4. property: html文本作为DOM元素，所包含的有意义的属性",
+        "5. 参考jQuery官方API文档：http://api.jquery.com/",
+        "6. W3C介绍successful controls: https://www.w3.org/TR/html401/interact/forms.html#h-17.13.2"
     ],
     "参考文献": [
     ]
