@@ -100,7 +100,7 @@
                         "codeSnippets": [
                             {
                                 "description": "CREATE DROP ALTER（定义、删除、修改数据库对象）",
-                                "url": "/codeSnippets/language/ddl.sql"
+                                "url": "/codeSnippets/language/ddl"
                             }
                         ]
                     },
@@ -109,7 +109,7 @@
                         "codeSnippets": [
                             {
                                 "description": "INSERT DELETE/TRUNCATE UPDATE MERGE（插入、删除、修改库中的数据）",
-                                "url": "/codeSnippets/language/dml.sql"
+                                "url": "/codeSnippets/language/dml"
                             }
                         ]
                     },
@@ -118,7 +118,7 @@
                         "codeSnippets": [
                             {
                                 "description": "SELECT（执行顺序：FROM WHERE SELECT）",
-                                "url": "/codeSnippets/language/dql.sql"
+                                "url": "/codeSnippets/language/dql"
                             }
                         ]
                     },
@@ -127,7 +127,7 @@
                         "codeSnippets": [
                             {
                                 "description": "GRANT REVOKE(控制权限和事务)",
-                                "url": "/codeSnippets/language/dcl.sql"
+                                "url": "/codeSnippets/language/dcl"
                             }
                         ]
                     },
@@ -136,7 +136,7 @@
                         "codeSnippets": [
                             {
                                 "description": "(保证数据的准确性和一致性)",
-                                "url": "/codeSnippets/language/integrityConstraint.sql"
+                                "url": "/codeSnippets/language/integrityConstraint"
                             }
                         ]
                     }
@@ -200,7 +200,7 @@
                         "codeSnippets": [
                             {
                                 "description": "使用套路",
-                                "url": "/codeSnippets/language/plsql.sql"
+                                "url": "/codeSnippets/language/plsql"
                             }
                         ]
                     }
@@ -214,7 +214,7 @@
                         "codeSnippets": [
                             {
                                 "description": "具体语法",
-                                "url": "/codeSnippets/language/tablespace.sql"
+                                "url": "/codeSnippets/language/tablespace"
                             }
                         ]
                     },
@@ -525,7 +525,7 @@
                         "codeSnippets": [
                             {
                                 "description": "四种方式",
-                                "url": "/codeSnippets/language/backup.sql"
+                                "url": "/codeSnippets/language/backup"
                             }
                         ]
                     }
