@@ -5,200 +5,258 @@
     "正文": {
         "chapters": [
             {
-                "name": "一、数据定义",
+                "name": "一、概述",
                 "sections": [
                     {
-                        "name": "1.Table 表",
+                        "name": "1.基础概念",
                         "blocks": [
                             {
-                                "key": "创建",
-                                "description": "create table 【表】( <br />&nbsp; 【字段】 【数据类型】 【约束】, <br />&nbsp; ... <br /> )"
+                                "key": "数据库",
+                                "description": "存放数据的仓库"
                             },
                             {
-                                "key": "修改",
-                                "description": "alter table 【表】 add 【字段】 【数据类型】 【约束】 <br /> alter table 【表】 modify 【字段】 【数据类型】 【约束】 <br /> alter table 【表】 drop column 【字段】 <br /> alter table 【表】 rename column 【字段】 to 【新字段名】 <br /> rename 【表】 to 【新表名】"
+                                "key": "数据库管理系统",
+                                "description": "科学的组织和存储数据、高效的获取和维护数据"
                             },
                             {
-                                "key": "删除",
-                                "description": "drop table 【表】"
+                                "key": "数据库系统的组成",
+                                "description": "数据库、dbms、应用系统、数据库管理员"
                             },
                             {
-                                "key": "查看表结构",
-                                "description": "desc 【表】"
+                                "key": "硬件要求",
+                                "description": "CPU速度、内存大小、IO效率、硬盘容量、网络效率"
+                            },
+                            {
+                                "key": "DBA要求",
+                                "description": "参与数据库设计的全过程、通过权限管理和完整性约束保证安全、监控数据库运行（发生故障后及时恢复）、定期备份"
+                            },
+                            {
+                                "key": "数据模型",
+                                "description": "数据结构ddl、数据操纵dml、数据控制dcl"
+                            },
+                            {
+                                "key": "完整性约束",
+                                "description": "实体完整性(PK)、参照完整性(FK)、域完整性(UNIQUE、NULL、CHECK)"
+                            },
+                            {
+                                "key": "SQL语言",
+                                "description": "访问数据库的接口"
                             }
                         ]
                     },
                     {
-                        "name": "2.Sequence 序号",
+                        "name": "2.元数据",
                         "blocks": [
                             {
-                                "key": "创建",
-                                "description": "create sequence 【序号】 <br />&nbsp; minvalue 【值】 <br />&nbsp; maxvalue 【值】 <br />&nbsp; start with 【值】 <br />&nbsp; increment by 【值】 <br />&nbsp; cache 【值】"
+                                "key": "数据字典",
+                                "description": "由dbms自动生成、并维护的一组表和视图"
                             },
                             {
-                                "key": "修改",
-                                "description": "alter sequence 【序号】 【属性】 【值】"
+                                "key": "控制文件",
+                                "description": "支撑数据库的运行"
                             },
                             {
-                                "key": "删除",
-                                "description": "drop sequence 【序号】"
+                                "key": "日志文件",
+                                "description": "记录数据和数据结构的修改"
+                            },
+                            {
+                                "key": "数据文件",
+                                "description": "物理划分，存储表空间的内容"
                             }
                         ]
                     },
                     {
-                        "name": "3.Index 索引",
+                        "name": "3.数据库结构",
                         "blocks": [
                             {
-                                "key": "创建",
-                                "description": ""
+                                "key": "表空间（逻辑）",
+                                "description": "数据库对象在逻辑上划分的容器 （默认创建3个：SYSTEM SYSTEMAUX TEMP）"
                             },
                             {
-                                "key": "修改",
-                                "description": ""
+                                "key": "段（逻辑）",
+                                "description": "每个数据库对象，在逻辑上的存储单位（分类：数据段、索引段、临时段、回滚段）"
                             },
                             {
-                                "key": "删除",
-                                "description": ""
+                                "key": "区（物理）",
+                                "description": "组成段的基本物理单位"
+                            },
+                            {
+                                "key": "块（物理）",
+                                "description": "读写的最小物理单位"
+                            },
+                            {
+                                "key": "组成关系",
+                                "description": "数据库 > 表空间 > 数据库对象 > 区 > 块"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "二、数据操作",
+                "name": "二、数据模型",
                 "sections": [
                     {
-                        "name": "1.Tables",
-                        "blocks": [
+                        "name": "1.数据定义",
+                        "codeSnippets": [
                             {
-                                "key": "插入",
-                                "description": "insert into 【表】(【各字段的名称】) values(【一条记录】) <br /> insert into 【表】(【各字段的名称】) (【记录集合】)"
-                            },
-                            {
-                                "key": "更新",
-                                "description": "update 【表】 set 【字段】=【值】 where 【条件】"
-                            },
-                            {
-                                "key": "删除",
-                                "description": "delete from 【表】 where 【条件】 <br /> truncate table 【表】（删除全部数据，速度快）"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "三、数据查询",
-                "sections": [
-                    {
-                        "name": "1.Select",
-                        "blocks": [
-                            {
-                                "key": "单表查询",
-                                "description": "select 【字段】 from 【表】 <br />&nbsp; where 【条件】 <br />&nbsp; group by 【列名】 <br />&nbsp; order by 【列名】 asc/desc"
-                            },
-                            {
-                                "key": "modify",
-                                "description": ""
-                            },
-                            {
-                                "key": "delete",
-                                "description": ""
+                                "description": "CREATE DROP ALTER（定义、删除、修改数据库对象）",
+                                "url": "/codeSnippets/language/ddl.sql"
                             }
                         ]
                     },
                     {
-                        "name": "2.操作符",
-                        "blocks": [
+                        "name": "2.数据操纵",
+                        "codeSnippets": [
                             {
-                                "key": "关系比较",
-                                "description": "=, <>, >, >=, <, <="
-                            },
-                            {
-                                "key": "算术运算",
-                                "description": "与java中的一样"
-                            },
-                            {
-                                "key": "逻辑判断",
-                                "description": "【字段】 is null / is not null <br /> 【字段】 between 【值1】 and 【值2】 <br /> 【字段】 in ('【枚举1】', '【枚举2】', ...) <br /> 【字段】 like '-匹配字符串%' <br /> exists (select 1 from 【表】) 集合不为空 <br /> unique (select 【字段】 from 【表】) 记录无重复 <br /> 【字段】 > all 【集合】 <br /> 【字段】 < any 【集合】 <br />  【条件1】 and 【条件2】 <br />  【条件1】 or 【条件2】 "
-                            },
-                            {
-                                "key": "统计函数",
-                                "description": "count <br /> sum <br /> max <br /> min <br /> avg"
-                            },
-                            {
-                                "key": "字符串函数",
-                                "description": "upper <br /> lower <br /> substring(【字段】,【起始位置】,【长度】)"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "四、数据控制",
-                "sections": [
-                    {
-                        "name": "1.权限",
-                        "blocks": [
-                            {
-                                "key": "grant",
-                                "description": ""
-                            },
-                            {
-                                "key": "revoke",
-                                "description": ""
+                                "description": "INSERT DELETE/TRUNCATE UPDATE MERGE（插入、删除、修改库中的数据）",
+                                "url": "/codeSnippets/language/dml.sql"
                             }
                         ]
                     },
                     {
-                        "name": "2.口令",
-                        "blocks": [
+                        "name": "3.数据查询",
+                        "codeSnippets": [
                             {
-                                "key": "alter",
-                                "description": ""
+                                "description": "SELECT（执行顺序：FROM WHERE SELECT）",
+                                "url": "/codeSnippets/language/dql.sql"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.数据控制",
+                        "codeSnippets": [
+                            {
+                                "description": "GRANT REVOKE(控制权限和事务)",
+                                "url": "/codeSnippets/language/dcl.sql"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.完整性约束",
+                        "codeSnippets": [
+                            {
+                                "description": "(保证数据的准确性和一致性)",
+                                "url": "/codeSnippets/language/integrityConstraint.sql"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "五、数据管理命令",
+                "name": "三、PL/SQL",
                 "sections": [
                     {
-                        "name": "1.审计",
+                        "name": "1.概述",
                         "blocks": [
                             {
-                                "key": "start audit",
-                                "description": ""
+                                "key": "本质",
+                                "description": "在SQL语言上扩展的程序设计语言"
                             },
                             {
-                                "key": "stop audit",
-                                "description": ""
+                                "key": "使用",
+                                "description": "下载PL/SQL客户端和oracle客户端，配置PL/SQL客户端，使它连接到oracle客户端上"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.重要元素",
+                        "blocks": [
+                            {
+                                "key": "逻辑单元",
+                                "description": "PL/Sql程序块，可独立编译并存储在数据库中，以四种形式存储：函数、过程、包、触发器"
+                            },
+                            {
+                                "key": "函数",
+                                "description": "输入参数：任意，返回值：1个；调用：与其它语言一样"
+                            },
+                            {
+                                "key": "过程",
+                                "description": "输入参数：任意，返回值：无；调用：直接调用 / execute 过程名"
+                            },
+                            {
+                                "key": "包",
+                                "description": "一组相关的【过程、函数、类型、变量】的集合"
+                            },
+                            {
+                                "key": "触发器",
+                                "description": "输入参数：无，返回值：无；调用：事件引发"
+                            },
+                            {
+                                "key": "记录",
+                                "description": "当成结构体来用，有2种定义方式：显示和隐式"
+                            },
+                            {
+                                "key": "集合",
+                                "description": "当成数组来用"
+                            },
+                            {
+                                "key": "游标",
+                                "description": "指向集合的指针，作用是遍历集合 <br /><code>%FOUND</code>有记录 <br /><code>%NOTFOUND</code>没有记录 <br /><code>%ROWCOUNT</code>当前记录数 <br /><code>%ISOPEN</code>游标开启"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.语法说明",
+                        "codeSnippets": [
+                            {
+                                "description": "使用套路",
+                                "url": "/codeSnippets/language/plsql.sql"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "六、事务性控制命令",
+                "name": "四、ORACLE 表空间管理",
                 "sections": [
                     {
-                        "name": "1.事务",
+                        "name": "1.表空间操作",
+                        "codeSnippets": [
+                            {
+                                "description": "具体语法",
+                                "url": "/codeSnippets/language/tablespace.sql"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.各种情况",
                         "blocks": [
                             {
-                                "key": "commit",
-                                "description": "提交更改"
+                                "key": "建立数据库时",
+                                "description": "初始化表空间大小"
                             },
                             {
-                                "key": "rollback",
-                                "description": "放弃更改"
+                                "key": "表空间充足时",
+                                "description": "动态空间监视：SELECT * FROM DBA_FREE_SPACE <br />增加数据文件"
                             },
                             {
-                                "key": "savepoint",
-                                "description": "保存点，可以实现事务分段撤销"
+                                "key": "表空间不足时",
+                                "description": "修改数据文件大小 <br />创建新表空间 <br />增加数据文件"
                             },
                             {
-                                "key": "set transaction",
-                                "description": "设置事务的属性"
+                                "key": "合理利用存储空间",
+                                "description": "为字段设置合适的数据类型和长度"
+                            },
+                            {
+                                "key": "",
+                                "description": "删除无用的对象和表空间"
+                            },
+                            {
+                                "key": "",
+                                "description": "删除数据文件"
+                            },
+                            {
+                                "key": "",
+                                "description": "归档历史数据并回收相应空间"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.总结",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "主要玩的是表空间、数据文件、数据对象；表空间是房屋格局，数据文件是占地面积，数据对象是屋里的家具；完全看dba怎么分隔，怎么摆放"
                             }
                         ]
                     }
@@ -460,151 +518,15 @@
                 ]
             },
             {
-                "name": "附录三、PL/Sql基础",
+                "name": "附录三、Oracle备份/恢复",
                 "sections": [
                     {
-                        "name": "1.概念",
-                        "blocks": [
-                            {
-                                "key": "定义",
-                                "description": "SQL语句的超集，运行在Oracle上"
-                            },
-                            {
-                                "key": "逻辑单元",
-                                "description": "PL/Sql程序块，可独立编译并存储在数据库中，以四种形式存储：函数、过程、包、触发器"
-                            },
-                            {
-                                "key": "函数",
-                                "description": "输入参数：任意，返回值：1个，调用：与其它语言一样"
-                            },
-                            {
-                                "key": "过程",
-                                "description": "输入参数：任意，返回值：无，调用：直接调用 / execute 过程名"
-                            },
-                            {
-                                "key": "包",
-                                "description": "一组相关的【过程、函数、类型、变量】的集合"
-                            },
-                            {
-                                "key": "触发器",
-                                "description": "输入参数：无，返回值：无，调用：事件引发"
-                            },
-                            {
-                                "key": "记录",
-                                "description": "当成结构体来用，有2种定义方式：显示和隐式"
-                            },
-                            {
-                                "key": "集合",
-                                "description": "当成数组来用"
-                            },
-                            {
-                                "key": "游标",
-                                "description": "指向集合的指针，作用是遍历集合 <br /><code>%FOUND</code>有记录 <br /><code>%NOTFOUND</code>没有记录 <br /><code>%ROWCOUNT</code>当前记录数 <br /><code>%ISOPEN</code>游标开启"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "2.语法",
-                        "blocks": [
-                            {
-                                "key": "声明",
-                                "description": "<code>[变量名] 数据类型; </code>"
-                            },
-                            {
-                                "key": "赋值",
-                                "description": "<code>[变量] := 值; </code>"
-                            },
-                            {
-                                "key": "算术操作符",
-                                "description": "加<code>+</code>、减<code>-</code>、乘<code>*</code>、除<code>/</code>、乘方<code>**</code>"
-                            },
-                            {
-                                "key": "关系操作符",
-                                "description": "相等<code>=</code>、不等<code>!=</code>、其它的都一样"
-                            },
-                            {
-                                "key": "比较操作符",
-                                "description": "为空<code>is null</code>、模糊匹配<code>like</code>、区间<code>between and</code>、枚举<code>in</code>"
-                            },
-                            {
-                                "key": "逻辑操作符",
-                                "description": "与<code>and</code>、或<code>or</code>、非<code>not</code>"
-                            },
-                            {
-                                "key": "抛出异常",
-                                "description": "<code>raise [异常名称]</code>"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "3.代码模版",
+                        "name": "",
                         "codeSnippets": [
                             {
-                                "description": "PL/Sql 程序块",
-                                "url": "/codeSnippets/plsql/block.sql"
-                            },
-                            {
-                                "description": "分支",
-                                "url": "/codeSnippets/plsql/if.sql"
-                            },
-                            {
-                                "description": "循环1：LOOP",
-                                "url": "/codeSnippets/plsql/loop.sql"
-                            },
-                            {
-                                "description": "循环2：WHILE",
-                                "url": "/codeSnippets/plsql/while.sql"
-                            },
-                            {
-                                "description": "循环3：FOR IN",
-                                "url": "/codeSnippets/plsql/for_in.sql"
-                            },
-                            {
-                                "description": "异常处理：Exception",
-                                "url": "/codeSnippets/plsql/exception.sql"
-                            },
-                            {
-                                "description": "记录定义1：显式",
-                                "url": "/codeSnippets/plsql/record_explicit.sql"
-                            },
-                            {
-                                "description": "记录定义2：隐式",
-                                "url": "/codeSnippets/plsql/record_implicit.sql"
-                            },
-                            {
-                                "description": "记录赋值1：select into",
-                                "url": "/codeSnippets/plsql/record_SelectInto.sql"
-                            },
-                            {
-                                "description": "记录赋值2：fetch into",
-                                "url": "/codeSnippets/plsql/record_FetchInto.sql"
-                            },
-                            {
-                                "description": "集合定义1：Index_by",
-                                "url": "/codeSnippets/plsql/collection_Index_by.sql"
-                            },
-                            {
-                                "description": "游标的使用",
-                                "url": "/codeSnippets/plsql/collection_cursor.sql"
-                            },
-                            {
-                                "description": "存储过程",
-                                "url": "/codeSnippets/plsql/procedure.sql"
-                            },
-                            {
-                                "description": "函数",
-                                "url": "/codeSnippets/plsql/function.sql"
-                            },
-                            {
-                                "description": "动态SQL",
-                                "url": "/codeSnippets/plsql/dynamic_sql.sql"
+                                "description": "四种方式",
+                                "url": "/codeSnippets/language/backup.sql"
                             }
-                        ]
-                    },
-                    {
-                        "name": "4.",
-                        "codeSnippets": [
-                            
                         ]
                     }
                 ]
