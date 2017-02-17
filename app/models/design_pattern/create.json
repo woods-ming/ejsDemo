@@ -55,21 +55,29 @@
                         "images": [
                             {
                                 "alt": "确保一个类只有一个示例，并提供全局访问点",
-                                "url": "/images/singleton.png"
+                                "url": "/images/design_pattern/singleton.png"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "二、Factory",
+                "name": "二、Prototype",
                 "sections": [
                     {
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "单个实例",
-                                "description": "该类只能创建1个实例"
+                                "key": "属性是变化点",
+                                "description": "初始化逻辑需要经常修改"
+                            },
+                            {
+                                "key": "接口稳定",
+                                "description": "调用逻辑无需修改"
+                            },
+                            {
+                                "key": "目标",
+                                "description": "复用初始化实例的代码"
                             }
                         ]
                     },
@@ -77,30 +85,201 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "隐藏构造函数",
-                                "description": "限制随意创建实例"
+                                "key": "枚举",
+                                "description": "每种类型的对象，创建一个原型"
                             },
                             {
-                                "key": "使用静态实例",
-                                "description": "确保同一个实例被大家访问"
+                                "key": "复制",
+                                "description": "通过拷贝原型，创建新对象"
                             }
                         ]
                     },
                     {
                         "name": "3.代码示例",
-                        "blocks": [
+                        "codeSnippets": [
                             {
-                                "key": "",
-                                "description": ""
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/prototype.java"
                             }
                         ]
                     },
                     {
                         "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "通过复制来创建新对象",
+                                "url": "/images/design_pattern/prototype.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、Factory Method",
+                "sections": [
+                    {
+                        "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "依赖的对象是变化点",
+                                "description": "多处依赖就要修改多次，使得本类不稳定"
+                            },
+                            {
+                                "key": "系列对象，接口稳定",
+                                "description": "调用逻辑无需修改，根据对象类型决定行为的多态"
+                            },
+                            {
+                                "key": "目标1",
+                                "description": "将多处依赖合并为一处依赖，延迟考虑所依赖的具体对象，使得本类相对稳定"
+                            },
+                            {
+                                "key": "目标2",
+                                "description": "通过更换工厂，可替换具体依赖对象"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "分离依赖对象的创建过程",
+                                "description": "描述一个对象工厂，专门用于创建所依赖对象"
+                            },
+                            {
+                                "key": "依赖对象工厂",
+                                "description": "从工厂获取所依赖对象，将依赖具体产品转为依赖工厂"
+                            },
+                            {
+                                "key": "抽象工厂",
+                                "description": "按照对象的系列结构，对应一个系列的工厂"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "将类的实例化，延迟到工厂的子类",
+                                "url": "/codeSnippets/design_pattern/factoryMethod.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "确保一个类只有一个示例，并提供全局访问点",
+                                "url": "/images/design_pattern/factoryMethod.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、Abstract Factory",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "依赖的整套对象是变化点",
+                                "description": "整套对象可同时替换，多处依赖就要修改多次，使得本类不稳定"
+                            },
+                            {
+                                "key": "系列对象，接口稳定",
+                                "description": "调用逻辑无需修改，根据对象类型决定行为的多态"
+                            },
+                            {
+                                "key": "目标1",
+                                "description": "将多处依赖合并为一处依赖，延迟考虑所依赖的整套具体对象，使得本类相对稳定"
+                            },
+                            {
+                                "key": "目标2",
+                                "description": "通过更换工厂，可替换整套依赖对象"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "分离整套依赖对象的创建过程",
+                                "description": "描述一个对象工厂，专门用于创建所整套依赖对象"
+                            },
+                            {
+                                "key": "依赖对象工厂",
+                                "description": "从工厂获取所整套依赖对象，将依赖多个具体产品转为依赖工厂"
+                            },
+                            {
+                                "key": "抽象工厂",
+                                "description": "按照对象的系列结构，对应一个系列的工厂"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/abstractFactory.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "可用来更换依赖的整套组件",
+                                "url": "/images/design_pattern/abstractFactory.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "五、Builder",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "对象的部件是灵活多变的",
+                                "description": "组合算法稳定，可替换零件（如：组装电脑）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "分离组合算法",
+                                "description": "描述一个组装者，负责组装部件"
+                            },
+                            {
+                                "key": "分离部件的创建",
+                                "description": "描述一个部件工厂，负责提供整套零件"
+                            },
+                            {
+                                "key": "抽象工厂",
+                                "description": "零件是变化点，所以需要将部件工厂抽象，以生产不同的零件套装"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/builder.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示",
+                                "url": "/images/design_pattern/builder.png"
                             }
                         ]
                     }

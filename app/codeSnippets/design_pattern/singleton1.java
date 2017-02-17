@@ -1,5 +1,5 @@
 public class Singleton {
-    private static readonly Singleton uniqueInstance = new Singleton();
+    private static Singleton uniqueInstance = new Singleton();
 
     private Singleton() {}
 
