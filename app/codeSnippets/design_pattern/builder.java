@@ -66,6 +66,7 @@ public class Client {
     public static void main(String[] args) {
         Builder builder = new ConcreteBuilder2();   // 变化点       
         Director director = new Director(builder);
+        
         Product product = director.construct();     // 代码稳定
     }
 }

@@ -11,8 +11,12 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "已有组件中存在可复用的逻辑",
+                                "description": "想要复用"
+                            },
+                            {
+                                "key": "已有组件的接口 与 正在使用的接口 不同",
+                                "description": "无法直接使用"
                             }
                         ]
                     },
@@ -20,20 +24,12 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "接口转换",
+                                "description": "调用已有组件，实现现有接口"
                             },
                             {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
+                                "key": "增加中间层",
+                                "description": "创建新的类，封装接口转换逻辑"
                             }
                         ]
                     },
@@ -50,7 +46,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "",
+                                "alt": "在不改变原有实现的基础上，将原先不兼容的接口转换为兼容的接口",
                                 "url": "/images/design_pattern/adapter.png"
                             }
                         ]
@@ -64,8 +60,12 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "属性是扩展点",
+                                "description": "需要修改类结构"
+                            },
+                            {
+                                "key": "行为逻辑是变化点",
+                                "description": "需要修改方法的实现代码"
                             }
                         ]
                     },
@@ -73,20 +73,20 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "抽象类",
+                                "description": "通过类继承，解决属性的扩展问题"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "分离行为的实现",
+                                "description": "描述一个行为类，专门用于实现类的行为逻辑"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "抽象行为类",
+                                "description": "行为是变化点，所以需要继承机制，描述多种行为逻辑"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "桥接",
+                                "description": "将抽象行为，组合到抽象类中，将各自变化的属性和行为衔接起来"
                             }
                         ]
                     },
@@ -94,7 +94,7 @@
                         "name": "3.代码示例",
                         "codeSnippets": [
                             {
-                                "description": "",
+                                "description": "bridge负责自己的属性变化，行为逻辑就委托给behavior来实现",
                                 "url": "/codeSnippets/design_pattern/bridge.java"
                             }
                         ]
@@ -103,7 +103,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "",
+                                "alt": "分离抽象与实现，使他们可以各自独立的变化",
                                 "url": "/images/design_pattern/bridge.png"
                             }
                         ]
@@ -117,8 +117,8 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "容器对和元素的接口不同",
+                                "description": "需要先判断类型，然后分别调用不同的接口"
                             }
                         ]
                     },
@@ -126,20 +126,12 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "组合成树形结构",
+                                "description": "描述 <整体-部分> 这个结构"
                             },
                             {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
+                                "key": "统一接口",
+                                "description": "使用时无需判断，保持一致性"
                             }
                         ]
                     },
@@ -147,7 +139,7 @@
                         "name": "3.代码示例",
                         "codeSnippets": [
                             {
-                                "description": "",
+                                "description": "将容器对象的操作递归到基本对象上",
                                 "url": "/codeSnippets/design_pattern/composite.java"
                             }
                         ]
@@ -156,7 +148,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "",
+                                "alt": "忽略容器与元素的不同，统一的使用所有对象",
                                 "url": "/images/design_pattern/composite.png"
                             }
                         ]

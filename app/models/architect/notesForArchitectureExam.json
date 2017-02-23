@@ -1178,16 +1178,16 @@
                                 "description": "由已知对象，复制出另外一个实例"
                             },
                             {
-                                "key": "Builder",
-                                "description": "由若干已知对象，组合出新的实例"
-                            },
-                            {
                                 "key": "Factory Method",
                                 "description": "预先定义生产一个对象的工厂接口：以后由若干具体的工厂，去创建不同的对象"
                             },
                             {
                                 "key": "Abstract Factory",
                                 "description": "预先定义生产一系列相关对象的工厂接口：以后由若干具体的工厂，去创建不同的对象族"
+                            },
+                            {
+                                "key": "Builder",
+                                "description": "由若干已知对象，组合出新的实例"
                             }
                         ]
                     },

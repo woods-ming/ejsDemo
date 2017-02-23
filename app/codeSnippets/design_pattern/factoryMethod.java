@@ -24,6 +24,7 @@ public class Client {
  
     public static void main(String[] args) {
         Factory factory = new Factory2();           // 变化点
+        
         Product product = factory.createProduct();  // 代码稳定
     }
 }
