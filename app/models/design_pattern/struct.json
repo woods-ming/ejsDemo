@@ -11,12 +11,12 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "已有组件中存在可复用的逻辑",
-                                "description": "想要复用"
+                                "key": "想要复用",
+                                "description": "已有组件中存在可复用的逻辑"
                             },
                             {
-                                "key": "已有组件的接口 与 正在使用的接口 不同",
-                                "description": "无法直接使用"
+                                "key": "无法直接使用",
+                                "description": "已有组件的接口 与 正在使用的接口 不同"
                             }
                         ]
                     },
@@ -162,8 +162,20 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "属性是扩展点",
+                                "description": "需要修改类结构"
+                            },
+                            {
+                                "key": "行为逻辑需要扩展附加功能",
+                                "description": "需要在方法内增加代码"
+                            },
+                            {
+                                "key": "扩展的附加功能个数很多",
+                                "description": "需要针对每种排列组合，扩展相应的类，造成类爆炸"
+                            },
+                            {
+                                "key": "有点像AOP",
+                                "description": "在指定方法（前/后）添加代码"
                             }
                         ]
                     },
@@ -171,20 +183,20 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "抽象类",
+                                "description": "通过类继承，解决属性的扩展问题"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "X功能附加到Y对象",
+                                "description": "描述一个装饰类，专门用于将功能附加到指定对象上"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "装饰类设计",
+                                "description": "对外表现为原始类，因此要继承原始类；对内要附加的对象类型是原始类，所以要组合一个原始类对象；由于是对指定对象进行附加，所以类的方法全部由指定对象来实现"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "抽象装饰类",
+                                "description": "附加功能是变化点，所以需要继承机制，描述多种附加功能"
                             }
                         ]
                     },
@@ -201,7 +213,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "",
+                                "alt": "不改变原始类，动态的给对象的行为附加一种或多种功能",
                                 "url": "/images/design_pattern/decorator.png"
                             }
                         ]
@@ -215,8 +227,8 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "子系统复杂",
+                                "description": "使用前，需要了解子系统的全部细节（好烧脑）"
                             }
                         ]
                     },
@@ -224,20 +236,12 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "最小知识原则",
+                                "description": "与了解子系统的人沟通，说明自己的需求，约定一个够自己使用的接口"
                             },
                             {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
+                                "key": "实现接口",
+                                "description": "子系统人员提供一个类，实现该接口（这个类就像子系统的外观，所以叫外观类）"
                             }
                         ]
                     },
@@ -245,7 +249,7 @@
                         "name": "3.代码示例",
                         "codeSnippets": [
                             {
-                                "description": "",
+                                "description": "外观类为子系统提供一个简单的对外接口",
                                 "url": "/codeSnippets/design_pattern/facade.java"
                             }
                         ]
@@ -254,7 +258,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "",
+                                "alt": "让子系统更加容易使用",
                                 "url": "/images/design_pattern/facade.png"
                             }
                         ]
@@ -268,8 +272,12 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "类的某些参数需要固定或隐藏",
+                                "description": "如：系统对外的邮箱，给各个组件提供邮件服务，但密码要隐藏；再比如：现实中，跟经纪人谈商业合作，不直接接触本人"
+                            },
+                            {
+                                "key": "无法直接使用的类",
+                                "description": "如：WebService，无法直接使用远程服务器上的对象"
                             }
                         ]
                     },
@@ -277,20 +285,8 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": ""
+                                "key": "增加中间层",
+                                "description": "解耦依赖关系"
                             }
                         ]
                     },
@@ -298,7 +294,7 @@
                         "name": "3.代码示例",
                         "codeSnippets": [
                             {
-                                "description": "",
+                                "description": "把原始对象包裹一下",
                                 "url": "/codeSnippets/design_pattern/proxy.java"
                             }
                         ]
@@ -307,7 +303,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "",
+                                "alt": "提供一种代理以控制对这个对象的访问",
                                 "url": "/images/design_pattern/proxy.png"
                             }
                         ]
@@ -321,8 +317,8 @@
                         "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "大量相似的对象",
+                                "description": "消耗过多的内存"
                             }
                         ]
                     },
@@ -330,20 +326,20 @@
                         "name": "2.思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "共用相同的部分",
+                                "description": "单另存储一份数据，所有对象引用它"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "识别相同的部分",
+                                "description": "内蕴状态：不随环境改变的属性"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "识别不同的部分",
+                                "description": "外蕴状态：随环境改变的属性"
                             },
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "管理共享的对象",
+                                "description": "描述一个享元工厂，共享部分用键值对来存储，根据键返回享元对象"
                             }
                         ]
                     },
@@ -360,7 +356,7 @@
                         "name": "4.模型图",
                         "images": [
                             {
-                                "alt": "",
+                                "alt": "运用共享技术有效地支持大量细粒度的对象",
                                 "url": "/images/design_pattern/flyweight.png"
                             }
                         ]
