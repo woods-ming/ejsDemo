@@ -22,23 +22,15 @@
         dataType : 'text',
         success : function (data) {
          var encodedData = that.htmlEncode(data);
-         that.$codeContainer.html(encodedData);
-
-         if(window.prettyPrint){
-          window.setTimeout(
-            function() {
-              window.prettyPrint();
-            }, 
-            100);
-        }
-      },
-      error : function (XMLHttpRequest, textStatus, errorThrown) {
-       that.$codeContainer.html(errorThrown);
-     },
-     cache : true,
-     type : 'get',
-     async : true
-   });
+         that.$codeContainer.html(window.prettyPrintOne(encodedData, '', 'prettyPrintOne'));
+       },
+       error : function (XMLHttpRequest, textStatus, errorThrown) {
+         that.$codeContainer.html(errorThrown);
+       },
+       cache : true,
+       type : 'get',
+       async : true
+     });
      }
    };
 
@@ -73,22 +65,21 @@
     * =================== */
     
     $(function(){
-      var $codeContainer = $('code[data-code-url]')
-      ,   $window = $(window);
+      var $codeContainer = $('code[data-code-url]'),
+      $window = $(window);
 
       $window.on("scroll.prettyCode", function(){
         $codeContainer.each(function () {
-          var $this = $(this),
+          var $this = $(this),   
           codeUrl = $this.attr('data-code-url');
-          //$this.prettyCode(codeUrl);
 
-          
-          var fold= (window.innerHeight ? window.innerHeight : $window.height()) + $window.scrollTop();
-          
-          if(fold-$this.offset().top >= 0) {
+          if(!$this.data('loaded')) {
+            var fold= (window.innerHeight ? window.innerHeight : $window.height()) + $window.scrollTop();
 
-alert($this.attr('data-code-url'));
-alert("  $window.height()"+ $window.height() +"  $window.scrollTop()"+ $window.scrollTop() +"  $this.offset().top"+ $this.offset().top);
+            if(fold >= $this.offset().top + 10) {
+              $this.data('loaded', true);
+              $this.prettyCode(codeUrl);
+            }
           }
         });
 

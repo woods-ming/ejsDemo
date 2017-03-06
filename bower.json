@@ -4,6 +4,6 @@
   "dependencies": {
     "bootstrap": "3.3.4",
     "google-code-prettify": "~1.0.4",
-    "jquery_lazyload": "jquery.lazyload"
+    "jquery_lazyload": "jquery.lazyload#1.9.5"
   }
 }

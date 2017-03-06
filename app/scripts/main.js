@@ -1,5 +1,3 @@
-$(function(){
-  
-
-  $("img[data-original]").lazyload();
+$("img[data-original]").lazyload({
+    threshold : -10
 });
