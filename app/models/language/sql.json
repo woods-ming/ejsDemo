@@ -201,6 +201,10 @@
                             {
                                 "description": "使用套路",
                                 "url": "/codeSnippets/language/plsql"
+                            },
+                            {
+                                "description": "SQL技巧",
+                                "url": "/codeSnippets/language/sql_skill"
                             }
                         ]
                     }

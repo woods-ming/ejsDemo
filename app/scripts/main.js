@@ -1,1 +1,5 @@
-/* jshint devel:true */
+$(function(){
+  
+
+  $("img[data-original]").lazyload();
+});

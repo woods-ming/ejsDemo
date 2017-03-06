@@ -1,13 +1,13 @@
 'use strict';
 
 var glob = require('glob')
-  , wiredep = require('wiredep').stream
-  , browserSync = require('browser-sync')  
-  , reload = browserSync.reload
-  , routeTable = require('./app/routeTable.json')
-  , moment = require('moment')
-  , gulp = require('gulp')
-  , $ = require('gulp-load-plugins')();
+, wiredep = require('wiredep').stream
+, browserSync = require('browser-sync')  
+, reload = browserSync.reload
+, routeTable = require('./app/routeTable.json')
+, moment = require('moment')
+, gulp = require('gulp')
+, $ = require('gulp-load-plugins')();
 
 function compileHtml(model, view, dest) {
     gulp.src(model)
@@ -93,9 +93,13 @@ gulp.task('html', ['compile', 'jshint', 'styles'], function () {
         {
             match: /src=\".*prettify.min.js\"/,
             replacement: 'src="//apps.bdimg.com/libs/prettify/r298/prettify.min.js"'
+        },
+        {
+            match: /src=\".*jquery.lazyload.js\"/,
+            replacement: 'src="//apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.min.js"'
         }
         ]
-    }))
+    })) // 百度cdn
     .pipe($.if('*.html', $.minifyHtml({conditionals: true})))
     .pipe(gulp.dest('dist'));
 });
@@ -124,9 +128,9 @@ gulp.task('extras', function () {
 
 // sitemap:生成站点地图，并拷贝到生成目录
 gulp.task('sitemap', function () {
-    gulp.src('app/**/*.html')
+    gulp.src('app/html/**/*.html')
     .pipe($.sitemap({
-        siteUrl: 'http://codexp.duapp.com/'
+        siteUrl: 'http://woods240.cn/html/'
     }))
     .pipe(gulp.dest('dist'));
 });

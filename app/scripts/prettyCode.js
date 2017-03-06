@@ -1,62 +1,60 @@
 ﻿+function ($) {
-    'use strict';
+  'use strict';
 
-    var count = 0;
-    
     /* PrettyCode CLASS DEFINITION
-     * ========================= */
+    * ========================= */
     var PrettyCode = function (element, codeUrl) {
-        this.codeUrl = codeUrl;
-        this.$codeContainer = $(element);
-        this.$codeContainer.html('<span class="loading">源代码加载中...</span>');
+      this.codeUrl = codeUrl;
+      this.$codeContainer = $(element);
+      this.$codeContainer.html('<span class="loading">源代码加载中...</span>');
     };
 
     PrettyCode.prototype.htmlEncode = function (s) {
-        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     };
 
     PrettyCode.prototype.show = function () {
-		var noContent = this.$codeContainer.children().hasClass('loading');
-		if (noContent) {
-			var that = this;
-			$.ajax({
-				url : this.codeUrl,
-				dataType : 'text',
-				success : function (data) {
-					var encodedData = that.htmlEncode(data);
-					that.$codeContainer.html(encodedData);
+      var noContent = this.$codeContainer.children().hasClass('loading');
+      if (noContent) {
+       var that = this;
+       $.ajax({
+        url : this.codeUrl,
+        dataType : 'text',
+        success : function (data) {
+         var encodedData = that.htmlEncode(data);
+         that.$codeContainer.html(encodedData);
 
-                    if(--count === 0 && window.prettyPrint){
-                        window.setTimeout(
-                            function() {
-                                window.prettyPrint();
-                            }, 
-                            100);
-                    }
-				},
-				error : function (XMLHttpRequest, textStatus, errorThrown) {
-					that.$codeContainer.html(errorThrown);
-				},
-				cache : true,
-				type : 'get',
-				async : true
-			});
-		}
-    };
+         if(window.prettyPrint){
+          window.setTimeout(
+            function() {
+              window.prettyPrint();
+            }, 
+            100);
+        }
+      },
+      error : function (XMLHttpRequest, textStatus, errorThrown) {
+       that.$codeContainer.html(errorThrown);
+     },
+     cache : true,
+     type : 'get',
+     async : true
+   });
+     }
+   };
 
     /* PrettyCode PLUGIN DEFINITION
-     * ============================= */
+    * ============================= */
     function Plugin(option) {
-        return this.each(function () {
-            var $this = $(this),
-            data = $this.data('prettyCode'),
-            codeUrl = typeof option == "string" && option;
+      return this.each(function () {
+        var $this = $(this),
+        data = $this.data('prettyCode'),
+        codeUrl = typeof option == "string" && option;
 
-            if (!data)
-                $this.data('prettyCode', data = new PrettyCode(this, codeUrl));
+        if (!data)
+          $this.data('prettyCode', data = new PrettyCode(this, codeUrl));
 
-            data.show();
-        });
+        data.show();
+      });
     }
 
     var old = $.fn.prettyCode;
@@ -67,21 +65,35 @@
     // PrettyCode NO CONFLICT
     // =================
     $.fn.prettyCode.noConflict = function () {
-        $.fn.prettyCode = old;
-        return this;
+      $.fn.prettyCode = old;
+      return this;
     };
 
     /* PrettyCode DATA-API
-     * =================== */
+    * =================== */
     
     $(function(){
-        var $codeContainer = $('[data-code-url]');
-        count = $('[data-code-url]').length;
+      var $codeContainer = $('code[data-code-url]')
+      ,   $window = $(window);
+
+      $window.on("scroll.prettyCode", function(){
         $codeContainer.each(function () {
-            var $this = $(this),
-            codeUrl = $this.attr('data-code-url');
-            $this.prettyCode(codeUrl);
+          var $this = $(this),
+          codeUrl = $this.attr('data-code-url');
+          //$this.prettyCode(codeUrl);
+
+          
+          var fold= (window.innerHeight ? window.innerHeight : $window.height()) + $window.scrollTop();
+          
+          if(fold-$this.offset().top >= 0) {
+
+alert($this.attr('data-code-url'));
+alert("  $window.height()"+ $window.height() +"  $window.scrollTop()"+ $window.scrollTop() +"  $this.offset().top"+ $this.offset().top);
+          }
         });
+
+
+      });
     });
 
-}(jQuery);
+  }(jQuery);

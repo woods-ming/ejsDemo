@@ -10,7 +10,7 @@
 
 --系统函数：
   --字符类：
-  LENGTH LOWER TRIM REPLACE SUBSTR
+  LENGTH LOWER TRIM REPLACE SUBSTR LPAD RPAD INSTR
 
   --数字类：
   ABS CEIL POWER ROUND TRUNC GREATEST LEAST 
@@ -26,3 +26,18 @@
 
   --分组统计：
   COUNT SUM MAX MIN AVG
+
+
+--日期格式
+  年：YYYY
+  季度：Q
+  月：MM
+  周（当月）：W
+  周（当年）：WW
+  日（当周）：D
+  日（当月）：DD
+  日（当年）：DDD
+  星期几：DY
+  时：hh24
+  分：mi
+  秒：ss

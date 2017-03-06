@@ -1,0 +1,27 @@
+--行列转换
+列转行：记录 -> 键值对（用union方式）
+行转列：键值对 -> 记录（用group by的方式）
+
+--排序
+取排序：ROW_NUMBER() OVER(order by 字段)
+取排名：RANK() OVER(order by 字段)
+top-N分页：嵌套查询（里层筛选、排序，外层rownum <= N）
+删除重复数据：delete from 表 where rowid not in (select min(rowid) from 表 group by 所有字段)
+
+--递归
+查询：start with 筛选第一条记录的条件 connect by prior （父节点）递归字段1=（子节点）递归字段2
+构造序列：select level from dual connect by level <= 序列长度
+
+--分组
+多字段按顺序分组：rollup(字段1, 字段2)
+标识分组为Null的字段：grouping(分组字段)
+
+--优化思路
+from的解析顺序：自右向左
+where条件的执行顺序：自下而上
+
+尽量用索引列，提高查询速度
+表关联自己时，巧用rowid
+
+不同查询方案：主要是比较查询次数
+任何sql语句都可以翻译成大白话，或流程图，它就是算法的浓缩（考虑复用查询结果、从小集合查询等）
