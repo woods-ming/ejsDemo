@@ -31,8 +31,12 @@
                 <!-- 注释 -->
                 <%- include('../partials/note', { note: 注释 }); %> 
 
+                <!-- 分享 -->
+                <%- include('../partials/share', { bdText: 题目 }); %> 
+                
                 <!-- 评论 -->
                 <%- include('../partials/comment', { sid: 题目 }); %> 
+
             </div>
             <div class="col-md-3" role="complementary">
                 <!-- 目录 -->
