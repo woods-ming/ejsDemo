@@ -107,7 +107,8 @@
     },
     "注释": [
         "1.版本控制的主要工作是 让文件在不同区域流转",
-        "2.参考Pro Git（中文版） http://git.oschina.net/progit/index.html"
+        "2.参考Pro Git（中文版） http://git.oschina.net/progit/index.html",
+        "3.命令速记 http://www.runoob.com/manual/github-git-cheat-sheet.pdf"
     ],
     "参考文献": [
         ""
