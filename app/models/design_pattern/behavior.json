@@ -1,22 +1,455 @@
 {
-    "题目": "题目",
-    "摘要": "摘要",
-    "关键字": "关键字",
+    "题目": "行为型模式",
+    "摘要": "解决类在协作时遇到的问题",
+    "关键字": "ChainOfResponsibility Command Interpreter Iterator Mediator Memento Observer State Strategy TemplateMethod Visitor",
     "正文": {
         "chapters": [
             {
-                "name": "一、第一章",
+                "name": "一、Chain of Responsibility",
                 "sections": [
                     {
-                        "name": "1.第一节",
+                        "name": "1.问题",
                         "blocks": [
                             {
-                                "key": "键",
-                                "description": "值"
-                            },
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
                             {
-                                "key": "键",
-                                "description": "值"
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/chainOfResponsibility.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/chainOfResponsibility.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、Command",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/command.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/command.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、Interpreter",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/interpreter.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/interpreter.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、Iterator",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/iterator.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/iterator.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "五、Mediator",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/mediator.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/mediator.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "六、Memento",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/memento.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/memento.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "七、Observer",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/observer.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/observer.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "八、State",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/state.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/state.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "九、Strategy",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/strategy.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/strategy.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "十、Template Method",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/templateMethod.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/templateMethod.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "十一、Visitor",
+                "sections": [
+                    {
+                        "name": "1.问题",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.思路",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.代码示例",
+                        "codeSnippets": [
+                            {
+                                "description": "",
+                                "url": "/codeSnippets/design_pattern/visitor.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.模型图",
+                        "images": [
+                            {
+                                "alt": "",
+                                "url": "/images/design_pattern/visitor.png"
                             }
                         ]
                     }
