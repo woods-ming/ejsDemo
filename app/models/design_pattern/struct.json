@@ -1,7 +1,7 @@
 {
     "题目": "结构型模式",
     "摘要": "解决设计类结构时遇到的问题",
-    "关键字": "Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight",
+    "关键字": "Adapter Bridge Composite Decorator Facade Proxy Flyweight",
     "正文": {
         "chapters": [
             {
@@ -366,7 +366,7 @@
         ]
     },
     "注释": [
-        "1.",
+        "1.总的思路：不从头设计类结构，复用现有的类",
         ""
     ],
     "参考文献": [
