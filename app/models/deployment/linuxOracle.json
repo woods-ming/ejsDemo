@@ -1,7 +1,7 @@
 {
     "题目": "在linux下部署oracle数据库",
-    "摘要": "摘要",
-    "关键字": "关键字",
+    "摘要": "介绍在CentOS7中部署oracle的具体步骤",
+    "关键字": "linux下oracle部署 oracle部署 oracle",
     "正文": {
         "chapters": [
             {

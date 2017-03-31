@@ -1,26 +1,28 @@
-binutils-2.17.50.0.6
-compat-libstdc++-33-3.2.3
-compat-libstdc++-33-3.2.3 (32 bit)
-elfutils-libelf-0.125
-elfutils-libelf-devel-0.125
-gcc-4.1.2
-gcc-c++-4.1.2
-glibc-2.5-24
-glibc-2.5-24 (32 bit)
-glibc-common-2.5
-glibc-devel-2.5
-glibc-devel-2.5 (32 bit)
-glibc-headers-2.5
-ksh-20060214
-libaio-0.3.106
-libaio-0.3.106 (32 bit)
-libaio-devel-0.3.106
-libaio-devel-0.3.106 (32 bit)
-libgcc-4.1.2yu
-libgcc-4.1.2 (32 bit)
-libstdc++-4.1.2
-libstdc++-4.1.2 (32 bit)
-libstdc++-devel 4.1.2
-make-3.81
-sysstat-7.0.2
+binutils-2.23.52.0.1-12.el7.x86_64 
+compat-libcap1-1.10-3.el7.x86_64 
+compat-libstdc++-33-3.2.3-71.el7.i686
+compat-libstdc++-33-3.2.3-71.el7.x86_64
+gcc-4.8.2-3.el7.x86_64 
+gcc-c++-4.8.2-3.el7.x86_64 
+glibc-2.17-36.el7.i686 
+glibc-2.17-36.el7.x86_64 
+glibc-devel-2.17-36.el7.i686 
+glibc-devel-2.17-36.el7.x86_64 
+ksh
+libaio-0.3.109-9.el7.i686 
+libaio-0.3.109-9.el7.x86_64 
+libaio-devel-0.3.109-9.el7.i686 
+libaio-devel-0.3.109-9.el7.x86_64 
+libgcc-4.8.2-3.el7.i686 
+libgcc-4.8.2-3.el7.x86_64 
+libstdc++-4.8.2-3.el7.i686 
+libstdc++-4.8.2-3.el7.x86_64 
+libstdc++-devel-4.8.2-3.el7.i686 
+libstdc++-devel-4.8.2-3.el7.x86_64 
+libXi-1.7.2-1.el7.i686 
+libXi-1.7.2-1.el7.x86_64 
+libXtst-1.2.2-1.el7.i686 
+libXtst-1.2.2-1.el7.x86_64 
+make-3.82-19.el7.x86_64 
+sysstat-10.1.5-1.el7.x86_64
 （没有就安装，有些需要同时安装x86_64和i386/i686，如果确实安装了，可以忽略错误）
