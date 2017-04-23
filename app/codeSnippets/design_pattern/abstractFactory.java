@@ -9,7 +9,8 @@ public class ProductB2 extends ProductB { }
 
 // 工厂
 public abstract class Factory {
-    abstract Product createProduct();
+    abstract Product createProductA();
+    abstract Product createProductB();
 }
 public class Factory1 extends Factory {
     public Product createProductA() {
