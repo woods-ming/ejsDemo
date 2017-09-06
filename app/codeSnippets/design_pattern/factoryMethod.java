@@ -14,10 +14,10 @@ public class Factory {
 
 // 客户程序
 public class Client {
+	private Product product;
  
-    public static void main(String[] args) {
-    	// 代码稳定
-        Factory factory = new Factory();           
-        Product product = factory.createProduct();  
+    public void setProduct(Factory factory) {
+    	// 代码稳定        
+        product = factory.createProduct();  
     }
 }
