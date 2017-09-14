@@ -8,7 +8,7 @@
                 "name": "一、Singleton",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "控制",
@@ -69,7 +69,7 @@
                 "name": "二、Prototype",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "需要创建",
@@ -126,7 +126,7 @@
                 "name": "三、Factory Method",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "依赖对象是扩展点",
@@ -179,7 +179,7 @@
                 "name": "四、Abstract Factory",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "不想修改",
@@ -232,7 +232,7 @@
                 "name": "五、Builder",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "不想修改",

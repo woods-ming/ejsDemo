@@ -8,7 +8,7 @@
                 "name": "一、Chain of Responsibility",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "多个角色",
@@ -73,7 +73,7 @@
                 "name": "二、Command",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "一个动作",
@@ -111,7 +111,7 @@
                             {
                                 "key": "增加中间层",
                                 "description": "描述一个类，将行为封装起来、行为主体参数化"
-                            },
+                            }
                         ]
                     },
                     {
@@ -138,14 +138,14 @@
                 "name": "三、Interpreter",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "问题千变万化",
                                 "description": "不能一劳永逸的处理所有情况"
                             },
                             {
-                                "key": "基本处理方式就那么几种",
+                                "key": "基本思路是固定的",
                                 "description": "可通过组合变化，处理所有问题"
                             },
                             {
@@ -154,7 +154,7 @@
                             },
                             {
                                 "key": "例子2",
-                                "description": "战场命令，书面命令和战场执行是分离的，并需要执行者的解释"
+                                "description": "古代战场中，作战计划和战场执行是分离的，并需要钦差大臣的解释"
                             },
                             {
                                 "key": "例子3",
@@ -166,8 +166,16 @@
                         "name": "2.解决思路",
                         "blocks": [
                             {
-                                "key": "分离动作和描述",
-                                "description": "将动作步骤单另描述到纸上，"
+                                "key": "动静分离",
+                                "description": "将逻辑分离为书面和执行2部分"
+                            },
+                            {
+                                "key": "定义书面语法",
+                                "description": "用来描述书面逻辑"
+                            },
+                            {
+                                "key": "定义执行组件",
+                                "description": "用来解释书面逻辑，并执行"
                             }
                         ]
                     },
@@ -195,11 +203,15 @@
                 "name": "四、Iterator",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "遍历集合",
+                                "description": "把所有子元素看一遍"
+                            },
+                            {
+                                "key": "只想遍历",
+                                "description": "不想关注目标集合的内部结构"
                             }
                         ]
                     },
@@ -207,8 +219,8 @@
                         "name": "2.解决思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "定义遍历接口",
+                                "description": "只关注遍历行为，任何集合只需实现改接口"
                             }
                         ]
                     },
@@ -236,20 +248,33 @@
                 "name": "五、Mediator",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "多个角色之间",
+                                "description": "需要相互协助"
+                            },
+                            {
+                                "key": "对于其中任意一个角色来说",
+                                "description": "认识其它角色要花费大力气"
+                            },
+                            {
+                                "key": "例子1",
+                                "description": "消费者和商家互相需要对方的产品或钱，由天猫充当中介，让他们可以不用认识就能交换到对方的物品"
                             }
                         ]
-                    },
+                    },  
+
                     {
                         "name": "2.解决思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "增加中间层",
+                                "description": "封装每个角色对外提供的帮助"
+                            },
+                            {
+                                "key": "有事找中介",
+                                "description": "某个角色需要帮助时，不再用寻找另一个角色，中介就可以间接提供帮助"
                             }
                         ]
                     },
@@ -277,11 +302,15 @@
                 "name": "六、Memento",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "随时备份",
+                                "description": "某个时刻的状态，方便以后恢复"
+                            },
+                            {
+                                "key": "隐藏镜像",
+                                "description": "不想把隐私暴露给别人"
                             }
                         ]
                     },
@@ -289,8 +318,12 @@
                         "name": "2.解决思路",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": ""
+                                "key": "交给信赖的人",
+                                "description": "新建一个备忘录角色，专门用来备份/还原"
+                            },
+                            {
+                                "key": "守口如瓶",
+                                "description": "她要把备份隐藏起来，只让我来取"
                             }
                         ]
                     },
@@ -318,7 +351,7 @@
                 "name": "七、Observer",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "",
@@ -359,7 +392,7 @@
                 "name": "八、State",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "",
@@ -400,7 +433,7 @@
                 "name": "九、Strategy",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "",
@@ -441,7 +474,7 @@
                 "name": "十、Template Method",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "",
@@ -482,7 +515,7 @@
                 "name": "十一、Visitor",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "",
