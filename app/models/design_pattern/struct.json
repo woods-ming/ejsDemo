@@ -8,7 +8,7 @@
                 "name": "一、Adapter",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "想要复用",
@@ -57,7 +57,7 @@
                 "name": "二、Bridge",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "属性是扩展点",
@@ -114,7 +114,7 @@
                 "name": "三、Composite",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "容器和元素的接口不同",
@@ -159,7 +159,7 @@
                 "name": "四、Decorator",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "属性是扩展点",
@@ -224,7 +224,7 @@
                 "name": "五、Facade",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "子系统复杂",
@@ -269,7 +269,7 @@
                 "name": "六、Proxy",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "类的某些参数需要固定或隐藏",
@@ -314,7 +314,7 @@
                 "name": "七、Flyweight",
                 "sections": [
                     {
-                        "name": "1.问题",
+                        "name": "1.需求",
                         "blocks": [
                             {
                                 "key": "大量相似的对象",
@@ -366,7 +366,7 @@
         ]
     },
     "注释": [
-        "1.总的思路：不从头设计类结构，复用现有的类",
+        "1.总的思路：不从头设计类结构，尽量复用现有逻辑",
         ""
     ],
     "参考文献": [
