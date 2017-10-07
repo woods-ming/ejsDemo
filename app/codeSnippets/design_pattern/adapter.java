@@ -1,10 +1,10 @@
 // 旧接口  
-public interface AdapteeInterface  
+interface AdapteeInterface  
 {  
    void adaptedOperation();
 }  
 // 新接口  
-public interface AdapterInterface  
+interface AdapterInterface  
 {  
    void operation();
 }  
