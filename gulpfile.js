@@ -44,6 +44,43 @@ gulp.task('compile', function() {
     }
 });
 
+// debug:测试环境发布
+gulp.task('debug', ['compile'], function() {
+    // webserver:临时服务器
+    browserSync({
+        notify: true,
+        port: 9000,
+        logFileChanges: true,
+        server: {
+            baseDir: ['.tmp', 'app'],
+            index: "/html/index.html",
+            routes: {
+                '/bower_components': 'bower_components'
+            }
+        }
+    });
+
+    // watch:监视变化
+    gulp.watch([
+        'app/html/**/*.html',
+        'app/scripts/**/*.js',
+        'app/styles/**/*.css',
+        'app/images/**/*.*'
+        ]).on('change', reload);
+    gulp.watch('app/styles/**/*.css', ['styles']);
+    gulp.watch('app/views/**/*.ejs', ['compile']);
+
+    var path = require('path');
+    gulp.watch('app/models/**/*.json')
+    .on('change', function(event) {
+        notifyChange(event.path);
+        var model = event.path; 
+        var view = findRouteView(model);
+        var dest = path.resolve('app/html', path.relative('app/models', path.dirname(event.path)));
+        compileHtml(model, view, dest);
+    });
+});
+
 // jshint:检查js代码中的错误
 gulp.task('jshint', function () {
     return gulp.src('app/scripts/**/*.js')
@@ -102,6 +139,7 @@ gulp.task('html', ['compile', 'jshint', 'styles'], function () {
     })) // 百度cdn
     .pipe($.if('*.html', $.minifyHtml({conditionals: true})))
     .pipe(gulp.dest('dist'));
+
 });
 
 // images:优化图片，并拷贝到生成目录
@@ -122,80 +160,53 @@ gulp.task('extras', function () {
     gulp.src('app/codeSnippets/**/*')
     .pipe(gulp.dest('dist/codeSnippets'));
 
-    gulp.src('app/favicon.ico')
+    return gulp.src('app/favicon.ico')
     .pipe(gulp.dest('dist/'));
+
 });
 
 // sitemap:生成站点地图，并拷贝到生成目录
 gulp.task('sitemap', function () {
-    gulp.src('app/html/**/*.html')
+    return gulp.src('app/html/**/*.html')
     .pipe($.sitemap({
         siteUrl: 'http://woods240.cn/html/'
     }))
     .pipe(gulp.dest('dist'));
-});
 
-// build:生成
-gulp.task('build', ['html', 'images', 'extras', 'sitemap'], function () {
-    gulp.src('dist/**/*')
-    .pipe($.size({title: 'build', gzip: true}))
-    .pipe($.zip('ejsDemo_' + moment().format('YYYYMMDD_Ahhmmss') + '.zip'))
-    .pipe(gulp.dest('../Publish'));
 });
 
 // clean:清除生成的文件
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-// rebuild:重新生成
-gulp.task('rebuild', ['clean'], function () {
-    gulp.start('build');
+// build:生成
+gulp.task('build', ['html', 'images', 'extras', 'sitemap'], function () {
+    // 复制网站首页
+    return gulp.src('dist/html/index.html')
+    .pipe($.rename("index.html"))
+    .pipe(gulp.dest('dist/'));
 });
 
-// debug:测试环境发布
-gulp.task('debug', ['compile'], function() {
-    // webserver:临时服务器
-    browserSync({
-        notify: true,
-        port: 9000,
-        logFileChanges: true,
-        server: {
-            baseDir: ['.tmp', 'app'],
-            index: "/html/index.html",
-            routes: {
-                '/bower_components': 'bower_components'
-            }
-        }
-    });
+// zip:压缩打包
+gulp.task('zip', function(){
+    return gulp.src('dist/**/*')
+    .pipe($.size({title: 'build', gzip: true}))
+    .pipe($.zip('ejsDemo_' + moment().format('YYYYMMDD_Ahhmmss') + '.zip'))
+    .pipe(gulp.dest('../Publish'));
+});
 
-    // watch:监视变化
-    gulp.watch([
-        'app/html/**/*.html',
-        'app/scripts/**/*.js',
-        'app/styles/**/*.css',
-        'app/images/**/*.*'
-        ]).on('change', reload);
-    gulp.watch('app/styles/**/*.css', ['styles']);
-    gulp.watch('app/views/**/*.ejs', ['compile']);
-
-    var path = require('path');
-    gulp.watch('app/models/**/*.json')
-    .on('change', function(event) {
-        notifyChange(event.path);
-        var model = event.path; 
-        var view = findRouteView(model);
-        var dest = path.resolve('app/html', path.relative('app/models', path.dirname(event.path)));
-        compileHtml(model, view, dest);
-    });
+// rebuild:重新生成
+gulp.task('rebuild', function () {
+    return $.runSequence('clean', 'build', 'zip');
 });
 
 // default:生产环境发布
 gulp.task('default', ['rebuild'], function () {
     // webserver:临时服务器
-    browserSync({
+    return browserSync({
         port: 9001,
         server: {
             baseDir: ['dist'],
-            index: "/html/index.html"
+            index: "/index.html"
         }
     });
 });
