@@ -1,0 +1,198 @@
+{
+    "题目": "搭建便携式node开发环境",
+    "摘要": "如何能够搭建一次node开发环境，就可以随身携带、随走随用",
+    "关键字": "node开发环境 便携式node",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、软件下载清单",
+                "sections": [
+                    {
+                        "name": "1.cmder",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "windows下的控制台模拟器，比cmd更好用"
+                            },
+                            {
+                                "key": "完整版包含",
+                                "description": "cmder + portalbe-git"
+                            },
+                            {
+                                "key": "作用",
+                                "description": "敲命令 + 版本控制"
+                            },
+                            {
+                                "key": "下载地址",
+                                "description": "http://cmder.net/"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.nodejs",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "javascript运行环境，在npm的管理下有个很好的生态圈，吸引人们在圈子里开发js程序"
+                            },
+                            {
+                                "key": "包含",
+                                "description": "javascript解释引擎 + npm + 各种js类库（尤为重要）"
+                            },
+                            {
+                                "key": "作用",
+                                "description": "使用各种js类库，开发web应用程序"
+                            },
+                            {
+                                "key": "下载地址",
+                                "description": "https://nodejs.org/en/download/"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.sublime-text",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "好用的代码编辑器"
+                            },
+                            {
+                                "key": "包含",
+                                "description": "代码编辑器 + 各种插件"
+                            },
+                            {
+                                "key": "作用",
+                                "description": "提供友好的环境，方便写代码"
+                            },
+                            {
+                                "key": "下载地址",
+                                "description": "https://www.sublimetext.com/3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "二、安装软件",
+                "sections": [
+                    {
+                        "name": "1.解压",
+                        "blocks": [
+                            {
+                                "key": "位置",
+                                "description": "找个u盘，建个目录，该目录以后就是开发环境"
+                            },
+                            {
+                                "key": "权限",
+                                "description": "在Cmder.exe的兼容性属性里，勾选【以管理员方式运行】"
+                            },
+                            {
+                                "key": "快捷方式",
+                                "description": "创建Cmder.exe、sublime_text.exe的快捷方式，放在U盘根目录，方便使用"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.创建nodejs的配置文件",
+                        "codeSnippets": [
+                            {
+                                "description": "{nodejs目录}/etc/npmrc",
+                                "url": "/codeSnippets/deployment/npmrc"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.设置node环境变量",
+                        "codeSnippets": [
+                            {
+                                "description": "启动Cmder.exe，右键 -> Settings -> Enviroment，输入如下语句",
+                                "url": "/codeSnippets/deployment/nodeEnv"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、环境检查",
+                "sections": [
+                    {
+                        "name": "1.git环境",
+                        "blocks": [
+                            {
+                                "key": "查看版本",
+                                "description": "git --version"
+                            },
+                            {
+                                "key": "查看配置",
+                                "description": "git config --list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.node环境",
+                        "blocks": [
+                            {
+                                "key": "查看版本",
+                                "description": "node -v"
+                            },
+                            {
+                                "key": "查看配置",
+                                "description": "npm config ls -l"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.系统环境",
+                        "blocks": [
+                            {
+                                "key": "查看环境变量",
+                                "description": "set"
+                            },
+                            {
+                                "key": "",
+                                "description": "肉眼核查结果，看有没有异常的环境变量"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "四、使用",
+                "sections": [
+                    {
+                        "name": "1.nodejs使用国内的淘宝npm镜像",
+                        "blocks": [
+                            {
+                                "key": "安装cnpm",
+                                "description": "npm install -g cnpm --registry=https://registry.npm.taobao.org"
+                            },
+                            {
+                                "key": "",
+                                "description": "以后直接用cnpm代替npm"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.选择cmder会话环境",
+                        "blocks": [
+                            {
+                                "key": "bash as Admin",
+                                "description": "支持很多shell命令，且避免权限不足的问题"
+                            },
+                            {
+                                "key": "",
+                                "description": "打开Cmder窗口，新建console时选择此选项"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "参考：http://www.linkedin.com/pulse/portable-node-windows-process-create-environment-incus-data-pty-ltd"
+    ],
+    "参考文献": [
+        ""
+    ]
+}
