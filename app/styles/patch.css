@@ -1,5 +1,5 @@
 body {
-  font-family: 	"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	font-family: 	"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 
 .bs-example:after {
@@ -33,11 +33,25 @@ h3{
 	margin: 1.5em auto 2.5em;
 }
 
+.dl-horizontal {
+	cursor: zoom-in;
+}
+
 .dl-horizontal dt {
- 	white-space: pre-wrap;
- 	width: 30%;
+	white-space: pre-wrap;
+	width: 30%;
 }
 
 .dl-horizontal dd {
 	margin-left: 32%;
+}
+
+.dl-horizontal.focus {
+	transform: scale(1.5, 1.5);
+	-ms-transform: scale(1.5, 1.5);	/* IE 9 */
+	-webkit-transform: scale(1.5, 1.5);	/* Safari 和 Chrome */
+	-o-transform: scale(1.5, 1.5);	/* Opera */
+	-moz-transform: scale(1.5, 1.5);	/* Firefox */
+
+	color:#6f5499;
 }

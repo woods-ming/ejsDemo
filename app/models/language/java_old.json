@@ -1,406 +1,275 @@
 {
     "题目": "Java",
-    "摘要": "介绍Java的语法基础、常用类库",
-    "关键字": "Java入门, Java基础, JavaAPI",
+    "摘要": "从零开始学习Java",
+    "关键字": "Java入门",
     "正文": {
         "chapters": [
             {
-                "name": "一、java简介",
+                "name": "一、搭建开发环境",
                 "sections": [
                     {
-                        "name": "1.what（Java是什么，用来干啥？）",
+                        "name": "1.安装Jdk",
                         "blocks": [
                             {
-                                "key": "面向对象编程语言",
-                                "description": "【适合】编写服务端应用程序，【偶尔】用于编写桌面应用程序"
+                                "key": "包含内容",
+                                "description": "JRE、编译器、打包工具、文档生成器、调试器、头文件生成器、反汇编器、监控工具等"
                             },
                             {
-                                "key": "web应用的组成",
-                                "description": "界面交互(html/...) —— 业务逻辑(java/...) —— 数据存取(SqlServer/...)"
+                                "key": "下载",
+                                "description": "http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+                            },
+                            {
+                                "key": "JAVA_HOME",
+                                "description": "C:\\Program Files\\Java\\jdk1.7.0"
+                            },
+                            {
+                                "key": "CLASSPATH",
+                                "description": ".;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;"
+                            },
+                            {
+                                "key": "Path",
+                                "description": "%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;"
+                            },
+                            {
+                                "key": "查看java版本",
+                                "description": "java -version"
                             }
                         ]
                     },
                     {
-                        "name": "2.why（为什么使用它？ 下列广告词）",
+                        "name": "2.安装Tomcat",
                         "blocks": [
                             {
-                                "key": "简单",
-                                "description": "java是高级语言（其它：汇编、机器语言），表达能力强 <br />从c++发展而来，大部分语法规则相同 <br />剔除了一些复杂的语法（指针【容易造成内存泄漏、内存溢出】、多重继承等） <br />增加了一些功能（自动垃圾回收：创建对象时，自动分配内存；使用完毕，自动释放内存）"
+                                "key": "下载（Core:zip）",
+                                "description": "http://tomcat.apache.org/download-80.cgi"
                             },
                             {
-                                "key": "面向对象",
-                                "description": "Object（事物） Oriented（看待） <br />如何解决问题，取决于如何看待问题，面向对象与普通人看待世界的方式一致 <br />封装（隐藏细节）、继承（复用）、多态（同一个行为，在不同事物身上表现不同）"
+                                "key": "绿色",
+                                "description": "解压到不需要Admin权限的目录"
                             },
                             {
-                                "key": "平台独立",
-                                "description": "编译后的类文件是跨平台的，可以在任何安装了jvm的计算机上运行"
+                                "key": "CATALINA_HOME",
+                                "description": "F:\\Downloads\\Tomcat\\apache-tomcat-8.0.22"
                             },
                             {
-                                "key": "可移植",
-                                "description": "源码无需更改，java虚拟机掩盖了不同机器的差别"
-                            },
-                            {
-                                "key": "分布式",
-                                "description": "通过网络编程，将应用程序分布在多台计算机上（QQ、微信）"
-                            },
-                            {
-                                "key": "安全",
-                                "description": "Java 安全模型基于一个可定制的“沙盒”，程序可在其中安全运行，对系统或用户无潜在风险"
-                            },
-                            {
-                                "key": "健壮",
-                                "description": "程序不会轻易崩溃。通过异常处理（预案），可以快速恢复正常流程"
-                            },
-                            {
-                                "key": "多线程",
-                                "description": "同时执行多个任务"
+                                "key": "启动",
+                                "description": "<kbd>双击</kbd> ‘安装目录\\bin\\startup.bat’ || 打开浏览器 ‘http://localhost:8080/’"
                             }
                         ]
                     },
                     {
-                        "name": "3.how（怎样学习Java？）",
+                        "name": "3.安装Eclipse",
                         "blocks": [
                             {
-                                "key": "理解",
-                                "description": "基础概念（如：面向对象、类、接口、继承、异常）"
+                                "key": "下载",
+                                "description": "http://www.eclipse.org/downloads/"
                             },
                             {
-                                "key": "掌握",
-                                "description": "基本语法（如：定义类、接口、枚举，对类成员做访问限制，流程控制）"
+                                "key": "绿色",
+                                "description": "解压到不需要Admin权限的目录"
                             },
                             {
-                                "key": "学会",
-                                "description": "基本套路（如：安装java环境、编译、运行、调试）"
+                                "key": "工作目录",
+                                "description": "存放代码的默认文件夹"
                             },
                             {
-                                "key": "熟悉",
-                                "description": "api和类库（如：流、集合、jdbc）"
+                                "key": "配置运行环境",
+                                "description": "Preference\\Java\\Installed JREs：选择jdk安装目录"
+                            },
+                            {
+                                "key": "配置Tomcat",
+                                "description": "Preference\\Server\\Runtime Enviorments：添加Apache Tomcat v8.0及安装目录 || JRE选择jdk开头的"
+                            },
+                            {
+                                "key": "配置Content Assist",
+                                "description": "Preference\\Java\\Content Assist\\Auto activacation：输入'.abc...z'"
+                            },
+                            {
+                                "key": "打开Tomcat",
+                                "description": "Window\\Show View\\Servers：<kbd>右键</kbd> start"
+                            },
+                            {
+                                "key": "配置编码格式",
+                                "description": "General\\WorkSpace\\Text file encoding：UTF-8 <br />Web\\JSP Files\\Encoding：ISO 10646/Unicode(UTF-8)"
+                            },
+                            {
+                                "key": "关闭拼写检查",
+                                "description": "General\\Editors\\Text Editors\\Spelling：禁用拼写检查"
+                            },
+                            {
+                                "key": "安装插件",
+                                "description": "Help\\Eclipse Marketplace"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.安装Maven",
+                        "blocks": [
+                            {
+                                "key": "下载",
+                                "description": "http://maven.apache.org/download.cgi"
+                            },
+                            {
+                                "key": "绿色",
+                                "description": "解压到不需要Admin权限的目录"
+                            },
+                            {
+                                "key": "M2_HOME",
+                                "description": "G:\\SoftWare\\apache-maven-3.3.3"
+                            },
+                            {
+                                "key": "Path",
+                                "description": "%M2_HOME%\\bin;"
+                            },
+                            {
+                                "key": "测试",
+                                "key": "测试",
+                                "description": "<code>mvn -v</code>"
+                            },
+                            {
+                                "key": "注意",
+                                "description": "必须配合jdk1.7"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "二、基础概念",
+                "name": "二、Jsp（方便生成Html的servlet，由Tomcat自动解析）",
                 "sections": [
                     {
-                        "name": "1.java的体系结构",
+                        "name": "1.Hello World",
                         "blocks": [
                             {
-                                "key": "源文件",
-                                "description": "程序员写的代码，保存为Xxx.java"
+                                "key": "创建项目",
+                                "description": "Web\\Dynamic Web Project"
                             },
                             {
-                                "key": "类文件",
-                                "description": "javac编译源文件，生成Xxx.class"
+                                "key": "创建页面",
+                                "description": "WebContent\\某目录，<kbd>右键</kbd> JSP File"
                             },
                             {
-                                "key": "JVM(java虚拟机)",
-                                "description": "类加载器：【动态加载】所需的类文件 <br />字节码校验器：【检查】类文件的内容，确保字节码安全执行 <br />执行引擎：【解释】类文件中的字节码 <br />JIT编译：【编译】类文件中的字节码 -> 机器码（执行速度更快）"
+                                "key": "编写代码",
+                                "description": "跟Asp差不多，语句用<code><% %></code>，声明用<code><%! %></code>，表达式用<code><%= %></code>"
                             },
                             {
-                                "key": "API/类库",
-                                "description": "JRE中自带的java类文件（类似c语言的函数库）"
+                                "key": "九大内置对象",
+                                "description": "request，response，session，application，out（输出），page，pageContext，config，exception"
+                            },
+                            {
+                                "key": "部署到Tomcat",
+                                "description": "Server\\Add and Remove...，添加当前项目"
+                            },
+                            {
+                                "key": "运行",
+                                "description": "Window\\Show View\\Servers：<kbd>右键</kbd> start || 打开浏览器 ‘http://localhost:8080/目录/xxx.jsp’"
+                            },
+                            {
+                                "key": "（修改端口号）",
+                                "description": "并列工程目录的Servers\\server.xml：找到Connector\\port，进行修改"
+                            },
+                            {
+                                "key": "（智能提示）",
+                                "description": "快捷键：<kbd>Alt + /</kbd> <br /> 导入运行时类库：<kbd>项目右键</kbd> Build Path\\Config Build Path\\Java Build Path\\Add Library\\Server Runtime"
+                            },
+                            {
+                                "key": "（解决中文乱码）",
+                                "description": "post：<code>request.setCharacterEncoding(\"utf-8\");</code><br /> get：修改Tomcat的server.xml的配置 <code>URIEncoding=\"utf-8\"</code>"
                             }
                         ]
                     },
                     {
-                        "name": "2.java的开发工具包（JDK）",
+                        "name": "2.使用JavaBean",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": "查看jdk目录的bin文件夹"
+                                "key": "四大特点",
+                                "description": "public， 无参构造函数， 私有属性， get/set访问器（符合特定规范的java类，用于做Model层）"
                             },
                             {
-                                "key": "<code>javac</code>",
-                                "description": "编译（解决中文乱码：-encoding utf-8）"
+                                "key": "<code>&lt;jsp:useBean /&gt;</code>",
+                                "description": "实例化Bean，并将Bean作为成员，挂到scope对象上（它就具有了scope对象的生存期）"
                             },
                             {
-                                "key": "<code>java</code>",
-                                "description": "运行（在package所在的目录，使用java命令时带上包名）"
+                                "key": "<code>&lt;jsp:setProperty /&gt;</code>",
+                                "description": "给指定Bean的属性赋值（从表单或Request的池子中捞数据，与.net MVC中的模型绑定极其相似）"
                             },
                             {
-                                "key": "<code>jar</code>",
-                                "description": "打包（相当于zip，可以压缩jar/war包）"
+                                "key": "<code>&lt;jsp:getProperty /&gt;</code>",
+                                "description": "读取指定Bean的属性值"
                             },
                             {
-                                "key": "<code>javadoc</code>",
-                                "description": "根据代码注释生成文档"
-                            },
-                            {
-                                "key": "<code>...</code>",
-                                "description": ""
-                            },
-                            {
-                                "key": "",
-                                "description": "①JDK自带 JRE(java运行环境) = JVM + API"
-                            },
-                            {
-                                "key": "",
-                                "description": "②生产环境不需要JDK，只需单独安装JRE"
+                                "key": "本质",
+                                "description": "jsp要经常使用Bean，因此特定开发出一系列语法技巧"
                             }
                         ]
                     },
                     {
-                        "name": "3.java程序的构建块",
+                        "name": "3.使用Jsp指令",
                         "blocks": [
                             {
-                                "key": "",
-                                "description": "1）宏观"
+                                "key": "<code><%@ include file %></code>",
+                                "description": "嵌入外部文件的原始代码（物理替换）"
                             },
                             {
-                                "key": "包",
-                                "description": "类/接口 太多，归置一下"
+                                "key": "<code><%@ page import %></code>",
+                                "description": "相当于 c#的<code>using</code>"
                             },
                             {
-                                "key": "类",
-                                "description": "描述事物"
+                                "key": "<code><%@ page contentType %></code>",
+                                "description": "当前页面使用的字符编码（推荐utf-8）"
                             },
                             {
-                                "key": "",
-                                "description": "属性（用数据，描述特征）"
-                            },
-                            {
-                                "key": "",
-                                "description": "方法（用算法，描述行为）"
-                            },
-                            {
-                                "key": "接口",
-                                "description": "定义能力"
-                            },
-                            {
-                                "key": "",
-                                "description": "方法（仅声明，不实现）"
-                            },
-                            {
-                                "key": "",
-                                "description": "2）微观"
-                            },
-                            {
-                                "key": "数据",
-                                "description": "数据类型 变量 = 值/对象;"
-                            },
-                            {
-                                "key": "算法",
-                                "description": "一系列处理数据的步骤"
+                                "key": "本质",
+                                "description": "编译Jsp页面时，执行的逻辑"
                             }
                         ]
                     },
                     {
-                        "name": "4.数据类型",
+                        "name": "4.使用Jsp动作",
                         "blocks": [
                             {
-                                "key": "原生数据类型",
-                                "description": "告诉计算机，要开辟的多大内存空间，可进行哪类运算（值类型，不在类的体系中）"
+                                "key": "<code>&lt;jsp:include page /&gt;</code>",
+                                "description": "嵌入外部文件的执行结果（逻辑调用）"
                             },
                             {
-                                "key": "自定义的类",
-                                "description": "告诉程序员，事物的特征和行为（面向对象程序中，一切都基于类型）"
+                                "key": "<code>&lt;jsp:forward page /&gt;</code>",
+                                "description": "服务器跳转（交给指定Jsp页面处理请求）"
                             },
                             {
-                                "key": "包装类",
-                                "description": "Java作者特意定义了一些类，专门描述原生数据类型 <br />（得到2个好处：①将原生数据纳入到类的体系中 ②原生数据使用起来更方便）"
+                                "key": "<code>&lt;jsp:param name value /&gt;</code>",
+                                "description": "作为forward动作的子标签，给request对象添加请求参数（相当于 c#的<code>routeValues</code>）"
+                            },
+                            {
+                                "key": "本质",
+                                "description": "运行Jsp页面时，调用的逻辑"
                             }
                         ]
                     },
                     {
-                        "name": "5.值",
+                        "name": "5.什么是Servlet",
                         "blocks": [
                             {
-                                "key": "字面值",
-                                "description": "原生数据类型对应的值"
+                                "key": "定义",
+                                "description": "在服务端运行的小程序，没有程序入口，由servlet容器调用"
                             },
                             {
-                                "key": "对象",
-                                "description": "类对应的值（创建对象要调用构造函数）"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "6.访问限制",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "1）访问说明符（限制访问范围：能不能用？）"
+                                "key": "处理流程",
+                                "description": "1.servlet容器（如：Tomcat）接收 Http请求 <br />2.容器根据 url映射，调用对应的servlet <br />3.servlet运行完毕，将结果返回给容器 <br />4.容器将结果返回给请求方"
                             },
                             {
-                                "key": "<code>public</code>",
-                                "description": "（类/成员）完全公开"
+                                "key": "本质",
+                                "description": "一个实现了特定接口的基类，以接口为规范在服务器运行"
                             },
                             {
-                                "key": "<code>protected</code>",
-                                "description": "（成员）留给自己和子类"
-                            },
-                            {
-                                "key": "<code>private</code>",
-                                "description": "（成员）只留给自己"
-                            },
-                            {
-                                "key": "<code>[默认]</code>",
-                                "description": "（类/成员）同一个包内公开"
-                            },
-                            {
-                                "key": "",
-                                "description": "2）访问修饰符（限制如何使用：怎么用？）"
-                            },
-                            {
-                                "key": "<code>final</code>",
-                                "description": "（变量/方法/类）最终，不能修改"
-                            },
-                            {
-                                "key": "<code>static</code>",
-                                "description": "（属性/方法/内部类）静态，一直都在、不需要实例化就能访问"
-                            },
-                            {
-                                "key": "<code>abstract</code>",
-                                "description": "（方法/类）抽象，因为不真实、不能实例化"
-                            },
-                            {
-                                "key": "<code>transient</code>",
-                                "description": "（属性）短暂，因为不长久、无需序列化"
-                            },
-                            {
-                                "key": "<code>synchronized</code>",
-                                "description": "（变量/方法）同步，排队、强迫多个线程依次访问"
-                            },
-                            {
-                                "key": "<code>volatile</code>",
-                                "description": "（变量）易变，状态不稳定、需要实时取值"
-                            },
-                            {
-                                "key": "<code>strictfp</code>",
-                                "description": "（方法/类）严格，精确的计算小数"
-                            },
-                            {
-                                "key": "<code>native</code>",
-                                "description": "（方法）当地，不是我实现的、由其它语言编写"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "7.面向对象的三大特征",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "1）封装"
-                            },
-                            {
-                                "key": "",
-                                "description": "隐藏实现细节（数据和算法都在类的内部）"
-                            },
-                            {
-                                "key": "",
-                                "description": "2）继承"
-                            },
-                            {
-                                "key": "<code>extends</code>",
-                                "description": "扩展基类的属性和方法"
-                            },
-                            {
-                                "key": "<code>implements</code>",
-                                "description": "实现接口中定义的方法"
-                            },
-                            {
-                                "key": "",
-                                "description": "3）多态"
-                            },
-                            {
-                                "key": "静态多态性",
-                                "description": "方法重载（同名，参数不同，在同一类中）"
-                            },
-                            {
-                                "key": "动态多态性",
-                                "description": "方法重写（同名，参数相同，在不同类中）"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "8.异常处理",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "程序执行期间，发生的执行流中断的情况（就是程序运行不下去了）"
-                            },
-                            {
-                                "key": "错误",
-                                "description": "严重，程序无法解决"
-                            },
-                            {
-                                "key": "异常",
-                                "description": "轻微，可以恢复正常"
-                            },
-                            {
-                                "key": "",
-                                "description": "编写异常处理代码的思维过程"
-                            },
-                            {
-                                "key": "1）预判异常",
-                                "description": "感觉这段代码，会出哪类问题"
-                            },
-                            {
-                                "key": "2）定义异常",
-                                "description": "描述这个问题（通常已经在类库中了/没有的话就继承并定义一个）"
-                            },
-                            {
-                                "key": "3）处理异常",
-                                "description": "能够处理：捕获（很多时候是记日志：暂时忽略，由运维人员定期查看分析原因） <br />处理不了：抛出"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "9.断言",
-                        "blocks": [
-                            {
-                                "key": "测试的本质",
-                                "description": "现实 ?= 期望"
-                            },
-                            {
-                                "key": "断言的本质",
-                                "description": "这个表达式，在java中的语法"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "10.类型转换",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "1）原生数据类型（值）"
-                            },
-                            {
-                                "key": "",
-                                "description": "（本质：内存空间大小的切换）"
-                            },
-                            {
-                                "key": "隐式转换",
-                                "description": "自动转换（小空间 【无损】切换到 大空间）"
-                            },
-                            {
-                                "key": "显式转换",
-                                "description": "强制转换（大空间 【有损】截断到 小空间）"
-                            },
-                            {
-                                "key": "",
-                                "description": "2）复合数据类型（引用）"
-                            },
-                            {
-                                "key": "",
-                                "description": "（本质：粗略还是精确）"
-                            },
-                            {
-                                "key": "向上转型",
-                                "description": "父类可以引用子类对象（因为：子类是对父类的细分）"
-                            },
-                            {
-                                "key": "向下转型",
-                                "description": "子类对象被父类引用后，还可以强制转换回本身的类型"
+                                "key": "相关package",
+                                "description": "<code>javax.servlet</code> <code>javax.servlet.http</code> <code>javax.servlet.annotation</code> <code>javax.servlet.descriptor</code>"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "三、基本语法",
+                "name": "三、Java API",
                 "sections": [
                     {
                         "name": "1.集合框架",
