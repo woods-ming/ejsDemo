@@ -109,7 +109,7 @@
                         "blocks": [
                             {
                                 "key": "",
-                                "description": "查看jdk目录的bin文件夹"
+                                "description": "（查看jdk目录的bin文件夹）"
                             },
                             {
                                 "key": "<code>javac</code>",
@@ -208,7 +208,7 @@
                         "blocks": [
                             {
                                 "key": "字面值",
-                                "description": "原生数据类型对应的值"
+                                "description": "原生数据类型对应的值（计算机认识的基础数据）"
                             },
                             {
                                 "key": "对象",
@@ -305,6 +305,10 @@
                                 "description": "3）多态"
                             },
                             {
+                                "key": "",
+                                "description": "同一个行为（方法名），具有多种不同的表现形态（实际上是不同的代码块）"
+                            },
+                            {
                                 "key": "静态多态性",
                                 "description": "方法重载（同名，参数不同，在同一类中）"
                             },
@@ -331,7 +335,7 @@
                             },
                             {
                                 "key": "",
-                                "description": "编写异常处理代码的思维过程"
+                                "description": "（编写异常处理代码的思维过程）"
                             },
                             {
                                 "key": "1）预判异常",
@@ -403,184 +407,315 @@
                 "name": "三、基本语法",
                 "sections": [
                     {
-                        "name": "1.集合框架",
+                        "name": "1.定义程序的构建块",
+                        "codeSnippets": [
+                            {
+                                "description": "1）定义类",
+                                "url": "/codeSnippets/java/defineClass.java"
+                            },
+                            {
+                                "description": "2）定义接口",
+                                "url": "/codeSnippets/java/defineInterface.java"
+                            },
+                            {
+                                "description": "3）定义成员变量",
+                                "url": "/codeSnippets/java/defineData.java"
+                            },
+                            {
+                                "description": "4）定义成员方法",
+                                "url": "/codeSnippets/java/defineMethod.java"
+                            },
+                            {
+                                "description": "5）定义构造函数",
+                                "url": "/codeSnippets/java/defineConstructor.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.基本数据类型",
                         "blocks": [
                             {
-                                "key": "Collection接口",
-                                "description": "List接口 &rarr; ArrayList子类 / Vector子类 （可以重复） <br /> Set接口 &rarr; HashSet （不能重复） <br /> Queue接口 &rarr; LinkedList  &nbsp; "
+                                "key": "",
+                                "description": "1）原生数据类型"
                             },
                             {
-                                "key": "Map接口",
-                                "description": "HashMap / HashTable （键值对）"
+                                "key": "整数",
+                                "description": "<code>byte</code>(8bit), <code>short</code>(2byte), <code>int</code>(4byte) ,<code>long</code>(8byte)"
                             },
                             {
-                                "key": "工具类",
-                                "description": "Collections, Comparable, Comparator"
+                                "key": "小数",
+                                "description": "<code>float</code>(4byte), <code>double</code>(8byte)"
+                            },
+                            {
+                                "key": "字符",
+                                "description": "<code>char</code>(1byte，字符和数字可以相互转换，规则是ASCII码)"
+                            },
+                            {
+                                "key": "布尔",
+                                "description": "<code>boolean</code>"
+                            },
+                            {
+                                "key": "",
+                                "description": "2）包装类"
+                            },
+                            {
+                                "key": "整数",
+                                "description": "<code>Byte</code>, <code>Short</code>, <code>Integer</code> ,<code>Long</code>"
+                            },
+                            {
+                                "key": "小数",
+                                "description": "<code>Float</code>, <code>Double</code>"
+                            },
+                            {
+                                "key": "字符",
+                                "description": "<code>Character</code>"
+                            },
+                            {
+                                "key": "布尔",
+                                "description": "<code>Boolean</code>"
+                            },
+                            {
+                                "key": "",
+                                "description": "3）字面值"
+                            },
+                            {
+                                "key": "二进制（前缀）",
+                                "description": "<code>0b</code>"
+                            },
+                            {
+                                "key": "八进制（前缀）",
+                                "description": "<code>0</code>"
+                            },
+                            {
+                                "key": "十六进制（前缀）",
+                                "description": "<code>0x</code>"
+                            },
+                            {
+                                "key": "long型（后缀）",
+                                "description": "<code>L</code>"
+                            },
+                            {
+                                "key": "float型（后缀）",
+                                "description": "<code>f</code>"
+                            },
+                            {
+                                "key": "double型（后缀）",
+                                "description": "<code>d</code>（可以省略，十进制数字默认是double型）"
+                            },
+                            {
+                                "key": "char型",
+                                "description": "<code>''</code>"
+                            },
+                            {
+                                "key": "boolean型",
+                                "description": "<code>true/false</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.运算符",
+                        "blocks": [
+                            {
+                                "key": "位运算符",
+                                "description": "<code>&</code> <code>|</code> <code>~</code> <code>^</code> <code><<</code> <code>>></code>"
+                            },
+                            {
+                                "key": "算数运算符",
+                                "description": "<code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code> <code>++</code> <code>--</code>"
+                            },
+                            {
+                                "key": "比较运算符",
+                                "description": "<code>==</code> <code>!=</code> <code>></code> <code>>=</code> <code><</code> <code><=</code>"
+                            },
+                            {
+                                "key": "逻辑运算符",
+                                "description": "<code>&&</code> <code>||</code> <code>!</code>"
+                            },
+                            {
+                                "key": "赋值运算符",
+                                "description": "<code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code>"
+                            },
+                            {
+                                "key": "三元运算符",
+                                "description": "<code>布尔 ? 选项1 ：选项2</code>"
+                            },
+                            {
+                                "key": "运算符优先级",
+                                "description": "括号 > 一元运算符 > 算数运算符 > 比较运算符 > 逻辑运算符 > 赋值运算符"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.流程控制语句",
+                        "codeSnippets": [
+                            {
+                                "description": "1）分支",
+                                "url": "/codeSnippets/java/branchControl.java"
+                            },
+                            {
+                                "description": "2）循环",
+                                "url": "/codeSnippets/java/loopControl.java"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "四、Spring框架",
+                "name": "四、基本套路",
                 "sections": [
                     {
-                        "name": "1.简介",
+                        "name": "1.安装jdk",
                         "blocks": [
                             {
-                                "key": "定位",
-                                "description": "解决企业级应用开发的复杂性，是一站式、轻量级解决方案"
+                                "key": "",
+                                "description": "①下载并解压"
                             },
                             {
-                                "key": "特点",
-                                "description": "模块化，可以选择使用需要的模块；源码很经典"
+                                "key": "下载地址",
+                                "description": "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
                             },
                             {
-                                "key": "口号",
-                                "description": "我负责管理架构，你关注应用逻辑"
+                                "key": "",
+                                "description": "②配置环境变量"
                             },
                             {
-                                "key": "受益",
-                                "description": "写Java方法操作数据库事务，而不必处理事务接口；<br />写Java方法实现remote procedure，而不必处理remote api；<br />写Java方法实现management operation，而不必处理Jmx api；<br />写Java方法实现message handler，而不必处理Jms api；"
+                                "key": "JAVA_HOME",
+                                "description": "{jdk的目录}"
                             },
                             {
-                                "key": "控制反转：依赖注入",
-                                "description": "协调对象之间的依赖关系（组织部长）"
+                                "key": "PATH",
+                                "description": "<code>%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;</code>"
                             },
                             {
-                                "key": "AOP",
-                                "description": "逻辑分类管理"
+                                "key": "CLASS_PATH",
+                                "description": "<code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;</code>"
                             },
                             {
-                                "key": "容器",
-                                "description": "管理应用对象的配置和生命周期（根据图纸，创建和组合积木）"
+                                "key": "",
+                                "description": "<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换"
                             },
                             {
-                                "key": "框架",
-                                "description": "将各种组件装配到一起，构成完整的应用程序"
+                                "key": "",
+                                "description": "③验证环境"
+                            },
+                            {
+                                "key": "命令行",
+                                "description": "<code>java -version</code>"
                             }
                         ]
                     },
                     {
-                        "name": "2.模块介绍",
+                        "name": "2.编译",
                         "blocks": [
                             {
-                                "key": "基础部分",
-                                "description": "<code>spring-core</code>核心工具类 <code>spring-beans</code> 提供依赖注入和bean工厂"
+                                "key": "命令行",
+                                "description": "①进入{项目根目录}"
                             },
                             {
-                                "key": "上下文",
-                                "description": "<code>spring-context</code>运行时信息 <code>spring-context-support</code>集成第三方类"
+                                "key": "",
+                                "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹（若省略，默认在同一目录）}"
                             },
                             {
-                                "key": "面向方面",
-                                "description": "<code>spring-aop</code>代理AOP <code>spring-aspects</code>集成AspectJ"
-                            },
-                            {
-                                "key": "工具类",
-                                "description": "<code>spring-instrument</code>服务器代理 <code>spring-instrument-tomcat</code>集成Tomcat连接池"
-                            },
-                            {
-                                "key": "消息组件",
-                                "description": "<code>spring-messaging</code> 可通过注解来映射消息"
-                            },
-                            {
-                                "key": "数据访问",
-                                "description": "<code>spring-jdbc</code>数据库 <code>spring-tx</code>事务 <code>spring-orm</code>对象关系映射 <code>spring-oxm</code>对象XML映射 <code>spring-jms</code>消息生产和消费"
-                            },
-                            {
-                                "key": "Web",
-                                "description": "<code>spring-web</code> <code>spring-webmvc</code> <code>spring-websocket</code> <code>spring-webmvc-portlet</code> 提供Http上下文及界面框架等"
-                            },
-                            {
-                                "key": "单元测试和集成测试",
-                                "description": "<code>spring-test</code> 可配合JUnit和TestNG使用"
-                            },
-                            {
-                                "key": "查询管理对象图",
-                                "description": "<code>spring-expression</code>"
+                                "key": "",
+                                "description": "在{目标文件夹}，生成同名的类文件{包名}.{类名}"
                             }
                         ]
                     },
                     {
-                        "name": "3.容器的使用",
+                        "name": "3.运行",
                         "blocks": [
                             {
-                                "key": "本质",
-                                "description": "applicationContext根据配置文件，创建和管理对象"
+                                "key": "命令行",
+                                "description": "①进入{目标文件夹}"
                             },
                             {
-                                "key": "实现原理",
-                                "description": "读取配置文件，利用java的反射机制实现工厂类，自动创建和组装对象"
+                                "key": "",
+                                "description": "②<code>java</code> {包名}.{类名}"
                             },
                             {
-                                "key": "IOC的配置方式",
-                                "description": "xml：默认配置文件为<code>applicationContext.xml</code> <br /> 注解"
-                            },
-                            {
-                                "key": "实现Aware接口",
-                                "description": "applicationContext在创建对象时，注入指定的环境信息（使对象可以使用环境信息）"
-                            },
-                            {
-                                "key": "自动装配",
-                                "description": "<code>default-autowire=\"no\"</code> 不自动装配 <br /><code>default-autowire=\"byName\"</code> 检查成员变量，根据名称（在context中）匹配对象并赋值 <br /><code>default-autowire=\"byType\"</code> 检查成员变量，根据类型（在context中）匹配对象并赋值 <br /><code>default-autowire=\"constructor\"</code> 检查构造函数的参数，根据类型（在context中）匹配对象并赋值"
-                            },
-                            {
-                                "key": "bean的作用域",
-                                "description": "<code>scope=\"singleton\"</code> 容器内唯一（默认） <br /><code>scope=\"prototype\"</code> 创建新的 <br /><code>scope=\"request\"</code> 请求过程中唯一 <br /><code>scope=\"session\"</code> 会话过程唯一 <br /><code>scope=\"globalSession\"</code> （portlet）会话过程唯一 "
-                            },
-                            {
-                                "key": "加载资源文件",
-                                "description": "<code>Resource resource = applicationContext.getResource(\"文件位置\")</code> 加载资源文件 <br />位置格式：<code>ClassPath: / File: / Http:</code>"
-                            }
-                        ],
-                        "codeSnippets": [
-                            {
-                                "description": "初始化ApplicationContext",
-                                "url": "/codeSnippets/java/spring_initContext.java"
-                            },
-                            {
-                                "description": "applicationContext.xml配置范例",
-                                "url": "/codeSnippets/java/spring_applicationContext.xml"
+                                "key": "",
+                                "description": "JVM加载类文件并运行"
                             }
                         ]
                     },
                     {
-                        "name": "4.AOP的使用",
+                        "name": "4.打包",
                         "blocks": [
                             {
-                                "key": "本质",
-                                "description": "同一个时间点大家要做同样的事情，为了不重复做这件事情，大家发出同样的事件通知，交给一个公共的逻辑来处理"
+                                "key": "",
+                                "description": "1）压缩"
                             },
                             {
-                                "key": "AOP 的配置方式",
-                                "description": "这个类（方面）负责处理：哪些操作（业务方法）在什么时间（切入点），需要做的事情（切入方法）"
+                                "key": "命令行",
+                                "description": "①进入 {要压缩的目录} 的上一级"
                             },
                             {
-                                "key": "支持 Mix-in",
-                                "description": "用AOP的方式，给匹配的类，增加父类"
-                            }
-                        ],
-                        "codeSnippets": [
+                                "key": "",
+                                "description": "②<code>jar -cvf</code> {压缩文件名}.jar {要压缩的目录}"
+                            },
                             {
-                                "description": "AOP配置范例",
-                                "url": "/codeSnippets/java/spring_aop.xml"
+                                "key": "",
+                                "description": "2）解压"
+                            },
+                            {
+                                "key": "",
+                                "description": "①将 {压缩文件名}.jar 复制到 {解压目录}"
+                            },
+                            {
+                                "key": "命令行",
+                                "description": "①进入 {解压目录}"
+                            },
+                            {
+                                "key": "",
+                                "description": "②<code>jar -xvf</code> {压缩文件名}.jar"
                             }
                         ]
                     },
                     {
-                        "name": "5.常见出错原因",
+                        "name": "5.eclipse安装配置",
                         "blocks": [
                             {
-                                "key": "相关包未引入",
-                                "description": "必须的包 <code>spring-core</code> <code>spring-beans</code> <code>spring-context</code> <code>spring-context-support</code> <code>spring-expression</code> <code>commons-logging</code>"
+                                "key": "",
+                                "description": "①下载并解压，在桌面创建快捷方式"
+                            },
+                            {
+                                "key": "下载地址",
+                                "description": "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip"
+                            },
+                            {
+                                "key": "",
+                                "description": "②配置"
+                            },
+                            {
+                                "key": "工作目录",
+                                "description": "File\\Switch WorkSpace"
+                            },
+                            {
+                                "key": "选择jdk目录",
+                                "description": "Preference\\Java\\Installed JREs"
+                            },
+                            {
+                                "key": "选择编码格式 UTF-8",
+                                "description": "Preference\\General\\WorkSpace\\Text file encoding"
+                            },
+                            {
+                                "key": "",
+                                "description": "③快捷键"
+                            },
+                            {
+                                "key": "智能提示",
+                                "description": "<code>Alt</code> + <code>/</code>"
+                            },
+                            {
+                                "key": "注释",
+                                "description": "<code>/*</code> + <code>回车</code>"
                             }
                         ]
                     }
                 ]
             },
             {
-                "name": "五、Maven构建",
+                "name": "五、API和类库",
                 "sections": [
                     {
                         "name": "1.简介",
@@ -614,103 +749,7 @@
                                 "description": "在项目根目录，描述构建信息（相当于 package.json）"
                             }
                         ]
-                    },
-                    {
-                        "name": "2.配置",
-                        "blocks": [
-                            {
-                                "key": "Eclipse配置",
-                                "description": "Maven\\Installations：选择Maven的安装目录 <br />Maven\\User Settings：选择Maven本地仓库的Settings.xml"
-                            }
-                        ],
-                        "codeSnippets": [
-                            {
-                                "description": "仓库配置",
-                                "url": "/codeSnippets/java/maven_repositorySettings.xml"
-                            },
-                            {
-                                "description": "pom配置",
-                                "url": "/codeSnippets/java/maven_pom.xml"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "3.使用",
-                        "blocks": [
-                            {
-                                "key": "常用命令",
-                                "description": "<code>mvn compile</code>编译 <br /><code>mvn package</code>打包 <br /><code>mvn test</code>单元测试 <br /><code>mvn clean</code>删除target <br /><code>mvn archetype:generate</code>生成标准目录 <br /><code>mvn install</code>打包到本地仓库（供其它项目引用） <br />"
-                            },
-                            {
-                                "key": "Maven生命周期",
-                                "description": "<code>clean</code> 清理项目 <br /><code>default</code> 构建项目 <br /><code>site</code> 生成项目站点"
-                            }
-                        ]
-                    }                    
-                ]
-            },
-            {
-                "name": "六、工作流Activiti",
-                "sections": [
-                    {
-                        "name": "1.环境搭建",
-                        "blocks": [
-                            {
-                                "key": "下载",
-                                "description": "http://activiti.org/download.html"
-                            },
-                            {
-                                "key": "环境要求",
-                                "description": "jdk1.7以上 & Tomcat7"
-                            },
-                            {
-                                "key": "查看Demo",
-                                "description": "将下载的 activiti-explorer.war 部署到Tomcat <br />帐号：kermit/kermit"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "2.基础概念",
-                        "blocks": [
-                            {
-                                "key": "BPMN 2.0",
-                                "description": "Business Process Model and Notation 是工作流厂商遵守的流程定义标准"
-                            },
-                            {
-                                "key": "使用方式",
-                                "description": "引入 jar 文件 <br />独立服务器"
-                            },
-                            {
-                                "key": "流程设计工具",
-                                "description": "图形设计器 <br />表格设计器"
-                            },
-                            {
-                                "key": "工作流原理",
-                                "description": "流程由 Task 组成，由事件驱动，Task 分配给 用户/角色 完成（核心是序列图）"
-                            },
-                            {
-                                "key": "任务状态",
-                                "description": "未签收、办理中、执行中、已完成"
-                            },
-                            {
-                                "key": "事件",
-                                "description": "捕获：空心圆 <br />触发：实心圆"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "3.部署方式",
-                        "blocks": [
-                            {
-                                "key": "Activiti Explorer",
-                                "description": "在 Tomcat 中运行 activiti-explorer.war <br />准备好xxx.bpmn20.xml <br />登录后，在 ‘管理/部署包/添加新的部署包’ 中上传"
-                            },
-                            {
-                                "key": "编程方式",
-                                "description": "<code>repositoryService.createDeployment().addClasspathResource(\"org/activiti/test/VacationRequest.bpmn20.xml\").deploy();</code>"
-                            }
-                        ]
-                    }                    
+                    }                  
                 ]
             }
         ]
