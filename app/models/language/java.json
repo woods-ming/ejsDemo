@@ -5,7 +5,7 @@
     "正文": {
         "chapters": [
             {
-                "name": "一、java简介",
+                "name": "一、Java简介",
                 "sections": [
                     {
                         "name": "1.what（Java是什么，用来干啥？）",
@@ -16,7 +16,7 @@
                             },
                             {
                                 "key": "web应用的组成",
-                                "description": "界面交互(html/...) —— 业务逻辑(java/...) —— 数据存取(SqlServer/...)"
+                                "description": "界面交互(Html/...) —— 业务逻辑(Java/...) —— 数据存取(SqlServer/...)"
                             }
                         ]
                     },
@@ -278,7 +278,7 @@
                         ]
                     },
                     {
-                        "name": "7.面向对象的三大特征",
+                        "name": "7.面向对象的三大特性",
                         "blocks": [
                             {
                                 "key": "",
@@ -359,7 +359,7 @@
                                 "description": "现实 ?= 期望"
                             },
                             {
-                                "key": "断言的本质",
+                                "key": "Java中的断言",
                                 "description": "这个表达式，在java中的语法"
                             }
                         ]
@@ -557,6 +557,62 @@
                                 "url": "/codeSnippets/java/loopControl.java"
                             }
                         ]
+                    },
+                    {
+                        "name": "5.复合数据类型",
+                        "codeSnippets": [
+                            {
+                                "description": "1）数组（当成一组变量）",
+                                "url": "/codeSnippets/java/arrayType.java"
+                            },
+                            {
+                                "description": "2）枚举",
+                                "url": "/codeSnippets/java/enumType.java"
+                            },
+                            {
+                                "description": "3）字符串String",
+                                "url": "/codeSnippets/java/stringType.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.面向对象的三大特性",
+                        "codeSnippets": [
+                            {
+                                "description": "1）封装",
+                                "url": "/codeSnippets/java/encapsulation.java"
+                            },
+                            {
+                                "description": "2）继承",
+                                "url": "/codeSnippets/java/inheritance.java"
+                            },
+                            {
+                                "description": "3）多态",
+                                "url": "/codeSnippets/java/polymorphic.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.异常",
+                        "codeSnippets": [
+                            {
+                                "description": "1）异常处理",
+                                "url": "/codeSnippets/java/catchException.java"
+                            },
+                            {
+                                "description": "2）抛出异常",
+                                "url": "/codeSnippets/java/throwException.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "8.断言",
+                        "codeSnippets": [
+                            {
+                                "description": "断言默认是关闭的，运行时加上参数：java -ea Assertion",
+                                "url": "/codeSnippets/java/Assertion.java"
+                            }
+                        ]
                     }
                 ]
             },
@@ -718,35 +774,88 @@
                 "name": "五、API和类库",
                 "sections": [
                     {
-                        "name": "1.简介",
+                        "name": "1.正则表达式",
                         "blocks": [
                             {
-                                "key": "作用",
-                                "description": "管理依赖，构建项目。（相当于 npm + gulp）"
+                                "key": "what",
+                                "description": "描述一段文本中，字符的组合规律（与编程语言无关）"
                             },
                             {
-                                "key": "项目构建过程",
-                                "description": "清理、编译、测试、打包、集成测试、验证、部署"
+                                "key": "",
+                                "description": "抽象成 “模式*重复次数”（模式可以看作字符的取值范围）"
                             },
                             {
-                                "key": "构件识别",
-                                "description": "<code>groupId</code> 公司网址的反写.项目名 <br /><code>artifactId</code> 项目名-模块名 <br /><code>version</code> 版本号"
+                                "key": "",
+                                "description": "【模式中的特殊字符】"
                             },
                             {
-                                "key": "仓库",
-                                "description": "存放构件，分为本地仓库和远程仓库（与nodejs相似）"
+                                "key": "",
+                                "description": "<code>&nbsp.</code>任意单个字符（换行除外） <br /><code>\\s</code>空白字符 <br /><code>\\S</code>非空白字符 <br /><code>\\n</code>换行 <br /><code>\\r</code>回车 <br /><code>&nbsp^</code>开始位置 <br /><code>&nbsp$</code>结束位置 <br /><code>[]</code>取值范围"
                             },
                             {
-                                "key": "ClassPath",
-                                "description": "相当于.net中的第三方类库引用"
+                                "key": "",
+                                "description": "【重复次数】"
                             },
                             {
-                                "key": "Dependency Scope",
-                                "description": "compile: 编译、测试、运行 <br/>provided: 编译、测试 <br/>runtime: 测试、运行 <br/>test: 测试 <br/>compile: 编译、测试"
+                                "key": "",
+                                "description": "<code>?</code>[0, 1] <br /><code>+</code>[1,正无穷) <br /><code>*</code>[0,正无穷) <br /><code>{n}</code>n次 <br /><code>{n,}</code>[n,正无穷) <br /><code>{n, m}</code>[n, m]"
                             },
                             {
-                                "key": "重要的pom.xml",
-                                "description": "在项目根目录，描述构建信息（相当于 package.json）"
+                                "key": "",
+                                "description": "【限定符】（当重复次数是一个范围，比较含糊的时候，会用到它！）"
+                            },
+                            {
+                                "key": "Greedy贪婪",
+                                "description": "（重复次数后什么都不加）     从最大次数开始匹配（若匹配不上，递减次数再尝试）"
+                            },
+                            {
+                                "key": "Reluctant懒惰",
+                                "description": "（重复次数后加 ?）                从最小次数开始匹配（若匹配不上，递增次数再尝试）"
+                            },
+                            {
+                                "key": "Possessive独占",
+                                "description": "（重复次数后加 +）                只用最大次数开始匹配"
+                            },
+                            {
+                                "key": "why",
+                                "description": "方便对文本进行 “匹配、查找、替换”"
+                            },
+                            {
+                                "key": "how",
+                                "description": "使用Pattern编译正则表达式，使用Matcher类完成“匹配、查找、替换”"
+                            }
+                        ],
+                        "codeSnippets": [
+                            {
+                                "description": "Java处理正则表达式的套路",
+                                "url": "/codeSnippets/java/regularExp.java"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.本地化",
+                        "blocks": [
+                            {
+                                "key": "what",
+                                "description": "应用程序根据用户 “使用的语言、所在的国家” ，自动切换 “日期/货币/文本” 的显示格式"
+                            },
+                            {
+                                "key": "why",
+                                "description": "写一份程序，可以由多个国家的用户使用"
+                            },
+                            {
+                                "key": "how",
+                                "description": "输出 “日期/货币/数字” 时，使用 (语言, 国家) 进行格式化；"
+                            },
+                            {
+                                "key": "",
+                                "description": "提前定义好各种语言字典（资源束文件），根据用户使用的语言，在字典中翻译后再输出；"
+                            }
+                        ],
+                        "codeSnippets": [
+                            {
+                                "description": "Java本地化的套路",
+                                "url": "/codeSnippets/java/localization.java"
                             }
                         ]
                     }                  
