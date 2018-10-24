@@ -1,6 +1,6 @@
 {
     "题目": "Java",
-    "摘要": "介绍Java的语法基础、常用类库",
+    "摘要": "Java入门：介绍如何学习Java，了解基础概念、基本语法、及常用API",
     "关键字": "Java入门, Java基础, JavaAPI",
     "正文": {
         "chapters": [
@@ -8,7 +8,7 @@
                 "name": "一、Java简介",
                 "sections": [
                     {
-                        "name": "1.what（Java是什么，用来干啥？）",
+                        "name": "1.what（Java是什么，用来干什么？）",
                         "blocks": [
                             {
                                 "key": "面向对象编程语言",
@@ -170,7 +170,11 @@
                             },
                             {
                                 "key": "",
-                                "description": "方法（仅声明，不实现）"
+                                "description": "方法（用函数声明，规划行为）"
+                            },
+                            {
+                                "key": "",
+                                "description": "常量（用静态常量，指代固定情况）"
                             },
                             {
                                 "key": "",
@@ -410,24 +414,8 @@
                         "name": "1.定义程序的构建块",
                         "codeSnippets": [
                             {
-                                "description": "1）定义类",
-                                "url": "/codeSnippets/java/defineClass.java"
-                            },
-                            {
-                                "description": "2）定义接口",
-                                "url": "/codeSnippets/java/defineInterface.java"
-                            },
-                            {
-                                "description": "3）定义成员变量",
-                                "url": "/codeSnippets/java/defineData.java"
-                            },
-                            {
-                                "description": "4）定义成员方法",
-                                "url": "/codeSnippets/java/defineMethod.java"
-                            },
-                            {
-                                "description": "5）定义构造函数",
-                                "url": "/codeSnippets/java/defineConstructor.java"
+                                "description": "",
+                                "url": "/codeSnippets/java/basicBlock.java"
                             }
                         ]
                     },
@@ -771,7 +759,7 @@
                 ]
             },
             {
-                "name": "五、API和类库",
+                "name": "五、常用的API和类",
                 "sections": [
                     {
                         "name": "1.正则表达式",
@@ -822,7 +810,7 @@
                             },
                             {
                                 "key": "how",
-                                "description": "使用Pattern编译正则表达式，使用Matcher类完成“匹配、查找、替换”"
+                                "description": "使用<code>Pattern</code>编译正则表达式，使用<code>Matcher</code>类完成“匹配、查找、替换”"
                             }
                         ],
                         "codeSnippets": [

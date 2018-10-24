@@ -190,7 +190,9 @@
         ]
     },
     "注释": [
-        "参考：http://www.linkedin.com/pulse/portable-node-windows-process-create-environment-incus-data-pty-ltd"
+        "1.参考：http://www.linkedin.com/pulse/portable-node-windows-process-create-environment-incus-data-pty-ltd",
+        "2.前端开发流行使用yeoman工作流，它在nodejs环境下工作；版本控制流行使用git；它俩都喜欢命令行",
+        "3.带上U盘开发环境，比随身带电脑轻松"
     ],
     "参考文献": [
         ""

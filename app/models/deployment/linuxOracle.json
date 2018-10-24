@@ -134,7 +134,8 @@
     },
     "注释": [
         "1.http://docs.oracle.com/cd/E11882_01/install.112/e24326/toc.htm",
-        "2.http://www.askoracle.org/oracle/DBA/169.html"
+        "2.http://www.askoracle.org/oracle/DBA/169.html",
+        "3.碰运气吧：尽管参照了官方文档，仍然经常出错，有的时候忽略小错误，可以安装上"
     ],
     "参考文献": [
     ]
