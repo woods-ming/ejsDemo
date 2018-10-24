@@ -7,6 +7,7 @@ var glob = require('glob')
 , routeTable = require('./app/routeTable.json')
 , moment = require('moment')
 , gulp = require('gulp')
+, Q = require('q')
 , $ = require('gulp-load-plugins')();
 
 function compileHtml(model, view, dest) {
@@ -35,13 +36,16 @@ function findRouteView(model) {
     return null;
 }
 
-
 // compile:根据路由表找到model对应的view，编译成html
 gulp.task('compile', function() {
+    // var deferred = Q.defer();
+
     for(var i = 0; i < routeTable.length; i++) {
         var route = routeTable[i];
         compileHtml(route.modelGlob, route.view, 'app/html');
     }
+
+    // return deferred.promise;
 });
 
 // debug:测试环境发布
@@ -139,7 +143,6 @@ gulp.task('html', ['compile', 'jshint', 'styles'], function () {
     })) // 百度cdn
     .pipe($.if('*.html', $.minifyHtml({conditionals: true})))
     .pipe(gulp.dest('dist'));
-
 });
 
 // images:优化图片，并拷贝到生成目录
@@ -162,24 +165,22 @@ gulp.task('extras', function () {
 
     return gulp.src('app/favicon.ico')
     .pipe(gulp.dest('dist/'));
-
 });
 
 // sitemap:生成站点地图，并拷贝到生成目录
 gulp.task('sitemap', function () {
-    return gulp.src('app/html/**/*.html')
+    return gulp.src('dist/**/*.html')
     .pipe($.sitemap({
-        siteUrl: 'http://woods240.cn/html/'
+        siteUrl: 'http://woods240.cn/'
     }))
     .pipe(gulp.dest('dist'));
-
 });
 
 // clean:清除生成的文件
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-// build:生成
-gulp.task('build', ['html', 'images', 'extras', 'sitemap'], function () {
+// build:生成网站文件
+gulp.task('build', ['html', 'images', 'extras'], function () {
     // 复制网站首页
     return gulp.src('dist/html/index.html')
     .pipe($.rename("index.html"))
@@ -194,13 +195,17 @@ gulp.task('zip', function(){
     .pipe(gulp.dest('../Publish'));
 });
 
-// rebuild:重新生成
-gulp.task('rebuild', function () {
-    return $.runSequence('clean', 'build', 'zip');
+// product:准备服务器文件
+gulp.task('product', function () {
+    // var deferred = Q.defer();
+
+    $.runSequence('clean', 'build', 'sitemap', 'zip');
+
+    // return deferred.promise;
 });
 
 // default:生产环境发布
-gulp.task('default', ['rebuild'], function () {
+gulp.task('default', ['product'], function () {
     // webserver:临时服务器
     return browserSync({
         port: 9001,

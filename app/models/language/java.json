@@ -597,11 +597,11 @@
                         "codeSnippets": [
                             {
                                 "description": "1）异常处理",
-                                "url": "/codeSnippets/java/catchException.java"
+                                "url": "/codeSnippets/java/CatchException.java"
                             },
                             {
                                 "description": "2）抛出异常",
-                                "url": "/codeSnippets/java/throwException.java"
+                                "url": "/codeSnippets/java/ThrowException.java"
                             }
                         ]
                     },
@@ -805,16 +805,16 @@
                                 "description": "【限定符】（当重复次数是一个范围，比较含糊的时候，会用到它！）"
                             },
                             {
-                                "key": "Greedy贪婪",
-                                "description": "（重复次数后什么都不加）     从最大次数开始匹配（若匹配不上，递减次数再尝试）"
+                                "key": "",
+                                "description": "Greedy贪婪（重复次数后什么都不加）     从最大次数开始匹配（若匹配不上，递减次数再尝试）"
                             },
                             {
-                                "key": "Reluctant懒惰",
-                                "description": "（重复次数后加 ?）                从最小次数开始匹配（若匹配不上，递增次数再尝试）"
+                                "key": "",
+                                "description": "Reluctant懒惰（重复次数后加 ?）                从最小次数开始匹配（若匹配不上，递增次数再尝试）"
                             },
                             {
-                                "key": "Possessive独占",
-                                "description": "（重复次数后加 +）                只用最大次数开始匹配"
+                                "key": "",
+                                "description": "Possessive独占（重复次数后加 +）                只用最大次数开始匹配"
                             },
                             {
                                 "key": "why",
@@ -864,8 +864,9 @@
         ]
     },
     "注释": [
-        "",
-        ""
+        "1.编程语言是 算法和思想 的表达工具",
+        "2.见人说人话，见鬼说鬼话：没有万能语言，不同的场合适合不同的编程语言",
+        "3.评价语言只说好不好用，真正强大的是各种接口和类库"
     ],
     "参考文献": []
 }

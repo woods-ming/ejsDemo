@@ -55,3 +55,9 @@ h3{
 
 	color:#6f5499;
 }
+
+/* 去除畅言广告 */
+#pop_ad, 
+#feedAv * {
+	display: none;
+}
