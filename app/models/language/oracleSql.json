@@ -1,7 +1,7 @@
 {
-    "题目": "Struct Query Language",
-    "摘要": "sql是结构化查询语言，用于访问关系型数据库",
-    "关键字": "sql，结构化查询语言",
+    "题目": "Oracle Sql",
+    "摘要": "Struct Query Language虽然有国际标准，但各厂家仍然加入了个性化的语法规则",
+    "关键字": "sql, 结构化查询语言",
     "正文": {
         "chapters": [
             {

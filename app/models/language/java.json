@@ -612,11 +612,15 @@
                         "blocks": [
                             {
                                 "key": "",
-                                "description": "①下载并解压"
+                                "description": "①下载"
                             },
                             {
                                 "key": "下载地址",
                                 "description": "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
+                            },
+                            {
+                                "key": "",
+                                "description": "（可以从其它电脑，直接复制jdk目录）"
                             },
                             {
                                 "key": "",
@@ -636,7 +640,7 @@
                             },
                             {
                                 "key": "",
-                                "description": "<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换"
+                                "description": "（<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换）"
                             },
                             {
                                 "key": "",
@@ -645,6 +649,10 @@
                             {
                                 "key": "命令行",
                                 "description": "<code>java -version</code>"
+                            },
+                            {
+                                "key": "",
+                                "description": "（cmd只能读取到打开前的环境变量，如果做了修改，必须打开新窗口）"
                             }
                         ]
                     },
@@ -657,11 +665,11 @@
                             },
                             {
                                 "key": "",
-                                "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹（若省略，默认在同一目录）}"
+                                "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹【若省略，默认在同一目录】}"
                             },
                             {
                                 "key": "",
-                                "description": "在{目标文件夹}，生成同名的类文件{包名}.{类名}"
+                                "description": "（会在{目标文件夹}，生成同名的类文件：{包名}.{类名}）"
                             }
                         ]
                     },
@@ -675,10 +683,6 @@
                             {
                                 "key": "",
                                 "description": "②<code>java</code> {包名}.{类名}"
-                            },
-                            {
-                                "key": "",
-                                "description": "JVM加载类文件并运行"
                             }
                         ]
                     },

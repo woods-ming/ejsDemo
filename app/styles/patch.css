@@ -56,6 +56,11 @@ h3{
 	color:#6f5499;
 }
 
+footer.bs-docs-footer {
+	margin-top: 0;
+	padding: 30px;
+}
+
 /* 去除畅言广告 */
 #pop_ad, 
 #feedAv * {
