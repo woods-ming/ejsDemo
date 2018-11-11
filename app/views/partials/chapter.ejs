@@ -35,6 +35,19 @@ for(var i = 0; i < content.chapters.length; i++) {
 			%>
 
 			<% 
+			if(section.paragraphs) {
+				for(var k = 0; k < section.paragraphs.length; k++) { 
+					var paragraph = section.paragraphs[k]; 
+					%>
+
+					<%- include('paragraph', { paragraph: paragraph }); %>
+
+					<% 
+				} 
+			}
+			%>
+
+			<% 
 			if(section.codeSnippets) {
 				for(var k = 0; k < section.codeSnippets.length; k++) { 
 					var codeSnippet = section.codeSnippets[k]; 

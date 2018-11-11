@@ -406,459 +406,459 @@
                         ]
                     }
                 ]
-            },
-            {
-                "name": "三、基本语法",
-                "sections": [
-                    {
-                        "name": "1.定义程序的构建块",
-                        "codeSnippets": [
-                            {
-                                "description": "",
-                                "url": "/codeSnippets/java/basicBlock.java"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "2.基本数据类型",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "1）原生数据类型"
-                            },
-                            {
-                                "key": "整数",
-                                "description": "<code>byte</code>(8bit), <code>short</code>(2byte), <code>int</code>(4byte) ,<code>long</code>(8byte)"
-                            },
-                            {
-                                "key": "小数",
-                                "description": "<code>float</code>(4byte), <code>double</code>(8byte)"
-                            },
-                            {
-                                "key": "字符",
-                                "description": "<code>char</code>(1byte，字符和数字可以相互转换，规则是ASCII码)"
-                            },
-                            {
-                                "key": "布尔",
-                                "description": "<code>boolean</code>"
-                            },
-                            {
-                                "key": "",
-                                "description": "2）包装类"
-                            },
-                            {
-                                "key": "整数",
-                                "description": "<code>Byte</code>, <code>Short</code>, <code>Integer</code> ,<code>Long</code>"
-                            },
-                            {
-                                "key": "小数",
-                                "description": "<code>Float</code>, <code>Double</code>"
-                            },
-                            {
-                                "key": "字符",
-                                "description": "<code>Character</code>"
-                            },
-                            {
-                                "key": "布尔",
-                                "description": "<code>Boolean</code>"
-                            },
-                            {
-                                "key": "",
-                                "description": "3）字面值"
-                            },
-                            {
-                                "key": "二进制（前缀）",
-                                "description": "<code>0b</code>"
-                            },
-                            {
-                                "key": "八进制（前缀）",
-                                "description": "<code>0</code>"
-                            },
-                            {
-                                "key": "十六进制（前缀）",
-                                "description": "<code>0x</code>"
-                            },
-                            {
-                                "key": "long型（后缀）",
-                                "description": "<code>L</code>"
-                            },
-                            {
-                                "key": "float型（后缀）",
-                                "description": "<code>f</code>"
-                            },
-                            {
-                                "key": "double型（后缀）",
-                                "description": "<code>d</code>（可以省略，十进制数字默认是double型）"
-                            },
-                            {
-                                "key": "char型",
-                                "description": "<code>''</code>"
-                            },
-                            {
-                                "key": "boolean型",
-                                "description": "<code>true/false</code>"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "3.运算符",
-                        "blocks": [
-                            {
-                                "key": "位运算符",
-                                "description": "<code>&</code> <code>|</code> <code>~</code> <code>^</code> <code><<</code> <code>>></code>"
-                            },
-                            {
-                                "key": "算数运算符",
-                                "description": "<code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code> <code>++</code> <code>--</code>"
-                            },
-                            {
-                                "key": "比较运算符",
-                                "description": "<code>==</code> <code>!=</code> <code>></code> <code>>=</code> <code><</code> <code><=</code>"
-                            },
-                            {
-                                "key": "逻辑运算符",
-                                "description": "<code>&&</code> <code>||</code> <code>!</code>"
-                            },
-                            {
-                                "key": "赋值运算符",
-                                "description": "<code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code>"
-                            },
-                            {
-                                "key": "三元运算符",
-                                "description": "<code>布尔 ? 选项1 ：选项2</code>"
-                            },
-                            {
-                                "key": "运算符优先级",
-                                "description": "括号 > 一元运算符 > 算数运算符 > 比较运算符 > 逻辑运算符 > 赋值运算符"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "4.流程控制语句",
-                        "codeSnippets": [
-                            {
-                                "description": "1）分支",
-                                "url": "/codeSnippets/java/branchControl.java"
-                            },
-                            {
-                                "description": "2）循环",
-                                "url": "/codeSnippets/java/loopControl.java"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "5.复合数据类型",
-                        "codeSnippets": [
-                            {
-                                "description": "1）数组（当成一组变量）",
-                                "url": "/codeSnippets/java/arrayType.java"
-                            },
-                            {
-                                "description": "2）枚举",
-                                "url": "/codeSnippets/java/enumType.java"
-                            },
-                            {
-                                "description": "3）字符串String",
-                                "url": "/codeSnippets/java/stringType.java"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "6.面向对象的三大特性",
-                        "codeSnippets": [
-                            {
-                                "description": "1）封装",
-                                "url": "/codeSnippets/java/encapsulation.java"
-                            },
-                            {
-                                "description": "2）继承",
-                                "url": "/codeSnippets/java/inheritance.java"
-                            },
-                            {
-                                "description": "3）多态",
-                                "url": "/codeSnippets/java/polymorphic.java"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "7.异常",
-                        "codeSnippets": [
-                            {
-                                "description": "1）异常处理",
-                                "url": "/codeSnippets/java/CatchException.java"
-                            },
-                            {
-                                "description": "2）抛出异常",
-                                "url": "/codeSnippets/java/ThrowException.java"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "8.断言",
-                        "codeSnippets": [
-                            {
-                                "description": "断言默认是关闭的，运行时加上参数：java -ea Assertion",
-                                "url": "/codeSnippets/java/Assertion.java"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "四、基本套路",
-                "sections": [
-                    {
-                        "name": "1.安装jdk",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "①下载"
-                            },
-                            {
-                                "key": "下载地址",
-                                "description": "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
-                            },
-                            {
-                                "key": "",
-                                "description": "（可以从其它电脑，直接复制jdk目录）"
-                            },
-                            {
-                                "key": "",
-                                "description": "②配置环境变量"
-                            },
-                            {
-                                "key": "JAVA_HOME",
-                                "description": "{jdk的目录}"
-                            },
-                            {
-                                "key": "PATH",
-                                "description": "<code>%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;</code>"
-                            },
-                            {
-                                "key": "CLASS_PATH",
-                                "description": "<code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;</code>"
-                            },
-                            {
-                                "key": "",
-                                "description": "（<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换）"
-                            },
-                            {
-                                "key": "",
-                                "description": "③验证环境"
-                            },
-                            {
-                                "key": "命令行",
-                                "description": "<code>java -version</code>"
-                            },
-                            {
-                                "key": "",
-                                "description": "（cmd只能读取到打开前的环境变量，如果做了修改，必须打开新窗口）"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "2.编译",
-                        "blocks": [
-                            {
-                                "key": "命令行",
-                                "description": "①进入{项目根目录}"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹【若省略，默认在同一目录】}"
-                            },
-                            {
-                                "key": "",
-                                "description": "（会在{目标文件夹}，生成同名的类文件：{包名}.{类名}）"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "3.运行",
-                        "blocks": [
-                            {
-                                "key": "命令行",
-                                "description": "①进入{目标文件夹}"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>java</code> {包名}.{类名}"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "4.打包",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "1）压缩"
-                            },
-                            {
-                                "key": "命令行",
-                                "description": "①进入 {要压缩的目录} 的上一级"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>jar -cvf</code> {压缩文件名}.jar {要压缩的目录}"
-                            },
-                            {
-                                "key": "",
-                                "description": "2）解压"
-                            },
-                            {
-                                "key": "",
-                                "description": "①将 {压缩文件名}.jar 复制到 {解压目录}"
-                            },
-                            {
-                                "key": "命令行",
-                                "description": "①进入 {解压目录}"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>jar -xvf</code> {压缩文件名}.jar"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "5.eclipse安装配置",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "①下载并解压，在桌面创建快捷方式"
-                            },
-                            {
-                                "key": "下载地址",
-                                "description": "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip"
-                            },
-                            {
-                                "key": "",
-                                "description": "②配置"
-                            },
-                            {
-                                "key": "工作目录",
-                                "description": "File\\Switch WorkSpace"
-                            },
-                            {
-                                "key": "选择jdk目录",
-                                "description": "Preference\\Java\\Installed JREs"
-                            },
-                            {
-                                "key": "选择编码格式 UTF-8",
-                                "description": "Preference\\General\\WorkSpace\\Text file encoding"
-                            },
-                            {
-                                "key": "",
-                                "description": "③快捷键"
-                            },
-                            {
-                                "key": "智能提示",
-                                "description": "<code>Alt</code> + <code>/</code>"
-                            },
-                            {
-                                "key": "注释",
-                                "description": "<code>/*</code> + <code>回车</code>"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "五、常用的API和类",
-                "sections": [
-                    {
-                        "name": "1.正则表达式",
-                        "blocks": [
-                            {
-                                "key": "what",
-                                "description": "描述一段文本中，字符的组合规律（与编程语言无关）"
-                            },
-                            {
-                                "key": "",
-                                "description": "抽象成 “模式*重复次数”（模式可以看作字符的取值范围）"
-                            },
-                            {
-                                "key": "",
-                                "description": "【模式中的特殊字符】"
-                            },
-                            {
-                                "key": "",
-                                "description": "<code>&nbsp.</code>任意单个字符（换行除外） <br /><code>\\s</code>空白字符 <br /><code>\\S</code>非空白字符 <br /><code>\\n</code>换行 <br /><code>\\r</code>回车 <br /><code>&nbsp^</code>开始位置 <br /><code>&nbsp$</code>结束位置 <br /><code>[]</code>取值范围"
-                            },
-                            {
-                                "key": "",
-                                "description": "【重复次数】"
-                            },
-                            {
-                                "key": "",
-                                "description": "<code>?</code>[0, 1] <br /><code>+</code>[1,正无穷) <br /><code>*</code>[0,正无穷) <br /><code>{n}</code>n次 <br /><code>{n,}</code>[n,正无穷) <br /><code>{n, m}</code>[n, m]"
-                            },
-                            {
-                                "key": "",
-                                "description": "【限定符】（当重复次数是一个范围，比较含糊的时候，会用到它！）"
-                            },
-                            {
-                                "key": "",
-                                "description": "Greedy贪婪（重复次数后什么都不加）     从最大次数开始匹配（若匹配不上，递减次数再尝试）"
-                            },
-                            {
-                                "key": "",
-                                "description": "Reluctant懒惰（重复次数后加 ?）                从最小次数开始匹配（若匹配不上，递增次数再尝试）"
-                            },
-                            {
-                                "key": "",
-                                "description": "Possessive独占（重复次数后加 +）                只用最大次数开始匹配"
-                            },
-                            {
-                                "key": "why",
-                                "description": "方便对文本进行 “匹配、查找、替换”"
-                            },
-                            {
-                                "key": "how",
-                                "description": "使用<code>Pattern</code>编译正则表达式，使用<code>Matcher</code>类完成“匹配、查找、替换”"
-                            }
-                        ],
-                        "codeSnippets": [
-                            {
-                                "description": "Java处理正则表达式的套路",
-                                "url": "/codeSnippets/java/regularExp.java"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "2.本地化",
-                        "blocks": [
-                            {
-                                "key": "what",
-                                "description": "应用程序根据用户 “使用的语言、所在的国家” ，自动切换 “日期/货币/文本” 的显示格式"
-                            },
-                            {
-                                "key": "why",
-                                "description": "写一份程序，可以由多个国家的用户使用"
-                            },
-                            {
-                                "key": "how",
-                                "description": "输出 “日期/货币/数字” 时，使用 (语言, 国家) 进行格式化；"
-                            },
-                            {
-                                "key": "",
-                                "description": "提前定义好各种语言字典（资源束文件），根据用户使用的语言，在字典中翻译后再输出；"
-                            }
-                        ],
-                        "codeSnippets": [
-                            {
-                                "description": "Java本地化的套路",
-                                "url": "/codeSnippets/java/localization.java"
-                            }
-                        ]
-                    }                  
-                ]
-            }
-        ]
-    },
-    "注释": [
-        "1.编程语言是 算法和思想 的表达工具",
-        "2.见人说人话，见鬼说鬼话：没有万能语言，不同的场合适合不同的编程语言",
-        "3.评价语言只说好不好用，真正强大的是各种接口和类库"
-    ],
-    "参考文献": []
+},
+{
+    "name": "三、基本语法",
+    "sections": [
+        {
+            "name": "1.定义程序的构建块",
+            "codeSnippets": [
+                {
+                    "description": "",
+                    "url": "/codeSnippets/java/basicBlock.java"
+                }
+            ]
+        },
+        {
+            "name": "2.基本数据类型",
+            "blocks": [
+                {
+                    "key": "",
+                    "description": "1）原生数据类型"
+                },
+                {
+                    "key": "整数",
+                    "description": "<code>byte</code>(8bit), <code>short</code>(2byte), <code>int</code>(4byte) ,<code>long</code>(8byte)"
+                },
+                {
+                    "key": "小数",
+                    "description": "<code>float</code>(4byte), <code>double</code>(8byte)"
+                },
+                {
+                    "key": "字符",
+                    "description": "<code>char</code>(1byte，字符和数字可以相互转换，规则是ASCII码)"
+                },
+                {
+                    "key": "布尔",
+                    "description": "<code>boolean</code>"
+                },
+                {
+                    "key": "",
+                    "description": "2）包装类"
+                },
+                {
+                    "key": "整数",
+                    "description": "<code>Byte</code>, <code>Short</code>, <code>Integer</code> ,<code>Long</code>"
+                },
+                {
+                    "key": "小数",
+                    "description": "<code>Float</code>, <code>Double</code>"
+                },
+                {
+                    "key": "字符",
+                    "description": "<code>Character</code>"
+                },
+                {
+                    "key": "布尔",
+                    "description": "<code>Boolean</code>"
+                },
+                {
+                    "key": "",
+                    "description": "3）字面值"
+                },
+                {
+                    "key": "二进制（前缀）",
+                    "description": "<code>0b</code>"
+                },
+                {
+                    "key": "八进制（前缀）",
+                    "description": "<code>0</code>"
+                },
+                {
+                    "key": "十六进制（前缀）",
+                    "description": "<code>0x</code>"
+                },
+                {
+                    "key": "long型（后缀）",
+                    "description": "<code>L</code>"
+                },
+                {
+                    "key": "float型（后缀）",
+                    "description": "<code>f</code>"
+                },
+                {
+                    "key": "double型（后缀）",
+                    "description": "<code>d</code>（可以省略，十进制数字默认是double型）"
+                },
+                {
+                    "key": "char型",
+                    "description": "<code>''</code>"
+                },
+                {
+                    "key": "boolean型",
+                    "description": "<code>true/false</code>"
+                }
+            ]
+        },
+        {
+            "name": "3.运算符",
+            "blocks": [
+                {
+                    "key": "位运算符",
+                    "description": "<code>&</code> <code>|</code> <code>~</code> <code>^</code> <code><<</code> <code>>></code>"
+                },
+                {
+                    "key": "算数运算符",
+                    "description": "<code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code> <code>++</code> <code>--</code>"
+                },
+                {
+                    "key": "比较运算符",
+                    "description": "<code>==</code> <code>!=</code> <code>></code> <code>>=</code> <code><</code> <code><=</code>"
+                },
+                {
+                    "key": "逻辑运算符",
+                    "description": "<code>&&</code> <code>||</code> <code>!</code>"
+                },
+                {
+                    "key": "赋值运算符",
+                    "description": "<code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code>"
+                },
+                {
+                    "key": "三元运算符",
+                    "description": "<code>布尔 ? 选项1 ：选项2</code>"
+                },
+                {
+                    "key": "运算符优先级",
+                    "description": "括号 > 一元运算符 > 算数运算符 > 比较运算符 > 逻辑运算符 > 赋值运算符"
+                }
+            ]
+        },
+        {
+            "name": "4.流程控制语句",
+            "codeSnippets": [
+                {
+                    "description": "1）分支",
+                    "url": "/codeSnippets/java/branchControl.java"
+                },
+                {
+                    "description": "2）循环",
+                    "url": "/codeSnippets/java/loopControl.java"
+                }
+            ]
+        },
+        {
+            "name": "5.复合数据类型",
+            "codeSnippets": [
+                {
+                    "description": "1）数组（当成一组变量）",
+                    "url": "/codeSnippets/java/arrayType.java"
+                },
+                {
+                    "description": "2）枚举",
+                    "url": "/codeSnippets/java/enumType.java"
+                },
+                {
+                    "description": "3）字符串String",
+                    "url": "/codeSnippets/java/stringType.java"
+                }
+            ]
+        },
+        {
+            "name": "6.面向对象的三大特性",
+            "codeSnippets": [
+                {
+                    "description": "1）封装",
+                    "url": "/codeSnippets/java/encapsulation.java"
+                },
+                {
+                    "description": "2）继承",
+                    "url": "/codeSnippets/java/inheritance.java"
+                },
+                {
+                    "description": "3）多态",
+                    "url": "/codeSnippets/java/polymorphic.java"
+                }
+            ]
+        },
+        {
+            "name": "7.异常",
+            "codeSnippets": [
+                {
+                    "description": "1）异常处理",
+                    "url": "/codeSnippets/java/CatchException.java"
+                },
+                {
+                    "description": "2）抛出异常",
+                    "url": "/codeSnippets/java/ThrowException.java"
+                }
+            ]
+        },
+        {
+            "name": "8.断言",
+            "codeSnippets": [
+                {
+                    "description": "断言默认是关闭的，运行时加上参数：java -ea Assertion",
+                    "url": "/codeSnippets/java/Assertion.java"
+                }
+            ]
+        }
+    ]
+},
+{
+    "name": "四、基本套路",
+    "sections": [
+        {
+            "name": "1.安装jdk",
+            "blocks": [
+                {
+                    "key": "",
+                    "description": "①下载"
+                },
+                {
+                    "key": "下载地址",
+                    "description": "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
+                },
+                {
+                    "key": "",
+                    "description": "（可以从其它电脑，直接复制jdk目录）"
+                },
+                {
+                    "key": "",
+                    "description": "②配置环境变量"
+                },
+                {
+                    "key": "JAVA_HOME",
+                    "description": "{jdk的目录}"
+                },
+                {
+                    "key": "PATH",
+                    "description": "<code>%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;</code>"
+                },
+                {
+                    "key": "CLASS_PATH",
+                    "description": "<code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;</code>"
+                },
+                {
+                    "key": "",
+                    "description": "（<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换）"
+                },
+                {
+                    "key": "",
+                    "description": "③验证环境"
+                },
+                {
+                    "key": "命令行",
+                    "description": "<code>java -version</code>"
+                },
+                {
+                    "key": "",
+                    "description": "（cmd只能读取到打开前的环境变量，如果做了修改，必须打开新窗口）"
+                }
+            ]
+        },
+        {
+            "name": "2.编译",
+            "blocks": [
+                {
+                    "key": "命令行",
+                    "description": "①进入{项目根目录}"
+                },
+                {
+                    "key": "",
+                    "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹【若省略，默认在同一目录】}"
+                },
+                {
+                    "key": "",
+                    "description": "（会在{目标文件夹}，生成同名的类文件：{包名}.{类名}）"
+                }
+            ]
+        },
+        {
+            "name": "3.运行",
+            "blocks": [
+                {
+                    "key": "命令行",
+                    "description": "①进入{目标文件夹}"
+                },
+                {
+                    "key": "",
+                    "description": "②<code>java</code> {包名}.{类名}"
+                }
+            ]
+        },
+        {
+            "name": "4.打包",
+            "blocks": [
+                {
+                    "key": "",
+                    "description": "1）压缩"
+                },
+                {
+                    "key": "命令行",
+                    "description": "①进入 {要压缩的目录} 的上一级"
+                },
+                {
+                    "key": "",
+                    "description": "②<code>jar -cvf</code> {压缩文件名}.jar {要压缩的目录}"
+                },
+                {
+                    "key": "",
+                    "description": "2）解压"
+                },
+                {
+                    "key": "",
+                    "description": "①将 {压缩文件名}.jar 复制到 {解压目录}"
+                },
+                {
+                    "key": "命令行",
+                    "description": "①进入 {解压目录}"
+                },
+                {
+                    "key": "",
+                    "description": "②<code>jar -xvf</code> {压缩文件名}.jar"
+                }
+            ]
+        },
+        {
+            "name": "5.eclipse安装配置",
+            "blocks": [
+                {
+                    "key": "",
+                    "description": "①下载并解压，在桌面创建快捷方式"
+                },
+                {
+                    "key": "下载地址",
+                    "description": "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip"
+                },
+                {
+                    "key": "",
+                    "description": "②配置"
+                },
+                {
+                    "key": "工作目录",
+                    "description": "File\\Switch WorkSpace"
+                },
+                {
+                    "key": "选择jdk目录",
+                    "description": "Preference\\Java\\Installed JREs"
+                },
+                {
+                    "key": "选择编码格式 UTF-8",
+                    "description": "Preference\\General\\WorkSpace\\Text file encoding"
+                },
+                {
+                    "key": "",
+                    "description": "③快捷键"
+                },
+                {
+                    "key": "智能提示",
+                    "description": "<code>Alt</code> + <code>/</code>"
+                },
+                {
+                    "key": "注释",
+                    "description": "<code>/*</code> + <code>回车</code>"
+                }
+            ]
+        }
+    ]
+},
+{
+    "name": "五、常用的API和类",
+    "sections": [
+        {
+            "name": "1.正则表达式",
+            "blocks": [
+                {
+                    "key": "what",
+                    "description": "描述一段文本中，字符的组合规律（与编程语言无关）"
+                },
+                {
+                    "key": "",
+                    "description": "抽象成 “模式*重复次数”（模式可以看作字符的取值范围）"
+                },
+                {
+                    "key": "",
+                    "description": "【模式中的特殊字符】"
+                },
+                {
+                    "key": "",
+                    "description": "<code>&nbsp.</code>任意单个字符（换行除外） <br /><code>\\s</code>空白字符 <br /><code>\\S</code>非空白字符 <br /><code>\\n</code>换行 <br /><code>\\r</code>回车 <br /><code>&nbsp^</code>开始位置 <br /><code>&nbsp$</code>结束位置 <br /><code>[]</code>取值范围"
+                },
+                {
+                    "key": "",
+                    "description": "【重复次数】"
+                },
+                {
+                    "key": "",
+                    "description": "<code>?</code>[0, 1] <br /><code>+</code>[1,正无穷) <br /><code>*</code>[0,正无穷) <br /><code>{n}</code>n次 <br /><code>{n,}</code>[n,正无穷) <br /><code>{n, m}</code>[n, m]"
+                },
+                {
+                    "key": "",
+                    "description": "【限定符】（当重复次数是一个范围，比较含糊的时候，会用到它！）"
+                },
+                {
+                    "key": "",
+                    "description": "Greedy贪婪（重复次数后什么都不加）     从最大次数开始匹配（若匹配不上，递减次数再尝试）"
+                },
+                {
+                    "key": "",
+                    "description": "Reluctant懒惰（重复次数后加 ?）                从最小次数开始匹配（若匹配不上，递增次数再尝试）"
+                },
+                {
+                    "key": "",
+                    "description": "Possessive独占（重复次数后加 +）                只用最大次数开始匹配"
+                },
+                {
+                    "key": "why",
+                    "description": "方便对文本进行 “匹配、查找、替换”"
+                },
+                {
+                    "key": "how",
+                    "description": "使用<code>Pattern</code>编译正则表达式，使用<code>Matcher</code>类完成“匹配、查找、替换”"
+                }
+            ],
+            "codeSnippets": [
+                {
+                    "description": "Java处理正则表达式的套路",
+                    "url": "/codeSnippets/java/regularExp.java"
+                }
+            ]
+        },
+        {
+            "name": "2.本地化",
+            "blocks": [
+                {
+                    "key": "what",
+                    "description": "应用程序根据用户 “使用的语言、所在的国家” ，自动切换 “日期/货币/文本” 的显示格式"
+                },
+                {
+                    "key": "why",
+                    "description": "写一份程序，可以由多个国家的用户使用"
+                },
+                {
+                    "key": "how",
+                    "description": "输出 “日期/货币/数字” 时，使用 (语言, 国家) 进行格式化；"
+                },
+                {
+                    "key": "",
+                    "description": "提前定义好各种语言字典（资源束文件），根据用户使用的语言，在字典中翻译后再输出；"
+                }
+            ],
+            "codeSnippets": [
+                {
+                    "description": "Java本地化的套路",
+                    "url": "/codeSnippets/java/localization.java"
+                }
+            ]
+        }                  
+    ]
+}
+]
+},
+"注释": [
+    "1.编程语言是 算法和思想 的表达工具",
+    "2.见人说人话，见鬼说鬼话：没有万能语言，不同的场合适合不同的编程语言",
+    "3.评价语言只说好不好用，真正强大的是各种接口和类库"
+],
+"参考文献": []
 }
