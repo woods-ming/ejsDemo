@@ -84,6 +84,15 @@
                 "name": "二、基础概念",
                 "sections": [
                     {
+                        "name": "",
+                        "images": [
+                            {
+                                "alt": "基础知识点总结",
+                                "url": "/images/java/summary.png"
+                            }
+                        ]
+                    },
+                    {
                         "name": "1.java的体系结构",
                         "blocks": [
                             {
