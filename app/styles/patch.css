@@ -47,17 +47,13 @@ h3{
 }
 
 .dl-horizontal.focus {
-	transform: scale(1.5, 1.5);
-	-ms-transform: scale(1.5, 1.5);	/* IE 9 */
-	-webkit-transform: scale(1.5, 1.5);	/* Safari 和 Chrome */
-	-o-transform: scale(1.5, 1.5);	/* Opera */
-	-moz-transform: scale(1.5, 1.5);	/* Firefox */
+	transform: scale(1, 1.2);
+	-ms-transform: scale(1, 1.2);	/* IE 9 */
+	-webkit-transform: scale(1, 1.2);	/* Safari 和 Chrome */
+	-o-transform: scale(1, 1.2);	/* Opera */
+	-moz-transform: scale(1, 1.2);	/* Firefox */
 
 	color:#6f5499;
-}
-
-p{
-	text-indent: 2em;
 }
 
 footer.bs-docs-footer {
