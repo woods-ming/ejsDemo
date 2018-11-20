@@ -61,16 +61,16 @@
                         "name": "3.how（怎样学习Java？）",
                         "blocks": [
                             {
+                                "key": "学会",
+                                "description": "基本套路（如：安装java环境、编译、运行、调试）"
+                            },
+                            {
                                 "key": "理解",
                                 "description": "基础概念（如：面向对象、类、接口、继承、异常）"
                             },
                             {
                                 "key": "掌握",
                                 "description": "基本语法（如：定义类、接口、枚举，对类成员做访问限制，流程控制）"
-                            },
-                            {
-                                "key": "学会",
-                                "description": "基本套路（如：安装java环境、编译、运行、调试）"
                             },
                             {
                                 "key": "熟悉",
@@ -81,7 +81,157 @@
                 ]
             },
             {
-                "name": "二、基础概念",
+                "name": "二、基本套路",
+                "sections": [
+                    {
+                        "name": "1.安装jdk",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①下载（也可以从其它电脑，直接复制jdk目录）"
+                            },
+                            {
+                                "key": "下载地址",
+                                "description": "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
+                            },
+                            {
+                                "key": "",
+                                "description": "②配置环境变量"
+                            },
+                            {
+                                "key": "JAVA_HOME",
+                                "description": "{jdk的目录}"
+                            },
+                            {
+                                "key": "PATH",
+                                "description": "<code>%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;</code>"
+                            },
+                            {
+                                "key": "CLASS_PATH",
+                                "description": "<code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;</code>"
+                            },
+                            {
+                                "key": "",
+                                "description": "（<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换）"
+                            },
+                            {
+                                "key": "",
+                                "description": "③验证环境（cmd只能读取到打开前的环境变量，如果做了修改，必须打开新窗口）"
+                            },
+                            {
+                                "key": "命令行",
+                                "description": "<code>java -version</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.编译",
+                        "blocks": [
+                            {
+                                "key": "命令行",
+                                "description": "①进入{项目根目录}"
+                            },
+                            {
+                                "key": "",
+                                "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹【若省略，默认在同一目录】}"
+                            },
+                            {
+                                "key": "",
+                                "description": "（会在{目标文件夹}，生成同名的类文件：{包名}.{类名}）"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3.运行",
+                        "blocks": [
+                            {
+                                "key": "命令行",
+                                "description": "①进入{目标文件夹}"
+                            },
+                            {
+                                "key": "",
+                                "description": "②<code>java</code> {包名}.{类名}"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4.打包",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "1）压缩"
+                            },
+                            {
+                                "key": "命令行",
+                                "description": "①进入 {要压缩的目录} 的上一级"
+                            },
+                            {
+                                "key": "",
+                                "description": "②<code>jar -cvf</code> {压缩文件名}.jar {要压缩的目录}"
+                            },
+                            {
+                                "key": "",
+                                "description": "2）解压"
+                            },
+                            {
+                                "key": "",
+                                "description": "①将 {压缩文件名}.jar 复制到 {解压目录}"
+                            },
+                            {
+                                "key": "命令行",
+                                "description": "①进入 {解压目录}"
+                            },
+                            {
+                                "key": "",
+                                "description": "②<code>jar -xvf</code> {压缩文件名}.jar"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5.eclipse安装配置",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "①下载并解压，在桌面创建快捷方式"
+                            },
+                            {
+                                "key": "下载地址",
+                                "description": "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip"
+                            },
+                            {
+                                "key": "",
+                                "description": "②配置"
+                            },
+                            {
+                                "key": "工作目录",
+                                "description": "File\\Switch WorkSpace"
+                            },
+                            {
+                                "key": "选择jdk目录",
+                                "description": "Preference\\Java\\Installed JREs"
+                            },
+                            {
+                                "key": "选择编码格式 UTF-8",
+                                "description": "Preference\\General\\WorkSpace\\Text file encoding"
+                            },
+                            {
+                                "key": "",
+                                "description": "③快捷键"
+                            },
+                            {
+                                "key": "智能提示",
+                                "description": "<code>Alt</code> + <code>/</code>"
+                            },
+                            {
+                                "key": "注释",
+                                "description": "<code>/*</code> + <code>回车</code>"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "三、基础概念",
                 "sections": [
                     {
                         "name": "",
@@ -417,7 +567,7 @@
                 ]
             },
             {
-                "name": "三、基本语法",
+                "name": "四、基本语法",
                 "sections": [
                     {
                         "name": "1.定义程序的构建块",
@@ -614,164 +764,6 @@
                 ]
             },
             {
-                "name": "四、基本套路",
-                "sections": [
-                    {
-                        "name": "1.安装jdk",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "①下载"
-                            },
-                            {
-                                "key": "下载地址",
-                                "description": "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
-                            },
-                            {
-                                "key": "",
-                                "description": "（可以从其它电脑，直接复制jdk目录）"
-                            },
-                            {
-                                "key": "",
-                                "description": "②配置环境变量"
-                            },
-                            {
-                                "key": "JAVA_HOME",
-                                "description": "{jdk的目录}"
-                            },
-                            {
-                                "key": "PATH",
-                                "description": "<code>%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;</code>"
-                            },
-                            {
-                                "key": "CLASS_PATH",
-                                "description": "<code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;</code>"
-                            },
-                            {
-                                "key": "",
-                                "description": "（<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换）"
-                            },
-                            {
-                                "key": "",
-                                "description": "③验证环境"
-                            },
-                            {
-                                "key": "命令行",
-                                "description": "<code>java -version</code>"
-                            },
-                            {
-                                "key": "",
-                                "description": "（cmd只能读取到打开前的环境变量，如果做了修改，必须打开新窗口）"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "2.编译",
-                        "blocks": [
-                            {
-                                "key": "命令行",
-                                "description": "①进入{项目根目录}"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹【若省略，默认在同一目录】}"
-                            },
-                            {
-                                "key": "",
-                                "description": "（会在{目标文件夹}，生成同名的类文件：{包名}.{类名}）"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "3.运行",
-                        "blocks": [
-                            {
-                                "key": "命令行",
-                                "description": "①进入{目标文件夹}"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>java</code> {包名}.{类名}"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "4.打包",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "1）压缩"
-                            },
-                            {
-                                "key": "命令行",
-                                "description": "①进入 {要压缩的目录} 的上一级"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>jar -cvf</code> {压缩文件名}.jar {要压缩的目录}"
-                            },
-                            {
-                                "key": "",
-                                "description": "2）解压"
-                            },
-                            {
-                                "key": "",
-                                "description": "①将 {压缩文件名}.jar 复制到 {解压目录}"
-                            },
-                            {
-                                "key": "命令行",
-                                "description": "①进入 {解压目录}"
-                            },
-                            {
-                                "key": "",
-                                "description": "②<code>jar -xvf</code> {压缩文件名}.jar"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "5.eclipse安装配置",
-                        "blocks": [
-                            {
-                                "key": "",
-                                "description": "①下载并解压，在桌面创建快捷方式"
-                            },
-                            {
-                                "key": "下载地址",
-                                "description": "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip"
-                            },
-                            {
-                                "key": "",
-                                "description": "②配置"
-                            },
-                            {
-                                "key": "工作目录",
-                                "description": "File\\Switch WorkSpace"
-                            },
-                            {
-                                "key": "选择jdk目录",
-                                "description": "Preference\\Java\\Installed JREs"
-                            },
-                            {
-                                "key": "选择编码格式 UTF-8",
-                                "description": "Preference\\General\\WorkSpace\\Text file encoding"
-                            },
-                            {
-                                "key": "",
-                                "description": "③快捷键"
-                            },
-                            {
-                                "key": "智能提示",
-                                "description": "<code>Alt</code> + <code>/</code>"
-                            },
-                            {
-                                "key": "注释",
-                                "description": "<code>/*</code> + <code>回车</code>"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
                 "name": "五、常用的API和类",
                 "sections": [
                     {
@@ -900,7 +892,7 @@
                         ]
                     },
                     {
-                        "name": "3.how：怎样找到组件？",
+                        "name": "3.how：积木在哪儿？",
                         "blocks": [
                             {
                                 "key": "定义积木",
@@ -913,6 +905,10 @@
                             {
                                 "key": "新积木",
                                 "description": "在老组件基础上做改进和扩展，新的类放在包<code>javax.swing</code>中，并且类名以J开头"
+                            },
+                            {
+                                "key": "积木的耳朵",
+                                "description": "为了感知到用户的操作，定义了各种侦听器和事件，它们放在包<code>java.awt.event</code>中"
                             }
                         ]
                     },
@@ -924,21 +920,59 @@
                                 "description": "每种组件的用途？"
                             },
                             {
-                                "key": "熟悉",
-                                "description": "每种组件常用的属性？（大小、背景、字体...）"
+                                "key": "明确",
+                                "description": "组件的位置？（外层容器/中间容器/原子组件）"
                             },
                             {
-                                "key": "明确",
-                                "description": "组件的位置？（外层容器/中间容器/原子）"
+                                "key": "熟悉",
+                                "description": "事件侦听器的类型？（action/key/mouse/window/foucs/item）"
                             }
                         ]
                     },
                     {
-                        "name": "5.组件梳理",
+                        "name": "5.组件类型",
+                        "blocks": [
+                            {
+                                "key": "外层容器",
+                                "description": "<code>JFrame</code> <code>JDialog</code>"
+                            },
+                            {
+                                "key": "中间容器",
+                                "description": "<code>JPanel</code> <code>JTabbedPane</code> <code>JMenuBar</code> <code>JMenu</code>"
+                            },
+                            {
+                                "key": "原子组件",
+                                "description": "<code>JCheckBox</code> <code>JRadioButton</code> <code>JComboBox</code> <code>JList</code> <code>JButton</code> <code>JLabel</code> <code>JTextField</code> <code>JTextArea</code> <code>JOptionPane</code> <code>JMenuItem</code>"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "6.事件原理",
+                        "blocks": [
+                            {
+                                "key": "传播过程",
+                                "description": "事件源 --【<code>侦听</code>】--> 事件侦听器 --【<code>调用</code>】--> 事件处理程序"
+                            },
+                            {
+                                "key": "事件源",
+                                "description": "界面上的 某个组件"
+                            },
+                            {
+                                "key": "事件侦听器",
+                                "description": "<code>XXXListener</code> 实现了 侦听接口 的类"
+                            },
+                            {
+                                "key": "事件处理程序",
+                                "description": "侦听接口 中的某个方法"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "7.代码示例",
                         "codeSnippets": [
                             {
-                                "description": "列举组件的用途、常用属性",
-                                "url": "/codeSnippets/java/basicBlock.java"
+                                "description": "使用所有组件、所有布局方式、所有事件类型，给出Demo",
+                                "url": "/codeSnippets/java/SwingComponents.java"
                             }
                         ]
                     }
