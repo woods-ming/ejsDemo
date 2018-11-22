@@ -27,33 +27,42 @@ body {
 
 h3{
 	padding-left: 30%;
+	color: #337ab7;
 }
 
 .section{
 	margin: 1.5em auto 2.5em;
 }
 
-.dl-horizontal {
-	cursor: zoom-in;
+dl{
+	margin-bottom: 0.5em;
 }
 
-.dl-horizontal dt {
+dl dt {
 	white-space: pre-wrap;
 	width: 30%;
+	float: left;
+	overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.dl-horizontal dd {
+dl dd {
 	margin-left: 32%;
+	color: #777;
 }
 
-.dl-horizontal.focus {
-	transform: scale(1, 1.2);
-	-ms-transform: scale(1, 1.2);	/* IE 9 */
-	-webkit-transform: scale(1, 1.2);	/* Safari 和 Chrome */
-	-o-transform: scale(1, 1.2);	/* Opera */
-	-moz-transform: scale(1, 1.2);	/* Firefox */
+dl.focus {
+	transform: scale(1.1, 1.1);
+	-ms-transform: scale(1.1, 1.1);	/* IE 9 */
+	-webkit-transform: scale(1.1, 1.1);	/* Safari 和 Chrome */
+	-o-transform: scale(1.1, 1.1);	/* Opera */
+	-moz-transform: scale(1.1, 1.1);	/* Firefox */
 
 	color:#6f5499;
+	font-weight: bold;
 }
 
 footer.bs-docs-footer {

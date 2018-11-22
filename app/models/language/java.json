@@ -870,7 +870,7 @@
                             },
                             {
                                 "key": "摆放顺序",
-                                "description": "容器指定 内部元素 的排列方式"
+                                "description": "容器指定 内部组件 的排列方式"
                             },
                             {
                                 "key": "互动",
@@ -892,7 +892,7 @@
                         ]
                     },
                     {
-                        "name": "3.how：积木在哪儿？",
+                        "name": "3.where：积木在哪儿？",
                         "blocks": [
                             {
                                 "key": "定义积木",
@@ -913,19 +913,15 @@
                         ]
                     },
                     {
-                        "name": "4.我们该如何学习？",
+                        "name": "4.how：我们该如何学习？",
                         "blocks": [
                             {
                                 "key": "了解",
-                                "description": "每种组件的用途？"
-                            },
-                            {
-                                "key": "明确",
-                                "description": "组件的位置？（外层容器/中间容器/原子组件）"
+                                "description": "每种组件的用途？及其所处的位置？（外层容器/中间容器/原子组件）"
                             },
                             {
                                 "key": "熟悉",
-                                "description": "事件侦听器的类型？（action/key/mouse/window/foucs/item）"
+                                "description": "事件侦听器的类型？（Action/Key/Mouse/MouseMotion/Window/Foucs/Item）"
                             }
                         ]
                     },
@@ -950,28 +946,69 @@
                         "name": "6.事件原理",
                         "blocks": [
                             {
-                                "key": "传播过程",
-                                "description": "事件源 --【<code>侦听</code>】--> 事件侦听器 --【<code>调用</code>】--> 事件处理程序"
+                                "key": "信息传播过程",
+                                "description": "事件源 --【被<code>侦听（感知）</code>】--> 事件侦听器 --【<code>调用（反馈）</code>】--> 事件处理程序"
                             },
                             {
-                                "key": "事件源",
+                                "key": "事件源（信息的制造者）",
                                 "description": "界面上的 某个组件"
                             },
                             {
-                                "key": "事件侦听器",
-                                "description": "<code>XXXListener</code> 实现了 侦听接口 的类"
+                                "key": "事件侦听器（信息的收集者）",
+                                "description": "实现了 <code>XXXListener</code> 的类"
                             },
                             {
-                                "key": "事件处理程序",
-                                "description": "侦听接口 中的某个方法"
+                                "key": "事件处理程序（信息的反馈者）",
+                                "description": "<code>XXXListener</code> 中的方法"
                             }
                         ]
                     },
                     {
-                        "name": "7.代码示例",
+                        "name": "7.如何动手做GUI？",
+                        "blocks": [
+                            {
+                                "key": "",
+                                "description": "<code>界面</code>"
+                            },
+                            {
+                                "key": "①构思界面（想）",
+                                "description": "可以先在纸上勾勒草图"
+                            },
+                            {
+                                "key": "②分解组件（有）",
+                                "description": "将草图上的所有图形元素，对应成swing的组件"
+                            },
+                            {
+                                "key": "③排列组件（整齐）",
+                                "description": "挑选合适的布局方式，将组件排列整齐"
+                            },
+                            {
+                                "key": "④雕琢外观（漂亮）",
+                                "description": "设置 组件的大小、颜色、字体"
+                            },
+                            {
+                                "key": "",
+                                "description": "<code>互动</code>"
+                            },
+                            {
+                                "key": "①构思动作场景（想）",
+                                "description": "可以先在纸上梳理所有操作"
+                            },
+                            {
+                                "key": "②细化每个操作（分析）",
+                                "description": "由哪个组件触发，是什么类型的操作，如何反馈"
+                            },
+                            {
+                                "key": "③编写代码（实现）",
+                                "description": "组件.addXXXListener(new XXXListener(){ 如何反馈 });"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "8.代码示例",
                         "codeSnippets": [
                             {
-                                "description": "使用所有组件、所有布局方式、所有事件类型，给出Demo",
+                                "description": "使用所有组件、所有布局方式、所有事件类型，演示一个完整的Demo",
                                 "url": "/codeSnippets/java/SwingComponents.java"
                             }
                         ]
