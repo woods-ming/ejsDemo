@@ -1,48 +1,48 @@
 body {
-	font-family: 	"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 
 .bs-example:after {
-	content: "实例：" !important;
+    content: "实例：" !important;
 }
 
-.bs-docs-section p, 
+.bs-docs-section p,
 /*.bs-docs-section ul, 
 .bs-docs-section ol, */
-.bs-callout p, 
-.bs-callout ol, 
+.bs-callout p,
+.bs-callout ol,
 .bs-callout ul {
-	font-size: 16px;
-	line-height: 1.75;
-	margin-bottom: 1em;
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 1em;
 }
 
-.bs-docs-section:last-child{
-	margin-bottom: 5em;
+.bs-docs-section:last-child {
+    margin-bottom: 5em;
 }
 
 .bs-callout *:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-h3{
-	padding-left: 30%;
-	color: #337ab7;
+h3 {
+    padding-left: 30%;
+    color: #337ab7;
 }
 
-.section{
-	margin: 1.5em auto 2.5em;
+.section {
+    margin: 1.5em auto 2.5em;
 }
 
-dl{
-	margin-bottom: 0.5em;
+dl {
+    margin-bottom: 0.5em;
 }
 
 dl dt {
-	white-space: pre-wrap;
-	width: 30%;
-	float: left;
-	overflow: hidden;
+    white-space: pre-wrap;
+    width: 30%;
+    float: left;
+    overflow: hidden;
     clear: left;
     text-align: right;
     text-overflow: ellipsis;
@@ -50,28 +50,37 @@ dl dt {
 }
 
 dl dd {
-	margin-left: 32%;
-	color: #777;
+    margin-left: 32%;
+    color: #777;
 }
 
 dl.focus {
-	transform: scale(1.1, 1.1);
-	-ms-transform: scale(1.1, 1.1);	/* IE 9 */
-	-webkit-transform: scale(1.1, 1.1);	/* Safari 和 Chrome */
-	-o-transform: scale(1.1, 1.1);	/* Opera */
-	-moz-transform: scale(1.1, 1.1);	/* Firefox */
+    transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1, 1.1);
+    /* Safari 和 Chrome */
+    -o-transform: scale(1.1, 1.1);
+    /* Opera */
+    -moz-transform: scale(1.1, 1.1);
+    /* Firefox */
 
-	color:#6f5499;
-	font-weight: bold;
+    color: #6f5499;
+    font-weight: bold;
+}
+
+div.highlight {
+    max-height: 600px;
+    overflow: auto;
 }
 
 footer.bs-docs-footer {
-	margin-top: 0;
-	padding: 30px;
+    margin-top: 0;
+    padding: 30px;
 }
 
 /* 去除畅言广告 */
-#pop_ad, 
+#pop_ad,
 #feedAv * {
-	display: none;
+    display: none;
 }
