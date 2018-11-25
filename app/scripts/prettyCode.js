@@ -78,7 +78,7 @@
                     var offsetTop = $window.scrollTop();
 
                     if ($this.offset().top < offsetTop + 0.6 * windowHeight &&
-                        $this.offset().top > offsetTop + 0.2 * windowHeight) {
+                        $this.offset().top > offsetTop + 0.1 * windowHeight) {
                         $this.data('loaded', true);
                         $this.prettyCode(codeUrl);
                     }

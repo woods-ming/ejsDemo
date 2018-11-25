@@ -89,8 +89,7 @@ public class SwingComponents {
      * @param height
      *            高度
      */
-    static JDialog getJDialog(JFrame frame, String title, boolean modal,
-            int width, int height) {
+    static JDialog getJDialog(JFrame frame, String title, boolean modal, int width, int height) {
         JDialog dialog = new JDialog(frame, title, modal);
         dialog.setSize(width, height);
 
@@ -198,8 +197,8 @@ public class SwingComponents {
      *            是否选中
      * @return
      */
-    static JRadioButton getJRadioButton(JPanel panel, ButtonGroup group,
-            String text, boolean selected) {
+    static JRadioButton getJRadioButton(JPanel panel, ButtonGroup group, String text,
+            boolean selected) {
         JRadioButton radioButton = new JRadioButton(text, selected);
         panel.add(radioButton);
         group.add(radioButton);
@@ -220,10 +219,8 @@ public class SwingComponents {
 
         // 分别设置水平和垂直滚动条自动出现
         JScrollPane scrollPane = new JScrollPane(list);
-        scrollPane.setHorizontalScrollBarPolicy(
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setVerticalScrollBarPolicy(
-                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
         // 添加选项
         DefaultListModel<String> dlist = new DefaultListModel<String>();
@@ -303,24 +300,28 @@ public class SwingComponents {
     }
 
     /**
-     * 文本块
+     * 文本块（超出高度，自动出滚动条）
      * 
      * @param panel
-     *            所属面板
+     *            文本块所在的面板
      * @param text
      *            文字
+     * @param rows
+     *            高度为几行
      */
-    static JTextArea getJTextArea(String text) {
+    static JTextArea getJTextArea(JPanel panel, int rows, String text) {
         JTextArea textArea = new JTextArea(text);
+        textArea.setRows(rows);
         textArea.setLineWrap(true); // 启用自动换行功能
         textArea.setWrapStyleWord(true); // 启用断行不断字功能
 
         // 分别设置水平和垂直滚动条自动出现
         JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setHorizontalScrollBarPolicy(
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setVerticalScrollBarPolicy(
-                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+        panel.setLayout(new BorderLayout());
+        panel.add(scrollPane);
 
         return textArea;
     }
@@ -344,29 +345,31 @@ class PerfectDemo {
 
     JButton panel2_btn1, panel2_btn2, panel2_btn3, panel2_btn4, panel2_btn5;
 
-    JLabel panel3_label_h1, panel3_label_h2, panel3_label_h3, panel3_label_r11,
-            panel3_label_r12, panel3_label_r21, panel3_label_r22,
-            panel3_label_r31, panel3_label_r32;
+    JLabel panel3_label_h1, panel3_label_h2, panel3_label_h3, panel3_label_r11, panel3_label_r12,
+            panel3_label_r21, panel3_label_r22, panel3_label_r31, panel3_label_r32;
     JCheckBox panel3_checkbox_r13, panel3_checkbox_r23, panel3_checkbox_r33;
 
-    JLabel panel4_label00, panel4_label10, panel4_label20, panel4_label30,
-            panel4_label40;
+    JLabel panel4_label00, panel4_label10, panel4_label20, panel4_label30, panel4_label40;
     JTextField panel4_text01, panel4_text11;
     JComboBox<String> panel4_combobox21;
     JTextArea panel4_textArea31;
     JList<String> panel4_list41;
     JButton panel4_button51;
 
-    JLabel panel5_label1, panel5_label2, panel5_label3, panel5_label4,
-            panel5_label5;
+    JLabel panel5_label1, panel5_label2, panel5_label3, panel5_label4, panel5_label5;
 
     JPanel panel6_drawer;
-    JLabel panel6_label_x, panel6_label_y, panel6_label_start, panel6_label_end,
-            panel6_label_description;
+    JLabel panel6_label_start, panel6_label_end, panel6_label_description;
+    JButton panel6_button_clear;
 
     public PerfectDemo() {
+        // 排列组件
         this.initComponent();
+
+        // 雕琢外观：字体、颜色、大小
         this.initLookAndFeel();
+
+        // 互动：绑定事件
         this.initEventListener();
     }
 
@@ -379,8 +382,7 @@ class PerfectDemo {
         dialog = SwingComponents.getJDialog(mainFrame, "友情提示", true, 400, 200);
         this.drawDialog();
 
-        tabbedPane = SwingComponents.getJTabbedPane(mainFrame,
-                JTabbedPane.BOTTOM);
+        tabbedPane = SwingComponents.getJTabbedPane(mainFrame, JTabbedPane.BOTTOM);
 
         // 流式布局：向一个方向排列，满了就换行
         panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -435,14 +437,10 @@ class PerfectDemo {
         // panel1的内容：单选
         panel1.add(new JLabel("这个寒假，你要去哪儿？"));
         ButtonGroup group = new ButtonGroup();
-        panel1_radioA = SwingComponents.getJRadioButton(panel1, group,
-                "A. 回家探亲", false);
-        panel1_radioB = SwingComponents.getJRadioButton(panel1, group,
-                "B. 留校学习", false);
-        panel1_radioC = SwingComponents.getJRadioButton(panel1, group,
-                "C. 出去旅游", false);
-        panel1_radioD = SwingComponents.getJRadioButton(panel1, group,
-                "D. 勤工俭学", false);
+        panel1_radioA = SwingComponents.getJRadioButton(panel1, group, "A. 回家探亲", false);
+        panel1_radioB = SwingComponents.getJRadioButton(panel1, group, "B. 留校学习", false);
+        panel1_radioC = SwingComponents.getJRadioButton(panel1, group, "C. 出去旅游", false);
+        panel1_radioD = SwingComponents.getJRadioButton(panel1, group, "D. 勤工俭学", false);
     }
 
     private void drawPanel2() {
@@ -456,29 +454,20 @@ class PerfectDemo {
 
     private void drawPanel3() {
         // panel3的内容：标签和复选框
-        panel3_label_h1 = SwingComponents.getJLabel(panel3, "学号",
-                JLabel.CENTER);
-        panel3_label_h2 = SwingComponents.getJLabel(panel3, "姓名",
-                JLabel.CENTER);
-        panel3_label_h3 = SwingComponents.getJLabel(panel3, "签到",
-                JLabel.CENTER);
+        panel3_label_h1 = SwingComponents.getJLabel(panel3, "学号", JLabel.CENTER);
+        panel3_label_h2 = SwingComponents.getJLabel(panel3, "姓名", JLabel.CENTER);
+        panel3_label_h3 = SwingComponents.getJLabel(panel3, "签到", JLabel.CENTER);
 
-        panel3_label_r11 = SwingComponents.getJLabel(panel3, "1001",
-                JLabel.CENTER);
-        panel3_label_r12 = SwingComponents.getJLabel(panel3, "张三",
-                JLabel.CENTER);
+        panel3_label_r11 = SwingComponents.getJLabel(panel3, "1001", JLabel.CENTER);
+        panel3_label_r12 = SwingComponents.getJLabel(panel3, "张三", JLabel.CENTER);
         panel3_checkbox_r13 = SwingComponents.getJCheckbox(panel3, "", false);
 
-        panel3_label_r21 = SwingComponents.getJLabel(panel3, "1002",
-                JLabel.CENTER);
-        panel3_label_r22 = SwingComponents.getJLabel(panel3, "李四",
-                JLabel.CENTER);
+        panel3_label_r21 = SwingComponents.getJLabel(panel3, "1002", JLabel.CENTER);
+        panel3_label_r22 = SwingComponents.getJLabel(panel3, "李四", JLabel.CENTER);
         panel3_checkbox_r23 = SwingComponents.getJCheckbox(panel3, "", false);
 
-        panel3_label_r31 = SwingComponents.getJLabel(panel3, "1003",
-                JLabel.CENTER);
-        panel3_label_r32 = SwingComponents.getJLabel(panel3, "王五",
-                JLabel.CENTER);
+        panel3_label_r31 = SwingComponents.getJLabel(panel3, "1003", JLabel.CENTER);
+        panel3_label_r32 = SwingComponents.getJLabel(panel3, "王五", JLabel.CENTER);
         panel3_checkbox_r33 = SwingComponents.getJCheckbox(panel3, "", false);
     }
 
@@ -519,8 +508,8 @@ class PerfectDemo {
 
             c.gridx = 1;
             c.ipadx = 200;
-            panel4.add(panel4_combobox21 = SwingComponents.getJComboBox("讲师",
-                    "程序员", "项目经理", "产品经理", "运维", "实施", "测试"), c);
+            panel4.add(panel4_combobox21 = SwingComponents.getJComboBox("讲师", "程序员", "项目经理", "产品经理",
+                    "运维", "实施", "测试"), c);
             panel4_combobox21.setSelectedIndex(0);
         }
 
@@ -532,8 +521,10 @@ class PerfectDemo {
 
             c.gridx = 1;
             c.ipadx = 0;
-            panel4.add(panel4_textArea31 = new JTextArea(
-                    "喜欢思考、善于总结，十余年程序员生涯，\n全栈开发工程师、软件设计师、系统架构师。"), c);
+            JPanel panel = new JPanel();
+            panel4_textArea31 = SwingComponents.getJTextArea(panel, 3,
+                    "喜欢思考、善于总结，十余年程序员生涯，\n全栈开发工程师、软件设计师、系统架构师。\n学习的完整过程：记忆->模仿->理解->应用。\n记忆是从不知道->知道\n模仿是从知道->熟悉\n理解是把别人的知识变成自己的知识\n应用是学习的最终目的\n学以致用。");
+            panel4.add(panel, c);
         }
 
         c.gridy = 4;
@@ -544,8 +535,8 @@ class PerfectDemo {
 
             c.gridx = 1;
             c.ipadx = 200;
-            panel4.add(panel4_list41 = SwingComponents.getJList("北京", "上海",
-                    "深圳", "宁夏", "内蒙", "新疆", "西藏"), c);
+            panel4.add(panel4_list41 = SwingComponents.getJList("北京", "上海", "深圳", "宁夏", "内蒙", "新疆",
+                    "西藏"), c);
             panel4_list41.setSelectedIndex(3);
         }
 
@@ -571,35 +562,27 @@ class PerfectDemo {
     }
 
     private void redrawPanel5() {
-        panel5_label1
-                .setText(panel4_label00.getText() + panel4_text01.getText());
-        panel5_label2
-                .setText(panel4_label10.getText() + panel4_text11.getText());
-        panel5_label3.setText(panel4_label20.getText()
-                + panel4_combobox21.getSelectedItem().toString());
-        panel5_label4.setText(
-                panel4_label30.getText() + panel4_textArea31.getText());
-        panel5_label5.setText(
-                panel4_label40.getText() + panel4_list41.getSelectedValue());
+        panel5_label1.setText(panel4_label00.getText() + panel4_text01.getText());
+        panel5_label2.setText(panel4_label10.getText() + panel4_text11.getText());
+        panel5_label3
+                .setText(panel4_label20.getText() + panel4_combobox21.getSelectedItem().toString());
+        panel5_label4.setText(panel4_label30.getText() + panel4_textArea31.getText());
+        panel5_label5.setText(panel4_label40.getText() + panel4_list41.getSelectedValue());
     }
 
     private void drawPanel6() {
-        panel6_label_x = SwingComponents.getJLabel(panel6, "X：", JLabel.LEFT);
-        panel6_label_y = SwingComponents.getJLabel(panel6, "Y：", JLabel.LEFT);
-        panel6_label_start = SwingComponents.getJLabel(panel6, "起点：(x , y)",
-                JLabel.LEFT);
-        panel6_label_end = SwingComponents.getJLabel(panel6, "终点：(x , y)",
-                JLabel.LEFT);
-        panel6_label_description = SwingComponents.getJLabel(panel6,
-                "画直线：鼠标按下确定起点，鼠标松开确定终点", JLabel.CENTER);
+        panel6_label_description = SwingComponents.getJLabel(panel6, "画直线：鼠标按下确定起点，鼠标松开确定终点",
+                JLabel.CENTER);
         panel6.add(panel6_drawer = new JPanel());
+        panel6_label_start = SwingComponents.getJLabel(panel6, "起点：(x , y)", JLabel.LEFT);
+        panel6_label_end = SwingComponents.getJLabel(panel6, "终点：(x , y)", JLabel.LEFT);
+        panel6_button_clear = SwingComponents.getJButton(panel6, "重画");
 
-        panel6_label_x.setBounds(5, 5, 50, 10);
-        panel6_label_y.setBounds(5, 25, 50, 10);
-        panel6_drawer.setBounds(50, 50, 400, 400);
-        panel6_label_start.setBounds(50, 460, 100, 20);
-        panel6_label_end.setBounds(350, 460, 100, 20);
-        panel6_label_description.setBounds(50, 20, 400, 20);
+        panel6_label_description.setBounds(10, 10, 460, 20);
+        panel6_drawer.setBounds(10, 40, 460, 460);
+        panel6_label_start.setBounds(10, 510, 100, 20);
+        panel6_label_end.setBounds(370, 510, 100, 20);
+        panel6_button_clear.setBounds(200, 510, 60, 20);
     }
 
     /**
@@ -627,31 +610,45 @@ class PerfectDemo {
         panel6_label_start.setForeground(Color.GREEN);
         panel6_label_end.setForeground(Color.RED);
         panel6_label_description.setForeground(Color.BLUE);
-        panel6_label_description.setFont(new Font("楷体", Font.ITALIC, 14));
+        panel6_label_description.setFont(new Font("黑体", Font.PLAIN, 14));
     }
 
     /**
      * 互动
      */
     private void initEventListener() {
+        listenMainFrame();
+
+        listenTabbedPane();
+
+        listenPanel1();
+
+        listenPanel2();
+
+        listenPanel4();
+
+        listenPanel6();
+    }
+
+    private void listenMainFrame() {
         // 窗口，在关闭前，显示确认对话框
         mainFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 int n = JOptionPane.showConfirmDialog(mainFrame,
                         "Do you want to close this window?", "Confirmation",
-                        JOptionPane.YES_NO_CANCEL_OPTION,
-                        JOptionPane.QUESTION_MESSAGE);
+                        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 
                 if (n == JOptionPane.YES_OPTION) {
                     mainFrame.dispose();
                 } else {
-                    mainFrame.setDefaultCloseOperation(
-                            WindowConstants.DO_NOTHING_ON_CLOSE);
+                    mainFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
                 }
             }
         });
+    }
 
+    private void listenTabbedPane() {
         // tabbedPane，在切换时，在标签页内做操作
         tabbedPane.addChangeListener(new ChangeListener() {
             @Override
@@ -665,7 +662,9 @@ class PerfectDemo {
                 }
             }
         });
+    }
 
+    private void listenPanel1() {
         // panel1中的单选按钮，在切换时，变色
         Color orginBackgroundColor = panel1_radioA.getBackground();
         ItemListener itemListener = new ItemListener() {
@@ -685,7 +684,9 @@ class PerfectDemo {
                 radio.addItemListener(itemListener);
             }
         }
+    }
 
+    private void listenPanel2() {
         // panel2的按钮，在点击时，弹出提示信息
         ActionListener actionListener = new ActionListener() {
             @Override
@@ -720,13 +721,14 @@ class PerfectDemo {
                 button.addActionListener(actionListener);
             }
         }
+    }
 
+    private void listenPanel4() {
         // panel4的保存按钮，在点击后，弹出确认对话框并进入panel5
         panel4_button51.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int option = JOptionPane.showConfirmDialog(mainFrame,
-                        "确定要保存吗？");
+                int option = JOptionPane.showConfirmDialog(mainFrame, "确定要保存吗？");
                 if (JOptionPane.YES_OPTION == option) {
                     tabbedPane.setSelectedIndex(4);
                 }
@@ -769,7 +771,9 @@ class PerfectDemo {
                 text.addFocusListener(focusListener);
             }
         }
+    }
 
+    private void listenPanel6() {
         // panel6的画板，当鼠标按下、松开时，画直线
         panel6_drawer.addMouseListener(new MouseAdapter() {
             private int start_x, start_y;
@@ -785,9 +789,8 @@ class PerfectDemo {
                 // 鼠标按下时，记录坐标值，作为起点
                 start_x = e.getX();
                 start_y = e.getY();
-                panel6_label_start.setText(
-                        "起点：(x , y)".replaceAll("x", String.valueOf(start_x))
-                                .replaceAll("y", String.valueOf(start_y)));
+                panel6_label_start.setText("起点：(x , y)".replaceAll("x", String.valueOf(start_x))
+                        .replaceAll("y", String.valueOf(start_y)));
 
                 // 清除终点的坐标值
                 panel6_label_end.setText("终点：(x , y)");
@@ -796,14 +799,14 @@ class PerfectDemo {
             @Override
             public void mouseReleased(MouseEvent e) {
                 // 鼠标松开时，记录坐标值，作为终点
-                panel6_label_end.setText(
-                        "终点：(x , y)".replaceAll("x", String.valueOf(e.getX()))
-                                .replaceAll("y", String.valueOf(e.getY())));
+                panel6_label_end.setText("终点：(x , y)".replaceAll("x", String.valueOf(e.getX()))
+                        .replaceAll("y", String.valueOf(e.getY())));
 
                 // 画直线，连接(起点, 终点)
-                Graphics g = panel6_drawer.getGraphics();
-                g.setColor(Color.ORANGE);
-                g.drawLine(start_x, start_y, e.getX(), e.getY());
+                Graphics panel6_drawer_g = panel6_drawer.getGraphics();
+                panel6_drawer_g.setColor(Color.ORANGE);
+                panel6_drawer_g.drawLine(start_x, start_y, e.getX(), e.getY());
+                panel6_drawer_g.dispose();
             }
         });
 
@@ -811,8 +814,25 @@ class PerfectDemo {
         panel6_drawer.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
-                panel6_label_x.setText("X：" + e.getX());
-                panel6_label_y.setText("Y：" + e.getY());
+                panel6_label_start.setText("起点：(x , y)".replaceAll("x", String.valueOf(e.getX()))
+                        .replaceAll("y", String.valueOf(e.getY())));
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                panel6_label_end.setText("终点：(x , y)".replaceAll("x", String.valueOf(e.getX()))
+                        .replaceAll("y", String.valueOf(e.getY())));
+            }
+        });
+
+        // panel6的重画按钮，当点击时，清楚画板内容
+        panel6_button_clear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Graphics panel6_drawer_g = panel6_drawer.getGraphics();
+                panel6_drawer_g.setColor(Color.WHITE);
+                panel6_drawer_g.fillRect(0, 0, 460, 460);
+                panel6_drawer_g.dispose();
             }
         });
     }
