@@ -865,15 +865,15 @@
                 "blocks": [
                 {
                     "key": "what",
-                    "description": "定义如何给元素排序"
+                    "description": "给集合元素排序"
                 },
                 {
                     "key": "why",
-                    "description": "统一 不同集合给元素排序的方式"
+                    "description": "统一并简化 集合元素的排序操作"
                 },
                 {
                     "key": "how",
-                    "description": "通过【仅定义】两个元素的比较规则，实现对整合集合的排序"
+                    "description": "分工：<code>Comparable/Comparator</code>描述两个样本元素如何比较，<code>Collections.sort()</code>根据比较规则进行排序"
                 }],
                 "codeSnippets": [
                 {

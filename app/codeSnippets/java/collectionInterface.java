@@ -4,7 +4,8 @@
     常用方法：size/clear/add/remove
 
 2）List接口（能重复，能根据位置来访问）
-    ArrayList：线程不安全
+    ArrayList：在集合尾部添加元素
+    LinkedList：在集合中间经常插入、删除元素
     Vector：线程安全
     常用方法：size/clear/add/remove/removeIf/get
 
