@@ -4,9 +4,11 @@ var glob = require('glob')
 , wiredep = require('wiredep').stream
 , browserSync = require('browser-sync')  
 , reload = browserSync.reload
-, routeTable = require('./app/routeTable.json')
+, routeTable = require('./routeTable.json')
 , moment = require('moment')
 , gulp = require('gulp')
+, rev = require('gulp-rev')
+, revReplace = require('gulp-rev-replace')
 , Q = require('q')
 , $ = require('gulp-load-plugins')();
 
@@ -111,7 +113,10 @@ gulp.task('html', ['compile', 'jshint', 'styles'], function () {
     return gulp.src('app/**/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', 'bower_components']}))
     .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.js', rev()))          
     .pipe($.if('*.css', $.csso()))
+    .pipe($.if('*.css', rev()))  
+    .pipe(revReplace())        
     .pipe($.replaceTask({
         usePrefix:false,
         patterns: [
@@ -141,7 +146,7 @@ gulp.task('html', ['compile', 'jshint', 'styles'], function () {
         }
         ]
     })) // 百度cdn
-    .pipe($.if('*.html', $.minifyHtml({conditionals: true})))
+    // .pipe($.if('*.html', $.minifyHtml({conditionals: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -215,6 +220,3 @@ gulp.task('default', ['product'], function () {
         }
     });
 });
-
-
-//test

@@ -858,6 +858,11 @@
                 {
                     "description": "集合接口的分类和异同",
                     "url": "/codeSnippets/java/collectionInterface.java"
+                }],
+                "images": [
+                {
+                    "alt": "集合接口",
+                    "url": "/images/java/collection.png"
                 }]
             },
             {
