@@ -841,6 +841,11 @@
             },
             {
                 "name": "4.集合接口",
+                "images": [
+                {
+                    "alt": "集合接口",
+                    "url": "/images/java/collection.png"
+                }],
                 "blocks": [
                 {
                     "key": "what",
@@ -858,11 +863,6 @@
                 {
                     "description": "集合接口的分类和异同",
                     "url": "/codeSnippets/java/collectionInterface.java"
-                }],
-                "images": [
-                {
-                    "alt": "集合接口",
-                    "url": "/images/java/collection.png"
                 }]
             },
             {
@@ -905,6 +905,156 @@
                 {
                     "description": "JDBC的使用套路",
                     "url": "/codeSnippets/java/JDBC.java"
+                }]
+            },
+            {
+                "name": "7.线程",
+                "images": [
+                {
+                    "alt": "线程状态切换",
+                    "url": "/images/java/thread.png"
+                }],
+                "blocks": [
+                {
+                    "key": "what",
+                    "description": "编写程序的目的是完成一个大的项目目标，这个大的项目目标通常被分解为若干小任务，有些小任务彼此不相关、可以各自独立完成（它们可以用线程来实现）。整个程序运行起来后，被叫做进程；默认的控制流是主线程，主线程可以创建若干同时运行的子线程，线程是程序内的单序列控制流、彼此独立运行、共享进程的资源"
+                },
+                {
+                    "key": "why",
+                    "description": "【同时】执行多个任务（省时间）"
+                },
+                {
+                    "key": "how",
+                    "description": "Java使用Runnable接口和Thread类来识别线程，然后对它们做特殊处理：在微观层面，把每个线程的代码切碎，让cup轮流调用；在宏观层面，由于切换足够块，看起来是在各自独立运行"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "线程如何创建、使用？",
+                    "url": "/codeSnippets/java/thread.java"
+                }]
+            },
+            {
+                "name": "8.线程同步",
+                "blocks": [
+                {
+                    "key": "what",
+                    "description": "多个线程【排队】使用共享资源"
+                },
+                {
+                    "key": "why",
+                    "description": "如果多个线程之间互不干扰，各自干自己的事情，永远不会出现问题；当多线程共用了某个资源后，如果一个没用完，另一个又来干扰，会扰乱资源的状态；而如果线程的逻辑依赖了资源的状态，还会使得线程运行错误的逻辑；无论是资源状态，还是逻辑错误都违背了程序的本意，应该避免!"
+                },
+                {
+                    "key": "how",
+                    "description": "使用synchronized给资源或方法加锁"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "线程如何同步？",
+                    "url": "/codeSnippets/java/threadSynchronize.java"
+                }]
+            },
+            {
+                "name": "9.线程通信",
+                "blocks": [
+                {
+                    "key": "what",
+                    "description": "多个线程【轮流】使用共享资源"
+                },
+                {
+                    "key": "why",
+                    "description": "多线程共享资源有这样一种场景：一部分线程（消费者）消耗资源，一部分线程（生产者）补充资源；当资源耗尽时，消费者线程卡死在共享资源上，无法继续运行，由于它获取了资源锁，生产者线程只能排队等待，也被卡死，这是一种双输的局面，根本原因是消费者和生产者没有沟通。"
+                },
+                {
+                    "key": "how",
+                    "description": "消费者暂时让出资源使用权，让生产者补充资源后，再次使用，两者都可以顺畅运行"
+                },
+                {
+                    "key": "",
+                    "description": "共享资源.wait()：谦让（消费者线程让出资源锁，在一旁等待）"
+                },
+                {
+                    "key": "",
+                    "description": "共享资源.notifyAll()：交接（生产者线程通知 所有 等待的消费者线程，不用等了）"
+                },
+                {
+                    "key": "",
+                    "description": "共享资源.notify()：容易造成死锁，因为它仅通知了一个等待者，还有若干线程仍在等待"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "线程如何通信？",
+                    "url": "/codeSnippets/java/threadCommunication.java"
+                }]
+            },
+            {
+                "name": "10.线程应用场景总结",
+                "blocks": [
+                {
+                    "key": "",
+                    "description": "没有先后次序的任务（相互独立）"
+                },
+                {
+                    "key": "1.开线程",
+                    "description": "分给多个人同时干（各干各的）"
+                },
+                {
+                    "key": "",
+                    "description": "多个任务用到了同一个资源（相互干扰）"
+                },
+                {
+                    "key": "2.同步",
+                    "description": "用到共享资源时排队（逐个使用）"
+                },
+                {
+                    "key": "",
+                    "description": "由于资源不足，消耗资源的任务被卡住了（占着茅坑不拉屎）"
+                },
+                {
+                    "key": "3.线程通信",
+                    "description": "消耗资源的任务先释放锁、在一旁等待，直到其它任务补充资源后、再反过来通知它，然后继续使用（交替使用）"
+                }]
+            },
+            {
+                "name": "11.流",
+                "blocks": [
+                {
+                    "key": "what",
+                    "description": "快速移动的数据（类比：流水、流沙）"
+                },
+                {
+                    "key": "why",
+                    "description": "将数据从一个位置（如：内存）移动到另一个位置（如：硬盘）"
+                },
+                {
+                    "key": "how",
+                    "description": "使用Stream描述了一个带方向的管道，它封装了搬运数据的方法"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "流的分类",
+                    "url": "/codeSnippets/java/stream.java"
+                }]
+            },
+            {
+                "name": "12.NIO",
+                "blocks": [
+                {
+                    "key": "what",
+                    "description": "描述路径、操作路径的一系列API"
+                },
+                {
+                    "key": "why",
+                    "description": "方便对文件或目录进行操作"
+                },
+                {
+                    "key": "how",
+                    "description": "使用Path类描述路径，使用File类描述文件和目录，使用Files类通过操作文件或目录的静态方法"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "NIO常用套路",
+                    "url": "/codeSnippets/java/nio.java"
                 }]
             }]
         },
@@ -1063,7 +1213,8 @@
     "注释": [
         "1.编程语言是 算法和思想 的表达工具",
         "2.见人说人话，见鬼说鬼话：没有万能语言，不同的场合适合不同的编程语言",
-        "3.评价语言只说好不好用，真正强大的是各种接口和类库"
+        "3.评价语言只说好不好用，真正强大的是各种接口和类库",
+        "4.swing组件的官方文档：https://docs.oracle.com/javase/tutorial/uiswing/components/table.html"
     ],
     "参考文献": []
 }
