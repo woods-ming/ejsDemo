@@ -73,7 +73,23 @@
                 },
                 {
                     "key": "熟悉",
-                    "description": "api和类库（如：流、集合、jdbc）"
+                    "description": "常用API（如：流、集合、jdbc）"
+                }]
+            },
+            {
+                "name": "4.知识结构一览",
+                "images": [
+                {
+                    "alt": "基础概念",
+                    "url": "/images/java/java.png"
+                },
+                {
+                    "alt": "常用API",
+                    "url": "/images/java/API.png"
+                },
+                {
+                    "alt": "GUI",
+                    "url": "/images/java/gui.png"
                 }]
             }]
         },
@@ -224,14 +240,6 @@
         {
             "name": "三、基础概念",
             "sections": [
-            {
-                "name": "",
-                "images": [
-                {
-                    "alt": "基础知识点总结",
-                    "url": "/images/java/summary.png"
-                }]
-            },
             {
                 "name": "1.java的体系结构",
                 "blocks": [
@@ -1059,16 +1067,8 @@
             }]
         },
         {
-            "name": "六、图形用户界面",
+            "name": "六、GUI",
             "sections": [
-            {
-                "name": "",
-                "images": [
-                {
-                    "alt": "GUI知识点总结",
-                    "url": "/images/java/gui.png"
-                }]
-            },
             {
                 "name": "1.what：用户与计算机软件的交流（输入/输出）工具",
                 "blocks": [
