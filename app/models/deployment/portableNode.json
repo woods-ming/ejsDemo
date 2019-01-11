@@ -123,6 +123,14 @@
                                 "description": "git --version"
                             },
                             {
+                                "key": "github账号",
+                                "description": "git config --global user.name \"{github账号}\""
+                            },
+                            {
+                                "key": "github邮箱",
+                                "description": "git config --global user.name \"{github邮箱}\""
+                            },
+                            {
                                 "key": "查看配置",
                                 "description": "git config --list"
                             }
@@ -168,7 +176,20 @@
                             },
                             {
                                 "key": "",
-                                "description": "以后直接用cnpm代替npm"
+                                "description": "以后直接用cnpm代替npm，管理服务端依赖"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2.搭建yeoman环境",
+                        "blocks": [
+                            {
+                                "key": "安装bower和gulp",
+                                "description": "cnpm install -g bower gulp"
+                            },
+                            {
+                                "key": "",
+                                "description": "bower管理web端依赖，gulp管理开发任务"
                             }
                         ]
                     },

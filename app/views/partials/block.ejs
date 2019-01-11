@@ -1,4 +1,12 @@
-<dl>
-	<dt><%- block.key %></dt>
-	<dd><%- block.description %></dd>
-</dl>
+<% for(var k = 0; k < blocks.length; k++) { 
+		var block = blocks[k]; 
+		%>
+
+		<dl>
+			<dt><%- block.key %></dt>
+			<dd><%- block.description %></dd>
+		</dl>
+
+		<% 
+	} 
+%>

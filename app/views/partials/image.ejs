@@ -1,3 +1,11 @@
-<a href="<%= image.url %>" target="_blank">
-<img data-original="<%= image.url %>" class="img-rounded img-responsive" title="<%= image.alt %>" alt="<%= image.alt %>">
-</a>
+<% for(var k = 0; k < images.length; k++) { 
+		var image = images[k]; 
+		%>
+
+		<a href="<%= image.url %>" target="_blank">
+		<img data-original="<%= image.url %>" class="img-rounded img-responsive" title="<%= image.alt %>" alt="<%= image.alt %>">
+		</a>
+
+		<% 
+	} 
+%>

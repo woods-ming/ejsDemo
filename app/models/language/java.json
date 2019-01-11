@@ -261,7 +261,7 @@
                 }]
             },
             {
-                "name": "2.java的开发工具包（JDK）",
+                "name": "2.java的开发工具包",
                 "blocks": [
                 {
                     "key": "",
@@ -298,50 +298,15 @@
             },
             {
                 "name": "3.java程序的构建块",
-                "blocks": [
+                "images": [
                 {
-                    "key": "",
-                    "description": "1）宏观"
-                },
+                    "alt": "类和接口",
+                    "url": "/images/java/java_building_block.png"
+                }],
+                "codeSnippets": [
                 {
-                    "key": "包",
-                    "description": "类/接口 太多，归置一下"
-                },
-                {
-                    "key": "类",
-                    "description": "描述事物"
-                },
-                {
-                    "key": "",
-                    "description": "属性（用数据，描述特征）"
-                },
-                {
-                    "key": "",
-                    "description": "方法（用算法，描述行为）"
-                },
-                {
-                    "key": "接口",
-                    "description": "定义能力"
-                },
-                {
-                    "key": "",
-                    "description": "方法（用函数声明，规划行为）"
-                },
-                {
-                    "key": "",
-                    "description": "常量（用静态常量，指代固定情况）"
-                },
-                {
-                    "key": "",
-                    "description": "2）微观"
-                },
-                {
-                    "key": "数据",
-                    "description": "数据类型 变量 = 值/对象;"
-                },
-                {
-                    "key": "算法",
-                    "description": "一系列处理数据的步骤"
+                    "description": "代码模版",
+                    "url": "/codeSnippets/java/basicBlock.java"
                 }]
             },
             {
@@ -352,12 +317,37 @@
                     "description": "告诉计算机，要开辟的多大内存空间，可进行哪类运算（值类型，不在类的体系中）"
                 },
                 {
-                    "key": "自定义的类",
-                    "description": "告诉程序员，事物的特征和行为（面向对象程序中，一切都基于类型）"
-                },
-                {
                     "key": "包装类",
                     "description": "Java作者特意定义了一些类，专门描述原生数据类型 <br />（得到2个好处：①将原生数据纳入到类的体系中 ②原生数据使用起来更方便）"
+                },
+                {
+                    "key": "自定义的类",
+                    "description": "描述事物的特征和行为（面向对象程序中，一切都基于类）"
+                },
+                {
+                    "key": "数组",
+                    "description": "定义一组类型相同的变量，单个变量是 <code>数组名[index]</code>"
+                },
+                {
+                    "key": "枚举",
+                    "description": "取值范围有限，把它列举出来"
+                },
+                {
+                    "key": "Optional类",
+                    "description": "表示可有可无（它用来包装对象，明确其值可能为null）"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "1）数组（当成一组变量）",
+                    "url": "/codeSnippets/java/arrayType.java"
+                },
+                {
+                    "description": "2）枚举",
+                    "url": "/codeSnippets/java/enumType.java"
+                },
+                {
+                    "description": "3）字符串String",
+                    "url": "/codeSnippets/java/stringType.java"
                 }]
             },
             {
@@ -470,6 +460,19 @@
                 {
                     "key": "动态多态性",
                     "description": "方法重写（同名，参数相同，在派生类中）"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "1）封装",
+                    "url": "/codeSnippets/java/encapsulation.java"
+                },
+                {
+                    "description": "2）继承",
+                    "url": "/codeSnippets/java/inheritance.java"
+                },
+                {
+                    "description": "3）多态",
+                    "url": "/codeSnippets/java/polymorphic.java"
                 }]
             },
             {
@@ -480,11 +483,11 @@
                     "description": "程序执行期间，发生的执行流中断的情况（就是程序挂了）"
                 },
                 {
-                    "key": "错误",
+                    "key": "Error",
                     "description": "严重，程序无法解决，只能中断"
                 },
                 {
-                    "key": "异常",
+                    "key": "Exception",
                     "description": "轻微，可以恢复正常，继续运行"
                 },
                 {
@@ -502,6 +505,15 @@
                 {
                     "key": "3）处理异常",
                     "description": "能够处理：捕获（很多时候是记日志：暂时忽略，由运维人员定期查看分析原因） <br />处理不了：抛出"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "1）异常处理",
+                    "url": "/codeSnippets/java/CatchException.java"
+                },
+                {
+                    "description": "2）抛出异常",
+                    "url": "/codeSnippets/java/ThrowException.java"
                 }]
             },
             {
@@ -514,6 +526,11 @@
                 {
                     "key": "Java中的断言",
                     "description": "这个表达式，在java中的语法"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "断言默认是关闭的，运行时加上参数：java -ea Assertion",
+                    "url": "/codeSnippets/java/Assertion.java"
                 }]
             },
             {
@@ -551,21 +568,25 @@
                     "key": "向下转型",
                     "description": "子类对象被父类引用后，还可以强制转换回本身的类型"
                 }]
+            },
+            {
+                "name": "11.函数式编程",
+                "blocks": [
+                {
+                    "key": "",
+                    "description": ""
+                },
+                {
+                    "key": "",
+                    "description": ""
+                }]
             }]
         },
         {
             "name": "四、基本语法",
             "sections": [
             {
-                "name": "1.定义程序的构建块",
-                "codeSnippets": [
-                {
-                    "description": "",
-                    "url": "/codeSnippets/java/basicBlock.java"
-                }]
-            },
-            {
-                "name": "2.基本数据类型",
+                "name": "1.基本数据类型",
                 "blocks": [
                 {
                     "key": "",
@@ -645,7 +666,7 @@
                 }]
             },
             {
-                "name": "3.运算符",
+                "name": "2.运算符",
                 "blocks": [
                 {
                     "key": "位运算符",
@@ -677,7 +698,7 @@
                 }]
             },
             {
-                "name": "4.流程控制语句",
+                "name": "3.流程控制语句",
                 "codeSnippets": [
                 {
                     "description": "1）分支",
@@ -686,58 +707,6 @@
                 {
                     "description": "2）循环",
                     "url": "/codeSnippets/java/loopControl.java"
-                }]
-            },
-            {
-                "name": "5.复合数据类型",
-                "codeSnippets": [
-                {
-                    "description": "1）数组（当成一组变量）",
-                    "url": "/codeSnippets/java/arrayType.java"
-                },
-                {
-                    "description": "2）枚举",
-                    "url": "/codeSnippets/java/enumType.java"
-                },
-                {
-                    "description": "3）字符串String",
-                    "url": "/codeSnippets/java/stringType.java"
-                }]
-            },
-            {
-                "name": "6.面向对象的三大特性",
-                "codeSnippets": [
-                {
-                    "description": "1）封装",
-                    "url": "/codeSnippets/java/encapsulation.java"
-                },
-                {
-                    "description": "2）继承",
-                    "url": "/codeSnippets/java/inheritance.java"
-                },
-                {
-                    "description": "3）多态",
-                    "url": "/codeSnippets/java/polymorphic.java"
-                }]
-            },
-            {
-                "name": "7.异常",
-                "codeSnippets": [
-                {
-                    "description": "1）异常处理",
-                    "url": "/codeSnippets/java/CatchException.java"
-                },
-                {
-                    "description": "2）抛出异常",
-                    "url": "/codeSnippets/java/ThrowException.java"
-                }]
-            },
-            {
-                "name": "8.断言",
-                "codeSnippets": [
-                {
-                    "description": "断言默认是关闭的，运行时加上参数：java -ea Assertion",
-                    "url": "/codeSnippets/java/Assertion.java"
                 }]
             }]
         },
@@ -851,7 +820,7 @@
                 "name": "4.集合接口",
                 "images": [
                 {
-                    "alt": "集合接口",
+                    "alt": "Collection",
                     "url": "/images/java/collection.png"
                 }],
                 "blocks": [
@@ -882,7 +851,7 @@
                 },
                 {
                     "key": "why",
-                    "description": "统一并简化 集合元素的排序操作"
+                    "description": "统一并简化 集合元素的排序"
                 },
                 {
                     "key": "how",
@@ -895,7 +864,28 @@
                 }]
             },
             {
-                "name": "6.JDBC",
+                "name": "6.集合元素处理",
+                "blocks": [
+                {
+                    "key": "what",
+                    "description": "处理集合元素：筛选、排序、分页、映射"
+                },
+                {
+                    "key": "why",
+                    "description": "统一并简化 对集合元素的处理"
+                },
+                {
+                    "key": "how",
+                    "description": "分工：<code>Stream API</code>负责将集合放到流水线上，<code>Lambda表达式</code>描述如何处理集合元素"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "Stream API",
+                    "url": "/codeSnippets/java/streamAPI.java"
+                }]
+            },
+            {
+                "name": "7.JDBC",
                 "blocks": [
                 {
                     "key": "what",
@@ -916,7 +906,7 @@
                 }]
             },
             {
-                "name": "7.线程",
+                "name": "8.线程",
                 "images": [
                 {
                     "alt": "线程状态切换",
@@ -942,7 +932,7 @@
                 }]
             },
             {
-                "name": "8.线程同步",
+                "name": "9.线程同步",
                 "blocks": [
                 {
                     "key": "what",
@@ -963,7 +953,7 @@
                 }]
             },
             {
-                "name": "9.线程通信",
+                "name": "10.线程通信",
                 "blocks": [
                 {
                     "key": "what",
@@ -996,7 +986,7 @@
                 }]
             },
             {
-                "name": "10.线程应用场景总结",
+                "name": "11.线程应用场景总结",
                 "blocks": [
                 {
                     "key": "",
@@ -1024,7 +1014,7 @@
                 }]
             },
             {
-                "name": "11.流",
+                "name": "12.流",
                 "blocks": [
                 {
                     "key": "what",
@@ -1045,7 +1035,28 @@
                 }]
             },
             {
-                "name": "12.NIO",
+                "name": "13.序列化",
+                "blocks": [
+                {
+                    "key": "what",
+                    "description": "Java对象 <code><==></code> 文本"
+                },
+                {
+                    "key": "why",
+                    "description": "Java对象是立体的，无法存储或传输"
+                },
+                {
+                    "key": "how",
+                    "description": "使用 <code>ObjectOutputStream/ObjectInputStream</code> 将Java对象和字节流进行互转"
+                }],
+                "codeSnippets": [
+                {
+                    "description": "序列化和反序列化",
+                    "url": "/codeSnippets/java/serialize.java"
+                }]
+            },
+            {
+                "name": "14.NIO",
                 "blocks": [
                 {
                     "key": "what",

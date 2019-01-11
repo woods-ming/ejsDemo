@@ -22,9 +22,14 @@ package 包;
 import 引用的包;
 
 [访问说明符] interface 接口名{
-    // 2.1）声明方法（通常省略：public abstract）
-    public abstract 返回类型 方法名(参数列表);
+    // 2.1）定义静态常量（默认省略：public static final）
+    数据类型 变量名 = 值;
 
-    // 2.2）定义静态常量（通常省略：public static final）
-    public static final 数据类型 变量名 = 值;
+    // 2.2）声明方法（默认省略：public abstract）
+    返回类型 方法名(参数列表);
+
+    // 2.3）默认方法（默认省略：public）
+    default 返回类型 方法名(参数列表) {
+        // 函数体
+    }
 }

@@ -9,6 +9,6 @@
 </mirror>
 
 <!-- 修改本地仓库的位置（使用 localRepository 搜索，并增加下列配置） -->
-<localRepository>G:\SoftWare\maveRepository</localRepository>
+<localRepository>H:\maven_temp</localRepository>
 
 <!-- 将修改后的 settings.xml 文件复制到 本地仓库根目录 -->

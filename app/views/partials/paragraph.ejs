@@ -1,1 +1,9 @@
-<p><%- paragraph %></p>
+<% for(var k = 0; k < paragraphs.length; k++) { 
+		var paragraph = paragraphs[k]; 
+		%>
+
+		<p><%- paragraph %></p>
+
+		<% 
+	} 
+%>

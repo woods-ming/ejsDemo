@@ -1,4 +1,3 @@
-set PORTABLE_DIR={便携式环境的目录}
-set NODE_TMP_ENV=D:\node_tmp
-set NODE_ENV=%PORTABLE_DIR%\node-v8.9.3-win-x64
+set NODE_TMP_ENV={nodejs的临时目录}
+set NODE_ENV={nodejs的根目录}
 set PATH=%NODE_ENV%;%NODE_TMP_ENV%;%ConEmuBaseDir%\Scripts;%PATH%

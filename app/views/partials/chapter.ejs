@@ -20,59 +20,36 @@ for(var i = 0; i < content.chapters.length; i++) {
 
 		<h3 id="<%= i %>-<%= j %>"><%= section.name %></h3>
 		<div class="section">
+			<%
+				for(key in section) { 
+					switch(key){
+						case "blocks":%>
+						
+						<%- include('block', { blocks: section.blocks }); %>
 
-			<% 
-			if(section.blocks) {
-				for(var k = 0; k < section.blocks.length; k++) { 
-					var block = section.blocks[k]; 
-					%>
+						<%
+						break;
+						case "paragraphs":%>
+						
+						<%- include('paragraph', { paragraphs: section.paragraphs }); %>
 
-					<%- include('block', { block: block }); %>
+						<%
+						break;
+						case "codeSnippets":%>
 
-					<% 
-				} 
-			}
+						<%- include('codeSnippet', { codeSnippets: section.codeSnippets }); %> 
+
+						<%
+						break;
+						case "images":%>
+
+						<%- include('image', { images: section.images }); %>
+
+						<%
+						break;
+					}
+				}
 			%>
-
-			<% 
-			if(section.paragraphs) {
-				for(var k = 0; k < section.paragraphs.length; k++) { 
-					var paragraph = section.paragraphs[k]; 
-					%>
-
-					<%- include('paragraph', { paragraph: paragraph }); %>
-
-					<% 
-				} 
-			}
-			%>
-
-			<% 
-			if(section.codeSnippets) {
-				for(var k = 0; k < section.codeSnippets.length; k++) { 
-					var codeSnippet = section.codeSnippets[k]; 
-					%>
-
-					<%- include('codeSnippet', { codeSnippet: codeSnippet }); %>
-
-					<% 
-				} 
-			}
-			%>
-
-			<% 
-			if(section.images) {
-				for(var k = 0; k < section.images.length; k++) { 
-					var image = section.images[k]; 
-					%>
-
-					<%- include('image', { image: image }); %>
-
-					<% 
-				} 
-			}
-			%>
-
 		</div>
 
 		<% 
