@@ -339,15 +339,19 @@
                 "codeSnippets": [
                 {
                     "description": "1）数组（当成一组变量）",
-                    "url": "/codeSnippets/java/arrayType.java"
+                    "url": "/codeSnippets/java/array.java"
                 },
                 {
                     "description": "2）枚举",
-                    "url": "/codeSnippets/java/enumType.java"
+                    "url": "/codeSnippets/java/enum.java"
                 },
                 {
                     "description": "3）字符串String",
-                    "url": "/codeSnippets/java/stringType.java"
+                    "url": "/codeSnippets/java/string.java"
+                },
+                {
+                    "description": "4）日期LocalDateTime",
+                    "url": "/codeSnippets/java/localDateTime.java"
                 }]
             },
             {
@@ -573,12 +577,48 @@
                 "name": "11.函数式编程",
                 "blocks": [
                 {
-                    "key": "",
-                    "description": ""
+                    "key": "数据",
+                    "description": "是变量的值"
+                },
+                {
+                    "key": "逻辑",
+                    "description": "是方法的值"
                 },
                 {
                     "key": "",
-                    "description": ""
+                    "description": "如果逻辑可以像数据一样，能被传来传去，该多好？"
+                },
+                {
+                    "key": "函数式接口",
+                    "description": "只包含一个方法的接口（传递对象就像传递方法）"
+                },
+                {
+                    "key": "Lambda表达式",
+                    "description": "实现函数式接口的匿名类，可以简化成匿名方法"
+                },
+                {
+                    "key": "常用的函数式接口",
+                    "description": "<code>Predicate / Consumer / Supplier / Function</code>"
+                },
+                {
+                    "key": "方法引用",
+                    "description": "任意已经存在的方法，可以用特殊语法转换为Lambda表达式"
+                },
+                {
+                    "key": "静态方法引用",
+                    "description": "类::方法 <code>==</code> ()->类.方法()"
+                },
+                {
+                    "key": "特定对象的方法引用",
+                    "description": "对象::方法 <code>==</code> ()->对象.方法()"
+                },
+                {
+                    "key": "任意对象的方法引用",
+                    "description": "类::方法 <code>==</code> (类 对象)->对象.方法()"
+                },
+                {
+                    "key": "构造方法引用",
+                    "description": "类::new <code>==</code> (参数)-> new 类(参数)"
                 }]
             }]
         },
