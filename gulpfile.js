@@ -1,6 +1,7 @@
 'use strict';
 
 var glob = require('glob')
+, runSequence = require('run-sequence')
 , wiredep = require('wiredep').stream
 , browserSync = require('browser-sync')  
 , reload = browserSync.reload
@@ -204,7 +205,7 @@ gulp.task('zip', function(){
 gulp.task('product', function () {
     // var deferred = Q.defer();
 
-    $.runSequence('clean', 'build', 'sitemap', 'zip');
+    runSequence('clean', 'build', 'sitemap', 'zip');
 
     // return deferred.promise;
 });
