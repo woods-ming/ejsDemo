@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <%- include('../partials/head'); %>
 </head>
+
 <body data-spy="scroll" data-offset="100" data-target="#catalog">
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
         <div class="container">
             <span class="skiplink-text">Skip to main content</span>
         </div>
     </a>
-
     <!-- 导航 -->
     <%- include('../partials/nav'); %>
-
     <!-- 论文简介 -->
     <div class="bs-docs-header" id="content" tabindex="-1">
         <div class="container">
-            <h1><%= 题目 %></h1>
-            <p><%= 摘要 %></p>
+            <h1>
+                <%= 题目 %>
+            </h1>
+            <p>
+                <%= 摘要 %>
+            </p>
             <!-- <p>关键字: <%= 关键字 %></p> -->
         </div>
     </div>
-
     <div class="container bs-docs-container">
         <div class="row">
             <div class="col-md-9" role="main">
                 <!-- 正文 -->
                 <%- include('../partials/chapter', { content: 正文 }); %>
-                
                 <!-- 注释 -->
-                <%- include('../partials/note', { note: 注释 }); %> 
-
+                <%- include('../partials/note', { note: 注释 }); %>
                 <!-- 分享 -->
-                <%- include('../partials/share', { bdText: 题目, bdDesc: 摘要 }); %> 
-                
+                <%- include('../partials/share', { bdText: 题目, bdDesc: 摘要 }); %>
                 <!-- 评论 -->
-                <%- include('../partials/comment', { sid: 题目 }); %> 
-
+                <%- include('../partials/comment', { sid: 题目 }); %>
             </div>
             <div class="col-md-3" role="complementary">
                 <!-- 目录 -->
@@ -49,8 +48,8 @@
             </div>
         </div>
     </div>
-
     <!-- 页脚 -->
     <%- include('../partials/footer'); %>
 </body>
+
 </html>

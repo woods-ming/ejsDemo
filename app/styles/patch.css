@@ -2,6 +2,10 @@ body {
     font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 
+.bs-docs-header {
+    margin-bottom: 0;
+}
+
 .bs-example:after {
     content: "实例：" !important;
 }
@@ -25,17 +29,27 @@ body {
     margin-bottom: 0;
 }
 
+h2 {
+    font-size: 26px;
+}
+
 h3 {
     padding-left: 30%;
     color: #337ab7;
+    font-size: 22px;
 }
 
 .section {
-    margin: 1.5em auto 2.5em;
+    margin: 1em auto 2em;
 }
 
 dl {
     margin-bottom: 0.5em;
+}
+
+dt,
+dd {
+    line-height: 1.2;
 }
 
 dl dt {

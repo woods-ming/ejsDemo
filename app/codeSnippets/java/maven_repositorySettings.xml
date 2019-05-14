@@ -2,10 +2,10 @@
 
 <!-- 为加速访问，设置为国内的镜像服务器（使用 mirrors 搜索，并增加下列配置） -->
 <mirror>
-  <id>maven.net.cn</id>
-  <mirrorOf>central</mirrorOf>
-  <name>central mirror in china</name>
-  <url>http://maven.net.cn/content/groups/public</url>
+  <id>alimaven</id>
+  <name>aliyun maven</name>
+  <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+  <mirrorOf>central</mirrorOf>        
 </mirror>
 
 <!-- 修改本地仓库的位置（使用 localRepository 搜索，并增加下列配置） -->
