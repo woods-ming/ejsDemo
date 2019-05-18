@@ -1,0 +1,367 @@
+{
+  "题目": "Jsp",
+  "摘要": "Java web开发中可选的一项视图技术（锦上添花）",
+  "关键字": "jsp",
+  "正文": {
+    "chapters": [
+      {
+        "name": "一、JSP的作用",
+        "sections": [
+          {
+            "name": "1.帮助servlet编写html（输出）",
+            "blocks": [
+              {
+                "key": "servlet",
+                "description": "用字符串拼接html代码（不直观、易出错）"
+              },
+              {
+                "key": "jsp",
+                "description": "直接编写html代码（直观、可调试）"
+              }
+            ]
+          },
+          {
+            "name": "2.代替servlet编写java代码（处理）",
+            "blocks": [
+              {
+                "key": "java脚本",
+                "description": "直接将java代码嵌入html页面"
+              },
+              {
+                "key": "jsp标签",
+                "description": "用jsp标签代替一段java代码"
+              }
+            ]
+          },
+          {
+            "name": "3.作为servlet接收请求（输入）",
+            "blocks": [
+              {
+                "key": "开发时",
+                "description": "被developer当成html页面"
+              },
+              {
+                "key": "运行时",
+                "description": "被tomcat编译成servlet"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "二、JSP的组件",
+        "sections": [
+          {
+            "name": "1.脚本（写java代码）",
+            "blocks": [
+              {
+                "key": "&lt;%= 表达式%&gt;",
+                "description": "相当于占位符，将结果写入html"
+              },
+              {
+                "key": "&lt;% 代码段%&gt;",
+                "description": "就是原封不动的java代码块"
+              },
+              {
+                "key": "&lt;%! 变量%&gt;",
+                "description": "仅用来声明java变量"
+              }
+            ]
+          },
+          {
+            "name": "2.隐式对象（方便写java代码：提供servletAPI的快捷方式）",
+            "blocks": [
+              {
+                "key": "request",
+                "description": "就是servlet中的request"
+              },
+              {
+                "key": "response",
+                "description": "就是servlet中的response"
+              },
+              {
+                "key": "session",
+                "description": "就是servlet中的request.getSession()"
+              },
+              {
+                "key": "application",
+                "description": "就是servlet中的request.getServletContext()"
+              }
+            ]
+          },
+          {
+            "name": "3.jsp标签（方便写java代码：用jsp标签代替一段java代码）",
+            "blocks": [
+              {
+                "key": "&lt;jsp:include /&gt;",
+                "description": "context.getRequestDispatcher(\"其它url\").include(request, response)"
+              },
+              {
+                "key": "&lt;jsp:forward /&gt;",
+                "description": "context.getRequestDispatcher(\"其它url\").forward(request, response)"
+              },
+              {
+                "key": "&lt;jsp:useBean /&gt;",
+                "description": "XXClass bean = new XXClass()"
+              },
+              {
+                "key": "&lt;jsp:setProperty /&gt;",
+                "description": "bean.setXX(值)"
+              },
+              {
+                "key": "&lt;jsp:getProperty /&gt;",
+                "description": "bean.getXX()"
+              },
+              {
+                "key": "&lt;jsp:param /&gt;",
+                "description": "request.setParameter(\"参数名\", \"值\")"
+              }
+            ]
+          },
+          {
+            "name": "4.指令（编译选项）",
+            "blocks": [
+              {
+                "key": "&lt;%@ page %&gt;",
+                "description": "如何处理当前页面（比如：编码方式、要导入的jar包）"
+              },
+              {
+                "key": "&lt;%@ include %&gt;",
+                "description": "组合哪些jsp页面"
+              },
+              {
+                "key": "&lt;%@ taglib %&gt;",
+                "description": "用到哪个jsp标签库"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "三、JSP的优缺点",
+        "sections": [
+          {
+            "name": "1.优点（解决问题）",
+            "blocks": [
+              {
+                "key": "html",
+                "description": "用自然的方式输出html"
+              }
+            ]
+          },
+          {
+            "name": "2.缺点（过犹不及）",
+            "blocks": [
+              {
+                "key": "java",
+                "description": "4类jsp组件都在围绕java做文章，带来了复杂性（学新知识）"
+              },
+              {
+                "key": "servlet",
+                "description": "代替原生servlet接收请求（没必要）"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "四、如何使用JSP",
+        "sections": [
+          {
+            "name": "1.思路",
+            "blocks": [
+              {
+                "key": "扬长",
+                "description": "用它输出html"
+              },
+              {
+                "key": "避短",
+                "description": "不用它写java"
+              }
+            ]
+          },
+          {
+            "name": "2.做法（MVC模式）",
+            "blocks": [
+              {
+                "key": "输入C",
+                "description": "使用servlet（控制器Controller）"
+              },
+              {
+                "key": "处理M",
+                "description": "使用java类（业务模型Model）"
+              },
+              {
+                "key": "结果B",
+                "description": "使用java bean（视图模型View Model）"
+              },
+              {
+                "key": "输出V",
+                "description": "使用jsp（视图View）"
+              },
+              {
+                "key": "过程",
+                "description": "request --&gt; C -调用M-&gt; B -嵌入-&gt; V --&gt; response"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "五、被忽视的Java bean",
+        "sections": [
+          {
+            "name": "1.作用",
+            "blocks": [
+              {
+                "key": "衔接",
+                "description": "servlet和jsp的桥梁"
+              },
+              {
+                "key": "嵌入",
+                "description": "javaBean的结构决定了view的动态部分"
+              }
+            ]
+          },
+          {
+            "name": "2.Java bean是什么",
+            "blocks": [
+              {
+                "key": "jsp调用它",
+                "description": "定义了jsp如何使用java类"
+              },
+              {
+                "key": "java类实现它",
+                "description": "java类要满足哪些约束"
+              }
+            ]
+          },
+          {
+            "name": "3.jsp使用JavaBean",
+            "blocks": [
+              {
+                "key": "获取对象",
+                "description": "&lt;jsp:useBean id=\"对象名\" class=\"类名\" scope=\"page/request/session/application\" /&gt;"
+              },
+              {
+                "key": "获取属性",
+                "description": "&lt;jsp:setProperty name=\"所属对象名\" property=\"属性名\" value=\"值\" /&gt;"
+              },
+              {
+                "key": "设置属性",
+                "description": "&lt;jsp:getProperty name=\"所属对象名\" property=\"属性名\" /&gt;"
+              }
+            ]
+          },
+          {
+            "name": "4.java类实现JavaBean",
+            "blocks": [
+              {
+                "key": "无参数构造函数",
+                "description": "能够直接创建对象"
+              },
+              {
+                "key": "get/set访问器",
+                "description": "规范读写方式（将域隐藏、用属性暴露）"
+              }
+            ]
+          },
+          {
+            "name": "5.servlet如何将JavaBean传输给jsp？",
+            "blocks": [
+              {
+                "key": "策略",
+                "description": "借用容器的Attributes"
+              },
+              {
+                "key": "容器类型",
+                "description": "page/request/session/application"
+              },
+              {
+                "key": "生命周期",
+                "description": "与容器的生命周期相同"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "六、最佳实践",
+        "sections": [
+          {
+            "name": "1.写controller：协调整体过程",
+            "blocks": [
+              {
+                "key": "1.1",
+                "description": "分析功能场景，定义servlet和action（添加好注释）"
+              },
+              {
+                "key": "1.2",
+                "description": "在action内，用注释或伪代码说明逻辑步骤"
+              },
+              {
+                "key": "1.3",
+                "description": "根据注释编写代码，遇到业务逻辑就定义成model"
+              },
+              {
+                "key": "1.4",
+                "description": "遇到处理结果就定义成java bean"
+              },
+              {
+                "key": "1.5",
+                "description": "将bean写入容器、并跳转到view"
+              }
+            ]
+          },
+          {
+            "name": "2.写model：业务逻辑",
+            "blocks": [
+              {
+                "key": "2.1",
+                "description": "在model类中根据接口写业务逻辑，遇到数据库操作就定义成repository"
+              },
+              {
+                "key": "2.2",
+                "description": "在repository类中根据接口写jdbc代码"
+              }
+            ]
+          },
+          {
+            "name": "3.写bean：业务结果",
+            "blocks": [
+              {
+                "key": "3.1",
+                "description": "根据用户需求，定义要输出的数据结构"
+              },
+              {
+                "key": "3.2",
+                "description": "将业务逻辑的处理结果，映射到bean的属性中"
+              }
+            ]
+          },
+          {
+            "name": "4.写view：界面",
+            "blocks": [
+              {
+                "key": "4.1",
+                "description": "画静态html"
+              },
+              {
+                "key": "4.2",
+                "description": "获取bean、并用它的属性替换html中的动态变化部分"
+              },
+              {
+                "key": "4.3",
+                "description": "如果动态部分有控制逻辑，编写&lt;% java代码%&gt;"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "注释": [
+    "1.",
+    "2."
+  ]
+}

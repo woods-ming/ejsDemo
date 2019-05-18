@@ -1,0 +1,11 @@
+// ② 记录Exception
+<error-page>
+  <exception-type>java异常类</exception-type>
+  <location>/xxxServlet</location>
+</error-page>
+
+// ④ 呈现 errorPage
+<error-page>
+  <error-code>http响应状态码</error-code>
+  <location>/xxx.html</location>
+</error-page>

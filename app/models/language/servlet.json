@@ -1,0 +1,624 @@
+{
+  "题目": "Servlet",
+  "摘要": "Java web开发的最基础、最根本的技术",
+  "关键字": "servlet",
+  "正文": {
+    "chapters": [
+      {
+        "name": "一、Http通信",
+        "sections": [
+          {
+            "name": "1.http协议的特点",
+            "blocks": [
+              {
+                "key": "无连接",
+                "description": "一次处理一个请求，处理完就断开连接"
+              },
+              {
+                "key": "无状态",
+                "description": "没有记忆能力，完全不知道处理过的请求"
+              },
+              {
+                "key": "媒体独立",
+                "description": "可传输任何数据，通过MIME-type描述数据类型"
+              }
+            ]
+          },
+          {
+            "name": "2.消息结构（就像信件）",
+            "blocks": [
+              {
+                "key": "",
+                "description": "Request"
+              },
+              {
+                "key": "请求行",
+                "description": "请求方式/资源/协议版本"
+              },
+              {
+                "key": "请求头",
+                "description": "我是谁（浏览器/操作系统/ip）？ 我找谁（host）？想要什么样的结果（格式、语言、压缩方式）？"
+              },
+              {
+                "key": "正文",
+                "description": "纯数据"
+              },
+              {
+                "key": "",
+                "description": "Response"
+              },
+              {
+                "key": "状态行",
+                "description": "响应状态码/协议版本"
+              },
+              {
+                "key": "响应头",
+                "description": "结果是什么样的（格式、语言、压缩方式、大小）？"
+              },
+              {
+                "key": "正文",
+                "description": "纯数据"
+              }
+            ]
+          },
+          {
+            "name": "3.请求方式",
+            "blocks": [
+              {
+                "key": "GET",
+                "description": "查询"
+              },
+              {
+                "key": "POST",
+                "description": "新增"
+              },
+              {
+                "key": "PUT",
+                "description": "修改（只支持ajax）"
+              },
+              {
+                "key": "DELETE",
+                "description": "删除（只支持ajax）"
+              },
+              {
+                "key": "HEAD",
+                "description": "查询头（不返回正文）"
+              },
+              {
+                "key": "OPTIONS",
+                "description": "询问服务器，支持哪些Request Method"
+              },
+              {
+                "key": "TRACE",
+                "description": "回路测试（浏览器不支持）"
+              }
+            ]
+          },
+          {
+            "name": "4.响应状态",
+            "blocks": [
+              {
+                "key": "1xx",
+                "description": "消息（临时响应：需要继续处理）"
+              },
+              {
+                "key": "2xx",
+                "description": "成功（处理完成：成功）"
+              },
+              {
+                "key": "3xx",
+                "description": "重定向（继续处理：转到其它url）"
+              },
+              {
+                "key": "4xx",
+                "description": "请求错误（处理失败：请求包含的信息有问题）"
+              },
+              {
+                "key": "5xx",
+                "description": "服务器错误（处理失败：软件或硬件有问题）"
+              }
+            ]
+          },
+          {
+            "name": "5.常见的 请求/响应 头",
+            "blocks": [
+              {
+                "key": "",
+                "description": "Request Header"
+              },
+              {
+                "key": "host",
+                "description": "web服务器地址（ip:port）"
+              },
+              {
+                "key": "user-agent",
+                "description": "浏览器信息"
+              },
+              {
+                "key": "referer",
+                "description": "发起请求的页面"
+              },
+              {
+                "key": "",
+                "description": "Response Header"
+              },
+              {
+                "key": "content-length",
+                "description": "内容大小"
+              },
+              {
+                "key": "content-disposition",
+                "description": "内容的处理方式（下载/直接打开）"
+              },
+              {
+                "key": "expires",
+                "description": "资源过期时间【如果未过期、浏览器不发请求】"
+              },
+              {
+                "key": "",
+                "description": "Request/Response Header"
+              },
+              {
+                "key": "accept/content-type",
+                "description": "内容的MIME类型"
+              },
+              {
+                "key": "accept-language/content-language",
+                "description": "内容中用的语言"
+              },
+              {
+                "key": "accept-encoding/content-encoding",
+                "description": "内容的压缩方式"
+              },
+              {
+                "key": "if-none-match/etag",
+                "description": "资源版本（序列值）【如果版本一致、服务器无需返回内容】"
+              },
+              {
+                "key": "if-modified-since/last-modified",
+                "description": "资源版本（修改时间）【如果版本一致、服务器无需返回内容】"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "二、使用servlet实现web通信",
+        "sections": [
+          {
+            "name": "1.servlet接口",
+            "blocks": [
+              {
+                "key": "call",
+                "description": "web容器在web通信过程中，调用servlet接口"
+              },
+              {
+                "key": "implement",
+                "description": "java类实现servlet接口，并在其中处理请求"
+              }
+            ]
+          },
+          {
+            "name": "2.接口内容",
+            "blocks": [
+              {
+                "key": "service",
+                "description": "（核心方法）将web请求交给java，并使用web响应接收处理结果"
+              },
+              {
+                "key": "init/destroy",
+                "description": "（很少用）创建/销毁 servlet的2个时间点"
+              }
+            ]
+          },
+          {
+            "name": "3.程序员做什么？",
+            "blocks": [
+              {
+                "key": "",
+                "description": "HttpServlet类 -> GenericServlet类 -> Servlet接口"
+              },
+              {
+                "key": "HttpServlet",
+                "description": "web容器已经用该类实现了servlet接口、并封装了常用的逻辑"
+              },
+              {
+                "key": "extends HttpServlet",
+                "description": "我们只需扩展该类，口语中常被简化为“写servlet类”"
+              }
+            ]
+          },
+          {
+            "name": "4.<servlet类, url>",
+            "blocks": [
+              {
+                "key": "",
+                "description": "http://ip:port/projectName/servletUrl"
+              },
+              {
+                "key": "服务器",
+                "description": "http://ip"
+              },
+              {
+                "key": "web容器",
+                "description": ":port"
+              },
+              {
+                "key": "项目",
+                "description": "/projectName"
+              },
+              {
+                "key": "servlet类",
+                "description": "/servletUrl"
+              }
+            ]
+          },
+          {
+            "name": "5.<servlet方法, 请求方式>",
+            "blocks": [
+              {
+                "key": "doXXX()",
+                "description": "XXX"
+              },
+              {
+                "key": "",
+                "description": "HttpServlet类定义了相关方法，与RequestMethod一一对应"
+              }
+            ]
+          },
+          {
+            "name": "6.java跟web容器如何交流",
+            "blocks": [
+              {
+                "key": "web.xml",
+                "description": "全局配置（适用于：数量少、影响广的配置，如：listener、filter）"
+              },
+              {
+                "key": "@注解",
+                "description": "单独描述（适用于：数量多、有规律的配置，如：servletUrl）"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "三、使用servlet API快速编写servlet",
+        "sections": [
+          {
+            "name": "1.在编写servlet类的过程中，常用到如下逻辑",
+            "blocks": [
+              {
+                "key": "",
+                "description": "① 从请求中 读数据"
+              },
+              {
+                "key": "",
+                "description": "② 向响应中 写数据"
+              },
+              {
+                "key": "",
+                "description": "③ 在环境中  读取配置信息 & 共享数据 & 与其它servlet配合工作"
+              },
+              {
+                "key": "",
+                "description": "④ 读写cookie"
+              },
+              {
+                "key": "",
+                "description": "⑤ 读写会话（给请求做会话标记sessionId，用sessionId关联会话）"
+              }
+            ]
+          },
+          {
+            "name": "2.针对这些逻辑，web容器提供了响应的API",
+            "blocks": [
+              {
+                "key": "① HttpServletRequest",
+                "description": ""
+              },
+              {
+                "key": "",
+                "description": "setCharacterEncoding(\"utf-8\")"
+              },
+              {
+                "key": "",
+                "description": "getParameter(\"表单中的参数名\")"
+              },
+              {
+                "key": "",
+                "description": "getParameterValues(\"表单中的参数名\")"
+              },
+              {
+                "key": "",
+                "description": "getHeader(\"header名称\")"
+              },
+              {
+                "key": "",
+                "description": "getCookies()"
+              },
+              {
+                "key": "",
+                "description": "getSession()"
+              },
+              {
+                "key": "② HttpServletResponse",
+                "description": ""
+              },
+              {
+                "key": "",
+                "description": "setCharacterEncoding(\"utf-8\")"
+              },
+              {
+                "key": "",
+                "description": "setContentType(\"text/html;charset=UTF-8\")"
+              },
+              {
+                "key": "",
+                "description": "getWriter()"
+              },
+              {
+                "key": "",
+                "description": "setHeader(\"header名称\", \"header值\")"
+              },
+              {
+                "key": "",
+                "description": "sendRedirect(\"其它url\") "
+              },
+              {
+                "key": "",
+                "description": "addCookie(Cookie对象)"
+              },
+              {
+                "key": "③ ServletContext",
+                "description": ""
+              },
+              {
+                "key": "",
+                "description": "getInitParameter(\"web.xml中的参数名\")"
+              },
+              {
+                "key": "",
+                "description": "setAttribute(\"键\", \"值\") "
+              },
+              {
+                "key": "",
+                "description": "getAttribute(\"键\")"
+              },
+              {
+                "key": "",
+                "description": "getRequestDispatcher(\"/servlet2\").forward()"
+              },
+              {
+                "key": "",
+                "description": "getRequestDispatcher(\"/servlet2\").include()"
+              },
+              {
+                "key": "④ Cookie",
+                "description": ""
+              },
+              {
+                "key": "",
+                "description": "new Cookie(\"键\", \"值\")"
+              },
+              {
+                "key": "⑤ HttpSession",
+                "description": " "
+              },
+              {
+                "key": "",
+                "description": "setAttribute(\"键\", 值)"
+              },
+              {
+                "key": "",
+                "description": "getAttribute(\"键\")"
+              },
+              {
+                "key": "",
+                "description": "invalidate()"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "四、使用listener监听事件",
+        "sections": [
+          {
+            "name": "1.listener接口",
+            "blocks": [
+              {
+                "key": "call",
+                "description": "web容器监听到事件后，调用servlet接口"
+              },
+              {
+                "key": "implement",
+                "description": "java类实现servlet接口，并在其中处理事件"
+              }
+            ]
+          },
+          {
+            "name": "2.事件有哪些",
+            "blocks": [
+              {
+                "key": "",
+                "description": "3个对象"
+              },
+              {
+                "key": "ServletRequest",
+                "description": "请求"
+              },
+              {
+                "key": "HttpSession",
+                "description": "会话"
+              },
+              {
+                "key": "ServletContext",
+                "description": "上下文"
+              },
+              {
+                "key": "",
+                "description": "2类事件"
+              },
+              {
+                "key": "LifeCycle",
+                "description": "创建/销毁"
+              },
+              {
+                "key": "AttributesChange",
+                "description": "属性的 增/删/改"
+              }
+            ]
+          },
+          {
+            "name": "3.如何告诉web容器",
+            "blocks": [
+              {
+                "key": "配置",
+                "description": "&lt;listener&gt; &lt;listener-class&gt;"
+              },
+              {
+                "key": "注解",
+                "description": "@WebListener"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "五、使用filter过滤 请求/响应",
+        "sections": [
+          {
+            "name": "1.filter接口",
+            "blocks": [
+              {
+                "key": "call",
+                "description": "web容器在调用servlet前后，调用filter接口"
+              },
+              {
+                "key": "implement",
+                "description": "java类实现filter接口，并在其中过滤 请求/响应"
+              }
+            ]
+          },
+          {
+            "name": "2.区分 请求拦截/响应拦截",
+            "blocks": [
+              {
+                "key": "chain.doFilter()",
+                "description": "作为分隔线"
+              },
+              {
+                "key": "",
+                "description": "前面的代码过滤请求，后面的代码过滤响应"
+              }
+            ]
+          },
+          {
+            "name": "3.指定要拦截的请求",
+            "blocks": [
+              {
+                "key": "url-pattern",
+                "description": "抒写方式与规则，和servletUrl完全相同，并且支持模糊匹配"
+              }
+            ]
+          },
+          {
+            "name": "4.如何告诉web容器",
+            "blocks": [
+              {
+                "key": "配置",
+                "description": "&lt;filter&gt; &lt;filter-mapping&gt;"
+              },
+              {
+                "key": "注解",
+                "description": "@WebFilter"
+              }
+            ]
+          },
+          {
+            "name": "5.如何决定多个filter的执行顺序",
+            "blocks": [
+              {
+                "key": "",
+                "description": "与web.xml中的抒写顺序一致"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "六、使用error-page统一处理错误",
+        "sections": [
+          {
+            "name": "1.如何描述程序中的错误",
+            "blocks": [
+              {
+                "key": "Exception",
+                "description": "代码是用java编写的，因此可以抛出Exception"
+              },
+              {
+                "key": "ResponseCode",
+                "description": "通信使用了http协议，因此可以发送ResponseCode"
+              }
+            ]
+          },
+          {
+            "name": "2.错误的传播过程",
+            "blocks": [
+              {
+                "key": "① 发现Exception",
+                "description": "代码错误 / throw Exception()"
+              },
+              {
+                "key": "② 记录Exception",
+                "description": "web容器用request.setAttribute()传播相关信息，同时用context.log()记录日志"
+              },
+              {
+                "key": "③ 转换ResponseCode",
+                "description": "web容器将异常对应到ResponseCode上 / response.sendError()"
+              },
+              {
+                "key": "④ 呈现 errorPage",
+                "description": "web容器输出ResponseCode对应的html页面"
+              }
+            ]
+          },
+          {
+            "name": "3.程序员如何参与？",
+            "blocks": [
+              {
+                "key": "① 发现Exception",
+                "description": "主动throw Exception"
+              },
+              {
+                "key": "② 记录Exception",
+                "description": "用request.getAttribute()读取异常信息，同时用其它方式记录日志"
+              },
+              {
+                "key": "③ 转换ResponseCode",
+                "description": "主动sendError(\"4xx/5xx\") / setStatus(\"1xx/2xx/3xx\")"
+              },
+              {
+                "key": "④ 呈现 errorPage",
+                "description": "重新指定ResponseCode对应的html页面"
+              }
+            ]
+          },
+          {
+            "name": "4.如何参与②和④",
+            "codeSnippets": [
+              {
+                "description": "在web.xml中使用 &lt;error-page&gt; 来映射",
+                "url": "/codeSnippets/servletJsp/errorPage.xml"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "注释": [
+    "1.servlet与jdbc同等重要，没有servlet就不能进行web通信，没有jdbc就不能访问数据库",
+    "2.定义接口是java语言扩展自己能力的一项手段，其实就是从调用接口的软件中“借力”"
+  ]
+}
