@@ -361,7 +361,7 @@
     ]
   },
   "注释": [
-    "1.",
-    "2."
+    "1.eclipse的项目临时目录： workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0",
+    "2.在eclipse的项目临时目录，可以查看jsp被编译后生成的servlet类"
   ]
 }
