@@ -10,6 +10,11 @@ body {
     content: "实例：" !important;
 }
 
+.bs-docs-header h1,
+.bs-docs-header p {
+    margin-right: 100px;
+}
+
 .bs-docs-section p,
 /*.bs-docs-section ul, 
 .bs-docs-section ol, */

@@ -357,6 +357,62 @@
             ]
           }
         ]
+      },
+      {
+        "name": "七、锦上添花",
+        "sections": [
+          {
+            "name": "1.自定义标签（控件）",
+            "blocks": [
+              {
+                "key": "本质",
+                "description": "tag &rarr; class"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "自定义标签的步骤",
+                "url": "/codeSnippets/servletJsp/customTag.java"
+              }
+            ]
+          },
+          {
+            "name": "2.JSTL（apache官方的控件库）",
+            "blocks": [
+              {
+                "key": "下载",
+                "description": "https://tomcat.apache.org/download-taglibs.cgi"
+              },
+              {
+                "key": "安装",
+                "description": "spec.jar和impl.jar 放在 /WEB-INF/lib下，并加入BuildPath"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "常用标签",
+                "url": "/codeSnippets/servletJsp/jstl.jsp"
+              }
+            ]
+          },
+          {
+            "name": "3.EL表达式",
+            "blocks": [
+              {
+                "key": "目的",
+                "description": "简化<%=bean.get属性() %>"
+              },
+              {
+                "key": "外部语法",
+                "description": "<%= %> &rarr; ${ }"
+              },
+              {
+                "key": "内部语法",
+                "description": "bean.get属性() &rarr; bean.属性"
+              }
+            ]
+          }
+        ]
       }
     ]
   },

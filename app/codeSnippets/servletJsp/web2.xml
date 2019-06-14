@@ -1,0 +1,19 @@
+<login-config>
+	<!-- BASIC -->
+	<!-- DIGEST(摘要算法加密) -->
+	<!-- FORM(定制登录页面：j_security_check, j_username, j_password) -->
+	<auth-method>FORM</auth-method>
+	<form-login-config>
+		<form-login-page>/tomcatLogin.html</form-login-page>
+		<form-error-page>/401.html</form-error-page>
+	</form-login-config>
+</login-config>
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>404页面</web-resource-name>
+		<url-pattern>/404.html</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>test</role-name>
+	</auth-constraint>
+</security-constraint>

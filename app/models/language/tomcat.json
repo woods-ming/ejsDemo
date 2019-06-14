@@ -1,0 +1,253 @@
+{
+  "题目": "Tomcat",
+  "摘要": "给Java提供web服务，还能提供数据连接池和简单权限控制等服务",
+  "关键字": "tomcat",
+  "正文": {
+    "chapters": [
+      {
+        "name": "一、安装Tomcat",
+        "sections": [
+          {
+            "name": "1.绿色安装包",
+            "blocks": [
+              {
+                "key": "下载",
+                "description": "http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-windows-x64.zip"
+              },
+              {
+                "key": "解压",
+                "description": "不需要管理员权限的目录"
+              }
+            ]
+          },
+          {
+            "name": "2.环境变量",
+            "blocks": [
+              {
+                "key": "CATALINA_HOME",
+                "description": "{tomcat目录}"
+              },
+              {
+                "key": "PATH",
+                "description": "%CATALINA_HOME%\bin;"
+              }
+            ]
+          },
+          {
+            "name": "3.验证",
+            "blocks": [
+              {
+                "key": "启动",
+                "description": "cmd/startup"
+              },
+              {
+                "key": "浏览器",
+                "description": "http://localhost:8080"
+              }
+            ]
+          },
+          {
+            "name": "4.Eclipse配置",
+            "blocks": [
+              {
+                "key": "指定web服务器",
+                "description": "Server\\Runtime Environments"
+              },
+              {
+                "key": "浏览器",
+                "description": "http://localhost:8080"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "二、数据库连接池dbcp",
+        "sections": [
+          {
+            "name": "1.直接打开/关闭数据连接，有什么问题？",
+            "blocks": [
+              {
+                "key": "数量上限",
+                "description": "数据库能够接受的连接数量有限，超出后会拒绝连接"
+              },
+              {
+                "key": "性能损耗",
+                "description": "打开关闭操作，消耗资源和时间"
+              }
+            ]
+          },
+          {
+            "name": "2.解决思路",
+            "blocks": [
+              {
+                "key": "控制连接数量",
+                "description": "当连接数量达到指定数量后，不再打开新连接"
+              },
+              {
+                "key": "复用数据连接",
+                "description": "几个操作共用一个连接，减少打开关闭操作"
+              }
+            ]
+          },
+          {
+            "name": "3.用连接池统一管理",
+            "blocks": [
+              {
+                "key": "控制数量",
+                "description": "何时打开新连接，何时关闭旧连接"
+              },
+              {
+                "key": "标记状态",
+                "description": "哪些连接正在使用，哪些连接还在空闲"
+              },
+              {
+                "key": "获取连接",
+                "description": "将空闲状态的数据连接，提供给用户"
+              }
+            ]
+          },
+          {
+            "name": "4.如何使用Tomcat的数据连接池？",
+            "blocks": [
+              {
+                "key": "配置context.xml",
+                "description": "tomcat / eclipse 的conf目录"
+              },
+              {
+                "key": "数据库驱动.jar",
+                "description": "tomcat / eclipse 的lib目录"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "配置context.xml",
+                "url": "/codeSnippets/servletJsp/context.xml"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "三、JNDI查找数据连接池对象",
+        "sections": [
+          {
+            "name": "1.作用（类似DNS）",
+            "blocks": [
+              {
+                "key": "",
+                "description": "Java Naming and Directory Interface"
+              },
+              {
+                "key": "起名",
+                "description": "对象 -> 名字"
+              },
+              {
+                "key": "查找",
+                "description": "名字 -> 对象"
+              }
+            ]
+          },
+          {
+            "name": "2.如何使用？",
+            "blocks": [
+              {
+                "key": "配置web.xml",
+                "description": "引用 数据库连接池对象"
+              },
+              {
+                "key": "java代码",
+                "description": "查找 数据连接池对象（前缀：java:/comp/env/）"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "在web.xml中，引用 数据库连接池对象",
+                "url": "/codeSnippets/servletJsp/web1.xml"
+              },
+              {
+                "description": "在servlet中，查找 数据连接池对象",
+                "url": "/codeSnippets/servletJsp/jndi.java"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "四、简单权限控制",
+        "sections": [
+          {
+            "name": "1.问题",
+            "blocks": [
+              {
+                "key": "区分用户",
+                "description": "知道 谁在使用系统"
+              },
+              {
+                "key": "区别对待",
+                "description": "不同的人，分配不同的资源"
+              }
+            ]
+          },
+          {
+            "name": "2.解决思路",
+            "blocks": [
+              {
+                "key": "身份认证",
+                "description": "通过用户身上的唯一信息，识别用户"
+              },
+              {
+                "key": "授权",
+                "description": "给用户分配资源，并在使用前检查"
+              }
+            ]
+          },
+          {
+            "name": "3.由以下功能来实现",
+            "blocks": [
+              {
+                "key": "注册",
+                "description": "建立 <用户，角色> 关系"
+              },
+              {
+                "key": "登录",
+                "description": "获取用户相关的信息"
+              },
+              {
+                "key": "授权",
+                "description": "建立/检查 <角色，资源> 关系"
+              }
+            ]
+          },
+          {
+            "name": "4.如何使用Tomcat内置的权限控制服务？",
+            "blocks": [
+              {
+                "key": "配置tomcat-users.xml",
+                "description": "实现 注册功能"
+              },
+              {
+                "key": "配置web.xml",
+                "description": "实现 登录和授权 功能"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "在tomcat-users.xml中，建立 <用户，角色> 关系",
+                "url": "/codeSnippets/servletJsp/tomcat-users.xml"
+              },
+              {
+                "description": "在web.xml中，建立 <角色，资源> 关系，指定登录方式",
+                "url": "/codeSnippets/servletJsp/web2.xml"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "注释": [
+    "1.tomcat作为java的web容器，不仅具备web通信的能力，还可以扩展各种其它能力：数据连接池、JNDI、权限控制 ...",
+    "2.web.xml是tomcat了解java项目的清单，JNDI是java项目获取tomcat内各种对象的方法"
+  ]
+}
