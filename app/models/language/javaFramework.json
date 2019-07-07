@@ -1,0 +1,47 @@
+{
+    "题目": "Java Framework",
+    "摘要": "使用框架简化java开发过程",
+    "关键字": "java Framework, maven, spring, mybatis",
+    "正文": {
+        "chapters": [
+            {
+                "name": "一、第一章",
+                "sections": [
+                    {
+                        "name": "1.第一节",
+                        "blocks": [
+                            {
+                                "key": "键",
+                                "description": "值"
+                            },
+                            {
+                                "key": "键",
+                                "description": "值"
+                            }
+                        ],
+                        "paragraphs": [
+                            "第一段",
+                            "第二段"
+                        ],
+                        "codeSnippets": [
+                            {
+                                "description": "代码描述",
+                                "url": "代码路径"
+                            }
+                        ],
+                        "images": [
+                            {
+                                "alt": "图片说明",
+                                "url": "图片路径"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "注释": [
+        "1.",
+        "2."
+    ]
+}

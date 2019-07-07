@@ -1,1271 +1,1345 @@
 {
-    "题目": "Java",
-    "摘要": "如何学习Java，了解基础概念、基本语法、及常用API",
-    "关键字": "Java入门, Java基础, JavaAPI",
-    "正文":
-    {
-        "chapters": [
-        {
-            "name": "一、Java简介",
-            "sections": [
-            {
-                "name": "1.what（Java是什么，用来干什么？）",
-                "blocks": [
-                {
-                    "key": "面向对象编程语言",
-                    "description": "【适合】编写服务端应用程序，【偶尔】用于编写桌面应用程序"
-                },
-                {
-                    "key": "web应用的组成",
-                    "description": "界面交互(Html/...) —— 业务逻辑(<code>Java</code>/...) —— 数据存取(SqlServer/...)"
-                }]
-            },
-            {
-                "name": "2.why（为什么使用它？ 下列广告词）",
-                "blocks": [
-                {
-                    "key": "简单",
-                    "description": "java是高级语言（其它：汇编、机器语言），表达能力强 <br />从c++发展而来，大部分语法规则相同 <br />剔除了一些复杂的语法（指针【容易造成内存泄漏、内存溢出】、多重继承等） <br />增加了一些功能（自动垃圾回收：创建对象时，自动分配内存；使用完毕，自动释放内存）"
-                },
-                {
-                    "key": "面向对象",
-                    "description": "Object（事物） Oriented（看待） <br />如何解决问题，取决于如何看待问题，面向对象与普通人看待世界的方式一致 <br />封装（隐藏细节）、继承（复用）、多态（同一个行为，在不同事物身上表现不同）"
-                },
-                {
-                    "key": "平台独立",
-                    "description": "编译后的类文件是跨平台的，可以在任何安装了jvm的计算机上运行"
-                },
-                {
-                    "key": "可移植",
-                    "description": "源码无需更改，java虚拟机掩盖了不同机器的差别"
-                },
-                {
-                    "key": "分布式",
-                    "description": "通过网络编程，将应用程序分布在多台计算机上（QQ、微信）"
-                },
-                {
-                    "key": "安全",
-                    "description": "Java 安全模型基于一个可定制的“沙盒”，程序可在其中安全运行，对系统或用户无潜在风险"
-                },
-                {
-                    "key": "健壮",
-                    "description": "程序不会轻易崩溃。通过异常处理（预案），可以快速恢复正常流程"
-                },
-                {
-                    "key": "多线程",
-                    "description": "同时执行多个任务"
-                }]
-            },
-            {
-                "name": "3.how（怎样学习Java？）",
-                "blocks": [
-                {
-                    "key": "学会",
-                    "description": "基本套路（如：安装java环境、编译、运行、调试）"
-                },
-                {
-                    "key": "理解",
-                    "description": "基础概念（如：面向对象、类、接口、继承、异常）"
-                },
-                {
-                    "key": "掌握",
-                    "description": "基本语法（如：定义类、接口、枚举，对类成员做访问限制，流程控制）"
-                },
-                {
-                    "key": "熟悉",
-                    "description": "常用API（如：流、集合、jdbc）"
-                }]
-            },
-            {
-                "name": "4.知识结构一览",
-                "images": [
-                {
-                    "alt": "基础概念",
-                    "url": "/images/java/java.png"
-                },
-                {
-                    "alt": "常用API",
-                    "url": "/images/java/API.png"
-                },
-                {
-                    "alt": "GUI",
-                    "url": "/images/java/gui.png"
-                }]
-            }]
-        },
-        {
-            "name": "二、基本套路",
-            "sections": [
-            {
-                "name": "1.安装jdk",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "①下载（也可以从其它电脑，直接复制jdk目录）"
-                },
-                {
-                    "key": "下载地址",
-                    "description": "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
-                },
-                {
-                    "key": "",
-                    "description": "②配置环境变量"
-                },
-                {
-                    "key": "JAVA_HOME",
-                    "description": "{jdk的目录}"
-                },
-                {
-                    "key": "PATH",
-                    "description": "<code>%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;</code>"
-                },
-                {
-                    "key": "CLASS_PATH",
-                    "description": "<code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;</code>"
-                },
-                {
-                    "key": "",
-                    "description": "（<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换）"
-                },
-                {
-                    "key": "",
-                    "description": "③验证环境（cmd只能读取到打开前的环境变量，如果做了修改，必须打开新窗口）"
-                },
-                {
-                    "key": "命令行",
-                    "description": "<code>java -version</code>"
-                }]
-            },
-            {
-                "name": "2.编译",
-                "blocks": [
-                {
-                    "key": "命令行",
-                    "description": "①进入{项目根目录}"
-                },
-                {
-                    "key": "",
-                    "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹【若省略，默认在同一目录】}"
-                },
-                {
-                    "key": "",
-                    "description": "（会在{目标文件夹}，生成同名的类文件：{包名}.{类名}）"
-                }]
-            },
-            {
-                "name": "3.运行",
-                "blocks": [
-                {
-                    "key": "命令行",
-                    "description": "①进入{目标文件夹}"
-                },
-                {
-                    "key": "",
-                    "description": "②<code>java</code> {包名}.{类名}"
-                }]
-            },
-            {
-                "name": "4.打包",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "1）压缩"
-                },
-                {
-                    "key": "命令行",
-                    "description": "①进入 {要压缩的目录} 的上一级"
-                },
-                {
-                    "key": "",
-                    "description": "②<code>jar -cvf</code> {压缩文件名}.jar {要压缩的目录}"
-                },
-                {
-                    "key": "",
-                    "description": "2）解压"
-                },
-                {
-                    "key": "",
-                    "description": "①将 {压缩文件名}.jar 复制到 {解压目录}"
-                },
-                {
-                    "key": "命令行",
-                    "description": "①进入 {解压目录}"
-                },
-                {
-                    "key": "",
-                    "description": "②<code>jar -xvf</code> {压缩文件名}.jar"
-                }]
-            },
-            {
-                "name": "5.eclipse安装配置",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "①下载并解压，在桌面创建快捷方式"
-                },
-                {
-                    "key": "下载地址",
-                    "description": "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip"
-                },
-                {
-                    "key": "",
-                    "description": "②配置"
-                },
-                {
-                    "key": "工作目录",
-                    "description": "File\\Switch WorkSpace"
-                },
-                {
-                    "key": "选择jdk目录",
-                    "description": "Preference\\Java\\Installed JREs"
-                },
-                {
-                    "key": "选择编码格式 UTF-8",
-                    "description": "Preference\\General\\WorkSpace\\Text file encoding"
-                },
-                {
-                    "key": "",
-                    "description": "③快捷键"
-                },
-                {
-                    "key": "智能提示",
-                    "description": "<code>Alt</code> + <code>/</code>"
-                },
-                {
-                    "key": "注释",
-                    "description": "<code>/*</code> + <code>回车</code>"
-                }]
-            }]
-        },
-        {
-            "name": "三、基础概念",
-            "sections": [
-            {
-                "name": "1.java的体系结构",
-                "blocks": [
-                {
-                    "key": "源文件",
-                    "description": "程序员写的代码，保存为Xxx.java"
-                },
-                {
-                    "key": "类文件",
-                    "description": "javac编译源文件，生成Xxx.class"
-                },
-                {
-                    "key": "JVM(java虚拟机)",
-                    "description": "类加载器：【动态加载】所需的类文件 <br />字节码校验器：【检查】类文件的内容，确保字节码安全执行 <br />执行引擎：【解释】类文件中的字节码 <br />JIT编译：【编译】类文件中的字节码 -> 机器码（执行速度更快）"
-                },
-                {
-                    "key": "API/类库",
-                    "description": "JRE中自带的java类文件（类似c语言的函数库）"
-                }]
-            },
-            {
-                "name": "2.java的开发工具包",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "（查看jdk目录的bin文件夹）"
-                },
-                {
-                    "key": "<code>javac</code>",
-                    "description": "编译（解决中文乱码：-encoding utf-8）"
-                },
-                {
-                    "key": "<code>java</code>",
-                    "description": "运行（在package所在的目录，使用java命令时带上包名）"
-                },
-                {
-                    "key": "<code>jar</code>",
-                    "description": "打包（相当于zip，可以压缩jar/war包）"
-                },
-                {
-                    "key": "<code>javadoc</code>",
-                    "description": "根据代码注释生成文档"
-                },
-                {
-                    "key": "<code>...</code>",
-                    "description": ""
-                },
-                {
-                    "key": "",
-                    "description": "①JDK自带 JRE(java运行环境) = JVM + API"
-                },
-                {
-                    "key": "",
-                    "description": "②生产环境不需要JDK，只需单独安装JRE"
-                }]
-            },
-            {
-                "name": "3.java程序的构建块",
-                "images": [
-                {
-                    "alt": "类和接口",
-                    "url": "/images/java/java_building_block.png"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "代码模版",
-                    "url": "/codeSnippets/java/basicBlock.java"
-                }]
-            },
-            {
-                "name": "4.数据类型",
-                "blocks": [
-                {
-                    "key": "原生数据类型",
-                    "description": "告诉计算机，要开辟的多大内存空间，可进行哪类运算（值类型，不在类的体系中）"
-                },
-                {
-                    "key": "包装类",
-                    "description": "Java作者特意定义了一些类，专门描述原生数据类型 <br />（得到2个好处：①将原生数据纳入到类的体系中 ②原生数据使用起来更方便）"
-                },
-                {
-                    "key": "自定义的类",
-                    "description": "描述事物的特征和行为（面向对象程序中，一切都基于类）"
-                },
-                {
-                    "key": "数组",
-                    "description": "定义一组类型相同的变量，单个变量是 <code>数组名[index]</code>"
-                },
-                {
-                    "key": "枚举",
-                    "description": "取值范围有限，把它列举出来"
-                },
-                {
-                    "key": "Optional类",
-                    "description": "表示可有可无（它用来包装对象，明确其值可能为null）"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "1）数组（当成一组变量）",
-                    "url": "/codeSnippets/java/array.java"
-                },
-                {
-                    "description": "2）枚举",
-                    "url": "/codeSnippets/java/enum.java"
-                },
-                {
-                    "description": "3）字符串String",
-                    "url": "/codeSnippets/java/string.java"
-                },
-                {
-                    "description": "4）日期LocalDateTime",
-                    "url": "/codeSnippets/java/localDateTime.java"
-                }]
-            },
-            {
-                "name": "5.值",
-                "blocks": [
-                {
-                    "key": "字面值",
-                    "description": "原生数据类型对应的值（计算机认识的基础数据）"
-                },
-                {
-                    "key": "对象",
-                    "description": "类对应的值（创建对象要调用构造函数）"
-                }]
-            },
-            {
-                "name": "6.访问限制",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "1）访问说明符（限制访问范围：能不能用？）"
-                },
-                {
-                    "key": "<code>public</code>",
-                    "description": "（类/成员）完全公开"
-                },
-                {
-                    "key": "<code>protected</code>",
-                    "description": "（成员）留给自己和子类"
-                },
-                {
-                    "key": "<code>private</code>",
-                    "description": "（成员）只留给自己"
-                },
-                {
-                    "key": "<code>[默认]</code>",
-                    "description": "（类/成员）同一个包内公开"
-                },
-                {
-                    "key": "",
-                    "description": "2）访问修饰符（限制如何使用：怎么用？）"
-                },
-                {
-                    "key": "<code>final</code>",
-                    "description": "（变量/方法/类）最终，不能修改"
-                },
-                {
-                    "key": "<code>static</code>",
-                    "description": "（属性/方法/内部类）静态，一直都在、不需要实例化就能访问"
-                },
-                {
-                    "key": "<code>abstract</code>",
-                    "description": "（方法/类）抽象，因为不真实、不能实例化"
-                },
-                {
-                    "key": "<code>transient</code>",
-                    "description": "（属性）短暂，因为不长久、无需序列化"
-                },
-                {
-                    "key": "<code>synchronized</code>",
-                    "description": "（变量/方法）同步，排队、强迫多个线程依次访问"
-                },
-                {
-                    "key": "<code>volatile</code>",
-                    "description": "（变量）易变，状态不稳定、需要实时取值"
-                },
-                {
-                    "key": "<code>strictfp</code>",
-                    "description": "（方法/类）严格，精确的计算小数"
-                },
-                {
-                    "key": "<code>native</code>",
-                    "description": "（方法）当地，不是我实现的、由其它语言编写"
-                }]
-            },
-            {
-                "name": "7.面向对象的三大特性",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "1）封装"
-                },
-                {
-                    "key": "",
-                    "description": "隐藏实现细节（数据和算法都在类的内部）"
-                },
-                {
-                    "key": "",
-                    "description": "2）继承"
-                },
-                {
-                    "key": "<code>extends</code>",
-                    "description": "扩展基类的属性和方法"
-                },
-                {
-                    "key": "<code>implements</code>",
-                    "description": "实现接口中定义的方法"
-                },
-                {
-                    "key": "",
-                    "description": "3）多态"
-                },
-                {
-                    "key": "",
-                    "description": "同一个行为（方法名），具有多种不同的表现形态（实际上是不同的方法）"
-                },
-                {
-                    "key": "静态多态性",
-                    "description": "方法重载（同名，参数不同，在同一类中）"
-                },
-                {
-                    "key": "动态多态性",
-                    "description": "方法重写（同名，参数相同，在派生类中）"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "1）封装",
-                    "url": "/codeSnippets/java/encapsulation.java"
-                },
-                {
-                    "description": "2）继承",
-                    "url": "/codeSnippets/java/inheritance.java"
-                },
-                {
-                    "description": "3）多态",
-                    "url": "/codeSnippets/java/polymorphic.java"
-                }]
-            },
-            {
-                "name": "8.异常处理",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "程序执行期间，发生的执行流中断的情况（就是程序挂了）"
-                },
-                {
-                    "key": "Error",
-                    "description": "严重，程序无法解决，只能中断"
-                },
-                {
-                    "key": "Exception",
-                    "description": "轻微，可以恢复正常，继续运行"
-                },
-                {
-                    "key": "",
-                    "description": "（编写异常处理代码的思维过程）"
-                },
-                {
-                    "key": "1）预判异常",
-                    "description": "感觉这段代码，会出哪类问题"
-                },
-                {
-                    "key": "2）定义异常",
-                    "description": "描述这个问题（通常已经在类库中了/没有的话就继承并定义一个）"
-                },
-                {
-                    "key": "3）处理异常",
-                    "description": "能够处理：捕获（很多时候是记日志：暂时忽略，由运维人员定期查看分析原因） <br />处理不了：抛出"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "1）异常处理",
-                    "url": "/codeSnippets/java/CatchException.java"
-                },
-                {
-                    "description": "2）抛出异常",
-                    "url": "/codeSnippets/java/ThrowException.java"
-                }]
-            },
-            {
-                "name": "9.断言",
-                "blocks": [
-                {
-                    "key": "测试的本质",
-                    "description": "现实 ?= 期望"
-                },
-                {
-                    "key": "Java中的断言",
-                    "description": "这个表达式，在java中的语法"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "断言默认是关闭的，运行时加上参数：java -ea Assertion",
-                    "url": "/codeSnippets/java/Assertion.java"
-                }]
-            },
-            {
-                "name": "10.类型转换",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "1）原生数据类型（值）"
-                },
-                {
-                    "key": "",
-                    "description": "（本质：内存空间大小的切换）"
-                },
-                {
-                    "key": "隐式转换",
-                    "description": "自动转换（小空间 【无损】切换到 大空间）"
-                },
-                {
-                    "key": "显式转换",
-                    "description": "强制转换（大空间 【有损】截断到 小空间）"
-                },
-                {
-                    "key": "",
-                    "description": "2）复合数据类型（引用）"
-                },
-                {
-                    "key": "",
-                    "description": "（本质：粗略还是精确）"
-                },
-                {
-                    "key": "向上转型",
-                    "description": "父类可以引用子类对象（因为：子类是对父类的细分）"
-                },
-                {
-                    "key": "向下转型",
-                    "description": "子类对象被父类引用后，还可以强制转换回本身的类型"
-                }]
-            },
-            {
-                "name": "11.函数式编程",
-                "blocks": [
-                {
-                    "key": "数据",
-                    "description": "是变量的值"
-                },
-                {
-                    "key": "逻辑",
-                    "description": "是方法的值"
-                },
-                {
-                    "key": "",
-                    "description": "如果逻辑可以像数据一样，能被传来传去，该多好？"
-                },
-                {
-                    "key": "函数式接口",
-                    "description": "只包含一个方法的接口（传递对象就像传递方法）"
-                },
-                {
-                    "key": "Lambda表达式",
-                    "description": "实现函数式接口的匿名类，可以简化成匿名方法"
-                },
-                {
-                    "key": "常用的函数式接口",
-                    "description": "<code>Predicate / Consumer / Supplier / Function</code>"
-                },
-                {
-                    "key": "方法引用",
-                    "description": "任意已经存在的方法，可以用特殊语法转换为Lambda表达式"
-                },
-                {
-                    "key": "静态方法引用",
-                    "description": "类::方法 <code>==</code> ()->类.方法()"
-                },
-                {
-                    "key": "特定对象的方法引用",
-                    "description": "对象::方法 <code>==</code> ()->对象.方法()"
-                },
-                {
-                    "key": "任意对象的方法引用",
-                    "description": "类::方法 <code>==</code> (类 对象)->对象.方法()"
-                },
-                {
-                    "key": "构造方法引用",
-                    "description": "类::new <code>==</code> (参数)-> new 类(参数)"
-                }]
-            }]
-        },
-        {
-            "name": "四、基本语法",
-            "sections": [
-            {
-                "name": "1.基本数据类型",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "1）原生数据类型"
-                },
-                {
-                    "key": "整数",
-                    "description": "<code>byte</code>(8bit), <code>short</code>(2byte), <code>int</code>(4byte) ,<code>long</code>(8byte)"
-                },
-                {
-                    "key": "小数",
-                    "description": "<code>float</code>(4byte), <code>double</code>(8byte)"
-                },
-                {
-                    "key": "字符",
-                    "description": "<code>char</code>(1byte，字符和数字可以相互转换，规则是ASCII码)"
-                },
-                {
-                    "key": "布尔",
-                    "description": "<code>boolean</code>"
-                },
-                {
-                    "key": "",
-                    "description": "2）包装类"
-                },
-                {
-                    "key": "整数",
-                    "description": "<code>Byte</code>, <code>Short</code>, <code>Integer</code> ,<code>Long</code>"
-                },
-                {
-                    "key": "小数",
-                    "description": "<code>Float</code>, <code>Double</code>"
-                },
-                {
-                    "key": "字符",
-                    "description": "<code>Character</code>"
-                },
-                {
-                    "key": "布尔",
-                    "description": "<code>Boolean</code>"
-                },
-                {
-                    "key": "",
-                    "description": "3）字面值"
-                },
-                {
-                    "key": "二进制（前缀）",
-                    "description": "<code>0b</code>"
-                },
-                {
-                    "key": "八进制（前缀）",
-                    "description": "<code>0</code>"
-                },
-                {
-                    "key": "十六进制（前缀）",
-                    "description": "<code>0x</code>"
-                },
-                {
-                    "key": "long型（后缀）",
-                    "description": "<code>L</code>"
-                },
-                {
-                    "key": "float型（后缀）",
-                    "description": "<code>f</code>"
-                },
-                {
-                    "key": "double型（后缀）",
-                    "description": "<code>d</code>（可以省略，十进制数字默认是double型）"
-                },
-                {
-                    "key": "char型",
-                    "description": "<code>''</code>"
-                },
-                {
-                    "key": "boolean型",
-                    "description": "<code>true/false</code>"
-                }]
-            },
-            {
-                "name": "2.运算符",
-                "blocks": [
-                {
-                    "key": "位运算符",
-                    "description": "<code>&</code> <code>|</code> <code>~</code> <code>^</code> <code><<</code> <code>>></code>"
-                },
-                {
-                    "key": "算数运算符",
-                    "description": "<code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code> <code>++</code> <code>--</code>"
-                },
-                {
-                    "key": "比较运算符",
-                    "description": "<code>==</code> <code>!=</code> <code>></code> <code>>=</code> <code><</code> <code><=</code>"
-                },
-                {
-                    "key": "逻辑运算符",
-                    "description": "<code>&&</code> <code>||</code> <code>!</code>"
-                },
-                {
-                    "key": "赋值运算符",
-                    "description": "<code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code>"
-                },
-                {
-                    "key": "三元运算符",
-                    "description": "<code>布尔 ? 选项1 ：选项2</code>"
-                },
-                {
-                    "key": "运算符优先级",
-                    "description": "括号 > 一元运算符 > 算数运算符 > 比较运算符 > 逻辑运算符 > 赋值运算符"
-                }]
-            },
-            {
-                "name": "3.流程控制语句",
-                "codeSnippets": [
-                {
-                    "description": "1）分支",
-                    "url": "/codeSnippets/java/branchControl.java"
-                },
-                {
-                    "description": "2）循环",
-                    "url": "/codeSnippets/java/loopControl.java"
-                }]
-            }]
-        },
-        {
-            "name": "五、常用的API和类",
-            "sections": [
-            {
-                "name": "1.正则表达式",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "描述一段文本中，字符的组合规律（与编程语言无关）"
-                },
-                {
-                    "key": "",
-                    "description": "抽象成 “模式*重复次数”（模式可以看作字符的取值范围）"
-                },
-                {
-                    "key": "",
-                    "description": "【模式中的特殊字符】"
-                },
-                {
-                    "key": "",
-                    "description": "<code>&nbsp.</code>任意单个字符（换行除外） <br /><code>\\s</code>空白字符 <br /><code>\\S</code>非空白字符 <br /><code>\\n</code>换行 <br /><code>\\r</code>回车 <br /><code>&nbsp^</code>开始位置 <br /><code>&nbsp$</code>结束位置 <br /><code>[]</code>取值范围"
-                },
-                {
-                    "key": "",
-                    "description": "【重复次数】"
-                },
-                {
-                    "key": "",
-                    "description": "<code>?</code>[0, 1] <br /><code>+</code>[1,正无穷) <br /><code>*</code>[0,正无穷) <br /><code>{n}</code>n次 <br /><code>{n,}</code>[n,正无穷) <br /><code>{n, m}</code>[n, m]"
-                },
-                {
-                    "key": "",
-                    "description": "【限定符】（当重复次数是一个范围，比较含糊的时候，会用到它！）"
-                },
-                {
-                    "key": "",
-                    "description": "Greedy贪婪（重复次数后什么都不加）     从最大次数开始匹配（若匹配不上，递减次数再尝试）"
-                },
-                {
-                    "key": "",
-                    "description": "Reluctant懒惰（重复次数后加 ?）                从最小次数开始匹配（若匹配不上，递增次数再尝试）"
-                },
-                {
-                    "key": "",
-                    "description": "Possessive独占（重复次数后加 +）                只用最大次数开始匹配"
-                },
-                {
-                    "key": "why",
-                    "description": "方便对文本进行 “匹配、查找、替换”"
-                },
-                {
-                    "key": "how",
-                    "description": "使用<code>Pattern</code>编译正则表达式，使用<code>Matcher</code>类完成“匹配、查找、替换”"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "Java处理正则表达式的套路",
-                    "url": "/codeSnippets/java/regularExp.java"
-                }]
-            },
-            {
-                "name": "2.本地化",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "应用程序根据用户 “使用的语言、所在的国家” ，自动切换 “日期/货币/文本” 的显示格式"
-                },
-                {
-                    "key": "why",
-                    "description": "写一份程序，可以由多个国家的用户使用"
-                },
-                {
-                    "key": "how",
-                    "description": "输出 “日期/货币/数字” 时，使用 (语言, 国家) 进行格式化；"
-                },
-                {
-                    "key": "",
-                    "description": "提前定义好各种语言字典（资源束文件），根据用户使用的语言，在字典中翻译后再输出；"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "Java本地化的套路",
-                    "url": "/codeSnippets/java/localization.java"
-                }]
-            },
-            {
-                "name": "3.泛型",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "将类/方法 中用到的数据类型 参数化"
-                },
-                {
-                    "key": "why",
-                    "description": "多种数据结构，复用同一个算法"
-                },
-                {
-                    "key": "how",
-                    "description": "将类中使用的类型 --抽象成--> 变量"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "泛型的定义和使用方式",
-                    "url": "/codeSnippets/java/GenericType.java"
-                }]
-            },
-            {
-                "name": "4.集合接口",
-                "images": [
-                {
-                    "alt": "Collection",
-                    "url": "/images/java/collection.png"
-                }],
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "定义处理集合元素的方式"
-                },
-                {
-                    "key": "why",
-                    "description": "统一集合元素的处理操作，并能适应不同复杂程度的应用场景"
-                },
-                {
-                    "key": "how",
-                    "description": "定义多种复杂程度的集合接口，并提供相应的实现类"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "集合接口的分类和异同",
-                    "url": "/codeSnippets/java/collectionInterface.java"
-                }]
-            },
-            {
-                "name": "5.集合元素排序",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "给集合元素排序"
-                },
-                {
-                    "key": "why",
-                    "description": "统一并简化 集合元素的排序"
-                },
-                {
-                    "key": "how",
-                    "description": "分工：<code>Comparable/Comparator</code>描述两个样本元素如何比较，<code>Collections.sort()</code>根据比较规则进行排序"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "集合排序用到的接口和方法",
-                    "url": "/codeSnippets/java/collectionSort.java"
-                }]
-            },
-            {
-                "name": "6.集合元素处理",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "处理集合元素：筛选、排序、分页、映射"
-                },
-                {
-                    "key": "why",
-                    "description": "统一并简化 对集合元素的处理"
-                },
-                {
-                    "key": "how",
-                    "description": "分工：<code>Stream API</code>负责将集合放到流水线上，<code>Lambda表达式</code>描述如何处理集合元素"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "Stream API",
-                    "url": "/codeSnippets/java/streamAPI.java"
-                }]
-            },
-            {
-                "name": "7.JDBC",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "定义java与数据库通信的一套API"
-                },
-                {
-                    "key": "why",
-                    "description": "能够让程序员用一套代码，使用不同的数据库"
-                },
-                {
-                    "key": "how",
-                    "description": "各数据库厂商编写自己的java类、实现这套api，这些类打成jar包后，就是数据库驱动"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "JDBC的使用套路",
-                    "url": "/codeSnippets/java/JDBC.java"
-                }]
-            },
-            {
-                "name": "8.线程",
-                "images": [
-                {
-                    "alt": "线程状态切换",
-                    "url": "/images/java/thread.png"
-                }],
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "编写程序的目的是完成一个大的项目目标，这个大的项目目标通常被分解为若干小任务，有些小任务彼此不相关、可以各自独立完成（它们可以用线程来实现）。整个程序运行起来后，被叫做进程；默认的控制流是主线程，主线程可以创建若干同时运行的子线程，线程是程序内的单序列控制流、彼此独立运行、共享进程的资源"
-                },
-                {
-                    "key": "why",
-                    "description": "【同时】执行多个任务（省时间）"
-                },
-                {
-                    "key": "how",
-                    "description": "Java使用Runnable接口和Thread类来识别线程，然后对它们做特殊处理：在微观层面，把每个线程的代码切碎，让cup轮流调用；在宏观层面，由于切换足够块，看起来是在各自独立运行"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "线程如何创建、使用？",
-                    "url": "/codeSnippets/java/thread.java"
-                }]
-            },
-            {
-                "name": "9.线程同步",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "多个线程【排队】使用共享资源"
-                },
-                {
-                    "key": "why",
-                    "description": "如果多个线程之间互不干扰，各自干自己的事情，永远不会出现问题；当多线程共用了某个资源后，如果一个没用完，另一个又来干扰，会扰乱资源的状态；而如果线程的逻辑依赖了资源的状态，还会使得线程运行错误的逻辑；无论是资源状态，还是逻辑错误都违背了程序的本意，应该避免!"
-                },
-                {
-                    "key": "how",
-                    "description": "使用synchronized给资源或方法加锁"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "线程如何同步？",
-                    "url": "/codeSnippets/java/threadSynchronize.java"
-                }]
-            },
-            {
-                "name": "10.线程通信",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "多个线程【轮流】使用共享资源"
-                },
-                {
-                    "key": "why",
-                    "description": "多线程共享资源有这样一种场景：一部分线程（消费者）消耗资源，一部分线程（生产者）补充资源；当资源耗尽时，消费者线程卡死在共享资源上，无法继续运行，由于它获取了资源锁，生产者线程只能排队等待，也被卡死，这是一种双输的局面，根本原因是消费者和生产者没有沟通。"
-                },
-                {
-                    "key": "how",
-                    "description": "消费者暂时让出资源使用权，让生产者补充资源后，再次使用，两者都可以顺畅运行"
-                },
-                {
-                    "key": "",
-                    "description": "共享资源.wait()：谦让（消费者线程让出资源锁，在一旁等待）"
-                },
-                {
-                    "key": "",
-                    "description": "共享资源.notifyAll()：交接（生产者线程通知 所有 等待的消费者线程，不用等了）"
-                },
-                {
-                    "key": "",
-                    "description": "共享资源.notify()：容易造成死锁，因为它仅通知了一个等待者，还有若干线程仍在等待"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "线程如何通信？",
-                    "url": "/codeSnippets/java/threadCommunication.java"
-                }]
-            },
-            {
-                "name": "11.线程应用场景总结",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "没有先后次序的任务（相互独立）"
-                },
-                {
-                    "key": "1.开线程",
-                    "description": "分给多个人同时干（各干各的）"
-                },
-                {
-                    "key": "",
-                    "description": "多个任务用到了同一个资源（相互干扰）"
-                },
-                {
-                    "key": "2.同步",
-                    "description": "用到共享资源时排队（逐个使用）"
-                },
-                {
-                    "key": "",
-                    "description": "由于资源不足，消耗资源的任务被卡住了（占着茅坑不拉屎）"
-                },
-                {
-                    "key": "3.线程通信",
-                    "description": "消耗资源的任务先释放锁、在一旁等待，直到其它任务补充资源后、再反过来通知它，然后继续使用（交替使用）"
-                }]
-            },
-            {
-                "name": "12.流",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "快速移动的数据（类比：流水、流沙）"
-                },
-                {
-                    "key": "why",
-                    "description": "将数据从一个位置（如：内存）移动到另一个位置（如：硬盘）"
-                },
-                {
-                    "key": "how",
-                    "description": "使用Stream描述了一个带方向的管道，它封装了搬运数据的方法"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "流的分类",
-                    "url": "/codeSnippets/java/stream.java"
-                }]
-            },
-            {
-                "name": "13.序列化",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "Java对象 <code><==></code> 文本"
-                },
-                {
-                    "key": "why",
-                    "description": "Java对象是立体的，无法存储或传输"
-                },
-                {
-                    "key": "how",
-                    "description": "使用 <code>ObjectOutputStream/ObjectInputStream</code> 将Java对象和字节流进行互转"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "序列化和反序列化",
-                    "url": "/codeSnippets/java/serialize.java"
-                }]
-            },
-            {
-                "name": "14.NIO",
-                "blocks": [
-                {
-                    "key": "what",
-                    "description": "描述路径、操作路径的一系列API"
-                },
-                {
-                    "key": "why",
-                    "description": "方便对文件或目录进行操作"
-                },
-                {
-                    "key": "how",
-                    "description": "使用Path类描述路径，使用File类描述文件和目录，使用Files类通过操作文件或目录的静态方法"
-                }],
-                "codeSnippets": [
-                {
-                    "description": "NIO常用套路",
-                    "url": "/codeSnippets/java/nio.java"
-                }]
-            }]
-        },
-        {
-            "name": "六、GUI",
-            "sections": [
-            {
-                "name": "1.what：用户与计算机软件的交流（输入/输出）工具",
-                "blocks": [
-                {
-                    "key": "搭积木",
-                    "description": "界面由 一堆组件 组装而成"
-                },
-                {
-                    "key": "积木按位置分类",
-                    "description": "最外层的容器、最内层的原子、中间的容器"
-                },
-                {
-                    "key": "摆放顺序",
-                    "description": "容器指定 内部组件 的排列方式"
-                },
-                {
-                    "key": "互动",
-                    "description": "组件感知用户的操作，并给出反馈"
-                }]
-            },
-            {
-                "name": "2.why：对用户来说，图形用户界面 更直观、更好用",
-                "blocks": [
-                {
-                    "key": "字符用户界面",
-                    "description": "输出 字符，使用 键盘 输入"
-                },
-                {
-                    "key": "图形用户界面",
-                    "description": "输出 图形，使用 鼠标+键盘 输入"
-                }]
-            },
-            {
-                "name": "3.where：积木在哪儿？",
-                "blocks": [
-                {
-                    "key": "定义积木",
-                    "description": "Java使用类来描述每一种组件"
-                },
-                {
-                    "key": "老积木",
-                    "description": "组件类放在包<code>java.awt</code>中，它们调用操作系统的图形接口"
-                },
-                {
-                    "key": "新积木",
-                    "description": "在老组件基础上做改进和扩展，新的类放在包<code>javax.swing</code>中，并且类名以J开头"
-                },
-                {
-                    "key": "积木的耳朵",
-                    "description": "为了感知到用户的操作，定义了各种侦听器和事件，它们放在包<code>java.awt.event</code>中"
-                }]
-            },
-            {
-                "name": "4.how：积木的耳朵怎么听？",
-                "blocks": [
-                {
-                    "key": "信息传播过程",
-                    "description": "事件源 --【被<code>侦听（感知）</code>】--> 事件侦听器 --【<code>调用（反馈）</code>】--> 事件处理程序"
-                },
-                {
-                    "key": "事件源（信息的制造者）",
-                    "description": "界面上的 某个组件"
-                },
-                {
-                    "key": "事件侦听器（信息的收集者）",
-                    "description": "实现了 <code>XXXListener</code> 的类"
-                },
-                {
-                    "key": "事件处理程序（信息的反馈者）",
-                    "description": "<code>XXXListener</code> 中的方法"
-                }],
-                "paragraphs": [
-                    "JVM是运行程序的大管家，它知道程序运行时，发生的一切。JAVA和程序员做了约定，只要写个类、并实现相应的Listener，它就是监听器，JVM会负责做侦查、并将所有信息告诉它；程序员只需要指定：监听器要监听哪个组件？ 一旦监听到动态、需要做什么处理？ 整个过程中传播的信息流 称为事件，被监听的组件 称为事件源，监听后要做的处理 称为事件处理程序。"
-                ]
-            },
-            {
-                "name": "5.我们该关注哪些知识点？",
-                "blocks": [
-                {
-                    "key": "①",
-                    "description": "每种组件的用途？"
-                },
-                {
-                    "key": "②",
-                    "description": "组件如何布局？"
-                },
-                {
-                    "key": "③",
-                    "description": "每种侦听器对应的使用场合？"
-                }]
-            },
-            {
-                "name": "6.如何动手做GUI？",
-                "blocks": [
-                {
-                    "key": "",
-                    "description": "<code>界面</code>"
-                },
-                {
-                    "key": "①构思界面（想）",
-                    "description": "可以先在纸上勾勒草图"
-                },
-                {
-                    "key": "②分解组件（有）",
-                    "description": "将草图上的所有图形元素，对应成swing的组件"
-                },
-                {
-                    "key": "③排列组件（整齐）",
-                    "description": "挑选合适的布局方式，将组件排列整齐"
-                },
-                {
-                    "key": "④雕琢外观（漂亮）",
-                    "description": "设置 组件的大小、颜色、字体"
-                },
-                {
-                    "key": "",
-                    "description": "<code>互动</code>"
-                },
-                {
-                    "key": "①构思动作场景（想）",
-                    "description": "可以先在纸上梳理所有操作"
-                },
-                {
-                    "key": "②细化每个操作（分析）",
-                    "description": "由哪个组件触发，是什么类型的操作，如何反馈"
-                },
-                {
-                    "key": "③编写代码（实现）",
-                    "description": "组件.addXXXListener(new XXXListener(){ 如何反馈 });"
-                }]
-            },
-            {
-                "name": "7.代码示例",
-                "codeSnippets": [
-                {
-                    "description": "使用所有组件、所有布局方式、所有事件类型，演示一个完整的Demo",
-                    "url": "/codeSnippets/java/SwingComponents.java"
-                }]
-            }]
-        }]
-    },
-    "注释": [
-        "1.编程语言是 算法和思想 的表达工具",
-        "2.见人说人话，见鬼说鬼话：没有万能语言，不同的场合适合不同的编程语言",
-        "3.评价语言只说好不好用，真正强大的是各种接口和类库",
-        "4.swing组件的官方文档：https://docs.oracle.com/javase/tutorial/uiswing/components/table.html"
-    ],
-    "参考文献": []
+  "题目": "Java",
+  "摘要": "如何学习Java，了解基础概念、基本语法、及常用API",
+  "关键字": "Java入门, Java基础, JavaAPI",
+  "正文": {
+    "chapters": [
+      {
+        "name": "一、Java简介",
+        "sections": [
+          {
+            "name": "1.what（Java是什么，用来干什么？）",
+            "blocks": [
+              {
+                "key": "面向对象编程语言",
+                "description": "【适合】编写服务端应用程序，【偶尔】用于编写桌面应用程序"
+              },
+              {
+                "key": "web应用的组成",
+                "description": "界面交互(Html/...) —— 业务逻辑(<code>Java</code>/...) —— 数据存取(SqlServer/...)"
+              }
+            ]
+          },
+          {
+            "name": "2.why（为什么使用它？ 下列广告词）",
+            "blocks": [
+              {
+                "key": "简单",
+                "description": "java是高级语言（其它：汇编、机器语言），表达能力强 <br />从c++发展而来，大部分语法规则相同 <br />剔除了一些复杂的语法（指针【容易造成内存泄漏、内存溢出】、多重继承等） <br />增加了一些功能（自动垃圾回收：创建对象时，自动分配内存；使用完毕，自动释放内存）"
+              },
+              {
+                "key": "面向对象",
+                "description": "Object（事物） Oriented（看待） <br />如何解决问题，取决于如何看待问题，面向对象与普通人看待世界的方式一致 <br />封装（隐藏细节）、继承（复用）、多态（同一个行为，在不同事物身上表现不同）"
+              },
+              {
+                "key": "平台独立",
+                "description": "编译后的类文件是跨平台的，可以在任何安装了jvm的计算机上运行"
+              },
+              {
+                "key": "可移植",
+                "description": "源码无需更改，java虚拟机掩盖了不同机器的差别"
+              },
+              {
+                "key": "分布式",
+                "description": "通过网络编程，将应用程序分布在多台计算机上（QQ、微信）"
+              },
+              {
+                "key": "安全",
+                "description": "Java 安全模型基于一个可定制的“沙盒”，程序可在其中安全运行，对系统或用户无潜在风险"
+              },
+              {
+                "key": "健壮",
+                "description": "程序不会轻易崩溃。通过异常处理（预案），可以快速恢复正常流程"
+              },
+              {
+                "key": "多线程",
+                "description": "同时执行多个任务"
+              }
+            ]
+          },
+          {
+            "name": "3.how（怎样学习Java？）",
+            "blocks": [
+              {
+                "key": "学会",
+                "description": "基本套路（如：安装java环境、编译、运行、调试）"
+              },
+              {
+                "key": "理解",
+                "description": "基础概念（如：面向对象、类、接口、继承、异常）"
+              },
+              {
+                "key": "掌握",
+                "description": "基本语法（如：定义类、接口、枚举，对类成员做访问限制，流程控制）"
+              },
+              {
+                "key": "熟悉",
+                "description": "常用API（如：流、集合、jdbc）"
+              }
+            ]
+          },
+          {
+            "name": "4.知识结构一览",
+            "images": [
+              {
+                "alt": "基础概念",
+                "url": "/images/java/java.png"
+              },
+              {
+                "alt": "常用API",
+                "url": "/images/java/API.png"
+              },
+              {
+                "alt": "GUI",
+                "url": "/images/java/gui.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "二、基本套路",
+        "sections": [
+          {
+            "name": "1.安装jdk",
+            "blocks": [
+              {
+                "key": "",
+                "description": "①下载（也可以从其它电脑，直接复制jdk目录）"
+              },
+              {
+                "key": "下载地址",
+                "description": "http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+              },
+              {
+                "key": "",
+                "description": "②配置环境变量"
+              },
+              {
+                "key": "JAVA_HOME",
+                "description": "{jdk的目录}"
+              },
+              {
+                "key": "PATH",
+                "description": "<code>%JAVA_HOME%\\bin;%JAVA_HOME%\\jre\\bin;</code>"
+              },
+              {
+                "key": "CLASS_PATH",
+                "description": "<code>.;%JAVA_HOME%\\lib\\dt.jar;%JAVA_HOME%\\lib\\tools.jar;</code>"
+              },
+              {
+                "key": "",
+                "description": "（<code>PATH</code>是把值追加到变量最前面，<code>JAVA_HOME</code>和<code>CLASS_PATH</code>是替换）"
+              },
+              {
+                "key": "",
+                "description": "③验证环境（cmd只能读取到打开前的环境变量，如果做了修改，必须打开新窗口）"
+              },
+              {
+                "key": "命令行",
+                "description": "<code>java -version</code>"
+              }
+            ]
+          },
+          {
+            "name": "2.编译",
+            "blocks": [
+              {
+                "key": "命令行",
+                "description": "①进入{项目根目录}"
+              },
+              {
+                "key": "",
+                "description": "②<code>javac</code> {包名}\\{类名}.java <code>-d</code> {目标文件夹【若省略，默认在同一目录】}"
+              },
+              {
+                "key": "",
+                "description": "（会在{目标文件夹}，生成同名的类文件：{包名}.{类名}）"
+              }
+            ]
+          },
+          {
+            "name": "3.运行",
+            "blocks": [
+              {
+                "key": "命令行",
+                "description": "①进入{目标文件夹}"
+              },
+              {
+                "key": "",
+                "description": "②<code>java</code> {包名}.{类名}"
+              }
+            ]
+          },
+          {
+            "name": "4.打包",
+            "blocks": [
+              {
+                "key": "",
+                "description": "1）压缩"
+              },
+              {
+                "key": "命令行",
+                "description": "①进入 {要压缩的目录} 的上一级"
+              },
+              {
+                "key": "",
+                "description": "②<code>jar -cvf</code> {压缩文件名}.jar {要压缩的目录}"
+              },
+              {
+                "key": "",
+                "description": "2）解压"
+              },
+              {
+                "key": "",
+                "description": "①将 {压缩文件名}.jar 复制到 {解压目录}"
+              },
+              {
+                "key": "命令行",
+                "description": "①进入 {解压目录}"
+              },
+              {
+                "key": "",
+                "description": "②<code>jar -xvf</code> {压缩文件名}.jar"
+              }
+            ]
+          },
+          {
+            "name": "5.eclipse安装配置",
+            "blocks": [
+              {
+                "key": "",
+                "description": "①下载并解压，在桌面创建快捷方式"
+              },
+              {
+                "key": "下载地址",
+                "description": "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip"
+              },
+              {
+                "key": "",
+                "description": "②配置"
+              },
+              {
+                "key": "工作目录",
+                "description": "File\\Switch WorkSpace"
+              },
+              {
+                "key": "选择jdk目录",
+                "description": "Preference\\Java\\Installed JREs"
+              },
+              {
+                "key": "选择编码格式 UTF-8",
+                "description": "Preference\\General\\WorkSpace\\Text file encoding"
+              },
+              {
+                "key": "关闭拼写检查",
+                "description": "Preference\\General\\Editors\\Text Editors\\Spelling"
+              },
+              {
+                "key": "",
+                "description": "③快捷键"
+              },
+              {
+                "key": "智能提示",
+                "description": "<code>Alt</code> + <code>/</code>"
+              },
+              {
+                "key": "注释",
+                "description": "<code>/*</code> + <code>回车</code>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "三、基础概念",
+        "sections": [
+          {
+            "name": "1.java的体系结构",
+            "blocks": [
+              {
+                "key": "源文件",
+                "description": "程序员写的代码，保存为Xxx.java"
+              },
+              {
+                "key": "类文件",
+                "description": "javac编译源文件，生成Xxx.class"
+              },
+              {
+                "key": "JVM(java虚拟机)",
+                "description": "类加载器：【动态加载】所需的类文件 <br />字节码校验器：【检查】类文件的内容，确保字节码安全执行 <br />执行引擎：【解释】类文件中的字节码 <br />JIT编译：【编译】类文件中的字节码 -> 机器码（执行速度更快）"
+              },
+              {
+                "key": "API/类库",
+                "description": "JRE中自带的java类文件（类似c语言的函数库）"
+              }
+            ]
+          },
+          {
+            "name": "2.java的开发工具包",
+            "blocks": [
+              {
+                "key": "",
+                "description": "（查看jdk目录的bin文件夹）"
+              },
+              {
+                "key": "<code>javac</code>",
+                "description": "编译（解决中文乱码：-encoding utf-8）"
+              },
+              {
+                "key": "<code>java</code>",
+                "description": "运行（在package所在的目录，使用java命令时带上包名）"
+              },
+              {
+                "key": "<code>jar</code>",
+                "description": "打包（相当于zip，可以压缩jar/war包）"
+              },
+              {
+                "key": "<code>javadoc</code>",
+                "description": "根据代码注释生成文档"
+              },
+              {
+                "key": "<code>...</code>",
+                "description": ""
+              },
+              {
+                "key": "",
+                "description": "①JDK自带 JRE(java运行环境) = JVM + API"
+              },
+              {
+                "key": "",
+                "description": "②生产环境不需要JDK，只需单独安装JRE"
+              }
+            ]
+          },
+          {
+            "name": "3.java程序的构建块",
+            "images": [
+              {
+                "alt": "类和接口",
+                "url": "/images/java/java_building_block.png"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "代码模版",
+                "url": "/codeSnippets/java/basicBlock.java"
+              }
+            ]
+          },
+          {
+            "name": "4.数据类型",
+            "blocks": [
+              {
+                "key": "原生数据类型",
+                "description": "告诉计算机，要开辟的多大内存空间，可进行哪类运算（值类型，不在类的体系中）"
+              },
+              {
+                "key": "包装类",
+                "description": "Java作者特意定义了一些类，专门描述原生数据类型 <br />（得到2个好处：①将原生数据纳入到类的体系中 ②原生数据使用起来更方便）"
+              },
+              {
+                "key": "自定义的类",
+                "description": "描述事物的特征和行为（面向对象程序中，一切都基于类）"
+              },
+              {
+                "key": "数组",
+                "description": "定义一组类型相同的变量，单个变量是 <code>数组名[index]</code>"
+              },
+              {
+                "key": "枚举",
+                "description": "取值范围有限，把它列举出来"
+              },
+              {
+                "key": "Optional类",
+                "description": "表示可有可无（它用来包装对象，明确其值可能为null）"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "1）数组（当成一组变量）",
+                "url": "/codeSnippets/java/array.java"
+              },
+              {
+                "description": "2）枚举",
+                "url": "/codeSnippets/java/enum.java"
+              },
+              {
+                "description": "3）字符串String",
+                "url": "/codeSnippets/java/string.java"
+              },
+              {
+                "description": "4）日期LocalDateTime",
+                "url": "/codeSnippets/java/localDateTime.java"
+              }
+            ]
+          },
+          {
+            "name": "5.值",
+            "blocks": [
+              {
+                "key": "字面值",
+                "description": "原生数据类型对应的值（计算机认识的基础数据）"
+              },
+              {
+                "key": "对象",
+                "description": "类对应的值（创建对象要调用构造函数）"
+              }
+            ]
+          },
+          {
+            "name": "6.访问限制",
+            "blocks": [
+              {
+                "key": "",
+                "description": "1）访问说明符（限制访问范围：能不能用？）"
+              },
+              {
+                "key": "<code>public</code>",
+                "description": "（类/成员）完全公开"
+              },
+              {
+                "key": "<code>protected</code>",
+                "description": "（成员）留给自己和子类"
+              },
+              {
+                "key": "<code>private</code>",
+                "description": "（成员）只留给自己"
+              },
+              {
+                "key": "<code>[默认]</code>",
+                "description": "（类/成员）同一个包内公开"
+              },
+              {
+                "key": "",
+                "description": "2）访问修饰符（限制如何使用：怎么用？）"
+              },
+              {
+                "key": "<code>final</code>",
+                "description": "（变量/方法/类）最终，不能修改"
+              },
+              {
+                "key": "<code>static</code>",
+                "description": "（属性/方法/内部类）静态，一直都在、不需要实例化就能访问"
+              },
+              {
+                "key": "<code>abstract</code>",
+                "description": "（方法/类）抽象，因为不真实、不能实例化"
+              },
+              {
+                "key": "<code>transient</code>",
+                "description": "（属性）短暂，因为不长久、无需序列化"
+              },
+              {
+                "key": "<code>synchronized</code>",
+                "description": "（变量/方法）同步，排队、强迫多个线程依次访问"
+              },
+              {
+                "key": "<code>volatile</code>",
+                "description": "（变量）易变，状态不稳定、需要实时取值"
+              },
+              {
+                "key": "<code>strictfp</code>",
+                "description": "（方法/类）严格，精确的计算小数"
+              },
+              {
+                "key": "<code>native</code>",
+                "description": "（方法）当地，不是我实现的、由其它语言编写"
+              }
+            ]
+          },
+          {
+            "name": "7.面向对象的三大特性",
+            "blocks": [
+              {
+                "key": "",
+                "description": "1）封装"
+              },
+              {
+                "key": "",
+                "description": "隐藏实现细节（数据和算法都在类的内部）"
+              },
+              {
+                "key": "",
+                "description": "2）继承"
+              },
+              {
+                "key": "<code>extends</code>",
+                "description": "扩展基类的属性和方法"
+              },
+              {
+                "key": "<code>implements</code>",
+                "description": "实现接口中定义的方法"
+              },
+              {
+                "key": "",
+                "description": "3）多态"
+              },
+              {
+                "key": "",
+                "description": "同一个行为（方法名），具有多种不同的表现形态（实际上是不同的方法）"
+              },
+              {
+                "key": "静态多态性",
+                "description": "方法重载（同名，参数不同，在同一类中）"
+              },
+              {
+                "key": "动态多态性",
+                "description": "方法重写（同名，参数相同，在派生类中）"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "1）封装",
+                "url": "/codeSnippets/java/encapsulation.java"
+              },
+              {
+                "description": "2）继承",
+                "url": "/codeSnippets/java/inheritance.java"
+              },
+              {
+                "description": "3）多态",
+                "url": "/codeSnippets/java/polymorphic.java"
+              }
+            ]
+          },
+          {
+            "name": "8.异常处理",
+            "blocks": [
+              {
+                "key": "",
+                "description": "程序执行期间，发生的执行流中断的情况（就是程序挂了）"
+              },
+              {
+                "key": "Error",
+                "description": "严重，程序无法解决，只能中断"
+              },
+              {
+                "key": "Exception",
+                "description": "轻微，可以恢复正常，继续运行"
+              },
+              {
+                "key": "",
+                "description": "（编写异常处理代码的思维过程）"
+              },
+              {
+                "key": "1）预判异常",
+                "description": "感觉这段代码，会出哪类问题"
+              },
+              {
+                "key": "2）定义异常",
+                "description": "描述这个问题（通常已经在类库中了/没有的话就继承并定义一个）"
+              },
+              {
+                "key": "3）处理异常",
+                "description": "能够处理：捕获（很多时候是记日志：暂时忽略，由运维人员定期查看分析原因） <br />处理不了：抛出"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "1）异常处理",
+                "url": "/codeSnippets/java/CatchException.java"
+              },
+              {
+                "description": "2）抛出异常",
+                "url": "/codeSnippets/java/ThrowException.java"
+              }
+            ]
+          },
+          {
+            "name": "9.断言",
+            "blocks": [
+              {
+                "key": "测试的本质",
+                "description": "现实 ?= 期望"
+              },
+              {
+                "key": "Java中的断言",
+                "description": "这个表达式，在java中的语法"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "断言默认是关闭的，运行时加上参数：java -ea Assertion",
+                "url": "/codeSnippets/java/Assertion.java"
+              }
+            ]
+          },
+          {
+            "name": "10.类型转换",
+            "blocks": [
+              {
+                "key": "",
+                "description": "1）原生数据类型（值）"
+              },
+              {
+                "key": "",
+                "description": "（本质：内存空间大小的切换）"
+              },
+              {
+                "key": "隐式转换",
+                "description": "自动转换（小空间 【无损】切换到 大空间）"
+              },
+              {
+                "key": "显式转换",
+                "description": "强制转换（大空间 【有损】截断到 小空间）"
+              },
+              {
+                "key": "",
+                "description": "2）复合数据类型（引用）"
+              },
+              {
+                "key": "",
+                "description": "（本质：粗略还是精确）"
+              },
+              {
+                "key": "向上转型",
+                "description": "父类可以引用子类对象（因为：子类是对父类的细分）"
+              },
+              {
+                "key": "向下转型",
+                "description": "子类对象被父类引用后，还可以强制转换回本身的类型"
+              }
+            ]
+          },
+          {
+            "name": "11.函数式编程",
+            "blocks": [
+              {
+                "key": "数据",
+                "description": "是变量的值"
+              },
+              {
+                "key": "逻辑",
+                "description": "是方法的值"
+              },
+              {
+                "key": "",
+                "description": "如果逻辑可以像数据一样，能被传来传去，该多好？"
+              },
+              {
+                "key": "函数式接口",
+                "description": "只包含一个方法的接口（传递对象就像传递方法）"
+              },
+              {
+                "key": "Lambda表达式",
+                "description": "实现函数式接口的匿名类，可以简化成匿名方法"
+              },
+              {
+                "key": "常用的函数式接口",
+                "description": "<code>Predicate / Consumer / Supplier / Function</code>"
+              },
+              {
+                "key": "方法引用",
+                "description": "任意已经存在的方法，可以用特殊语法转换为Lambda表达式"
+              },
+              {
+                "key": "静态方法引用",
+                "description": "类::方法 <code>==</code> ()->类.方法()"
+              },
+              {
+                "key": "特定对象的方法引用",
+                "description": "对象::方法 <code>==</code> ()->对象.方法()"
+              },
+              {
+                "key": "任意对象的方法引用",
+                "description": "类::方法 <code>==</code> (类 对象)->对象.方法()"
+              },
+              {
+                "key": "构造方法引用",
+                "description": "类::new <code>==</code> (参数)-> new 类(参数)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "四、基本语法",
+        "sections": [
+          {
+            "name": "1.基本数据类型",
+            "blocks": [
+              {
+                "key": "",
+                "description": "1）原生数据类型"
+              },
+              {
+                "key": "整数",
+                "description": "<code>byte</code>(8bit), <code>short</code>(2byte), <code>int</code>(4byte) ,<code>long</code>(8byte)"
+              },
+              {
+                "key": "小数",
+                "description": "<code>float</code>(4byte), <code>double</code>(8byte)"
+              },
+              {
+                "key": "字符",
+                "description": "<code>char</code>(1byte，字符和数字可以相互转换，规则是ASCII码)"
+              },
+              {
+                "key": "布尔",
+                "description": "<code>boolean</code>"
+              },
+              {
+                "key": "",
+                "description": "2）包装类"
+              },
+              {
+                "key": "整数",
+                "description": "<code>Byte</code>, <code>Short</code>, <code>Integer</code> ,<code>Long</code>"
+              },
+              {
+                "key": "小数",
+                "description": "<code>Float</code>, <code>Double</code>"
+              },
+              {
+                "key": "字符",
+                "description": "<code>Character</code>"
+              },
+              {
+                "key": "布尔",
+                "description": "<code>Boolean</code>"
+              },
+              {
+                "key": "",
+                "description": "3）字面值"
+              },
+              {
+                "key": "二进制（前缀）",
+                "description": "<code>0b</code>"
+              },
+              {
+                "key": "八进制（前缀）",
+                "description": "<code>0</code>"
+              },
+              {
+                "key": "十六进制（前缀）",
+                "description": "<code>0x</code>"
+              },
+              {
+                "key": "long型（后缀）",
+                "description": "<code>L</code>"
+              },
+              {
+                "key": "float型（后缀）",
+                "description": "<code>f</code>"
+              },
+              {
+                "key": "double型（后缀）",
+                "description": "<code>d</code>（可以省略，十进制数字默认是double型）"
+              },
+              {
+                "key": "char型",
+                "description": "<code>''</code>"
+              },
+              {
+                "key": "boolean型",
+                "description": "<code>true/false</code>"
+              }
+            ]
+          },
+          {
+            "name": "2.运算符",
+            "blocks": [
+              {
+                "key": "位运算符",
+                "description": "<code>&</code> <code>|</code> <code>~</code> <code>^</code> <code><<</code> <code>>></code>"
+              },
+              {
+                "key": "算数运算符",
+                "description": "<code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code> <code>++</code> <code>--</code>"
+              },
+              {
+                "key": "比较运算符",
+                "description": "<code>==</code> <code>!=</code> <code>></code> <code>>=</code> <code><</code> <code><=</code>"
+              },
+              {
+                "key": "逻辑运算符",
+                "description": "<code>&&</code> <code>||</code> <code>!</code>"
+              },
+              {
+                "key": "赋值运算符",
+                "description": "<code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code>"
+              },
+              {
+                "key": "三元运算符",
+                "description": "<code>布尔 ? 选项1 ：选项2</code>"
+              },
+              {
+                "key": "运算符优先级",
+                "description": "括号 > 一元运算符 > 算数运算符 > 比较运算符 > 逻辑运算符 > 赋值运算符"
+              }
+            ]
+          },
+          {
+            "name": "3.流程控制语句",
+            "codeSnippets": [
+              {
+                "description": "1）分支",
+                "url": "/codeSnippets/java/branchControl.java"
+              },
+              {
+                "description": "2）循环",
+                "url": "/codeSnippets/java/loopControl.java"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "五、常用的API和类",
+        "sections": [
+          {
+            "name": "1.正则表达式",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "描述一段文本中，字符的组合规律（与编程语言无关）"
+              },
+              {
+                "key": "",
+                "description": "抽象成 “模式*重复次数”（模式可以看作字符的取值范围）"
+              },
+              {
+                "key": "",
+                "description": "【模式中的特殊字符】"
+              },
+              {
+                "key": "",
+                "description": "<code>&nbsp.</code>任意单个字符（换行除外） <br /><code>\\s</code>空白字符 <br /><code>\\S</code>非空白字符 <br /><code>\\n</code>换行 <br /><code>\\r</code>回车 <br /><code>&nbsp^</code>开始位置 <br /><code>&nbsp$</code>结束位置 <br /><code>[]</code>取值范围"
+              },
+              {
+                "key": "",
+                "description": "【重复次数】"
+              },
+              {
+                "key": "",
+                "description": "<code>?</code>[0, 1] <br /><code>+</code>[1,正无穷) <br /><code>*</code>[0,正无穷) <br /><code>{n}</code>n次 <br /><code>{n,}</code>[n,正无穷) <br /><code>{n, m}</code>[n, m]"
+              },
+              {
+                "key": "",
+                "description": "【限定符】（当重复次数是一个范围，比较含糊的时候，会用到它！）"
+              },
+              {
+                "key": "",
+                "description": "Greedy贪婪（重复次数后什么都不加）     从最大次数开始匹配（若匹配不上，递减次数再尝试）"
+              },
+              {
+                "key": "",
+                "description": "Reluctant懒惰（重复次数后加 ?）                从最小次数开始匹配（若匹配不上，递增次数再尝试）"
+              },
+              {
+                "key": "",
+                "description": "Possessive独占（重复次数后加 +）                只用最大次数开始匹配"
+              },
+              {
+                "key": "why",
+                "description": "方便对文本进行 “匹配、查找、替换”"
+              },
+              {
+                "key": "how",
+                "description": "使用<code>Pattern</code>编译正则表达式，使用<code>Matcher</code>类完成“匹配、查找、替换”"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "Java处理正则表达式的套路",
+                "url": "/codeSnippets/java/regularExp.java"
+              }
+            ]
+          },
+          {
+            "name": "2.本地化",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "应用程序根据用户 “使用的语言、所在的国家” ，自动切换 “日期/货币/文本” 的显示格式"
+              },
+              {
+                "key": "why",
+                "description": "写一份程序，可以由多个国家的用户使用"
+              },
+              {
+                "key": "how",
+                "description": "输出 “日期/货币/数字” 时，使用 (语言, 国家) 进行格式化；"
+              },
+              {
+                "key": "",
+                "description": "提前定义好各种语言字典（资源束文件），根据用户使用的语言，在字典中翻译后再输出；"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "Java本地化的套路",
+                "url": "/codeSnippets/java/localization.java"
+              }
+            ]
+          },
+          {
+            "name": "3.泛型",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "将类/方法 中用到的数据类型 参数化"
+              },
+              {
+                "key": "why",
+                "description": "多种数据结构，复用同一个算法"
+              },
+              {
+                "key": "how",
+                "description": "将类中使用的类型 --抽象成--> 变量"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "泛型的定义和使用方式",
+                "url": "/codeSnippets/java/GenericType.java"
+              }
+            ]
+          },
+          {
+            "name": "4.集合接口",
+            "images": [
+              {
+                "alt": "Collection",
+                "url": "/images/java/collection.png"
+              }
+            ],
+            "blocks": [
+              {
+                "key": "what",
+                "description": "定义处理集合元素的方式"
+              },
+              {
+                "key": "why",
+                "description": "统一集合元素的处理操作，并能适应不同复杂程度的应用场景"
+              },
+              {
+                "key": "how",
+                "description": "定义多种复杂程度的集合接口，并提供相应的实现类"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "集合接口的分类和异同",
+                "url": "/codeSnippets/java/collectionInterface.java"
+              }
+            ]
+          },
+          {
+            "name": "5.集合元素排序",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "给集合元素排序"
+              },
+              {
+                "key": "why",
+                "description": "统一并简化 集合元素的排序"
+              },
+              {
+                "key": "how",
+                "description": "分工：<code>Comparable/Comparator</code>描述两个样本元素如何比较，<code>Collections.sort()</code>根据比较规则进行排序"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "集合排序用到的接口和方法",
+                "url": "/codeSnippets/java/collectionSort.java"
+              }
+            ]
+          },
+          {
+            "name": "6.集合元素处理",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "处理集合元素：筛选、排序、分页、映射"
+              },
+              {
+                "key": "why",
+                "description": "统一并简化 对集合元素的处理"
+              },
+              {
+                "key": "how",
+                "description": "分工：<code>Stream API</code>负责将集合放到流水线上，<code>Lambda表达式</code>描述如何处理集合元素"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "Stream API",
+                "url": "/codeSnippets/java/streamAPI.java"
+              }
+            ]
+          },
+          {
+            "name": "7.JDBC",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "定义java与数据库通信的一套API"
+              },
+              {
+                "key": "why",
+                "description": "能够让程序员用一套代码，使用不同的数据库"
+              },
+              {
+                "key": "how",
+                "description": "各数据库厂商编写自己的java类、实现这套api，这些类打成jar包后，就是数据库驱动"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "JDBC的使用套路",
+                "url": "/codeSnippets/java/JDBC.java"
+              }
+            ]
+          },
+          {
+            "name": "8.线程",
+            "images": [
+              {
+                "alt": "线程状态切换",
+                "url": "/images/java/thread.png"
+              }
+            ],
+            "blocks": [
+              {
+                "key": "what",
+                "description": "编写程序的目的是完成一个大的项目目标，这个大的项目目标通常被分解为若干小任务，有些小任务彼此不相关、可以各自独立完成（它们可以用线程来实现）。整个程序运行起来后，被叫做进程；默认的控制流是主线程，主线程可以创建若干同时运行的子线程，线程是程序内的单序列控制流、彼此独立运行、共享进程的资源"
+              },
+              {
+                "key": "why",
+                "description": "【同时】执行多个任务（省时间）"
+              },
+              {
+                "key": "how",
+                "description": "Java使用Runnable接口和Thread类来识别线程，然后对它们做特殊处理：在微观层面，把每个线程的代码切碎，让cup轮流调用；在宏观层面，由于切换足够块，看起来是在各自独立运行"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "线程如何创建、使用？",
+                "url": "/codeSnippets/java/thread.java"
+              }
+            ]
+          },
+          {
+            "name": "9.线程同步",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "多个线程【排队】使用共享资源"
+              },
+              {
+                "key": "why",
+                "description": "如果多个线程之间互不干扰，各自干自己的事情，永远不会出现问题；当多线程共用了某个资源后，如果一个没用完，另一个又来干扰，会扰乱资源的状态；而如果线程的逻辑依赖了资源的状态，还会使得线程运行错误的逻辑；无论是资源状态，还是逻辑错误都违背了程序的本意，应该避免!"
+              },
+              {
+                "key": "how",
+                "description": "使用synchronized给资源或方法加锁"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "线程如何同步？",
+                "url": "/codeSnippets/java/threadSynchronize.java"
+              }
+            ]
+          },
+          {
+            "name": "10.线程通信",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "多个线程【轮流】使用共享资源"
+              },
+              {
+                "key": "why",
+                "description": "多线程共享资源有这样一种场景：一部分线程（消费者）消耗资源，一部分线程（生产者）补充资源；当资源耗尽时，消费者线程卡死在共享资源上，无法继续运行，由于它获取了资源锁，生产者线程只能排队等待，也被卡死，这是一种双输的局面，根本原因是消费者和生产者没有沟通。"
+              },
+              {
+                "key": "how",
+                "description": "消费者暂时让出资源使用权，让生产者补充资源后，再次使用，两者都可以顺畅运行"
+              },
+              {
+                "key": "",
+                "description": "共享资源.wait()：谦让（消费者线程让出资源锁，在一旁等待）"
+              },
+              {
+                "key": "",
+                "description": "共享资源.notifyAll()：交接（生产者线程通知 所有 等待的消费者线程，不用等了）"
+              },
+              {
+                "key": "",
+                "description": "共享资源.notify()：容易造成死锁，因为它仅通知了一个等待者，还有若干线程仍在等待"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "线程如何通信？",
+                "url": "/codeSnippets/java/threadCommunication.java"
+              }
+            ]
+          },
+          {
+            "name": "11.线程应用场景总结",
+            "blocks": [
+              {
+                "key": "",
+                "description": "没有先后次序的任务（相互独立）"
+              },
+              {
+                "key": "1.开线程",
+                "description": "分给多个人同时干（各干各的）"
+              },
+              {
+                "key": "",
+                "description": "多个任务用到了同一个资源（相互干扰）"
+              },
+              {
+                "key": "2.同步",
+                "description": "用到共享资源时排队（逐个使用）"
+              },
+              {
+                "key": "",
+                "description": "由于资源不足，消耗资源的任务被卡住了（占着茅坑不拉屎）"
+              },
+              {
+                "key": "3.线程通信",
+                "description": "消耗资源的任务先释放锁、在一旁等待，直到其它任务补充资源后、再反过来通知它，然后继续使用（交替使用）"
+              }
+            ]
+          },
+          {
+            "name": "12.流",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "快速移动的数据（类比：流水、流沙）"
+              },
+              {
+                "key": "why",
+                "description": "将数据从一个位置（如：内存）移动到另一个位置（如：硬盘）"
+              },
+              {
+                "key": "how",
+                "description": "使用Stream描述了一个带方向的管道，它封装了搬运数据的方法"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "流的分类",
+                "url": "/codeSnippets/java/stream.java"
+              }
+            ]
+          },
+          {
+            "name": "13.序列化",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "Java对象 <code><==></code> 文本"
+              },
+              {
+                "key": "why",
+                "description": "Java对象是立体的，无法存储或传输"
+              },
+              {
+                "key": "how",
+                "description": "使用 <code>ObjectOutputStream/ObjectInputStream</code> 将Java对象和字节流进行互转"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "序列化和反序列化",
+                "url": "/codeSnippets/java/serialize.java"
+              }
+            ]
+          },
+          {
+            "name": "14.NIO",
+            "blocks": [
+              {
+                "key": "what",
+                "description": "描述路径、操作路径的一系列API"
+              },
+              {
+                "key": "why",
+                "description": "方便对文件或目录进行操作"
+              },
+              {
+                "key": "how",
+                "description": "使用Path类描述路径，使用File类描述文件和目录，使用Files类通过操作文件或目录的静态方法"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "NIO常用套路",
+                "url": "/codeSnippets/java/nio.java"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "六、GUI",
+        "sections": [
+          {
+            "name": "1.what：用户与计算机软件的交流（输入/输出）工具",
+            "blocks": [
+              {
+                "key": "搭积木",
+                "description": "界面由 一堆组件 组装而成"
+              },
+              {
+                "key": "积木按位置分类",
+                "description": "最外层的容器、最内层的原子、中间的容器"
+              },
+              {
+                "key": "摆放顺序",
+                "description": "容器指定 内部组件 的排列方式"
+              },
+              {
+                "key": "互动",
+                "description": "组件感知用户的操作，并给出反馈"
+              }
+            ]
+          },
+          {
+            "name": "2.why：对用户来说，图形用户界面 更直观、更好用",
+            "blocks": [
+              {
+                "key": "字符用户界面",
+                "description": "输出 字符，使用 键盘 输入"
+              },
+              {
+                "key": "图形用户界面",
+                "description": "输出 图形，使用 鼠标+键盘 输入"
+              }
+            ]
+          },
+          {
+            "name": "3.where：积木在哪儿？",
+            "blocks": [
+              {
+                "key": "定义积木",
+                "description": "Java使用类来描述每一种组件"
+              },
+              {
+                "key": "老积木",
+                "description": "组件类放在包<code>java.awt</code>中，它们调用操作系统的图形接口"
+              },
+              {
+                "key": "新积木",
+                "description": "在老组件基础上做改进和扩展，新的类放在包<code>javax.swing</code>中，并且类名以J开头"
+              },
+              {
+                "key": "积木的耳朵",
+                "description": "为了感知到用户的操作，定义了各种侦听器和事件，它们放在包<code>java.awt.event</code>中"
+              }
+            ]
+          },
+          {
+            "name": "4.how：积木的耳朵怎么听？",
+            "blocks": [
+              {
+                "key": "信息传播过程",
+                "description": "事件源 --【被<code>侦听（感知）</code>】--> 事件侦听器 --【<code>调用（反馈）</code>】--> 事件处理程序"
+              },
+              {
+                "key": "事件源（信息的制造者）",
+                "description": "界面上的 某个组件"
+              },
+              {
+                "key": "事件侦听器（信息的收集者）",
+                "description": "实现了 <code>XXXListener</code> 的类"
+              },
+              {
+                "key": "事件处理程序（信息的反馈者）",
+                "description": "<code>XXXListener</code> 中的方法"
+              }
+            ],
+            "paragraphs": [
+              "JVM是运行程序的大管家，它知道程序运行时，发生的一切。JAVA和程序员做了约定，只要写个类、并实现相应的Listener，它就是监听器，JVM会负责做侦查、并将所有信息告诉它；程序员只需要指定：监听器要监听哪个组件？ 一旦监听到动态、需要做什么处理？ 整个过程中传播的信息流 称为事件，被监听的组件 称为事件源，监听后要做的处理 称为事件处理程序。"
+            ]
+          },
+          {
+            "name": "5.我们该关注哪些知识点？",
+            "blocks": [
+              {
+                "key": "①",
+                "description": "每种组件的用途？"
+              },
+              {
+                "key": "②",
+                "description": "组件如何布局？"
+              },
+              {
+                "key": "③",
+                "description": "每种侦听器对应的使用场合？"
+              }
+            ]
+          },
+          {
+            "name": "6.如何动手做GUI？",
+            "blocks": [
+              {
+                "key": "",
+                "description": "<code>界面</code>"
+              },
+              {
+                "key": "①构思界面（想）",
+                "description": "可以先在纸上勾勒草图"
+              },
+              {
+                "key": "②分解组件（有）",
+                "description": "将草图上的所有图形元素，对应成swing的组件"
+              },
+              {
+                "key": "③排列组件（整齐）",
+                "description": "挑选合适的布局方式，将组件排列整齐"
+              },
+              {
+                "key": "④雕琢外观（漂亮）",
+                "description": "设置 组件的大小、颜色、字体"
+              },
+              {
+                "key": "",
+                "description": "<code>互动</code>"
+              },
+              {
+                "key": "①构思动作场景（想）",
+                "description": "可以先在纸上梳理所有操作"
+              },
+              {
+                "key": "②细化每个操作（分析）",
+                "description": "由哪个组件触发，是什么类型的操作，如何反馈"
+              },
+              {
+                "key": "③编写代码（实现）",
+                "description": "组件.addXXXListener(new XXXListener(){ 如何反馈 });"
+              }
+            ]
+          },
+          {
+            "name": "7.代码示例",
+            "codeSnippets": [
+              {
+                "description": "使用所有组件、所有布局方式、所有事件类型，演示一个完整的Demo",
+                "url": "/codeSnippets/java/SwingComponents.java"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "注释": [
+    "1.编程语言是 算法和思想 的表达工具",
+    "2.见人说人话，见鬼说鬼话：没有万能语言，不同的场合适合不同的编程语言",
+    "3.评价语言只说好不好用，真正强大的是各种接口和类库",
+    "4.swing组件的官方文档：https://docs.oracle.com/javase/tutorial/uiswing/components/table.html"
+  ],
+  "参考文献": []
 }

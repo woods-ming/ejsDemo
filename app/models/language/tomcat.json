@@ -12,7 +12,7 @@
             "blocks": [
               {
                 "key": "下载",
-                "description": "http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-windows-x64.zip"
+                "description": "https://tomcat.apache.org/download-80.cgi"
               },
               {
                 "key": "解压",
@@ -29,7 +29,7 @@
               },
               {
                 "key": "PATH",
-                "description": "%CATALINA_HOME%\bin;"
+                "description": "%CATALINA_HOME%\\bin;"
               }
             ]
           },
