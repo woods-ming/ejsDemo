@@ -1,47 +1,228 @@
 {
-    "题目": "Java Framework",
-    "摘要": "使用框架简化java开发过程",
-    "关键字": "java Framework, maven, spring, mybatis",
-    "正文": {
-        "chapters": [
-            {
-                "name": "一、第一章",
-                "sections": [
-                    {
-                        "name": "1.第一节",
-                        "blocks": [
-                            {
-                                "key": "键",
-                                "description": "值"
-                            },
-                            {
-                                "key": "键",
-                                "description": "值"
-                            }
-                        ],
-                        "paragraphs": [
-                            "第一段",
-                            "第二段"
-                        ],
-                        "codeSnippets": [
-                            {
-                                "description": "代码描述",
-                                "url": "代码路径"
-                            }
-                        ],
-                        "images": [
-                            {
-                                "alt": "图片说明",
-                                "url": "图片路径"
-                            }
-                        ]
-                    }
-                ]
-            }
+  "题目": "Java Framework",
+  "摘要": "使用框架简化java开发过程",
+  "关键字": "java Framework, maven, spring, mybatis",
+  "正文": {
+    "chapters": [
+      {
+        "name": "一、框架简介",
+        "sections": [
+          {
+            "name": "1.框架是什么？",
+            "blocks": [
+              {
+                "key": "类库",
+                "description": "针对通用的软件规范，由专业团队写好的代码"
+              },
+              {
+                "key": "基础设施",
+                "description": "与具体业务无关，是技术实现手段"
+              },
+              {
+                "key": "问题驱动",
+                "description": "问题 -> 框架"
+              }
+            ]
+          },
+          {
+            "name": "2.有哪些优缺点？",
+            "blocks": [
+              {
+                "key": "复用代码",
+                "description": "减少编码、测试的工作量，提高开发效率"
+              },
+              {
+                "key": "享用特性",
+                "description": "框架都有自己鲜明的特点，使用者省去了实现它的思考过程"
+              },
+              {
+                "key": "忍受缺陷",
+                "description": "世间没有完美的事物，享用优点的同时、必然要忍受其缺点"
+              },
+              {
+                "key": "学习成本",
+                "description": "需要花费时间，掌握框架的用法"
+              }
+            ]
+          },
+          {
+            "name": "3.如何选择框架？",
+            "blocks": [
+              {
+                "key": "问题导向",
+                "description": "先明确要解决什么问题"
+              },
+              {
+                "key": "上限和下限",
+                "description": "针对项目特点，确定需要的特性、和不能承受的缺陷"
+              },
+              {
+                "key": "筛选",
+                "description": "列出问题相关的所有框架，用下限剔除、用上限排序"
+              }
+            ]
+          },
+          {
+            "name": "4.如何引入框架？",
+            "blocks": [
+              {
+                "key": "手工添加",
+                "description": "麻烦！ 要逐个下载，还要考虑多个框架之间的版本兼容问题"
+              },
+              {
+                "key": "maven管理依赖",
+                "description": "方便！ 只需配置好框架的id和版本，就会自动匹配它所依赖的其它框架，并一次全部下载完"
+              },
+              {
+                "key": "maven项目构建",
+                "description": "构建过程包括一系列步骤：清理（生成目录）、编译（目标程序）、（运行单元）测试、（目标程序）打包、部署（到服务器），使用maven命令可以自动完成"
+              }
+            ]
+          }
         ]
-    },
-    "注释": [
-        "1.",
-        "2."
+      },
+      {
+        "name": "二、安装maven",
+        "sections": [
+          {
+            "name": "1.绿色安装包",
+            "blocks": [
+              {
+                "key": "下载",
+                "description": "http://maven.apache.org/download.cgi"
+              },
+              {
+                "key": "解压",
+                "description": "不需要管理员权限的目录"
+              }
+            ]
+          },
+          {
+            "name": "2.环境变量",
+            "blocks": [
+              {
+                "key": "MAVEN_HOME",
+                "description": "{maven目录}"
+              },
+              {
+                "key": "PATH",
+                "description": "%MAVEN_HOME%\\bin;"
+              }
+            ]
+          },
+          {
+            "name": "3.验证",
+            "blocks": [
+              {
+                "key": "命令行",
+                "description": "mvn -v"
+              }
+            ]
+          },
+          {
+            "name": "4.配置",
+            "blocks": [
+              {
+                "key": "maven配置",
+                "description": "修改中央仓库地址（国内的更快），指定本地缓存目录"
+              },
+              {
+                "key": "eclipse配置",
+                "description": "Maven\\Installations：选择Maven的安装目录 <br />Maven\\User Settings：选择Maven本地仓库的Settings.xml"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "maven配置： {maven目录}/conf/settings.xml",
+                "url": "/codeSnippets/java/maven_repositorySettings.xml"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "三、使用maven",
+        "sections": [
+          {
+            "name": "1.项目描述",
+            "blocks": [
+              {
+                "key": "id和版本号",
+                "description": "描述本项目的信息，和所依赖框架的信息"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "{项目根目录}/pom.xml",
+                "url": "/codeSnippets/java/maven_pom.xml"
+              },
+              {
+                "description": "pom详解",
+                "url": "/codeSnippets/java/pom详解.xml"
+              }
+            ]
+          },
+          {
+            "name": "2.查找框架的id",
+            "blocks": [
+              {
+                "key": "网址",
+                "description": "http://mvnrepository.com"
+              }
+            ]
+          },
+          {
+            "name": "3.构件命令（mvn xxx）",
+            "blocks": [
+              {
+                "key": "clean",
+                "description": "清理 生成目录"
+              },
+              {
+                "key": "compile",
+                "description": "编译 目标程序"
+              },
+              {
+                "key": "test",
+                "description": "运行 单元测试"
+              },
+              {
+                "key": "package",
+                "description": "目标程序 打包成jar或war文件"
+              },
+              {
+                "key": "install",
+                "description": "程序包 复制到本地仓库，供其它项目引用"
+              },
+              {
+                "key": "deploy",
+                "description": "程序包 复制到服务器上"
+              }
+            ]
+          },
+          {
+            "name": "4.项目模版（archetype）",
+            "blocks": [
+              {
+                "key": "目录结构",
+                "description": "已经定义好各目录的功能，分别存放哪些文件"
+              },
+              {
+                "key": "pom.xml",
+                "description": "已经定义好的项目描述，指定该类项目用到的所有框架"
+              },
+              {
+                "key": "好处",
+                "description": "可以用maven命令，将自己常用的项目，做成模版来复用"
+              }
+            ]
+          }
+        ]
+      }
     ]
+  },
+  "注释": [
+    "1.",
+    "2."
+  ]
 }

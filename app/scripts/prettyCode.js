@@ -70,8 +70,7 @@
 
         $window.on("scroll.prettyCode", function() {
             $codeContainer.each(function() {
-                var $this = $(this),
-                    codeUrl = $this.attr('data-code-url');
+                var $this = $(this);
 
                 if (!$this.data('loaded')) {
                     var windowHeight = window.innerHeight ? window.innerHeight : $window.height();
@@ -79,8 +78,17 @@
 
                     if ($this.offset().top < offsetTop + 0.6 * windowHeight &&
                         $this.offset().top > offsetTop + 0.1 * windowHeight) {
+
+                        var codeUrl = $this.attr('data-code-url'),
+                            $codeTitle = $this.parent().siblings('.code-title');
+
                         $this.data('loaded', true);
-                        $this.prettyCode(codeUrl);
+                        $this.prettyCode(codeUrl).addClass('hidden');
+                        $codeTitle.on('click', function() {
+                            $codeTitle.find('.glyphicon').toggleClass('glyphicon-folder-close').toggleClass('glyphicon-folder-open');
+                            $this.toggleClass('hidden')
+                        })
+
                     }
                 }
             });

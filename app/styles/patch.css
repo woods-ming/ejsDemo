@@ -88,11 +88,11 @@ dl.focus {
     font-weight: bold;
 }
 
-div.highlight {
+/*pre {
     max-height: 500px;
     overflow: auto;
     margin: 1.5em auto;
-}
+}*/
 
 footer.bs-docs-footer {
     margin-top: 0;
