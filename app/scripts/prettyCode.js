@@ -76,8 +76,8 @@
                     var windowHeight = window.innerHeight ? window.innerHeight : $window.height();
                     var offsetTop = $window.scrollTop();
 
-                    if ($this.offset().top < offsetTop + 0.6 * windowHeight &&
-                        $this.offset().top > offsetTop + 0.1 * windowHeight) {
+                    if ($this.offset().top < offsetTop + windowHeight &&
+                        $this.offset().top > offsetTop) {
 
                         var codeUrl = $this.attr('data-code-url'),
                             $codeTitle = $this.parent().siblings('.code-title');

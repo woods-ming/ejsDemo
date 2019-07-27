@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans 
+<beans default-autowire="byType"
     xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -9,22 +9,24 @@
     <import resource="beanContext.xml" />
 
 
-    <!-- 使用 无参构造函数 -->
-    <bean id="bean1" class="com.imooc.Bean1" parent="BaseClass"
-          init-method="start" destroy-method="stop" />
-	
-    <!-- 使用 有参构造函数并注入属性 -->
-    <bean id="beanFactory" class="com.immoc.BeanFactory">
-        <constructor-arg index="0" value="我是实例工厂" />
-        <property name="属性名称" ref="bean1" />
+    <!-- 用class实例化id，存储到scope中（singleton/prototype/request/session） -->
+    <bean id="gril1" class="spring_demo.Girl" scope="singleton">
+        <constructor-arg name="age" value="20"></constructor-arg>
+        <constructor-arg name="name" value="小龙女"></constructor-arg>
     </bean>
 
-    <!-- 使用 静态工厂 -->
-    <bean id="bean3" class="com.immoc.BeanFactory" factory-method="getInstance" />
+    <!-- 显示装配（ref -> 对象id） -->
+    <bean id="boy1" class="spring_demo.Boy" scope="singleton" >
+        <constructor-arg name="name" value="张三丰"></constructor-arg>
+        <constructor-arg name="age" value="22"></constructor-arg>
+        <property name="girlFriend" ref="gril1"></property>
+    </bean>
 
-    <!-- 使用 实例工厂 -->
-    <bean id="bean4" factory-bean="beanFactory" factory-method="createInstance" >
-        <constructor-arg index="0" value="test" />
+    <!-- 自动装配（注释掉的2个属性，根据类型自动匹配 boy1 和 gril1） -->
+    <bean id="group1" class="spring_demo.Partner" scope="prototype">
+        <constructor-arg name="slogan" value="男女搭配，干活不累" />
+        <!-- <property name="CEO" type="spring_demo.Boy" />
+        <property name="CFO" type="spring_demo.Girl" /> -->
     </bean>
 
  </beans>

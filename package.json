@@ -24,6 +24,7 @@
     "gulp-replace-task": "*",
     "gulp-rev": "*",
     "gulp-rev-replace": "*",
+    "gulp-sftp": "^0.1.5",
     "gulp-sitemap": "*",
     "gulp-size": "*",
     "gulp-sourcemaps": "*",

@@ -1,20 +1,10 @@
 <!-- 本地文件 -->
-FileSystemXmlApplicationContext context = 
-    new FileSystemXmlApplicationContext("F:/WorkSpace/appContext.xml");
+ApplicationContext context = 
+    new FileSystemXmlApplicationContext("F:\\WorkSpace\\appContext.xml");
+spring_demo.Boy player = (spring_demo.Boy)context.getBean("boy1");
 
 
 <!-- ClassPath -->
-String springXmlpath = "classpath*:spring-*.xml";
-ClassPathXmlApplicationContext context = 
-    new ClassPathXmlApplicationContext(springXmlpath.split("[,\\s]+"));
-
-
-<!-- Web应用 -->
-<listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-</listener>
-<servlet>
-    <servlet-name>context</servlet-name>
-    <servlet-class>org.springframework.web.context.ContextLoaderServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-</servlet>
+ApplicationContext context = 
+    new ClassPathXmlApplicationContext("beans/MarryMakerBean.xml");
+spring_demo.Girl player = (spring_demo.Girl)context.getBean("gril1");

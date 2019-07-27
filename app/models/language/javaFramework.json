@@ -16,7 +16,7 @@
               },
               {
                 "key": "基础设施",
-                "description": "与具体业务无关，是技术实现手段"
+                "description": "与具体业务无关，是技术实现的<code>工具</code>"
               },
               {
                 "key": "问题驱动",
@@ -144,7 +144,16 @@
         "name": "三、使用maven",
         "sections": [
           {
-            "name": "1.项目描述",
+            "name": "1.查找框架的id",
+            "blocks": [
+              {
+                "key": "网址",
+                "description": "http://mvnrepository.com"
+              }
+            ]
+          },
+          {
+            "name": "2.项目描述",
             "blocks": [
               {
                 "key": "id和版本号",
@@ -158,16 +167,7 @@
               },
               {
                 "description": "pom详解",
-                "url": "/codeSnippets/java/pom详解.xml"
-              }
-            ]
-          },
-          {
-            "name": "2.查找框架的id",
-            "blocks": [
-              {
-                "key": "网址",
-                "description": "http://mvnrepository.com"
+                "url": "/codeSnippets/java/pom_detail.xml"
               }
             ]
           },
@@ -214,6 +214,604 @@
               {
                 "key": "好处",
                 "description": "可以用maven命令，将自己常用的项目，做成模版来复用"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "四、Spring框架简介",
+        "sections": [
+          {
+            "name": "1.Spring是什么？",
+            "blocks": [
+              {
+                "key": "一组框架",
+                "description": "除了业务逻辑，在基础结构的各个方面都提供了框架"
+              },
+              {
+                "key": "一条产品线",
+                "description": "Pivotal公司的一系列软件产品"
+              },
+              {
+                "key": "口号",
+                "description": "让程序员只需关注 业务逻辑"
+              },
+              {
+                "key": "核心理念",
+                "description": "组装代码"
+              }
+            ]
+          },
+          {
+            "name": "2.有哪些模块？",
+            "blocks": [
+              {
+                "key": "Core",
+                "description": "依赖注入, 面向切面, 数据验证"
+              },
+              {
+                "key": "Testing",
+                "description": "单元测试"
+              },
+              {
+                "key": "Data Access",
+                "description": "访问数据库，事务管理"
+              },
+              {
+                "key": "Web Servlet",
+                "description": "Spring MVC, WebSocket"
+              },
+              {
+                "key": "Web Reactive",
+                "description": "非阻塞响应"
+              },
+              {
+                "key": "Integration",
+                "description": "消息, 邮件, 缓存, 远程调用, 任务计划"
+              },
+              {
+                "key": "官方文档",
+                "description": "https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/"
+              }
+            ]
+          },
+          {
+            "name": "3.最适合的工具",
+            "blocks": [
+              {
+                "key": "STS",
+                "description": "spring基于eclipse做的IDE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "五、Spring IoC（自动组装bean）",
+        "sections": [
+          {
+            "name": "1.原理：自动看图组装",
+            "blocks": [
+              {
+                "key": "图纸",
+                "description": "xml配置文件（描述bean，以及bean之间的组装关系）"
+              },
+              {
+                "key": "积木",
+                "description": "bean（pojo的实例）"
+              },
+              {
+                "key": "谁来组装？",
+                "description": "ApplicationContext（应用程序上下文）"
+              },
+              {
+                "key": "专业术语",
+                "description": "依赖注入（依赖就是bean之间的组装关系，注入就是组装的动作）"
+              }
+            ]
+          },
+          {
+            "name": "2.画图纸",
+            "blocks": [
+              {
+                "key": "显示装配",
+                "description": "在xml配置文件中，根据id明确指定bean的装配关系"
+              },
+              {
+                "key": "自动装配",
+                "description": "根据bean的属性(class/id)，自动匹配"
+              },
+              {
+                "key": "结合使用",
+                "description": "以自动装配为主，（对于匹配关系不唯一的）辅之以显示装配"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "装配图纸（xml配置文件）",
+                "url": "/codeSnippets/java/spring_applicationContext.xml"
+              }
+            ]
+          },
+          {
+            "name": "3.看图纸",
+            "blocks": [
+              {
+                "key": "ClassPathXmlApplicationContext",
+                "description": "在ClassPath中，根据相对路径找到bean的配置文件，然后加载"
+              },
+              {
+                "key": "FileSystemXmlApplicationContext",
+                "description": "在FileSystem中，根据物理路径找到bean的配置文件，然后加载"
+              },
+              {
+                "key": "XmlWebApplicationContext",
+                "description": "详见springMVC的配置（推荐使用@注解，不建议使用bean文件）"
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "桌面程序读配置的2种方式",
+                "url": "/codeSnippets/java/spring_initContext.java"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "六、Spring MVC（处理请求）",
+        "sections": [
+          {
+            "name": "1.原理",
+            "images": [
+              {
+                "alt": "框架的原理",
+                "url": "/images/java/springMVC.png"
+              }
+            ],
+            "blocks": [
+              {
+                "key": "① 接收请求",
+                "description": "web容器 --[请求]--> DispacherServlet --[UrlHandlerMapping]--> Controller"
+              },
+              {
+                "key": "DispacherServlet",
+                "description": "项目启动时创建，SpringMVC用它匹配大部分请求（通常是 '/'）"
+              },
+              {
+                "key": "UrlHandlerMapping",
+                "description": "提前定义好 [url, Controller] 的映射规则"
+              },
+              {
+                "key": "Controller",
+                "description": "DispacherServlet根据请求的Url找到Controller，创建它并调用"
+              },
+              {
+                "key": "② 返回响应",
+                "description": "Controller --[处理结果 + view名称]--> DispacherServlet --[ViewResolver]--> web容器"
+              },
+              {
+                "key": "Controller",
+                "description": "读取请求数据，调用注入的Model、生成处理结果，最后将结果和view名称一起返回"
+              },
+              {
+                "key": "ViewResolver",
+                "description": "提前定义好 [view名称, View] 的映射规则"
+              },
+              {
+                "key": "View",
+                "description": "DispacherServlet根据view名称找到View，并将Controller返回的处理结果嵌入到view中，生成最终的数据"
+              }
+            ]
+          },
+          {
+            "name": "2.使用步骤",
+            "blocks": [
+              {
+                "key": "①",
+                "description": "引入spring-webmvc的jar包"
+              },
+              {
+                "key": "",
+                "description": "[接收请求]"
+              },
+              {
+                "key": "②",
+                "description": "在web.xml中定义DispacherServlet"
+              },
+              {
+                "key": "③",
+                "description": "创建mvc配置文件，命名规范为{DispacherServletName}-servlet.xml"
+              },
+              {
+                "key": "④",
+                "description": "在mvc配置文件中，启用注解，并指定在哪些包中扫描注解"
+              },
+              {
+                "key": "⑤",
+                "description": "创建controller并用@Controller注解，用@RequestMapping注解要映射的url"
+              },
+              {
+                "key": "",
+                "description": "[封装请求数据]"
+              },
+              {
+                "key": "⑥",
+                "description": "定义action方法的形参（@PathVariable用来匹配uri的一部分，@RequestParam用来映射queryString，默认根据参数名称自动匹配）"
+              },
+              {
+                "key": "",
+                "description": "[返回json]"
+              },
+              {
+                "key": "⑦",
+                "description": "引入jackson-databind的jar包"
+              },
+              {
+                "key": "⑧",
+                "description": "直接返回java对象，用@ResponseBody注解action"
+              },
+              {
+                "key": "",
+                "description": "[返回html]"
+              },
+              {
+                "key": "⑦",
+                "description": "在mvc的配置文件中，指定ViewResolver及映射规则"
+              },
+              {
+                "key": "⑧",
+                "description": "将[处理结果]添加到ModelMap中，返回视图名称"
+              },
+              {
+                "key": "⑨",
+                "description": "创建view，并在view中使用  ${} 将[处理结果]填充到视图模板中"
+              }
+            ]
+          },
+          {
+            "name": "3.常用的注解",
+            "blocks": [
+              {
+                "key": "",
+                "description": "配置类"
+              },
+              {
+                "key": "@Configuration",
+                "description": "进行配置"
+              },
+              {
+                "key": "@ComponentScan",
+                "description": "在哪些包中扫描注解"
+              },
+              {
+                "key": "@Bean",
+                "description": "方法返回的对象，作为bean放在容器中"
+              },
+              {
+                "key": "@Scope",
+                "description": "指定bean的scope（singleton/prototype）"
+              },
+              {
+                "key": "",
+                "description": "定义被依赖组件（容器将它实例化成bean）"
+              },
+              {
+                "key": "@Component",
+                "description": "通用组件，后面3个是对三层架构的细化"
+              },
+              {
+                "key": "@Controller",
+                "description": "Controller层，处理请求"
+              },
+              {
+                "key": "@RestController",
+                "description": "返回json的Controller"
+              },
+              {
+                "key": "@Service",
+                "description": "Service层，处理业务（数据库的事务）"
+              },
+              {
+                "key": "@Repository",
+                "description": "Repository层，访问数据库"
+              },
+              {
+                "key": "",
+                "description": "定义依赖组件（容器用什么方式查找bean）"
+              },
+              {
+                "key": "@Autowired",
+                "description": "自动装配byType"
+              },
+              {
+                "key": "@Qualifier",
+                "description": "配合@Autowired使用，指定id解决多个匹配的问题"
+              },
+              {
+                "key": "@Resource",
+                "description": "自动装配byName"
+              },
+              {
+                "key": "",
+                "description": "请求路由（用RequestMethod细化Controller层）"
+              },
+              {
+                "key": "@RequestMapping",
+                "description": "指定Controller或Action对应的url"
+              },
+              {
+                "key": "@GetMapping",
+                "description": "Action对应Get方法（查询：/资源/参数）"
+              },
+              {
+                "key": "@PostMapping",
+                "description": "Action对应Post方法（新增：/资源）"
+              },
+              {
+                "key": "@PatchMapping",
+                "description": "Action对应Patch方法（修改部分属性：/资源/参数）"
+              },
+              {
+                "key": "@PutMapping",
+                "description": "Action对应Put方法（替换所有属性：/资源/参数）"
+              },
+              {
+                "key": "@DeleteMapping",
+                "description": "Action对应Delete方法（删除：/资源/参数）"
+              },
+              {
+                "key": "",
+                "description": "数据绑定（从请求中拿数据，并赋给变量）"
+              },
+              {
+                "key": "@PathVariable",
+                "description": "URI中的模板变量（url参数的另一种格式） ——> 单个变量"
+              },
+              {
+                "key": "@RequestParam",
+                "description": "请求参数（FormString/QueryString） ——> 单个变量"
+              },
+              {
+                "key": "@ModelAttribute",
+                "description": "请求参数（FormString/QueryString） ——> 类的所有属性"
+              },
+              {
+                "key": "@SessionAttributes",
+                "description": "session对象"
+              },
+              {
+                "key": "@CookieValue",
+                "description": "cookie对象"
+              },
+              {
+                "key": "@RequestHeader",
+                "description": "请求头 ——> 单个变量"
+              },
+              {
+                "key": "@RequestBody",
+                "description": "请求体 ——> 单个变量"
+              },
+              {
+                "key": "@InitBinder",
+                "description": "自定义数据绑定器"
+              },
+              {
+                "key": "",
+                "description": "返回响应"
+              },
+              {
+                "key": "@ResponseStatus",
+                "description": "指定响应状态码"
+              },
+              {
+                "key": "@ResponseBody",
+                "description": "指定响应正文"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "七、Mybatis（写sql并映射结果）",
+        "sections": [
+          {
+            "name": "1.原理",
+            "blocks": [
+              {
+                "key": "",
+                "description": "访问数据库：写sql -> 获得ResultSet -> 映射到对象上"
+              },
+              {
+                "key": "sql单元",
+                "description": "sql单元是mybatis的核心，它对应DAO访问数据库的方法"
+              },
+              {
+                "key": "①简化 sql",
+                "description": "把#{动态参数}填充到sql里，它替我们拼接"
+              },
+              {
+                "key": "②简化映射",
+                "description": "只需维护 [sql字段, 对象属性] 的映射规则，它替我们映射"
+              }
+            ]
+          },
+          {
+            "name": "2.使用步骤",
+            "blocks": [
+              {
+                "key": "①",
+                "description": "引入mybatis的jar包"
+              },
+              {
+                "key": "",
+                "description": "[配置和映射]"
+              },
+              {
+                "key": "②",
+                "description": "新建mybatis的配置文件: mybatis.cfg.xml"
+              },
+              {
+                "key": "③",
+                "description": "新建映射文件xxxMapper.xml、指定对应的interface，用sql单元映射方法，定义列名和属性的映射关系"
+              },
+              {
+                "key": "",
+                "description": "[执行sql单元]"
+              },
+              {
+                "key": "④",
+                "description": "读取mybatis的配置文件，获取SqlSessionFactory（从官网复制代码）"
+              },
+              {
+                "key": "⑤",
+                "description": "用SqlSessionFactory打开会话，获取SqlSession（从官网复制代码）"
+              },
+              {
+                "key": "⑥",
+                "description": "根据interface获取mapper"
+              },
+              {
+                "key": "⑦",
+                "description": "commit并关闭SqlSession"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "八、Spring AOP（切面编程）",
+        "sections": [
+          {
+            "name": "1.原理",
+            "blocks": [
+              {
+                "key": "比喻",
+                "description": "（观察者模式）动态添加listener，同时监听多个方法，执行同一段逻辑"
+              },
+              {
+                "key": "微观",
+                "description": "（代码复用）在多个方法中有相同的逻辑， 手动重复编写代码 --> 自动织入代码"
+              },
+              {
+                "key": "宏观",
+                "description": "（关注点分离）代码组织的更清晰，解耦 <业务逻辑, 非功能逻辑（方面）>"
+              }
+            ]
+          },
+          {
+            "name": "2.概念准备",
+            "blocks": [
+              {
+                "key": "JoinPoint接入点",
+                "description": "（待焊接点）程序运行时，能被监听的所有方法"
+              },
+              {
+                "key": "Pointcut切入点",
+                "description": "（实际焊接点）接入点被监听后，就成了事实上的切入点"
+              },
+              {
+                "key": "TargetObject目标对象",
+                "description": "切入点所在的对象"
+              },
+              {
+                "key": "Aspect切面",
+                "description": "非功能逻辑，系统的某一面（如：缓存、日志、安全、事务、异常处理等）"
+              },
+              {
+                "key": "Advice通知",
+                "description": "（焊枪）切面的方法 --> 切入点的位置（ 前/后/环绕/...）"
+              }
+            ]
+          },
+          {
+            "name": "3.使用步骤",
+            "blocks": [
+              {
+                "key": "①",
+                "description": "引入aspectjweaver的jar包"
+              },
+              {
+                "key": "",
+                "description": "[识别切面]"
+              },
+              {
+                "key": "②",
+                "description": "定义切面类，并在其方法中实现切面逻辑"
+              },
+              {
+                "key": "",
+                "description": "[识别切入点]"
+              },
+              {
+                "key": "③",
+                "description": "在aop.xml中，用正则表达式描述切入点"
+              },
+              {
+                "key": "",
+                "description": "[定义通知]"
+              },
+              {
+                "key": "④",
+                "description": "在aop.xml中，用切面类的方法 关联 切入点"
+              }
+            ]
+          },
+          {
+            "name": "4.语法细节",
+            "blocks": [
+              {
+                "key": "",
+                "description": "[切入点描述]"
+              },
+              {
+                "key": "正则表达式",
+                "description": "execution(修饰符? 返回类型   包名.类名?方法名(参数) 抛出的异常类型?)"
+              },
+              {
+                "key": "?",
+                "description": "代表{占位符}可以省略"
+              },
+              {
+                "key": "*",
+                "description": "匹配所有字符"
+              },
+              {
+                "key": "..",
+                "description": "匹配所有参数"
+              },
+              {
+                "key": "",
+                "description": "[切入点给通知传参数]"
+              },
+              {
+                "key": "入参",
+                "description": "在切入点表达式中加上 and args(参数1, 参数2, ...)"
+              },
+              {
+                "key": "返回值",
+                "description": "returning=\"result\""
+              }
+            ],
+            "codeSnippets": [
+              {
+                "description": "AOP配置范例",
+                "url": "/codeSnippets/java/spring_aop.xml"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "附：集成这些框架的配置文件",
+        "sections": [
+          {
+            "name": "1.maven配置文件",
+            "codeSnippets": [
+              {
+                "description": "集成所有框架",
+                "url": "/codeSnippets/java/spring_applicationContext.xml"
               }
             ]
           }
