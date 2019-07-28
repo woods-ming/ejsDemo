@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<setting name="useColumnLabel" value="true" />
+		<setting name="useGeneratedKeys" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL" />
+		<setting name="autoMappingUnknownColumnBehavior" value="WARNING" />
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		<setting name="defaultStatementTimeout" value="25" />
+		<setting name="defaultFetchSize" value="100" />
+		<setting name="safeRowBoundsEnabled" value="false" />
+		<setting name="safeResultHandlerEnabled" value="false" />
+		<!-- 数据库列使用大写单词命名，单词间用下划线分隔； java属性遵循驼峰命名法。 在这两种命名方式之间启用自动映射 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="localCacheScope" value="SESSION" />
+		<setting name="jdbcTypeForNull" value="OTHER" />
+		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
+		<setting name="logImpl" value="LOG4J" />
+		<!-- <setting name="logPrefix" value="MyBatis" /> -->
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="Outgoing" type="domain.entity.Outgoing" />
+		<typeAlias alias="OperationLog" type="domain.entity.OperationLog" />
+	</typeAliases>
+
+</configuration> 

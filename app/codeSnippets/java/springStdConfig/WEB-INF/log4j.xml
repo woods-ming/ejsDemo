@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- 输出到：控制台 -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %c{1} - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 输出到：文件 -->
+	<appender name="file" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${webapp.root}/WEB-INF/logs/util.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%t %-5p %c{2} - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 输出到：每日滚动文件 -->
+	<appender name="rollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+		<param name="file" value="${webapp.root}/WEB-INF/logs/mylogfile.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-25d{ISO8601}] %-5p %x %C{1} -- %m\n" />
+		</layout>
+	</appender>
+
+	<!-- 输出到：邮件 -->
+	<appender name="email" class="org.apache.log4j.net.SMTPAppender">
+		<param name="BufferSize" value="512" />
+		<param name="SMTPHost" value="some.email.host.org" />
+		<param name="From" value="appname@server.com" />
+		<param name="To" value="adminA@server.com,adminB@server.com" />
+		<param name="Subject" value="SomeApplication on SomeServer12" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}]%n%n%-5p%n%n%c%n%n%m%n%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<!-- 日志记录器 -->
+	<logger name="testLogger">
+		<level class="org.apache.log4j.Level" value="DEBUG" />
+		<appender-ref ref="console" />
+	</logger>
+
+	<!-- 修改Mybatis包的日志输出级别 -->
+	<category name="dao.repository">
+		<priority value="DEBUG" />
+		<appender-ref ref="console" />
+	</category>
+
+	<root>
+		<priority value="ERROR" />
+		<appender-ref ref="rollingFile" />
+	</root>
+
+</log4j:configuration>

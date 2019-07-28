@@ -12,9 +12,9 @@
         <aop:aspect id="{通知Id}" ref="{切面Id}">
             <aop:before method="{Aspect的方法名}" pointcut-ref="{切入点id}" />
             <aop:after method="{Aspect的方法名}" pointcut="execution(* aop.*.doSometing1())" />
-            <aop:after-returning method="afterReturn" pointcut="execution(* aop.*.count(int)) and args(t1)" />
-            <aop:after-throwing method="afterThrowing" pointcut-ref="moocPiontcut" />
-            <aop:around method="around" pointcut-ref="moocPiontcut" />
+            <aop:after-returning method="afterReturn" pointcut="execution(* aop.*.count(int)) and args(t1)" returning="result" />
+            <aop:after-throwing method="afterThrowing" pointcut-ref="{切入点id}" />
+            <aop:around method="around" pointcut-ref="{切入点id}" />
         </aop:aspect>
     </aop:config>
 </beans>

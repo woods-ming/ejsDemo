@@ -291,7 +291,7 @@
         "name": "五、Spring IoC（自动组装bean）",
         "sections": [
           {
-            "name": "1.原理：自动看图组装",
+            "name": "1.原理：看图 自动 组装",
             "blocks": [
               {
                 "key": "图纸",
@@ -628,7 +628,7 @@
                 "description": "sql单元是mybatis的核心，它对应DAO访问数据库的方法"
               },
               {
-                "key": "①简化 sql",
+                "key": "①方便写sql",
                 "description": "把#{动态参数}填充到sql里，它替我们拼接"
               },
               {
@@ -654,26 +654,30 @@
               },
               {
                 "key": "③",
-                "description": "新建映射文件xxxMapper.xml、指定对应的interface，用sql单元映射方法，定义列名和属性的映射关系"
+                "description": "新建映射文件xxxMapper.xml、与数据访问interface一一对应"
+              },
+              {
+                "key": "④",
+                "description": "在xxxMapper.xml文件中，编写sql单元对应接口中的方法，并提前定义好<sql列名，类属性>的映射关系"
               },
               {
                 "key": "",
                 "description": "[执行sql单元]"
               },
               {
-                "key": "④",
+                "key": "⑤",
                 "description": "读取mybatis的配置文件，获取SqlSessionFactory（从官网复制代码）"
               },
               {
-                "key": "⑤",
+                "key": "⑥",
                 "description": "用SqlSessionFactory打开会话，获取SqlSession（从官网复制代码）"
               },
               {
-                "key": "⑥",
+                "key": "⑦",
                 "description": "根据interface获取mapper"
               },
               {
-                "key": "⑦",
+                "key": "⑧",
                 "description": "commit并关闭SqlSession"
               }
             ]
@@ -783,15 +787,39 @@
               },
               {
                 "key": "",
-                "description": "[切入点给通知传参数]"
+                "description": "[5类通知]"
+              },
+              {
+                "key": "before",
+                "description": "调用前"
+              },
+              {
+                "key": "after",
+                "description": "调用后"
+              },
+              {
+                "key": "after-returning",
+                "description": "成功后"
+              },
+              {
+                "key": "after-throwing",
+                "description": "失败后"
+              },
+              {
+                "key": "around",
+                "description": "前+后（参数：必须有ProceedingJoinPoint pjp，返回值：必须是Object）"
+              },
+              {
+                "key": "",
+                "description": "[数据传递]"
               },
               {
                 "key": "入参",
-                "description": "在切入点表达式中加上 and args(参数1, 参数2, ...)"
+                "description": "（名称一致）在切入点表达式中加上 and args(参数1, 参数2, ...)"
               },
               {
                 "key": "返回值",
-                "description": "returning=\"result\""
+                "description": "returning=\"参数名\""
               }
             ],
             "codeSnippets": [
@@ -807,11 +835,31 @@
         "name": "附：集成这些框架的配置文件",
         "sections": [
           {
-            "name": "1.maven配置文件",
+            "name": "thymeleaf + springMvc + springTx + mybatis/spring-jdbc + log4j12",
             "codeSnippets": [
               {
-                "description": "集成所有框架",
-                "url": "/codeSnippets/java/spring_applicationContext.xml"
+                "description": "/pom.xml",
+                "url": "/codeSnippets/java/springStdConfig/pom.xml"
+              },
+              {
+                "description": "/WEB-INF/web.xml",
+                "url": "/codeSnippets/java/springStdConfig/WEB-INF/web.xml"
+              },
+              {
+                "description": "/WEB-INF/springMVC-servlet.xml",
+                "url": "/codeSnippets/java/springStdConfig/WEB-INF/springMVC-servlet.xml"
+              },
+              {
+                "description": "/WEB-INF/mybatis-config.xml",
+                "url": "/codeSnippets/java/springStdConfig/WEB-INF/mybatis-config.xml"
+              },
+              {
+                "description": "/WEB-INF/datasource.properties",
+                "url": "/codeSnippets/java/springStdConfig/WEB-INF/datasource.properties"
+              },
+              {
+                "description": "/WEB-INF/log4j.xml",
+                "url": "/codeSnippets/java/springStdConfig/WEB-INF/log4j.xml"
               }
             ]
           }
